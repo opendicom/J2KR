@@ -600,6 +600,7 @@ OFCondition DJCodecEncoder::encodeTrueLossless(
     DJEncoder *jpeg = createEncoderInstance(toRepParam, djcp, OFstatic_cast(Uint8, bitsAllocated));
     if (jpeg)
     {
+        printf("dcmjpeg/djcodece.cc DJCodecEncoder::encodeTrueLossless line 603\r\n");
       // main loop for compression: compress each frame
       for (unsigned int i=0; i<frameCount && result.good(); i++)
       {

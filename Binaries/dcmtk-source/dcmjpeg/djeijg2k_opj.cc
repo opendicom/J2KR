@@ -35,14 +35,7 @@
 #include "djeijg2k.h"
 #include "djcparam.h"
 #include "ofconsol.h"
-#import "Accelerate/Accelerate.h"
 #include "ofconsol.h"
-
-#include <sys/types.h>
-#include <sys/sysctl.h>
-
-#define INCLUDE_CSTDIO
-#define INCLUDE_CSETJMP
 #include "ofstdinc.h"
 
 // These two macros are re-defined in the IJG header files.
@@ -75,61 +68,24 @@ DJCompressJP2K::DJCompressJP2K(const DJCodecParameter& cp, EJ_Mode mode, Uint8 t
 
 DJCompressJP2K::~DJCompressJP2K()
 {
-
 }
 
-void DJCompressJP2K::findMinMax( int &_min, int &_max, char *bytes, long length, OFBool isSigned, int rows, int columns, int bitsAllocated)
+
+Uint16 DJCompressJP2K::bytesPerSample() const
 {
-    _min = 0;
-    _max = 0;
-    
-	float max = 0,  min = 0;
-	
-	if (bitsAllocated <= 8) 
-		length = length;
-	else if (bitsAllocated <= 16)
-		length = length/2;
-	else
-		length = length/4;
-		
-	float *fBuffer = (float*) malloc(length * 4);
-	if( fBuffer)
-	{
-		vImage_Buffer src, dstf;
-		dstf.height = src.height = rows;
-		dstf.width = src.width = columns;
-		dstf.rowBytes = columns*sizeof(float);
-		dstf.data = fBuffer;
-		src.data = (void*) bytes;
-		
-		if (bitsAllocated <= 8)
-		{
-			src.rowBytes = columns;
-			vImageConvert_Planar8toPlanarF( &src, &dstf, 0, 256, 0);
-		}
-		else if (bitsAllocated <= 16)
-		{
-			src.rowBytes = columns * 2;
-			
-			if( isSigned)
-				vImageConvert_16SToF( &src, &dstf, 0, 1, 0);
-			else
-				vImageConvert_16UToF( &src, &dstf, 0, 1, 0);
-		}
-		
-		vDSP_minv( fBuffer, 1, &min, length);
-		vDSP_maxv( fBuffer, 1, &max, length);
-        
-		_min = min;
-		_max = max;
-		
-		
-		free(fBuffer);
-	}
+    if( bitsPerSampleValue <= 8)
+        return 1;
     else
-        printf( "\r**** DJCompressJP2K::findMinMax malloc failed\r");
+        return 2;
 }
 
+Uint16 DJCompressJP2K::bitsPerSample() const
+{
+    return bitsPerSampleValue;
+}
+
+
+//buffer 8 bits
 OFCondition DJCompressJP2K::encode( 
   Uint16 columns,
   Uint16 rows,
@@ -139,11 +95,14 @@ OFCondition DJCompressJP2K::encode(
   Uint8 * & to,
   Uint32 & length,
   Uint8 pixelRepresentation,
-  double minUsed, double maxUsed)
+  double minUsed,
+  double maxUsed
+)
 {
 	return encode( columns, rows, colorSpace, samplesPerPixel, (Uint8*) image_buffer, to, length, 8, pixelRepresentation, minUsed, maxUsed);
 }
 
+//buffer 16 bits
 OFCondition DJCompressJP2K::encode(
     Uint16  columns ,
     Uint16  rows ,
@@ -153,22 +112,11 @@ OFCondition DJCompressJP2K::encode(
     Uint8 *&  to ,
     Uint32 &  length,
 	Uint8 pixelRepresentation,
-	double minUsed, double maxUsed)
+	double minUsed,
+    double maxUsed
+)
 {
 	return encode( columns, rows, interpr, samplesPerPixel, (Uint8*) image_buffer, to, length, 16, pixelRepresentation, minUsed, maxUsed);
-}
-
-Uint16 DJCompressJP2K::bytesPerSample() const
-{
-	if( bitsPerSampleValue <= 8)
-		return 1;
-	else
-		return 2;
-}
-
-Uint16 DJCompressJP2K::bitsPerSample() const
-{
-	return bitsPerSampleValue;
 }
 
 OFCondition DJCompressJP2K::encode( 
@@ -181,79 +129,23 @@ OFCondition DJCompressJP2K::encode(
   Uint32 & length,
   Uint8 bitsAllocated,
   Uint8 pixelRepresentation,
-  double minUsed, double maxUsed)
+  double minUsed,
+  double maxUsed
+)
 {
-	int bitsstored = bitsAllocated;
-	
-    if( samplesPerPixel > 1)
-        bitsstored = bitsAllocated = 8;
-    
-	OFBool isSigned = 0;
-	
-	if( bitsAllocated >= 16)
-	{
-		if( minUsed == 0 && maxUsed == 0)
-		{
-			int _min = 0, _max = 0;
-			findMinMax( _min, _max, (char*) image_buffer, columns*rows*samplesPerPixel*bitsAllocated/8, isSigned, rows, columns, bitsAllocated);
-						
-			minUsed = _min;
-			maxUsed = _max;
-		}
-		
-		int amplitude = maxUsed;
-		
-		if( minUsed < 0)
-			amplitude -= minUsed;
-		
-		int bits = 1, value = 2;
-		
-		while( value < amplitude && bits <= 16)
-		{
-			value *= 2;
-			bits++;
-		}
-		
-		if( minUsed < 0) // K A10009536850 22.06.12
-			bits++;
-		
-		if( bits < 9)
-			bits = 9;
-		
-		// avoid the artifacts... switch to lossless
-		if( (maxUsed >= 32000 && minUsed <= -32000) || maxUsed >= 65000 || bits > 16)
-			quality = 0;
-		
-		if( bits > 16) bits = 16;
-		
-		bitsstored = bits;
-	}
-    
-    int rate = 0;//DCMLosslessQuality
-
-            
-    int sample_pixel = samplesPerPixel;
-    
-    if (colorSpace != EPI_Monochrome1 &&
-        colorSpace != EPI_Monochrome2)
-    {
-        if( sample_pixel != 3)
-        {
-            printf( "*** RGB Photometric?, but... SamplesPerPixel != 3 ?");
-            sample_pixel = 3;
-        }
-    }
-    
-    long compressedLength = 0;
+    long compressedLength = 0;//type mismatch
     OPJSupport opj;
-    to = (Uint8 *)opj.compressJPEG2K( (void*) image_buffer,
+    to = (Uint8 *)opj.compressJPEG2K(
+                                     (void*) image_buffer,
                                      samplesPerPixel,
-                                     rows, columns,
-                                     bitsstored,
+                                     rows,
+                                     columns,
                                      bitsAllocated,
-                                     false, // sign
-                                     rate,
+                                     bitsAllocated,
+                                     false,
+                                     0,
                                      &compressedLength);
+    //[5] bitsstored, [7] signed, [8] rate=0=DCMLosslessQuality
     length = compressedLength;
 
     return EC_Normal;

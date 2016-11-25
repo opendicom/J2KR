@@ -5,8 +5,8 @@
 #include "osconfig.h" /* make sure OS specific configuration is included first */
 #include "djdecode.h"  /* for dcmjpeg decoders */
 #include "djencode.h"  /* for dcmjpeg encoders */
-#include "dcrledrg.h"  /* for DcmRLEDecoderRegistration */
-#include "dcrleerg.h"  /* for DcmRLEEncoderRegistration */
+//#include "dcrledrg.h"  /* for DcmRLEDecoderRegistration */
+//#include "dcrleerg.h"  /* for DcmRLEEncoderRegistration */
 #include "djrploss.h"
 #include "djrplol.h"
 #include "dcpixel.h"
@@ -19,8 +19,8 @@
 #include "dcuid.h"
 #include "dcdict.h"
 #include "dcdeftag.h"
-#include "Binaries/dcmtk-source/dcmjpls/djdecode.h" //JPEG-LS
-#include "Binaries/dcmtk-source/dcmjpls/djencode.h" //JPEG-LS
+//#include "Binaries/dcmtk-source/dcmjpls/djdecode.h" //JPEG-LS
+//#include "Binaries/dcmtk-source/dcmjpls/djencode.h" //JPEG-LS
 
 enum DCM_CompressionQuality {
     DCMLosslessQuality = 0,

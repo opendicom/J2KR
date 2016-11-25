@@ -362,18 +362,10 @@
 		4A1686FD1DE75970007E10B2 /* jcshuff.c in Sources */ = {isa = PBXBuildFile; fileRef = BFBF3CCA09B6828400545F5E /* jcshuff.c */; };
 		4A1686FE1DE75970007E10B2 /* djdec2k.cc in Sources */ = {isa = PBXBuildFile; fileRef = CEFFFE251286895300D69BB8 /* djdec2k.cc */; };
 		4A1687001DE75970007E10B2 /* djenc2k.cc in Sources */ = {isa = PBXBuildFile; fileRef = CEFF00FC1286F7A700D69BB8 /* djenc2k.cc */; };
-		4A1687021DE75970007E10B2 /* djcodecd.cc in Sources */ = {isa = PBXBuildFile; fileRef = AB451836149F47BF006674BF /* djcodecd.cc */; };
-		4A1687031DE75970007E10B2 /* djcodece.cc in Sources */ = {isa = PBXBuildFile; fileRef = AB451837149F47BF006674BF /* djcodece.cc */; };
-		4A1687041DE75970007E10B2 /* djcparam.cc in Sources */ = {isa = PBXBuildFile; fileRef = AB451838149F47BF006674BF /* djcparam.cc */; };
-		4A1687051DE75970007E10B2 /* djutils.cc in Sources */ = {isa = PBXBuildFile; fileRef = AB45183A149F47BF006674BF /* djutils.cc */; };
-		4A1687061DE75970007E10B2 /* djdecode.cc in Sources */ = {isa = PBXBuildFile; fileRef = AB45183C149F47C0006674BF /* djdecode.cc */; };
-		4A1687071DE75970007E10B2 /* djencode.cc in Sources */ = {isa = PBXBuildFile; fileRef = AB45183E149F47C0006674BF /* djencode.cc */; };
-		4A1687081DE75970007E10B2 /* djrparam.cc in Sources */ = {isa = PBXBuildFile; fileRef = AB451844149F47C0006674BF /* djrparam.cc */; };
 		4A1687091DE75970007E10B2 /* NSString+opendicom.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A04FF251CD924B900A8BB5D /* NSString+opendicom.mm */; };
 		4A16870B1DE75970007E10B2 /* libz.1.2.8.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A1685891DE6584D007E10B2 /* libz.1.2.8.tbd */; };
 		4A16870C1DE75970007E10B2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29B97325FDCFA39411CA2CEA /* Foundation.framework */; };
 		4A16870D1DE75970007E10B2 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB5E1A300595697700C48BEB /* Accelerate.framework */; };
-		4A16870F1DE75970007E10B2 /* libCharLS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB451802149F464B006674BF /* libCharLS.a */; };
 		4A1687131DE759DF007E10B2 /* libopenjp2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A1685931DE75871007E10B2 /* libopenjp2.a */; };
 		4A1687151DE75A14007E10B2 /* OPJ.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A1687141DE75A14007E10B2 /* OPJ.mm */; };
 		4A1687161DE75A40007E10B2 /* OPJSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A1685991DE7593D007E10B2 /* OPJSupport.h */; };
@@ -383,7 +375,7 @@
 		4A16871B1DE75AAB007E10B2 /* OPJSupport.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A1685981DE7593D007E10B2 /* OPJSupport.cpp */; };
 		4A16871D1DE75EA4007E10B2 /* djdijp2k_opj.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4A16871C1DE75EA4007E10B2 /* djdijp2k_opj.cc */; };
 		4A1687211DE76200007E10B2 /* djeijg2k_opj.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4A1687201DE76200007E10B2 /* djeijg2k_opj.cc */; };
-		4A169D761DE7A0C1007E10B2 /* libkdu_v73R.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A169D741DE7A0C1007E10B2 /* libkdu_v73R.a */; };
+		4A169D7B1DE8B2E4007E10B2 /* libkdu_v73R.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A169D7A1DE8B2E4007E10B2 /* libkdu_v73R.a */; };
 		4AEAD24A1CC6E475000FEA7F /* dcfilefo.cc in Sources */ = {isa = PBXBuildFile; fileRef = BFBF3AD809B6827D00545F5E /* dcfilefo.cc */; };
 		4AEAD24B1CC6E475000FEA7F /* dcxfer.cc in Sources */ = {isa = PBXBuildFile; fileRef = BFBF3B5309B6827F00545F5E /* dcxfer.cc */; };
 		4AEAD24C1CC6E475000FEA7F /* dcvrut.cc in Sources */ = {isa = PBXBuildFile; fileRef = BFBF3B5109B6827F00545F5E /* dcvrut.cc */; };
@@ -738,16 +730,8 @@
 		4AEAD3B41CC6E475000FEA7F /* djdijp2k_kdu.cc in Sources */ = {isa = PBXBuildFile; fileRef = CEFFFE3A12868F5400D69BB8 /* djdijp2k_kdu.cc */; };
 		4AEAD3B51CC6E475000FEA7F /* djenc2k.cc in Sources */ = {isa = PBXBuildFile; fileRef = CEFF00FC1286F7A700D69BB8 /* djenc2k.cc */; };
 		4AEAD3B61CC6E475000FEA7F /* djeijg2k_kdu.cc in Sources */ = {isa = PBXBuildFile; fileRef = CEFF01441286FB2000D69BB8 /* djeijg2k_kdu.cc */; };
-		4AEAD3B91CC6E475000FEA7F /* djcodecd.cc in Sources */ = {isa = PBXBuildFile; fileRef = AB451836149F47BF006674BF /* djcodecd.cc */; };
-		4AEAD3BA1CC6E475000FEA7F /* djcodece.cc in Sources */ = {isa = PBXBuildFile; fileRef = AB451837149F47BF006674BF /* djcodece.cc */; };
-		4AEAD3BB1CC6E475000FEA7F /* djcparam.cc in Sources */ = {isa = PBXBuildFile; fileRef = AB451838149F47BF006674BF /* djcparam.cc */; };
-		4AEAD3BC1CC6E475000FEA7F /* djutils.cc in Sources */ = {isa = PBXBuildFile; fileRef = AB45183A149F47BF006674BF /* djutils.cc */; };
-		4AEAD3BD1CC6E475000FEA7F /* djdecode.cc in Sources */ = {isa = PBXBuildFile; fileRef = AB45183C149F47C0006674BF /* djdecode.cc */; };
-		4AEAD3BE1CC6E475000FEA7F /* djencode.cc in Sources */ = {isa = PBXBuildFile; fileRef = AB45183E149F47C0006674BF /* djencode.cc */; };
-		4AEAD3BF1CC6E475000FEA7F /* djrparam.cc in Sources */ = {isa = PBXBuildFile; fileRef = AB451844149F47C0006674BF /* djrparam.cc */; };
 		4AEAD3C61CC6E475000FEA7F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29B97325FDCFA39411CA2CEA /* Foundation.framework */; };
 		4AEAD5721CC6E5A7000FEA7F /* KDU.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4AEAD5711CC6E5A7000FEA7F /* KDU.mm */; };
-		4AEAD57C1CCC6307000FEA7F /* libCharLS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB451802149F464B006674BF /* libCharLS.a */; };
 		4AEAD57D1CCC6398000FEA7F /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB5E1A300595697700C48BEB /* Accelerate.framework */; };
 /* End PBXBuildFile section */
 
@@ -766,7 +750,8 @@
 		4A1687141DE75A14007E10B2 /* OPJ.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OPJ.mm; sourceTree = "<group>"; };
 		4A16871C1DE75EA4007E10B2 /* djdijp2k_opj.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = djdijp2k_opj.cc; path = "Binaries/dcmtk-source/dcmjpeg/djdijp2k_opj.cc"; sourceTree = "<group>"; };
 		4A1687201DE76200007E10B2 /* djeijg2k_opj.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = djeijg2k_opj.cc; path = "Binaries/dcmtk-source/dcmjpeg/djeijg2k_opj.cc"; sourceTree = "<group>"; };
-		4A169D741DE7A0C1007E10B2 /* libkdu_v73R.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libkdu_v73R.a; path = "Binaries/KDU SDK/libkdu_v73R.a"; sourceTree = "<group>"; };
+		4A169D771DE7B8DC007E10B2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		4A169D7A1DE8B2E4007E10B2 /* libkdu_v73R.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libkdu_v73R.a; sourceTree = "<group>"; };
 		4A9059EC1CEF908600A9CA2F /* ODvr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODvr.h; sourceTree = "<group>"; };
 		4AC642D81CE57FF500A25E46 /* ODMetaInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODMetaInfo.h; sourceTree = "<group>"; };
 		4AC642D91CE57FF500A25E46 /* ODMetaInfo.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ODMetaInfo.mm; sourceTree = "<group>"; };
@@ -782,38 +767,6 @@
 		4AF940621CE5720100551476 /* ODDataset.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ODDataset.mm; sourceTree = "<group>"; };
 		4AF940651CE5720100551476 /* ODFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODFile.h; sourceTree = "<group>"; };
 		4AF940661CE5720100551476 /* ODFile.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ODFile.mm; sourceTree = "<group>"; };
-		AB451802149F464B006674BF /* libCharLS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libCharLS.a; path = Binaries/CharLS/libCharLS.a; sourceTree = "<group>"; };
-		AB451803149F464B006674BF /* scan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = scan.h; path = Binaries/CharLS/scan.h; sourceTree = "<group>"; };
-		AB451804149F464B006674BF /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = util.h; path = Binaries/CharLS/util.h; sourceTree = "<group>"; };
-		AB451805149F464B006674BF /* colortransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = colortransform.h; path = Binaries/CharLS/colortransform.h; sourceTree = "<group>"; };
-		AB451806149F464B006674BF /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = config.h; path = Binaries/CharLS/config.h; sourceTree = "<group>"; };
-		AB451807149F464B006674BF /* context.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = context.h; path = Binaries/CharLS/context.h; sourceTree = "<group>"; };
-		AB451808149F464B006674BF /* contextrunmode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = contextrunmode.h; path = Binaries/CharLS/contextrunmode.h; sourceTree = "<group>"; };
-		AB451809149F464B006674BF /* decoderstrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = decoderstrategy.h; path = Binaries/CharLS/decoderstrategy.h; sourceTree = "<group>"; };
-		AB45180A149F464B006674BF /* defaulttraits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = defaulttraits.h; path = Binaries/CharLS/defaulttraits.h; sourceTree = "<group>"; };
-		AB45180B149F464B006674BF /* encoderstrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = encoderstrategy.h; path = Binaries/CharLS/encoderstrategy.h; sourceTree = "<group>"; };
-		AB45180C149F464B006674BF /* header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = header.h; path = Binaries/CharLS/header.h; sourceTree = "<group>"; };
-		AB45180D149F464B006674BF /* interface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = interface.h; path = Binaries/CharLS/interface.h; sourceTree = "<group>"; };
-		AB45180E149F464B006674BF /* jpegmarker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = jpegmarker.h; path = Binaries/CharLS/jpegmarker.h; sourceTree = "<group>"; };
-		AB45180F149F464B006674BF /* lookuptable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lookuptable.h; path = Binaries/CharLS/lookuptable.h; sourceTree = "<group>"; };
-		AB451810149F464B006674BF /* losslesstraits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = losslesstraits.h; path = Binaries/CharLS/losslesstraits.h; sourceTree = "<group>"; };
-		AB451811149F464B006674BF /* processline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = processline.h; path = Binaries/CharLS/processline.h; sourceTree = "<group>"; };
-		AB451812149F464B006674BF /* publictypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = publictypes.h; path = Binaries/CharLS/publictypes.h; sourceTree = "<group>"; };
-		AB451836149F47BF006674BF /* djcodecd.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = djcodecd.cc; path = "Binaries/dcmtk-source/dcmjpls/djcodecd.cc"; sourceTree = SOURCE_ROOT; };
-		AB451837149F47BF006674BF /* djcodece.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = djcodece.cc; path = "Binaries/dcmtk-source/dcmjpls/djcodece.cc"; sourceTree = SOURCE_ROOT; };
-		AB451838149F47BF006674BF /* djcparam.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = djcparam.cc; path = "Binaries/dcmtk-source/dcmjpls/djcparam.cc"; sourceTree = SOURCE_ROOT; };
-		AB451839149F47BF006674BF /* djlsutil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = djlsutil.h; path = "Binaries/dcmtk-source/dcmjpls/djlsutil.h"; sourceTree = SOURCE_ROOT; };
-		AB45183A149F47BF006674BF /* djutils.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = djutils.cc; path = "Binaries/dcmtk-source/dcmjpls/djutils.cc"; sourceTree = SOURCE_ROOT; };
-		AB45183B149F47BF006674BF /* djrparam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = djrparam.h; path = "Binaries/dcmtk-source/dcmjpls/djrparam.h"; sourceTree = SOURCE_ROOT; };
-		AB45183C149F47C0006674BF /* djdecode.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = djdecode.cc; path = "Binaries/dcmtk-source/dcmjpls/djdecode.cc"; sourceTree = SOURCE_ROOT; };
-		AB45183D149F47C0006674BF /* djdecode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = djdecode.h; path = "Binaries/dcmtk-source/dcmjpls/djdecode.h"; sourceTree = SOURCE_ROOT; };
-		AB45183E149F47C0006674BF /* djencode.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = djencode.cc; path = "Binaries/dcmtk-source/dcmjpls/djencode.cc"; sourceTree = SOURCE_ROOT; };
-		AB45183F149F47C0006674BF /* djencode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = djencode.h; path = "Binaries/dcmtk-source/dcmjpls/djencode.h"; sourceTree = SOURCE_ROOT; };
-		AB451840149F47C0006674BF /* djerror.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = djerror.h; path = "Binaries/dcmtk-source/dcmjpls/djerror.h"; sourceTree = SOURCE_ROOT; };
-		AB451841149F47C0006674BF /* djcodecd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = djcodecd.h; path = "Binaries/dcmtk-source/dcmjpls/djcodecd.h"; sourceTree = SOURCE_ROOT; };
-		AB451842149F47C0006674BF /* djcodece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = djcodece.h; path = "Binaries/dcmtk-source/dcmjpls/djcodece.h"; sourceTree = SOURCE_ROOT; };
-		AB451843149F47C0006674BF /* djcparam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = djcparam.h; path = "Binaries/dcmtk-source/dcmjpls/djcparam.h"; sourceTree = SOURCE_ROOT; };
-		AB451844149F47C0006674BF /* djrparam.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = djrparam.cc; path = "Binaries/dcmtk-source/dcmjpls/djrparam.cc"; sourceTree = SOURCE_ROOT; };
 		AB5E1A300595697700C48BEB /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = /System/Library/Frameworks/Accelerate.framework; sourceTree = "<absolute>"; };
 		BFBF3AB809B6827D00545F5E /* cfunix.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = cfunix.h; sourceTree = "<group>"; };
 		BFBF3AB909B6827D00545F5E /* osconfig.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = osconfig.h; sourceTree = "<group>"; };
@@ -1102,7 +1055,7 @@
 		BFBF3BDC09B6828100545F5E /* dipijpeg.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = dipijpeg.h; sourceTree = "<group>"; };
 		BFBF3BDD09B6828100545F5E /* djcodecd.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; path = djcodecd.cc; sourceTree = "<group>"; };
 		BFBF3BDE09B6828100545F5E /* djcodecd.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = djcodecd.h; sourceTree = "<group>"; };
-		BFBF3BDF09B6828100545F5E /* djcodece.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; path = djcodece.cc; sourceTree = "<group>"; };
+		BFBF3BDF09B6828100545F5E /* djcodece.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = djcodece.cc; path = "Binaries/dcmtk-source/dcmjpeg/djcodece.cc"; sourceTree = "<group>"; };
 		BFBF3BE009B6828100545F5E /* djcodece.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = djcodece.h; sourceTree = "<group>"; };
 		BFBF3BE109B6828100545F5E /* djcparam.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; path = djcparam.cc; sourceTree = "<group>"; };
 		BFBF3BE209B6828100545F5E /* djcparam.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = djcparam.h; sourceTree = "<group>"; };
@@ -1445,7 +1398,6 @@
 				4A16870C1DE75970007E10B2 /* Foundation.framework in Frameworks */,
 				4A16870D1DE75970007E10B2 /* Accelerate.framework in Frameworks */,
 				4A1687131DE759DF007E10B2 /* libopenjp2.a in Frameworks */,
-				4A16870F1DE75970007E10B2 /* libCharLS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1453,11 +1405,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A169D7B1DE8B2E4007E10B2 /* libkdu_v73R.a in Frameworks */,
 				4A16858A1DE6584D007E10B2 /* libz.1.2.8.tbd in Frameworks */,
 				4AEAD3C61CC6E475000FEA7F /* Foundation.framework in Frameworks */,
 				4AEAD57D1CCC6398000FEA7F /* Accelerate.framework in Frameworks */,
-				4AEAD57C1CCC6307000FEA7F /* libCharLS.a in Frameworks */,
-				4A169D761DE7A0C1007E10B2 /* libkdu_v73R.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1476,9 +1427,10 @@
 		29B97314FDCFA39411CA2CEA /* OsiriX */ = {
 			isa = PBXGroup;
 			children = (
+				4A169D771DE7B8DC007E10B2 /* README.md */,
 				84A9D44712F7F8BE00DA1F99 /* KDU32 */,
 				4A1685921DE71C8F007E10B2 /* OPJ64 */,
-				AB451801149F44DD006674BF /* JPEG-LS (CharLS) */,
+				BFBF3BDF09B6828100545F5E /* djcodece.cc */,
 				4AF940601CE5720100551476 /* OD */,
 				AB724F1C0ADE6CFC00A212A0 /* categories */,
 				BFBF3AAF09B6820C00545F5E /* dcmtk */,
@@ -1537,59 +1489,12 @@
 		84A9D44712F7F8BE00DA1F99 /* KDU32 */ = {
 			isa = PBXGroup;
 			children = (
-				4A169D741DE7A0C1007E10B2 /* libkdu_v73R.a */,
+				4A169D7A1DE8B2E4007E10B2 /* libkdu_v73R.a */,
 				4AEAD5711CC6E5A7000FEA7F /* KDU.mm */,
 				CEFFFE3A12868F5400D69BB8 /* djdijp2k_kdu.cc */,
 				CEFF01441286FB2000D69BB8 /* djeijg2k_kdu.cc */,
 			);
 			name = KDU32;
-			sourceTree = "<group>";
-		};
-		AB451801149F44DD006674BF /* JPEG-LS (CharLS) */ = {
-			isa = PBXGroup;
-			children = (
-				AB451802149F464B006674BF /* libCharLS.a */,
-				AB451803149F464B006674BF /* scan.h */,
-				AB451804149F464B006674BF /* util.h */,
-				AB451805149F464B006674BF /* colortransform.h */,
-				AB451806149F464B006674BF /* config.h */,
-				AB451807149F464B006674BF /* context.h */,
-				AB451808149F464B006674BF /* contextrunmode.h */,
-				AB451809149F464B006674BF /* decoderstrategy.h */,
-				AB45180A149F464B006674BF /* defaulttraits.h */,
-				AB45180B149F464B006674BF /* encoderstrategy.h */,
-				AB45180C149F464B006674BF /* header.h */,
-				AB45180D149F464B006674BF /* interface.h */,
-				AB45180E149F464B006674BF /* jpegmarker.h */,
-				AB45180F149F464B006674BF /* lookuptable.h */,
-				AB451810149F464B006674BF /* losslesstraits.h */,
-				AB451811149F464B006674BF /* processline.h */,
-				AB451812149F464B006674BF /* publictypes.h */,
-			);
-			name = "JPEG-LS (CharLS)";
-			sourceTree = "<group>";
-		};
-		AB451835149F4758006674BF /* dcmjpls */ = {
-			isa = PBXGroup;
-			children = (
-				AB451836149F47BF006674BF /* djcodecd.cc */,
-				AB451837149F47BF006674BF /* djcodece.cc */,
-				AB451838149F47BF006674BF /* djcparam.cc */,
-				AB451839149F47BF006674BF /* djlsutil.h */,
-				AB45183A149F47BF006674BF /* djutils.cc */,
-				AB45183B149F47BF006674BF /* djrparam.h */,
-				AB45183C149F47C0006674BF /* djdecode.cc */,
-				AB45183D149F47C0006674BF /* djdecode.h */,
-				AB45183E149F47C0006674BF /* djencode.cc */,
-				AB45183F149F47C0006674BF /* djencode.h */,
-				AB451840149F47C0006674BF /* djerror.h */,
-				AB451841149F47C0006674BF /* djcodecd.h */,
-				AB451842149F47C0006674BF /* djcodece.h */,
-				AB451843149F47C0006674BF /* djcparam.h */,
-				AB451844149F47C0006674BF /* djrparam.cc */,
-			);
-			name = dcmjpls;
-			path = "Binaries/dcmtk-source/dcmjpeg";
 			sourceTree = "<group>";
 		};
 		AB724F1C0ADE6CFC00A212A0 /* categories */ = {
@@ -1608,7 +1513,6 @@
 				BFBF3ABA09B6827D00545F5E /* dcmdata */,
 				BFBF3B5509B6827F00545F5E /* dcmimage */,
 				BFBF3B9309B6828000545F5E /* dcmimgle */,
-				AB451835149F4758006674BF /* dcmjpls */,
 				BFBF3BD809B6828100545F5E /* dcmjpeg */,
 				BFBF3E4209B6828A00545F5E /* ofstd */,
 			);
@@ -1941,7 +1845,6 @@
 				CEFFFE3912868F5400D69BB8 /* djdijp2k.h */,
 				BFBF3BDD09B6828100545F5E /* djcodecd.cc */,
 				BFBF3BDE09B6828100545F5E /* djcodecd.h */,
-				BFBF3BDF09B6828100545F5E /* djcodece.cc */,
 				BFBF3BE009B6828100545F5E /* djcodece.h */,
 				BFBF3BE109B6828100545F5E /* djcparam.cc */,
 				BFBF3BE209B6828100545F5E /* djcparam.h */,
@@ -2763,13 +2666,6 @@
 				4A1686FD1DE75970007E10B2 /* jcshuff.c in Sources */,
 				4A1686FE1DE75970007E10B2 /* djdec2k.cc in Sources */,
 				4A1687001DE75970007E10B2 /* djenc2k.cc in Sources */,
-				4A1687021DE75970007E10B2 /* djcodecd.cc in Sources */,
-				4A1687031DE75970007E10B2 /* djcodece.cc in Sources */,
-				4A1687041DE75970007E10B2 /* djcparam.cc in Sources */,
-				4A1687051DE75970007E10B2 /* djutils.cc in Sources */,
-				4A1687061DE75970007E10B2 /* djdecode.cc in Sources */,
-				4A1687071DE75970007E10B2 /* djencode.cc in Sources */,
-				4A1687081DE75970007E10B2 /* djrparam.cc in Sources */,
 				4A1687091DE75970007E10B2 /* NSString+opendicom.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3133,13 +3029,6 @@
 				4AEAD3B41CC6E475000FEA7F /* djdijp2k_kdu.cc in Sources */,
 				4AEAD3B51CC6E475000FEA7F /* djenc2k.cc in Sources */,
 				4AEAD3B61CC6E475000FEA7F /* djeijg2k_kdu.cc in Sources */,
-				4AEAD3B91CC6E475000FEA7F /* djcodecd.cc in Sources */,
-				4AEAD3BA1CC6E475000FEA7F /* djcodece.cc in Sources */,
-				4AEAD3BB1CC6E475000FEA7F /* djcparam.cc in Sources */,
-				4AEAD3BC1CC6E475000FEA7F /* djutils.cc in Sources */,
-				4AEAD3BD1CC6E475000FEA7F /* djdecode.cc in Sources */,
-				4AEAD3BE1CC6E475000FEA7F /* djencode.cc in Sources */,
-				4AEAD3BF1CC6E475000FEA7F /* djrparam.cc in Sources */,
 				4A0E1FF01CDA0192002BE0BB /* NSString+opendicom.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3202,6 +3091,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/**",
 					"$(PROJECT_DIR)/Binaries/KDU\\ SDK",
+					"$(PROJECT_DIR)",
 				);
 				OTHER_LDFLAGS = (
 					"-framework",
