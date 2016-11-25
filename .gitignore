@@ -1,2 +1,6 @@
 
 Binaries/KDU SDK/libkdu_v73R.a
+
+build/*
+
+*.xcuserstate
