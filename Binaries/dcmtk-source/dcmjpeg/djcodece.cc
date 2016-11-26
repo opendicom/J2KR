@@ -62,6 +62,10 @@
 #define INCLUDE_CMATH
 #include "ofstdinc.h"
 
+#import <CommonCrypto/CommonDigest.h>
+
+char hexmap[] = {'0', '1', '2', '3', '4', '5', '6', '7',
+    '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
 
 DJCodecEncoder::DJCodecEncoder()
 : DcmCodec()
@@ -598,9 +602,18 @@ OFCondition DJCodecEncoder::encodeTrueLossless(
 
     // create encoder corresponding to bit depth (8 or 16 bit)
     DJEncoder *jpeg = createEncoderInstance(toRepParam, djcp, OFstatic_cast(Uint8, bitsAllocated));
+    
+    printf("dcmjpeg/djcodece.cc DJCodecEncoder::encodeTrueLossless line 603\r\n");
+    unsigned int pixelDataLength=0;
+    unsigned char md5[CC_MD5_DIGEST_LENGTH];
     if (jpeg)
     {
-        printf("dcmjpeg/djcodece.cc DJCodecEncoder::encodeTrueLossless line 603\r\n");
+        pixelDataLength = columns * rows * samplesPerPixel * bytesAllocated * frameCount;
+        
+        CC_MD5((Uint8*)pixelData, pixelDataLength, md5);
+        //printf("size:%u, md5:%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x\r\n",length,md5Before[0],md5Before[1],md5Before[2],md5Before[3],md5Before[4],md5Before[5],md5Before[6],md5Before[7],md5Before[8],md5Before[9],md5Before[10],md5Before[11],md5Before[12],md5Before[13],md5Before[14],md5Before[15]);
+        
+
       // main loop for compression: compress each frame
       for (unsigned int i=0; i<frameCount && result.good(); i++)
       {
@@ -645,8 +658,9 @@ OFCondition DJCodecEncoder::encodeTrueLossless(
     // but other modules such as SOP Common.  We only perform these
     // changes if we're on the main level of the datsetItem,
     // which should always identify itself as datsetItem, not as item.
-    if (result.good())
-      result = updateDerivationDescription(datsetItem, toRepParam, djcp, OFstatic_cast(Uint8, bitsAllocated), compressionRatio);
+
+      //if (result.good())
+      result = updateLosslessDerivationDescription(datsetItem, toRepParam, djcp, OFstatic_cast(Uint8, bitsAllocated), compressionRatio, md5, pixelDataLength);
 
     if ( (datsetItem->ident() == EVR_item) && result.good() )
     {
@@ -782,6 +796,64 @@ OFCondition DJCodecEncoder::updateDerivationDescription(
   return result;
 }
 
+
+OFCondition DJCodecEncoder::updateLosslessDerivationDescription(
+    DcmItem *dataset,
+    const DcmRepresentationParameter * toRepParam,
+    const DJCodecParameter *cp,
+    Uint8 bitsPerSample,
+    double ratio,
+    unsigned char *md5,
+    unsigned int pixelDataLength) const
+{
+    OFString derivationDescription;
+    
+    // create new Derivation Description
+    createDerivationDescription(toRepParam, cp, bitsPerSample, ratio, derivationDescription);
+    
+    //add md5
+    derivationDescription += " (pixel data size:";
+    
+    char buf[12];
+    sprintf(buf, "%u", pixelDataLength);
+    derivationDescription += buf;
+
+    
+    derivationDescription += " md5:";
+    for (int i = 0; i < 16; ++i) {
+        derivationDescription += hexmap[(md5[i] & 0xF0) >> 4];
+        derivationDescription += hexmap[md5[i] & 0x0F];
+    }
+    derivationDescription += ") ";
+    
+    // append old Derivation Description, if any
+    const char *oldDerivation = NULL;
+    if ((dataset->findAndGetString(DCM_DerivationDescription, oldDerivation)).good() && oldDerivation)
+    {
+        derivationDescription += " [";
+        derivationDescription += oldDerivation;
+        derivationDescription += "]";
+        if (derivationDescription.length() > 1024)
+        {
+            // ST is limited to 1024 characters, cut off tail
+            derivationDescription.erase(1020);
+            derivationDescription += "...]";
+        }
+    }
+    
+    OFCondition result = dataset->putAndInsertString(DCM_DerivationDescription, derivationDescription.c_str());
+    if (result.good())
+    {
+        // assume we can cast the codec parameter to what we need
+        DJCodecParameter *djcp = (DJCodecParameter *)cp;
+        
+        if (djcp->getTrueLosslessMode())
+            result = DcmCodec::insertCodeSequence(dataset, DCM_DerivationCodeSequence, "DCM", "121327", "Full fidelity image, uncompressed or lossless compressed");
+        else
+            result = DcmCodec::insertCodeSequence(dataset, DCM_DerivationCodeSequence, "DCM", "113040", "Lossy Compression");
+    }
+    return result;
+}
 
 OFCondition DJCodecEncoder::adjustOverlays(
   DcmItem *dataset,

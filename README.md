@@ -13,4 +13,6 @@ doneBasePath
 errBasePath
 ```
 
-In order to compile the, the KDU target needs to be completed with libkdu_v73R.a.
+Notas:
+* In order to compile the, the KDU target needs to be completed with libkdu_v73R.a.
+* for 8bits and 16bits pixels 

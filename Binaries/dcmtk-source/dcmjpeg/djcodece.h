@@ -280,6 +280,17 @@ private:
       Uint8 bitsPerSample,
       double ratio) const;
 
+  virtual OFCondition updateLosslessDerivationDescription(
+      DcmItem *dataset,
+      const DcmRepresentationParameter * toRepParam,
+      const DJCodecParameter *cp,
+      Uint8 bitsPerSample,
+      double ratio,
+      unsigned char *md5,
+      unsigned int pixelDataLength
+      ) const;
+    
+  
   /** for all overlay groups create (60xx,3000) Overlay Data.
    *  @param dataset dataset to be modified
    *  @param image DicomImage object for this dataset

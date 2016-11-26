@@ -5,8 +5,6 @@
 #include "osconfig.h" /* make sure OS specific configuration is included first */
 #include "djdecode.h"  /* for dcmjpeg decoders */
 #include "djencode.h"  /* for dcmjpeg encoders */
-//#include "dcrledrg.h"  /* for DcmRLEDecoderRegistration */
-//#include "dcrleerg.h"  /* for DcmRLEEncoderRegistration */
 #include "djrploss.h"
 #include "djrplol.h"
 #include "dcpixel.h"
@@ -19,8 +17,6 @@
 #include "dcuid.h"
 #include "dcdict.h"
 #include "dcdeftag.h"
-//#include "Binaries/dcmtk-source/dcmjpls/djdecode.h" //JPEG-LS
-//#include "Binaries/dcmtk-source/dcmjpls/djencode.h" //JPEG-LS
 
 enum DCM_CompressionQuality {
     DCMLosslessQuality = 0,
@@ -201,8 +197,6 @@ int main(int argc, const char *argv[])
 
 #pragma mark codecs
 
-    // J
-    //DJDecoderRegistration::registerCodecs();
     DJEncoderRegistration::registerCodecs(
         ECC_lossyRGB,
         EUC_never,
@@ -229,13 +223,6 @@ int main(int argc, const char *argv[])
         OFFalse,
         OFTrue);
     
-    // JLS
-    //DJLSDecoderRegistration::registerCodecs();
-    //DJLSEncoderRegistration::registerCodecs();
-    
-    // RLE
-    //DcmRLEDecoderRegistration::registerCodecs();
-    //DcmRLEEncoderRegistration::registerCodecs();
 
 #pragma mark -for each file
     for( NSString *relFilePath in r)
@@ -293,24 +280,6 @@ int main(int argc, const char *argv[])
          delete dataset->remove( DcmTagKey( 0x0009, 0x1110));
          */
         
-#pragma mark compute md5 of uncompressed datapixel within dataset
-        unsigned int length;
-        unsigned int md5Length = CC_MD5_DIGEST_LENGTH;
-        const Uint8 *bufferBefore = nil;
-        unsigned char md5Before[md5Length];
-        if (dataset->findAndGetUint8Array(DCM_PixelData, bufferBefore, &length, OFFalse).good() && length > 0)
-        {
-            CC_MD5(bufferBefore, md5Length, md5Before);
-            //NSLog(@"%@ size: %d md5:%s", sopInstanceUID,length,md5Before);
-            
-            DcmMetaInfo *metaInfo = fileformat.getMetaInfo();
-            if( metaInfo)
-            {
-                char privateInformationCreatorUID[]="2.16.858.0.2.6.46.5.1.0.213918600019";
-                metaInfo->putAndInsertString( DCM_PrivateInformationCreatorUID, privateInformationCreatorUID);
-                metaInfo->putAndInsertUint8Array(DCM_PrivateInformation, md5Before, md5Length);
-            }
-         }
         
 #pragma mark delete operations
         for (NSString *tagPath in [dDict allKeys])
