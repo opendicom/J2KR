@@ -133,7 +133,15 @@ int main(int argc, const char *argv[])
     }
     
     NSString *syntax=@"syntax:\r\nOPJ\r\n\t[1]inRelativePathOr*\r\n\t[2]inBasePath/\r\n\t[3]doneBasePath/\r\n\t[4]errBasePath/";
-//\r\n[5..]opt\r\n\t!\"attrPath\" (delete attribute)\r\n\t!\"attrPath\"!{\"Value\":[]} (delete attribute contents)\r\n\t!\"attrPath\"!{\"Value\":[a,b]} (delete values a and b from the values of the attribute)\r\n\t+\"attrPath\"+{\"vr\":\"xx\"} (add empty attribute, if it does not exist)\r\n\t+\"attrPath\"+{\"vr\":\"xx\",\"Value\":[a,b]} (add values a, b to attribute)\r\n\r\nattrPath=ggggeeee[.0001-ggggeeee][..]\r\ndeletes performed before additions\r\n 
+    //\r\n[5..]opt\r\n\t!\"attrPath\" (delete attribute)
+    //\r\n\t!\"attrPath\"!{\"Value\":[]} (delete attribute contents)
+    //\r\n\t!\"attrPath\"!{\"Value\":[a,b]} (delete values a and b from the values of the attribute)
+
+    //\r\n\t+\"attrPath\"+{\"vr\":\"xx\"} (add empty attribute, if it does not exist)
+    //\r\n\t+\"attrPath\"+{\"vr\":\"xx\",\"Value\":[a,b]} (add values a, b to attribute)
+
+    //\r\n\r\nattrPath=ggggeeee[.0001-ggggeeee][..]
+    //\r\ndeletes performed before additions\r\n
     NSUInteger argsCount=[args count];
     if (argsCount<5) {NSLog(@"%@",syntax);return 1;}
     
@@ -360,14 +368,6 @@ int main(int argc, const char *argv[])
         
         
 #pragma mark compress (revisar bien a que corresponde toda esta sintaxis!!!)
-        /*
-        E_TransferSyntax tSyntax;
-        DJ_RPLossy JP2KParamsLossLess( DCMLosslessQuality);
-        DcmRepresentationParameter *params = &JP2KParamsLossLess;
-        tSyntax = EXS_JPEG2000LosslessOnly;
-         */
-        
-        //E_TransferSyntax tSyntax = EXS_JPEG2000LosslessOnly;
         DJ_RPLossy JP2KParamsLossLess( DCMLosslessQuality);
         DcmRepresentationParameter *params = &JP2KParamsLossLess;
         
@@ -397,58 +397,6 @@ int main(int argc, const char *argv[])
                                                  error:&err]
                 )
             continue;
-        }
-        else
-        {
-    #pragma mark decompress
-            DcmXfer oxferSyn( EXS_LittleEndianExplicit);
-            dataset->chooseRepresentation(EXS_LittleEndianExplicit, params);
-            if (dataset->canWriteXfer(EXS_LittleEndianExplicit))
-            {
-                fileformat.loadAllDataIntoMemory();
-                const Uint8 *bufferAfter = nil;
-                unsigned char md5After[md5Length];
-                if (dataset->findAndGetUint8Array(DCM_PixelData, bufferAfter, &length, OFFalse).good() && length > 0)
-                {
-                    CC_MD5(bufferAfter, md5Length, md5After);
-                    NSData *md5DataBefore=[NSData dataWithBytes:md5Before length:md5Length];
-                    NSData *md5DataAfter=[NSData dataWithBytes:md5After length:md5Length];
-                    if (![md5DataBefore isEqualToData:md5DataAfter])
-                    {
-                        NSLog(@"different pixel md5 in J2KR entre %@ y %@\r\nmoving done to err with DT suffix .%@",i,o,DT);
-                        //myunlink([i fileSystemRepresentation]);
-                        
-                        if (![fileManager moveItemAtPath:o toPath:[e stringByAppendingPathExtension:DT] error:&err])
-                            NSLog(@"can not move done to err:%@\r\n%@",o,[err description]);
-                        continue;
-                    }
-                    else
-                    {
-                        //everything fine, no NSLog
-                        //myunlink([i fileSystemRepresentation]);
-                        continue;
-                    }
-                }
-                else
-                {
-                    NSLog(@"unreadable pixels of decompressed: %@\r\nmoving done to err with DT suffix .%@",o,DT);
-                    //myunlink([i fileSystemRepresentation]);
-
-                    if (![fileManager moveItemAtPath:o toPath:[e stringByAppendingPathExtension:DT] error:&err])
-                        NSLog(@"can not move done to err:%@\r\n%@",o,[err description]);
-                    continue;
-                }
-            }
-            else
-            {
-                NSLog(@"can not decompress compressed data of out: %@\r\nmoving done to err with DT suffix .%@",o,DT);
-                //myunlink([i fileSystemRepresentation]);
-                
-                if (![fileManager moveItemAtPath:o toPath:[e stringByAppendingPathExtension:DT] error:&err])
-                    NSLog(@"can not move done to err:%@\r\n%@",o,[err description]);
-                continue;
-
-            }
         }
     }
     [pool release];
