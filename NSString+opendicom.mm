@@ -26,7 +26,6 @@ const unsigned long ascii2BigHexa[71] =      {
 
 static NSRegularExpression *opendicomDecimalCardStringRegex=nil;
 static NSRegularExpression *opendicomHexaTagStringRegex=nil;
-static NSRegularExpression *opendicomUntilVrFromJSONElementRegex=nil;
 
 //version 3.6 (without new datatypes)
 static NSArray *vrs=@[
@@ -199,7 +198,7 @@ static NSArray *vrs=@[
     if (!values || ![values isKindOfClass:[NSArray class]])return nil;
     
     NSUInteger dcmEVR=[vrs indexOfObject:[jsonObject objectForKey:@"vr"]];
-    NSLog(@"%d",dcmEVR);
+    NSLog(@"%lu",(unsigned long)dcmEVR);
     switch (dcmEVR) {
         case NSNotFound: return nil;
         case  0: return nil;// @"EVR_AE";//AE title string

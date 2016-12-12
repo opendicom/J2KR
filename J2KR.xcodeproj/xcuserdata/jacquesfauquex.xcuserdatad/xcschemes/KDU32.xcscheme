@@ -63,20 +63,24 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "2.dcm"
+            argument = "1.dcm"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "/Users/jacquesfauquex/tmp/in/"
+            argument = "/Users/jacquesfauquex/Desktop/in/"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "/Users/jacquesfauquex/tmp/done/"
+            argument = "/Users/jacquesfauquex/Desktop/done/"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "/Users/jacquesfauquex/tmp/err/"
-            isEnabled = "NO">
+            argument = "/Users/jacquesfauquex/Desktop/err/"
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "DEBUG_LOG_LEVEL"
+            isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
             argument = "!00100010"
