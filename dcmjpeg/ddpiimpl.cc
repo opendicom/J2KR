@@ -22,7 +22,7 @@
 
 #include "dcmtk/config/osconfig.h"    /* make sure OS specific configuration is included first */
 
-#include "dcmtk/dcmjpeg/ddpiimpl.h"
+#include "ddpiimpl.h"
 #include "dcmtk/dcmimgle/dcmimage.h"  /* for class DicomImage */
 #include "dcmtk/dcmimgle/discalet.h"  /* for direct image scaling */
 

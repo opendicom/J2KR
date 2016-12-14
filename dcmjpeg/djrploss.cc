@@ -20,7 +20,7 @@
  */
 
 #include "dcmtk/config/osconfig.h"
-#include "dcmtk/dcmjpeg/djrploss.h"
+#include "djrploss.h"
 
 
 DJ_RPLossy::DJ_RPLossy(int aQuality)

@@ -259,10 +259,11 @@ int main(int argc, const char *argv[])
             continue;
         }
     }
-    
-    // register global JPEG decompression codecs
-    DJDecoderRegistration::registerCodecs();
+
 #pragma mark TODO decompression codecs
+
+    // register global JPEG decompression codecs
+    //DJDecoderRegistration::registerCodecs();
     // register JPEG-LS decompression codecs
     //JF DJLSDecoderRegistration::registerCodecs();
     // register RLE compression codec
@@ -305,6 +306,8 @@ int main(int argc, const char *argv[])
         if (DJEncoderRegistration::encpro != NULL) NSLog(@"codec JPEG encpro registered");
         if (DJEncoderRegistration::encsv1 != NULL) NSLog(@"codec JPEG encsv1 registered");
         if (DJEncoderRegistration::enclol != NULL) NSLog(@"codec JPEG enclol registered");
+        if (DJEncoderRegistration::enc2K != NULL) NSLog(@"codec JPEG enc2K registered");
+        if (DJEncoderRegistration::enc2KLoL != NULL) NSLog(@"codec JPEG enc2KLoL registered");
     }
 
     
@@ -512,21 +515,29 @@ int main(int argc, const char *argv[])
  EXS_JPIPReferencedDeflate = 38
 
 */
-/*
- DcmXfer opt_oxferSyn()
- ?
- */
-        DcmXfer opt_oxferSyn(EXS_JPEGProcess1);
+        DJ_RPLossy JP2KParamsLossLess( DCMLosslessQuality);
+        DcmRepresentationParameter *params = &JP2KParamsLossLess;
+        dataset->chooseRepresentation(EXS_JPEG2000LosslessOnly, params);
+        fileformat.loadAllDataIntoMemory();
+        if (dataset->canWriteXfer(EXS_JPEG2000LosslessOnly))
+        {
+           cond = fileformat.saveFile([o UTF8String], EXS_JPEG2000LosslessOnly);
+        }
+        else NSLog(@"NOT possible EXS_JPEG2000LosslessOnly");
+        /*
         DJ_RPLossy param;
+        
         dataset->chooseRepresentation(EXS_JPEGProcess1, &param);
         if (dataset->canWriteXfer(EXS_JPEGProcess1))
         {
             NSLog(@"possible JPEGProcess1");
-            
         }
         else NSLog(@"not possible JPEGProcess1");
+        */
+        /*
         fileformat.loadAllDataIntoMemory();
         cond = fileformat.saveFile([o UTF8String], EXS_JPEGProcess1);//EXS_LittleEndianExplicit);//
+         */
         
 #pragma mark TODO compress (revisar bien a que corresponde toda esta sintaxis!!!)
         /*

@@ -20,7 +20,7 @@
  */
 
 #include "dcmtk/config/osconfig.h"
-#include "dcmtk/dcmjpeg/djrplol.h"
+#include "djrplol.h"
 
 
 DJ_RPLossless::DJ_RPLossless(int aPrediction, int aPt)

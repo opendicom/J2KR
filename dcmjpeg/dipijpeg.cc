@@ -23,7 +23,7 @@
 #include "dcmtk/config/osconfig.h"
 #include "dcmtk/dcmdata/dctypes.h"
 #include "dcmtk/dcmimgle/diimage.h"
-#include "dcmtk/dcmjpeg/dipijpeg.h"
+#include "dipijpeg.h"
 
 #define INCLUDE_CSETJMP
 #define INCLUDE_CSTDIO

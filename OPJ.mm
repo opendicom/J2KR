@@ -13,7 +13,6 @@
 #include "dcdatset.h"
 #include "dcmetinf.h"
 #include "dcfilefo.h"
-#include "dcdebug.h"
 #include "dcuid.h"
 #include "dcdict.h"
 #include "dcdeftag.h"
