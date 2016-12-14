@@ -20,3 +20,4 @@ Notas:
 * dicom.dic needs to be copied to /usr/local/share/dcmtk/dicom.dic as defined in http://support.dcmtk.org/docs/file_datadict.html (DCMDICTPATH environment variable is not read correctly when executing from XCode)
 * we used static libraries compiled from 2016-11 version of dcmtk for everything except the dcmjpeg module. The headers relative to these static libraries are hierarchical in paths like this dcmtk/module/header.
 * we compile dcmjpeg within J2KR and removed the headers of this module from the hierarchy.
+* static libraries are compiled universal 32/64 bit. So they can be tuned to use OsiriX 5.9 32 bit codecs.
