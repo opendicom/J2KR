@@ -6,7 +6,7 @@
 #include "djdecode.h"  /* for dcmjpeg decoders */
 #include "djencode.h"  /* for dcmjpeg encoders */
 #include "djrploss.h"
-#include "djrplol.h"
+#include "dcmtk/dcmjpeg/lossless/djrplol.h"
 #include "dcpixel.h"
 #include "dcrlerp.h"
 #include "dcdicdir.h"
