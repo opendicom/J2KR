@@ -20,3 +20,12 @@ Notas:
 * dicom.dic needs to be copied to /usr/local/share/dcmtk/dicom.dic as defined in http://support.dcmtk.org/docs/file_datadict.html (DCMDICTPATH environment variable is not read correctly when executing from XCode)
 * we used static libraries compiled from 2016-11 version of dcmtk for everything except the dcmjpeg module. The headers relative to these static libraries are hierarchical in paths like this dcmtk/module/header.
 * dcmtk static libraries are compiled universal 32/64 bit. So they can be tuned to use OsiriX 5.9 32 bit codecs.
+
+
+Project folders:
+* dcmtk contains headers, c++ code and static libs of dcmtk
+* OPJ contains headers, c++ code and static libs for openjpeg 2.0 integration
+* KDU contains headers and c++ code for kakadu integration
+* objective-c wrappers make it easier to use dcmtk C++ classes from objecive-c
+* objective-c categories add functionality to objective-c classes
+* OD is an objective-c framework (in progress) for dicom file editing
