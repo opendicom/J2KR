@@ -14,13 +14,13 @@
 #include "djencode.h"
 
 #include "dcmtk/dcmdata/dccodec.h"  /* for DcmCodecStruct */
-#include "djencbas.h"
-#include "djencext.h"
-#include "djencsps.h"
-#include "djencpro.h"
-#include "djencsv1.h"
+#include "dcmtk/dcmjpeg/enc/ijg/bas/djencbas.h"
+#include "dcmtk/dcmjpeg/enc/ijg/ext/djencext.h"
+#include "dcmtk/dcmjpeg/enc/ijg/sps/djencsps.h"
+#include "dcmtk/dcmjpeg/enc/ijg/pro/djencpro.h"
+#include "dcmtk/dcmjpeg/enc/ijg/sv1/djencsv1.h"
 #include "dcmtk/dcmjpeg/enc/ijg/lol/djenclol.h"
-#include "djenc2k.h"
+#include "dcmtk/dcmjpeg/enc/2k/djenc2k.h"
 #include "dcmtk/dcmjpeg/djcparam.h"
 
 // initialization of static members

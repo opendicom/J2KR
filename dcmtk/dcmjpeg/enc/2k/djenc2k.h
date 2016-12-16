@@ -76,6 +76,8 @@ private:
     Uint8 bitsPerSample) const;
     
 };
+
+
 #pragma mark -
 #pragma mark Encoder class for JPEG 2K Lossless
 

@@ -33,12 +33,19 @@ class DJDecoder;
 class DCMTK_DCMJPEG_EXPORT DJCodecDecoder : public DcmCodec
 {
 public:
-
-  /// default constructor
   DJCodecDecoder();
-
-  /// destructor
   virtual ~DJCodecDecoder();
+
+    /** checks if this codec is able to convert from the
+     *  given current transfer syntax to the given new
+     *  transfer syntax
+     *  @param oldRepType current transfer syntax
+     *  @param newRepType desired new transfer syntax
+     *  @return true if transformation is supported by this codec, false otherwise.
+     */
+    virtual OFBool canChangeCoding(
+                                   const E_TransferSyntax oldRepType,
+                                   const E_TransferSyntax newRepType) const;
 
   /** decompresses the given pixel sequence and
    *  stores the result in the given uncompressedPixelData element.
@@ -138,17 +145,6 @@ public:
     const DcmCodecParameter * cp,
     DcmStack & objStack) const;
 
-  /** checks if this codec is able to convert from the
-   *  given current transfer syntax to the given new
-   *  transfer syntax
-   *  @param oldRepType current transfer syntax
-   *  @param newRepType desired new transfer syntax
-   *  @return true if transformation is supported by this codec, false otherwise.
-   */
-  virtual OFBool canChangeCoding(
-    const E_TransferSyntax oldRepType,
-    const E_TransferSyntax newRepType) const;
-
   /** determine color model of the decompressed image
    *  @param fromParam representation parameter of current compressed
    *    representation, may be NULL
@@ -174,7 +170,10 @@ public:
    *  @return supported transfer syntax
    */
   virtual E_TransferSyntax supportedTransferSyntax() const = 0;
-
+    
+#pragma mark -
+#pragma mark private
+    
 private:
 
   /** creates an instance of the compression library to be used for decoding.
@@ -190,7 +189,15 @@ private:
     Uint8 bitsPerSample,
     OFBool isYBR) const = 0;
 
-  // static private helper methods
+#pragma mark static private helper methods
+    
+    /** reads two bytes from the given array
+     *  of little endian 16-bit values and returns
+     *  the value as Uint16 in local byte order.
+     *  @param data pointer to array, must not be NULL, must at least 2 bytes large
+     *  @return Uint16 read from array
+     */
+    static Uint16 readUint16(const Uint8 *data);
 
   /** scans the given block of JPEG data for a Start of Frame marker
    *  and returns the number of bits per pixel stored in the
@@ -202,14 +209,6 @@ private:
   static Uint8 scanJpegDataForBitDepth(
     const Uint8 *data,
     const Uint32 fragmentLength);
-
-  /** reads two bytes from the given array
-   *  of little endian 16-bit values and returns
-   *  the value as Uint16 in local byte order.
-   *  @param data pointer to array, must not be NULL, must at least 2 bytes large
-   *  @return Uint16 read from array
-   */
-  static Uint16 readUint16(const Uint8 *data);
 
   /** converts an RGB or YBR frame with 8 bits/sample from
    *  color-by-pixel to color-by-plane planar configuration.

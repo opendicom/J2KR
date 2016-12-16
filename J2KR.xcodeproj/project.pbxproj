@@ -257,7 +257,6 @@
 		4A13D9A91E023C9E00D4ED4D /* djencpro.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A13D7EA1E023C9D00D4ED4D /* djencpro.h */; };
 		4A13D9AA1E023C9E00D4ED4D /* djencsps.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4A13D7EC1E023C9D00D4ED4D /* djencsps.cc */; };
 		4A13D9AB1E023C9E00D4ED4D /* djencsps.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A13D7ED1E023C9D00D4ED4D /* djencsps.h */; };
-		4A13D9AC1E023C9E00D4ED4D /* djrploss.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A13D7EE1E023C9D00D4ED4D /* djrploss.h */; };
 		4A13D9AD1E023C9E00D4ED4D /* djencsv1.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4A13D7F01E023C9D00D4ED4D /* djencsv1.cc */; };
 		4A13D9AE1E023C9E00D4ED4D /* djencsv1.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A13D7F11E023C9D00D4ED4D /* djencsv1.h */; };
 		4A13D9AF1E023C9E00D4ED4D /* jchuff12.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A13D7F31E023C9D00D4ED4D /* jchuff12.h */; };
@@ -448,6 +447,7 @@
 		4A13DA711E029F1A00D4ED4D /* djrplol.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4A13DA701E029F1A00D4ED4D /* djrplol.cc */; };
 		4A13DA741E029F2E00D4ED4D /* djrploss.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4A13DA721E029F2E00D4ED4D /* djrploss.cc */; };
 		4A13DA751E029F2E00D4ED4D /* djrploss.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A13DA731E029F2E00D4ED4D /* djrploss.h */; };
+		4A13DA7A1E02DEDE00D4ED4D /* djcodecd.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A13D81D1E023C9D00D4ED4D /* djcodecd.h */; };
 		4A16858A1DE6584D007E10B2 /* libz.1.2.8.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A1685891DE6584D007E10B2 /* libz.1.2.8.tbd */; };
 		4A16870B1DE75970007E10B2 /* libz.1.2.8.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A1685891DE6584D007E10B2 /* libz.1.2.8.tbd */; };
 		4A16870C1DE75970007E10B2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29B97325FDCFA39411CA2CEA /* Foundation.framework */; };
@@ -714,7 +714,6 @@
 		4A13D7EA1E023C9D00D4ED4D /* djencpro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = djencpro.h; sourceTree = "<group>"; };
 		4A13D7EC1E023C9D00D4ED4D /* djencsps.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = djencsps.cc; sourceTree = "<group>"; };
 		4A13D7ED1E023C9D00D4ED4D /* djencsps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = djencsps.h; sourceTree = "<group>"; };
-		4A13D7EE1E023C9D00D4ED4D /* djrploss.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = djrploss.h; sourceTree = "<group>"; };
 		4A13D7F01E023C9D00D4ED4D /* djencsv1.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = djencsv1.cc; sourceTree = "<group>"; };
 		4A13D7F11E023C9D00D4ED4D /* djencsv1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = djencsv1.h; sourceTree = "<group>"; };
 		4A13D7F31E023C9D00D4ED4D /* jchuff12.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jchuff12.h; sourceTree = "<group>"; };
@@ -1289,6 +1288,7 @@
 		4A13D7A41E023C9D00D4ED4D /* dec */ = {
 			isa = PBXGroup;
 			children = (
+				4A13DA761E02DB8E00D4ED4D /* rle */,
 				4A13D7A51E023C9D00D4ED4D /* 2k */,
 				4A13D7A91E023C9D00D4ED4D /* djcodecd.cc */,
 				4A13D7AA1E023C9D00D4ED4D /* djcodecd.h */,
@@ -1386,6 +1386,7 @@
 		4A13D7CD1E023C9D00D4ED4D /* enc */ = {
 			isa = PBXGroup;
 			children = (
+				4A13DA781E02DBB100D4ED4D /* rle */,
 				4A13D7CE1E023C9D00D4ED4D /* 2k */,
 				4A13D7D21E023C9D00D4ED4D /* djcodece.cc */,
 				4A13D7D31E023C9D00D4ED4D /* djcodece.h */,
@@ -1467,7 +1468,6 @@
 			children = (
 				4A13D7EC1E023C9D00D4ED4D /* djencsps.cc */,
 				4A13D7ED1E023C9D00D4ED4D /* djencsps.h */,
-				4A13D7EE1E023C9D00D4ED4D /* djrploss.h */,
 			);
 			path = sps;
 			sourceTree = "<group>";
@@ -1786,6 +1786,20 @@
 			name = lossy;
 			sourceTree = "<group>";
 		};
+		4A13DA761E02DB8E00D4ED4D /* rle */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = rle;
+			sourceTree = "<group>";
+		};
+		4A13DA781E02DBB100D4ED4D /* rle */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = rle;
+			sourceTree = "<group>";
+		};
 		4AF940601CE5720100551476 /* OD */ = {
 			isa = PBXGroup;
 			children = (
@@ -1822,8 +1836,15 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A13D9DD1E023C9E00D4ED4D /* dldefine.h in Headers */,
+				4A13D9DC1E023C9E00D4ED4D /* djrparam.h in Headers */,
+				4A13D9DB1E023C9E00D4ED4D /* djlsutil.h in Headers */,
+				4A13D9DA1E023C9E00D4ED4D /* djencode.h in Headers */,
+				4A13D9D91E023C9E00D4ED4D /* djdecode.h in Headers */,
 				4A13DA601E023C9E00D4ED4D /* ofxml.h in Headers */,
+				4A13D9D81E023C9E00D4ED4D /* djcparam.h in Headers */,
 				4A13D8E11E023C9D00D4ED4D /* dcrlecp.h in Headers */,
+				4A13DA7A1E02DEDE00D4ED4D /* djcodecd.h in Headers */,
 				4A13D8D31E023C9D00D4ED4D /* dcobject.h in Headers */,
 				4A13D8D41E023C9D00D4ED4D /* dcofsetl.h in Headers */,
 				4A13D9351E023C9D00D4ED4D /* diqthitl.h in Headers */,
@@ -1905,7 +1926,6 @@
 				4A13D9721E023C9D00D4ED4D /* ddpiimpl.h in Headers */,
 				4A13D9E81E023C9E00D4ED4D /* appender.h in Headers */,
 				4A13DA501E023C9E00D4ED4D /* ofstdinc.h in Headers */,
-				4A13D9DC1E023C9E00D4ED4D /* djrparam.h in Headers */,
 				4A13D97C1E023C9D00D4ED4D /* djdecbas.h in Headers */,
 				4A13D94D1E023C9D00D4ED4D /* didispfn.h in Headers */,
 				4A13D9371E023C9D00D4ED4D /* diqtid.h in Headers */,
@@ -2019,7 +2039,6 @@
 				4A13D9381E023C9D00D4ED4D /* diqtpbox.h in Headers */,
 				4A13D91B1E023C9D00D4ED4D /* diargimg.h in Headers */,
 				4A13D9B31E023C9E00D4ED4D /* jerror12.h in Headers */,
-				4A13D9DB1E023C9E00D4ED4D /* djlsutil.h in Headers */,
 				4A13D9511E023C9D00D4ED4D /* digsdlut.h in Headers */,
 				4A13D94C1E023C9D00D4ED4D /* didislut.h in Headers */,
 				4A13D9D21E023C9E00D4ED4D /* jmorecfg8.h in Headers */,
@@ -2028,7 +2047,6 @@
 				4A13D9271E023C9D00D4ED4D /* dicopxt.h in Headers */,
 				4A13DA1F1E023C9E00D4ED4D /* tchar.h in Headers */,
 				4A13D9C21E023C9E00D4ED4D /* jlossls16.h in Headers */,
-				4A13D9D91E023C9E00D4ED4D /* djdecode.h in Headers */,
 				4A13D9C41E023C9E00D4ED4D /* jmemsys16.h in Headers */,
 				4A13D9BC1E023C9E00D4ED4D /* jchuff16.h in Headers */,
 				4A13D9451E023C9D00D4ED4D /* diyp2pxt.h in Headers */,
@@ -2118,7 +2136,6 @@
 				4A13D9651E023C9D00D4ED4D /* diovlay.h in Headers */,
 				4A13DA041E023C9E00D4ED4D /* hierarchy.h in Headers */,
 				4A13D9621E023C9D00D4ED4D /* dimosct.h in Headers */,
-				4A13D9DD1E023C9E00D4ED4D /* dldefine.h in Headers */,
 				4A13D94A1E023C9D00D4ED4D /* dicrvfit.h in Headers */,
 				4A13DA461E023C9E00D4ED4D /* ofmath.h in Headers */,
 				4A13DA021E023C9E00D4ED4D /* threadcf.h in Headers */,
@@ -2177,8 +2194,6 @@
 				4A13D95E1E023C9D00D4ED4D /* dimoopxt.h in Headers */,
 				4A13DA221E023C9E00D4ED4D /* syncpthr.h in Headers */,
 				4A13D9811E023C9E00D4ED4D /* djdecext.h in Headers */,
-				4A13D9AC1E023C9E00D4ED4D /* djrploss.h in Headers */,
-				4A13D9D81E023C9E00D4ED4D /* djcparam.h in Headers */,
 				4A13D9EC1E023C9E00D4ED4D /* defines.h in Headers */,
 				4A13D94F1E023C9D00D4ED4D /* diflipt.h in Headers */,
 				4A13DA261E023C9E00D4ED4D /* syncprim.h in Headers */,
@@ -2196,7 +2211,6 @@
 				4A13DA591E023C9E00D4ED4D /* oftuple.h in Headers */,
 				4A13D8CB1E023C9D00D4ED4D /* dchashdi.h in Headers */,
 				4A13D9EF1E023C9E00D4ED4D /* windowsh.h in Headers */,
-				4A13D9DA1E023C9E00D4ED4D /* djencode.h in Headers */,
 				4A13D8D51E023C9D00D4ED4D /* dcostrma.h in Headers */,
 				4A13D8D01E023C9D00D4ED4D /* dcitem.h in Headers */,
 				4A13D9301E023C9D00D4ED4D /* dipitiff.h in Headers */,

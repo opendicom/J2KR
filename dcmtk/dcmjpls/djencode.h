@@ -18,7 +18,7 @@
 #include "dcmtk/ofstd/oftypes.h"  /* for OFBool */
 #include "dcmtk/dcmjpls/djlsutil.h"
 #include "dcmtk/dcmdata/dctypes.h"  /* for Uint32 */
-#include "dcmtk/dcmjpls/dcmtk/dcmjpeg/djcparam.h" /* for class DJLSCodecParameter */
+#include "dcmtk/dcmjpls/djcparam.h" /* for class DJLSCodecParameter */
 
 class DJLSCodecParameter;
 class DJLSLosslessEncoder;
@@ -73,7 +73,7 @@ public:
    */
   static OFString getLibraryVersionString();
 
-private:
+//JF private:
 
   /// flag indicating whether the encoders are already registered.
   static OFBool registered_;

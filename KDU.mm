@@ -1,23 +1,20 @@
 #import <Foundation/Foundation.h>
-#import <CommonCrypto/CommonDigest.h>
+#import <CommonCrypto/CommonDigest.h>//for md5
 
 #undef verify
-#include "osconfig.h" /* make sure OS specific configuration is included first */
-//JF#include "dcdebug.h" deprecated in 2009.11.04
+#include "dcmtk/config/osconfig.h"
 #include "dcmtk/oflog/oflog.h"
-#include "djdecode.h" /* for dcmjpeg decoders */
-#include "djencode.h" /* for dcmjpeg encoders */
-#include "djrploss.h"
+#include "dcmtk/dcmjpeg/dec/djdecode.h"
+#include "dcmtk/dcmjpeg/enc/djencode.h"
+#include "dcmtk/dcmjpls/djdecode.h"
+#include "dcmtk/dcmjpls/djencode.h"
+#include "dcmtk/dcmjpeg/lossy/djrploss.h"
 #include "dcmtk/dcmjpeg/lossless/djrplol.h"
-#include "dcpixel.h"
-#include "dcrlerp.h"
-#include "dcdicdir.h"
-#include "dcdatset.h"
-#include "dcmetinf.h"
-#include "dcfilefo.h"
-#include "dcuid.h"
-#include "dcdict.h"
-#include "dcdeftag.h"
+#include "dcmtk/dcmdata/dcdatset.h"
+#include "dcmtk/dcmdata/dcmetinf.h"
+#include "dcmtk/dcmdata/dcfilefo.h"
+#include "dcmtk/dcmdata/dcdict.h"
+#include "dcmtk/dcmdata/dcdeftag.h"
 
 enum DCM_CompressionQuality {
     DCMLosslessQuality = 0,
@@ -38,7 +35,6 @@ enum baseArgs {
 
 static NSFileManager *fileManager=nil;
 static NSError *err=nil;
-//short Use_kdu_IfAvailable = 1;
 
 BOOL folderExists(NSString *f, BOOL shouldBeEmptyAndWritable)
 {
@@ -90,38 +86,6 @@ NSString* attrStringValue(DcmDataset *dataset, short g, short e, NSStringEncodin
 int main(int argc, const char *argv[])
 {
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-
-    NSDateFormatter *DTDateFormatter = [[NSDateFormatter alloc] init];
-    [DTDateFormatter setDateFormat:@"yyyyMMddHHmmssSSSSS"];
-    NSString *DT = [DTDateFormatter stringFromDate:[NSDate date]];
-    fileManager=[NSFileManager defaultManager];
-    NSNull *null = [NSNull null];
-    NSMutableArray *args=[NSMutableArray arrayWithArray:[[NSProcessInfo processInfo] arguments]];
-    NSLog(@"%@\r\n%@",DT,[args description]);
-
-    
-#pragma mark args[1] relativePaths (could be adapted to recursive)
-    NSArray *r;
-    if (
-        [args[1] isEqualToString:@"*"]
-        ||!(r=[fileManager contentsOfDirectoryAtPath:[args[inBasePath]stringByExpandingTildeInPath] error:&err])
-        )
-    {
-        NSLog(@"could not get contents of %@\r%@",args[inBasePath],[err description]);
-        return 1;
-    }
-    else
-    {
-        BOOL isDirectory=true;
-        if (([fileManager fileExistsAtPath:[[args[inBasePath]stringByExpandingTildeInPath]stringByAppendingPathComponent:args[fileRelativePath]] isDirectory:&isDirectory]) && !isDirectory)
-            r=@[args[fileRelativePath]];
-        else
-        {
-            NSLog(@"no %@ in %@",args[fileRelativePath],args[inBasePath]);
-            return 1;
-        }
-        
-    }
     
     NSString *syntax=@"syntax:\r\nKDU\r\n\t[1]inRelativePathOr*\r\n\t[2]inBasePath/\r\n\t[3]doneBasePath/\r\n\t[4]errBasePath/\r\n\t[5] FATAL_LOG_LEVEL, ERROR_LOG_LEVEL, WARN_LOG_LEVEL, INFO_LOG_LEVEL, DEBUG_LOG_LEVEL, TRACE_LOG_LEVEL";
     //\r\n[6..]opt\r\n
@@ -134,21 +98,14 @@ int main(int argc, const char *argv[])
     //\r\n
     //attrPath=ggggeeee[.0001-ggggeeee][..]\r\n
     //deletes performed before additions\r\n
-
+    
+    NSMutableArray *args=[NSMutableArray arrayWithArray:[[NSProcessInfo processInfo] arguments]];
     NSUInteger argsCount=[args count];
     if (argsCount<6) {NSLog(@"%@",syntax);return 1;}
-    
-    //check folders existence
-    NSString *iFolder=[args[inBasePath]stringByExpandingTildeInPath];
-    NSString *oFolder=[args[doneBasePath]stringByExpandingTildeInPath];
-    NSString *eFolder=[args[errBasePath]stringByExpandingTildeInPath];
-    if(
-         !folderExists(oFolder,true)
-       ||!folderExists(eFolder,true)
-       )
-        return 1;//exit error
 
-    
+    fileManager=[NSFileManager defaultManager];
+
+#pragma mark arg[5] log level
     enum loglevel {
         FATAL_LOG_LEVEL,
         ERROR_LOG_LEVEL,
@@ -157,7 +114,6 @@ int main(int argc, const char *argv[])
         DEBUG_LOG_LEVEL,
         TRACE_LOG_LEVEL,
     };
-
     BOOL FATAL=false;
     BOOL ERROR=false;
     BOOL WARN=false;
@@ -214,8 +170,45 @@ int main(int argc, const char *argv[])
         NSLog(@"log verbosity (arg[5] required to be one of FATAL_LOG_LEVEL, ERROR_LOG_LEVEL, WARN_LOG_LEVEL, INFO_LOG_LEVEL, DEBUG_LOG_LEVEL, TRACE_LOG_LEVEL");
         return 1;//exit error
     }
+
+//--------------------------------------------------------------------------
     
-#pragma mark args opt
+#pragma mark args[1-4] paths
+    NSArray *r;
+    if (
+           [args[1] isEqualToString:@"*"]
+        ||!(r=[fileManager contentsOfDirectoryAtPath:[args[inBasePath]stringByExpandingTildeInPath] error:&err])
+        )
+    {
+        NSLog(@"could not get contents of %@\r%@",args[inBasePath],[err description]);
+        return 1;
+    }
+    else
+    {
+        BOOL isDirectory=true;
+        if (([fileManager fileExistsAtPath:[[args[inBasePath]stringByExpandingTildeInPath]stringByAppendingPathComponent:args[fileRelativePath]] isDirectory:&isDirectory]) && !isDirectory)
+            r=@[args[fileRelativePath]];
+        else
+        {
+            NSLog(@"no %@ in %@",args[fileRelativePath],args[inBasePath]);
+            return 1;
+        }
+        
+    }
+    
+    NSString *iFolder=[args[inBasePath]stringByExpandingTildeInPath];
+    NSString *oFolder=[args[doneBasePath]stringByExpandingTildeInPath];
+    NSString *eFolder=[args[errBasePath]stringByExpandingTildeInPath];
+    if(
+         !folderExists(oFolder,true)
+       ||!folderExists(eFolder,true)
+       )
+        return 1;//exit error
+
+    
+//--------------------------------------------------------------------------
+#pragma mark args[6..] optional (delete/add)
+    
     NSMutableDictionary *dDict=[NSMutableDictionary dictionary];
     NSMutableDictionary *aDict=[NSMutableDictionary dictionary];
     for (int i=5;i<argsCount;i++)
@@ -244,7 +237,7 @@ int main(int argc, const char *argv[])
             NSMutableArray *add=[NSMutableArray arrayWithArray:[args[i] componentsSeparatedByString:@"+"]];
             switch ([add count]) {
                 case 2:
-                    [aDict setObject:null forKey:add[1]];
+                    [aDict setObject:[NSNull null] forKey:add[1]];
                     break;
                 case 3:
                     [aDict setObject:add[2] forKey:add[1]];
@@ -260,21 +253,12 @@ int main(int argc, const char *argv[])
         }
     }
 
-#pragma mark TODO decompression codecs
-
-    // register global JPEG decompression codecs
-    //DJDecoderRegistration::registerCodecs();
-    // register JPEG-LS decompression codecs
-    //JF DJLSDecoderRegistration::registerCodecs();
-    // register RLE compression codec
-    //JF DcmRLEEncoderRegistration::registerCodecs();
-
-
-#pragma mark codecs
-
+//--------------------------------------------------------------------------
+#pragma mark encoders registration
+    
     DJEncoderRegistration::registerCodecs(
-        ECC_lossyRGB, //E_CompressionColorSpaceConversion opt_compCSconversion for decompression only
-        EUC_never,  //E_UIDCreation opt_uidcreation
+        ECC_lossyRGB, //E_CompressionColorSpaceConversion [ECC_lossyYCbCr,ECC_lossyRGB,ECC_monochrome]
+        EUC_never,  //E_UIDCreation [EUC_default,EUC_always,EUC_never]
         OFFalse,    //OFBool opt_huffmanOptimize for 8 bits/pixel
         0,          //OFCmdUnsignedInt OFstatic_cast(int, opt_smoothing) [0..100]
         0,          //int opt_compressedBits pForcedBitDepth [0(auto) | 8 | 12 | 16]
@@ -295,19 +279,65 @@ int main(int argc, const char *argv[])
         OFTrue,     //OFBool opt_useModalityRescale to scale back, to original pixel range, mode 0 only
         OFFalse,    //OFBool opt_acceptWrongPaletteTags (only "pseudo lossless" encoder)
         OFFalse,    //OFBool opt_acrNemaCompatibility
-        OFTrue);    //OFBool opt_trueLossless
+        OFTrue      //OFBool opt_trueLossless
+        );
+    //DcmRLEEncoderRegistration::registerCodecs();
+    DJLSEncoderRegistration::registerCodecs();
 
+    
+//--------------------------------------------------------------------------
+#pragma mark decoders registration
+
+    DJDecoderRegistration::registerCodecs(
+        EDC_photometricInterpretation,//E_DecompressionColorSpaceConversion [EDC_photometricInterpretation, EDC_lossyOnly,EDC_always,EDC_never,EDC_guessLossyOnly,EDC_guess]
+        EUC_never,//E_UIDCreation [EUC_default,EUC_always,EUC_never]
+        EPC_default,//E_PlanarConfiguration [EPC_default,EPC_colorByPixel,EPC_colorByPlane]
+        OFFalse //OFBool predictor6WorkaroundEnable [OFFalse,OFTrue]
+    );
+    //DcmRLEDecoderRegistration::registerCodecs();
+    DJLSDecoderRegistration::registerCodecs();
+    
+    
     if (DEBUG)
     {
-        //we removed the private caracter of codec registrations
-        if (DJEncoderRegistration::encbas != NULL) NSLog(@"codec JPEG encbas registered");
-        if (DJEncoderRegistration::encext != NULL) NSLog(@"codec JPEG encext registered");
-        if (DJEncoderRegistration::encsps != NULL) NSLog(@"codec JPEG encsps registered");
-        if (DJEncoderRegistration::encpro != NULL) NSLog(@"codec JPEG encpro registered");
-        if (DJEncoderRegistration::encsv1 != NULL) NSLog(@"codec JPEG encsv1 registered");
-        if (DJEncoderRegistration::enclol != NULL) NSLog(@"codec JPEG enclol registered");
-        if (DJEncoderRegistration::enc2K != NULL) NSLog(@"codec JPEG enc2K registered");
-        if (DJEncoderRegistration::enc2KLoL != NULL) NSLog(@"codec JPEG enc2KLoL registered");
+        //http://www.dicomlibrary.com/dicom/transfer-syntax/
+        
+        fprintf(stdout,"D: encoders registered [\r\n");
+        //we removed the private character of encoding codec registrations
+        if (DJEncoderRegistration::encbas != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.50) dcmtk ijg encbas \r\n");
+        if (DJEncoderRegistration::encext != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.51) dcmtk ijg encext \r\n");
+        if (DJEncoderRegistration::encsps != NULL) fprintf(stdout,"      (Retired)                dcmtk ijg encsps\r\n");
+        if (DJEncoderRegistration::encpro != NULL) fprintf(stdout,"      (Retired)                dcmtk ijg encpro\r\n");
+        if (DJEncoderRegistration::encsv1 != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.70) dcmtk ijg encsv1 \r\n");
+        if (DJEncoderRegistration::enclol != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.57) dcmtk ijg enclol \r\n");
+        if (DJEncoderRegistration::enc2K != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.91) kdu enc2K \r\n");
+        if (DJEncoderRegistration::enc2KLoL != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.90) kdu enc2KLoL \r\n");
+        if (DJLSEncoderRegistration::registered_==OFTrue)
+        {            
+            if (DJLSEncoderRegistration::losslessencoder_ != nullptr) fprintf(stdout,"      (1.2.840.10008.1.2.4.80) %s losslessencoder \r\n",DJLSEncoderRegistration::getLibraryVersionString().c_str());
+            if (DJLSEncoderRegistration::nearlosslessencoder_ != nullptr) fprintf(stdout,"      (1.2.840.10008.1.2.4.81) %s nearlosslessencoder \r\n",DJLSEncoderRegistration::getLibraryVersionString().c_str());
+        }
+        fprintf(stdout,"   ]\r\n");
+
+        
+        fprintf(stdout,"D: decoders registered [\r\n");
+        //we removed the private character of encoding codec registrations
+        if (DJDecoderRegistration::decbas != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.50) dcmtk ijg encbas \r\n");
+        if (DJDecoderRegistration::decext != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.51) dcmtk ijg encext \r\n");
+        if (DJDecoderRegistration::decsps != NULL) fprintf(stdout,"      (Retired)                dcmtk ijg encsps\r\n");
+        if (DJDecoderRegistration::decpro != NULL) fprintf(stdout,"      (Retired)                dcmtk ijg encpro\r\n");
+        if (DJDecoderRegistration::decsv1 != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.70) dcmtk ijg encsv1 \r\n");
+        if (DJDecoderRegistration::declol != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.57) dcmtk ijg enclol \r\n");
+        if (DJDecoderRegistration::dec2k != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.91) kdu enc2K \r\n");
+        if (DJDecoderRegistration::dec2kLossLess != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.90) kdu enc2KLoL \r\n");
+        if (DJLSEncoderRegistration::registered_==OFTrue)
+        {
+            if (DJLSEncoderRegistration::losslessencoder_ != nullptr) fprintf(stdout,"      (1.2.840.10008.1.2.4.80) %s losslessencoder \r\n",DJLSEncoderRegistration::getLibraryVersionString().c_str());
+            if (DJLSEncoderRegistration::nearlosslessencoder_ != nullptr) fprintf(stdout,"      (1.2.840.10008.1.2.4.81) %s nearlosslessencoder \r\n",DJLSEncoderRegistration::getLibraryVersionString().c_str());
+        }
+        fprintf(stdout,"   ]\r\n");
+    
+    
     }
 
     

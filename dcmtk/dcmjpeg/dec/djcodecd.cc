@@ -27,14 +27,9 @@
 
 DJCodecDecoder::DJCodecDecoder()
 : DcmCodec()
-{
-}
-
-
+{}
 DJCodecDecoder::~DJCodecDecoder()
-{
-}
-
+{}
 
 OFBool DJCodecDecoder::canChangeCoding(
     const E_TransferSyntax oldRepType,
@@ -42,7 +37,8 @@ OFBool DJCodecDecoder::canChangeCoding(
 {
   E_TransferSyntax myXfer = supportedTransferSyntax();
   DcmXfer newRep(newRepType);
-  if (newRep.isNotEncapsulated() && (oldRepType == myXfer)) return OFTrue; // decompress requested
+  if (newRep.isNotEncapsulated() && (oldRepType == myXfer))
+      return OFTrue; // decompress requested
 
   // we don't support re-coding for now.
   return OFFalse;
@@ -578,6 +574,19 @@ OFCondition DJCodecDecoder::determineDecompressedColorModel(
       DCMJPEG_ERROR("can't decompress first frame: " << result.text());
   return result;
 }
+
+/*purely abstract
+E_TransferSyntax supportedTransferSyntax() const = 0;
+{}
+ */
+
+#pragma mark -
+#pragma mark private
+
+/*purely abstract
+ E_TransferSyntax supportedTransferSyntax() const = 0;
+ {}
+ */
 
 
 Uint16 DJCodecDecoder::readUint16(const Uint8 *data)

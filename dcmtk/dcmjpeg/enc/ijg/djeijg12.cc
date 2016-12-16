@@ -397,6 +397,10 @@ OFCondition DJCompressIJG12Bit::encode(
      // always disables any kind of color space conversion
      jpeg_simple_lossless(&cinfo,psv,pt);
      break;
+      case EJM_JP2K_lossless:
+      case EJM_JP2K_lossy:
+      //not applicable
+      break;
   }
   
   cinfo.smoothing_factor = cparam->getSmoothingFactor();
