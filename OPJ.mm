@@ -5,8 +5,8 @@
 #include "osconfig.h" /* make sure OS specific configuration is included first */
 #include "djdecode.h"  /* for dcmjpeg decoders */
 #include "djencode.h"  /* for dcmjpeg encoders */
-#include "djrploss.h"
-#include "dcmtk/dcmjpeg/lossless/djrplol.h"
+#include "dcmtk/dcmdataImplementaion/dcpixel/jpegParams.h"
+#include "dcmtk/dcmjpeg/lossless/jpegReversibleParams.h"
 #include "dcpixel.h"
 #include "dcrlerp.h"
 #include "dcdicdir.h"
@@ -367,7 +367,7 @@ int main(int argc, const char *argv[])
         
         
 #pragma mark compress (revisar bien a que corresponde toda esta sintaxis!!!)
-        DJ_RPLossy JP2KParamsLossLess( DCMLosslessQuality);
+        DJ_RPLossless JP2KParamsLossLess( 0);//reversible
         DcmRepresentationParameter *params = &JP2KParamsLossLess;
         
         DcmXfer oxferSyn( EXS_JPEG2000LosslessOnly);

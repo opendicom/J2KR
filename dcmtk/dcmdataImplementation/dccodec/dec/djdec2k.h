@@ -17,11 +17,11 @@
  */
 
 #include "dcmtk/config/osconfig.h"
-#include "dcmtk/dcmjpeg/dec/djcodecd.h" /* for class DJCodecDecoder */
-#include "djencabs.h"
+#include "dcmtk/dcmdataImplementation/dccodec/djcodecd.h" /* for class DJCodecDecoder */
+//#include "djencabs.h"
 
 
-#pragma mark Decoder class for JPEG 2K Lossy ( DCMTK_DCMJPEG_EXPORT)
+#pragma mark Decoder class for JPEG 2K Lossy
 
 class DJDecoderJP2k : public DJCodecDecoder
 {

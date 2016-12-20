@@ -15,7 +15,7 @@
 #define DJENCSV1_H
 
 #include "dcmtk/config/osconfig.h"
-#import "dcmtk/dcmjpeg/enc/djcodece.h" /* for class DJCodecEncoder */
+#import "dcmtk/dcmdataImplementation/dccodec/djcodece.h" /* for class DJCodecEncoder */
 
 
 /** Encoder class for JPEG Lossless Selection Value 1 (8/12/16-bit)

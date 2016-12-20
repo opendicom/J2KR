@@ -14,7 +14,7 @@
  */
 
 #include "dcmtk/config/osconfig.h"
-#include "dcmtk/dcmjpeg/enc/djcodece.h"
+#include "dcmtk/dcmdataImplementation/dccodec/djcodece.h"
 
 // ofstd includes
 #include "dcmtk/ofstd/oflist.h"
@@ -35,7 +35,7 @@
 #include "dcmtk/dcmdata/dcswap.h"     /* for swapIfNecessary */
 
 // dcmjpeg includes
-#include "dcmtk/dcmjpeg/djcparam.h"   /* for class DJCodecParameter */
+#include "dcmtk/dcmdataImplementation/dccodec/djcparam.h"   /* for class DJCodecParameter */
 #include "djencabs.h"   /* for class DJEncoder */
 
 // dcmimgle includes

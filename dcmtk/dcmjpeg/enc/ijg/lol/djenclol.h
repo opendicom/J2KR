@@ -15,7 +15,7 @@
 #define DJENCLOL_H
 
 #include "dcmtk/config/osconfig.h"
-#import "dcmtk/dcmjpeg/enc/djcodece.h" /* for class DJCodecEncoder */
+#import "dcmtk/dcmdataImplementation/dccodec/djcodece.h" /* for class DJCodecEncoder */
 
 
 /** Encoder class for JPEG Lossless (8/12/16-bit)

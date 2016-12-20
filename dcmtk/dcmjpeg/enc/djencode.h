@@ -11,9 +11,6 @@
  *  Purpose: singleton class that registers encoders for all supported JPEG processes.
  */
 
-#ifndef DJENCODE_H
-#define DJENCODE_H
-
 #include "dcmtk/config/osconfig.h"
 #include "dcmtk/ofstd/oftypes.h"  /* for OFBool */
 #include "djutils.h"
@@ -130,5 +127,3 @@ public:
   static DJEncoder2KLossLess *enc2KLoL;
 
 };
-
-#endif

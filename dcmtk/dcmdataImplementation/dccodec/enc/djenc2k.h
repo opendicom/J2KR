@@ -17,7 +17,7 @@
  */
 
 #include "dcmtk/config/osconfig.h"
-#import "dcmtk/dcmjpeg/enc/djcodece.h" /* for class DJCodecEncoder */
+#import "dcmtk/dcmdataImplementation/dccodec/djcodece.h" /* for class DJCodecEncoder */
 
 
 #pragma mark Encoder class for JPEG 2K Lossy

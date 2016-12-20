@@ -17,8 +17,8 @@
  */
 
 #include "dcmtk/config/osconfig.h"
-#include "dcmtk/dcmjpeg/djcparam.h"
-#include "djrploss.h"
+#include "dcmtk/dcmdataImplementation/dccodec/djcparam.h"
+#include "dcmtk/dcmdataImplementation/dcpixel/jpegParams.h"
 #include "djenc2k.h"
 #include "djeijg2k.h" //createEncoderInstance requiere DJCompressJP2K (djeijg2k...)
 

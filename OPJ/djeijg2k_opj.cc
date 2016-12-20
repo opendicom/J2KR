@@ -23,7 +23,7 @@
 
 #include "osconfig.h"
 #include "djeijg2k.h"
-#include "dcmtk/dcmjpeg/djcparam.h"
+#include "dcmtk/dcmdataImplementation/dccodec/djcparam.h"
 #include "ofconsol.h"
 #include "ofconsol.h"
 #include "ofstdinc.h"
@@ -134,7 +134,7 @@ OFCondition DJCompressJP2K::encode(
                                      false,
                                      0,
                                      &compressedLength);
-    //[5] bitsstored, [7] signed, [8] rate=0=DCMLosslessQuality
+    //[5] bitsstored, [7] signed, [8] rate=0=reversible
     length = compressedLength;
 
     return EC_Normal;

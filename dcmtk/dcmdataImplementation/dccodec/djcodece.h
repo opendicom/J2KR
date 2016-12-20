@@ -10,10 +10,10 @@
  *  Purpose: abstract codec class for JPEG encoders.
  */
 
-#include "dcmtk/dcmdata/dccodec.h" /* for parent class DcmCodec */
 
 #include "dcmtk/config/osconfig.h"
 #include "dcmtk/ofstd/oftypes.h"
+#include "dcmtk/dcmdata/dccodec.h" /* for parent class DcmCodec */
 #include "djutils.h"    /* for enums */
 #include "dcmtk/ofstd/oflist.h"
 #include "dcmtk/ofstd/ofstring.h"     /* for class OFString */

@@ -12,7 +12,7 @@
  */
 
 #include "dcmtk/config/osconfig.h"
-#include "dcmtk/dcmjpeg/lossless/djrplol.h"
+#include "dcmtk/dcmdataImplementation/dcpixel/jpegReversibleParams.h"
 
 
 DJ_RPLossless::DJ_RPLossless(int aPrediction, int aPt)

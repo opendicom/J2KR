@@ -21,8 +21,8 @@
 #include "dcmtk/dcmjpeg/dec/ijg/pro/djdecpro.h"
 #include "dcmtk/dcmjpeg/dec/ijg/sv1/djdecsv1.h"
 #include "dcmtk/dcmjpeg/dec/ijg/lol/djdeclol.h"
-#include "dcmtk/dcmjpeg/dec/2k/djdec2k.h"
-#include "dcmtk/dcmjpeg/djcparam.h"
+#include "dcmtk/dcmdataImplementation/dccodec/dec/djdec2k.h"
+#include "dcmtk/dcmdataImplementation/dccodec/djcparam.h"
 
 // initialization of static members
 OFBool DJDecoderRegistration::registered                  = OFFalse;

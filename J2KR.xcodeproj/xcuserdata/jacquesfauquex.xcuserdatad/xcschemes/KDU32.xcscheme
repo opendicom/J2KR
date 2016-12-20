@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4AEAD2471CC6E475000FEA7F"
-               BuildableName = "KDU"
-               BlueprintName = "KDU"
+               BuildableName = "J2KR"
+               BlueprintName = "J2KR"
                ReferencedContainer = "container:J2KR.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,8 +33,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4AEAD2471CC6E475000FEA7F"
-            BuildableName = "KDU"
-            BlueprintName = "KDU"
+            BuildableName = "J2KR"
+            BlueprintName = "J2KR"
             ReferencedContainer = "container:J2KR.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -56,12 +56,16 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4AEAD2471CC6E475000FEA7F"
-            BuildableName = "KDU"
-            BlueprintName = "KDU"
+            BuildableName = "J2KR"
+            BlueprintName = "J2KR"
             ReferencedContainer = "container:J2KR.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <CommandLineArguments>
+         <CommandLineArgument
+            argument = "KDU"
+            isEnabled = "YES">
+         </CommandLineArgument>
          <CommandLineArgument
             argument = "1.dcm"
             isEnabled = "YES">
@@ -109,8 +113,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4AEAD2471CC6E475000FEA7F"
-            BuildableName = "KDU"
-            BlueprintName = "KDU"
+            BuildableName = "J2KR"
+            BlueprintName = "J2KR"
             ReferencedContainer = "container:J2KR.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

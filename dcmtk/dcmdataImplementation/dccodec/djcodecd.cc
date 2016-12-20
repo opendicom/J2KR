@@ -11,7 +11,7 @@
  */
 
 #include "dcmtk/config/osconfig.h"
-#include "dcmtk/dcmjpeg/dec/djcodecd.h"
+#include "dcmtk/dcmdataImplementation/dccodec/djcodecd.h"
 
 #include "dcmtk/dcmdata/dcdatset.h"  /* for class DcmDataset */
 #include "dcmtk/dcmdata/dcdeftag.h"  /* for tag constants */
@@ -21,7 +21,7 @@
 #include "dcmtk/dcmdata/dcswap.h"    /* for swapIfNecessary() */
 #include "dcmtk/dcmdata/dcuid.h"     /* for dcmGenerateUniqueIdentifer()*/
 
-#include "dcmtk/dcmjpeg/djcparam.h"  /* for class DJCodecParameter */
+#include "dcmtk/dcmdataImplementation/dccodec/djcparam.h"  /* for class DJCodecParameter */
 #include "dcmtk/dcmjpeg/dec/djdecabs.h"  /* for class DJDecoder */
 
 

@@ -20,8 +20,8 @@
 #include "dcmtk/dcmjpeg/enc/ijg/pro/djencpro.h"
 #include "dcmtk/dcmjpeg/enc/ijg/sv1/djencsv1.h"
 #include "dcmtk/dcmjpeg/enc/ijg/lol/djenclol.h"
-#include "dcmtk/dcmjpeg/enc/2k/djenc2k.h"
-#include "dcmtk/dcmjpeg/djcparam.h"
+#include "dcmtk/dcmdataImplementation/dccodec/enc/djenc2k.h"
+#include "dcmtk/dcmdataImplementation/dccodec/djcparam.h"
 
 // initialization of static members
 OFBool DJEncoderRegistration::registered                  = OFFalse;

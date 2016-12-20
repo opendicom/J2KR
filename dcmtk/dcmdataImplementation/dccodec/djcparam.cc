@@ -12,7 +12,7 @@
  */
 
 #include "dcmtk/config/osconfig.h"
-#include "dcmtk/dcmjpeg/djcparam.h"
+#include "dcmtk/dcmdataImplementation/dccodec/djcparam.h"
 
 DJCodecParameter::DJCodecParameter(
     E_CompressionColorSpaceConversion pCompressionCSConversion,

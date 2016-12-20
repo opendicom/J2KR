@@ -17,8 +17,7 @@
  */
 #include "osconfig.h"
 #include "djdec2k.h"
-#include "dcmtk/dcmjpeg/djcparam.h"
-#include "dcmtk/dcmjpeg/lossless/djrplol.h"
+#include "dcmtk/dcmdataImplementation/dccodec/djcparam.h"
 #include "djdijp2k.h"
 #include "dcpixseq.h"  /* for class DcmPixelSequence */
 

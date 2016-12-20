@@ -11,7 +11,7 @@
  */
 
 #include "dcmtk/config/osconfig.h"
-#include "dcmtk/dcmjpeg/lossy/djrploss.h"
+#include "dcmtk/dcmdataImplementation/dcpixel/jpegParams.h"
 
 DJ_RPLossy::DJ_RPLossy(int aQuality)
 : DcmRepresentationParameter()

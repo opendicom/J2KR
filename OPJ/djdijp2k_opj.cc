@@ -23,7 +23,7 @@
 
 #include "osconfig.h"
 #include "djdijp2k.h"
-#include "dcmtk/dcmjpeg/djcparam.h"
+#include "dcmtk/dcmdataImplementation/dccodec/djcparam.h"
 #include "ofconsol.h"
 #include "OPJSupport.h"
 

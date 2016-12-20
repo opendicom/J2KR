@@ -8,23 +8,19 @@
 #include "dcmtk/dcmjpeg/enc/djencode.h"
 #include "dcmtk/dcmjpls/djdecode.h"
 #include "dcmtk/dcmjpls/djencode.h"
-#include "dcmtk/dcmjpeg/lossy/djrploss.h"
-#include "dcmtk/dcmjpeg/lossless/djrplol.h"
+
+#include "dcmdataImplementation/dcpixel/jpegParams.h"
+#include "dcmdataImplementation/dcpixel/jpegReversibleParams.h"
+
 #include "dcmtk/dcmdata/dcdatset.h"
 #include "dcmtk/dcmdata/dcmetinf.h"
 #include "dcmtk/dcmdata/dcfilefo.h"
 #include "dcmtk/dcmdata/dcdict.h"
 #include "dcmtk/dcmdata/dcdeftag.h"
 
-enum DCM_CompressionQuality {
-    DCMLosslessQuality = 0,
-    DCMHighQuality,
-    DCMMediumQuality,
-    DCMLowQuality
-};
-
 enum baseArgs {
-    fileRelativePath=1,
+    codec=1,
+    fileRelativePath,
     inBasePath,
     doneBasePath,
     errBasePath,
@@ -35,6 +31,8 @@ enum baseArgs {
 
 static NSFileManager *fileManager=nil;
 static NSError *err=nil;
+static BOOL kdu=false;
+static BOOL opj=false;
 
 BOOL folderExists(NSString *f, BOOL shouldBeEmptyAndWritable)
 {
@@ -87,7 +85,7 @@ int main(int argc, const char *argv[])
 {
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     
-    NSString *syntax=@"syntax:\r\nKDU\r\n\t[1]inRelativePathOr*\r\n\t[2]inBasePath/\r\n\t[3]doneBasePath/\r\n\t[4]errBasePath/\r\n\t[5] FATAL_LOG_LEVEL, ERROR_LOG_LEVEL, WARN_LOG_LEVEL, INFO_LOG_LEVEL, DEBUG_LOG_LEVEL, TRACE_LOG_LEVEL";
+    NSString *syntax=@"syntax:\r\nJ2KR\r\n[1]codec\r\n\t[1]inRelativePathOr*\r\n\t[2]inBasePath/\r\n\t[3]doneBasePath/\r\n\t[4]errBasePath/\r\n\t[5] FATAL_LOG_LEVEL, ERROR_LOG_LEVEL, WARN_LOG_LEVEL, INFO_LOG_LEVEL, DEBUG_LOG_LEVEL, TRACE_LOG_LEVEL";
     //\r\n[6..]opt\r\n
     //\t!\"attrPath\" (delete attribute)\r\n
     //\t!\"attrPath\"!{\"Value\":[]} (delete attribute contents)\r\n
@@ -101,10 +99,12 @@ int main(int argc, const char *argv[])
     
     NSMutableArray *args=[NSMutableArray arrayWithArray:[[NSProcessInfo processInfo] arguments]];
     NSUInteger argsCount=[args count];
-    if (argsCount<6) {NSLog(@"%@",syntax);return 1;}
+    if (argsCount<7) {NSLog(@"%@",syntax);return 1;}
 
     fileManager=[NSFileManager defaultManager];
 
+    kdu=[args[codec] isEqualToString:@"kdu"];
+    opj=[args[codec] isEqualToString:@"opj"];
 #pragma mark arg[5] log level
     enum loglevel {
         FATAL_LOG_LEVEL,
@@ -173,10 +173,10 @@ int main(int argc, const char *argv[])
 
 //--------------------------------------------------------------------------
     
-#pragma mark args[1-4] paths
+#pragma mark args[2-5] paths
     NSArray *r;
     if (
-           [args[1] isEqualToString:@"*"]
+           [args[fileRelativePath] isEqualToString:@"*"]
         ||!(r=[fileManager contentsOfDirectoryAtPath:[args[inBasePath]stringByExpandingTildeInPath] error:&err])
         )
     {
@@ -472,136 +472,44 @@ int main(int argc, const char *argv[])
                 }
             }
         }
-        
-#pragma mark JF JPEG prueba
-/*
- E_TransferSyntax opt_oxfer
- 
-    EXS_LittleEndianImplicit = 0
-    EXS_LittleEndianExplicit = 2
- 
-    EXS_JPEGProcess14SV1 (lossless-sv1)
-    EXS_JPEGProcess1 (baseline lossy) =4
-    EXS_JPEGProcess2_4 (extended sequencial lossy 8/12 bits) =5
-    EXS_JPEGProcess3_5 (extended sequencial lossy 8/12 bits arithmetic coding) =6
-    EXS_JPEGProcess6_8 (spectral Non-Hierarchical lossy, 8/12 bit) =7
-    EXS_JPEGProcess7_9 (spectral Non-Hierarchical lossy, 8/12 bit arithmetic coding) =8
-    EXS_JPEGProcess10_12 (Full Progression, Non-Hierarchical lossy, 8/12 bit) =9
-    EXS_JPEGProcess11_13 (Full Progression, Non-Hierarchical lossy, 8/12 bit arithmetic coding) =10
-    EXS_JPEGProcess14 (lossless) =11
-    EXS_JPEGProcess15 (lossless arithmetic coding) =12
-    EXS_JPEGProcess16_18 (Extended Sequential, Hierarchical lossy, 8/12 bit) = 13
-    EXS_JPEGProcess17_19 (Extended Sequential, Hierarchical lossy, 8/12 bit arithmetic coding) = 14
 
- 
- 
- /// JPEG Spectral Selection, Hierarchical (lossy, 8/12 bit)
- EXS_JPEGProcess20_22 = 15,
- /// JPEG Spectral Selection, Hierarchical (lossy, 8/12 bit), arithmetic coding
- EXS_JPEGProcess21_23 = 16,
- /// JPEG Full Progression, Hierarchical (lossy, 8/12 bit)
- EXS_JPEGProcess24_26 = 17,
- /// JPEG Full Progression, Hierarchical (lossy, 8/12 bit), arithmetic coding
- EXS_JPEGProcess25_27 = 18,
- /// JPEG Lossless, Hierarchical
- EXS_JPEGProcess28 = 19,
- /// JPEG Lossless, Hierarchical, arithmetic coding
- EXS_JPEGProcess29 = 20,
- /// JPEG Lossless, Selection Value 1
- EXS_JPEGProcess14SV1 = 21,
- /// Run Length Encoding (lossless)
- EXS_RLELossless = 22,
- /// JPEG-LS (lossless)
- EXS_JPEGLSLossless = 23,
- /// JPEG-LS (lossless or near-lossless mode)
- EXS_JPEGLSLossy = 24,
- /// Deflated Explicit VR Little Endian
- EXS_DeflatedLittleEndianExplicit = 25,
- /// JPEG 2000 (lossless)
- EXS_JPEG2000LosslessOnly = 26,
- /// JPEG 2000 (lossless or lossy)
- EXS_JPEG2000 = 27,
- /// MPEG2 Main Profile at Main Level
- EXS_MPEG2MainProfileAtMainLevel = 28,
- /// MPEG2 Main Profile at High Level
- EXS_MPEG2MainProfileAtHighLevel = 29,
- /// MPEG4 High Profile / Level 4.1
- EXS_MPEG4HighProfileLevel4_1 = 30,
- /// MPEG4 BD-compatible High Profile / Level 4.1
- EXS_MPEG4BDcompatibleHighProfileLevel4_1 = 31,
- /// MPEG4 High Profile / Level 4.2 For 2D Video
- EXS_MPEG4HighProfileLevel4_2_For2DVideo = 32,
- /// MPEG4 High Profile / Level 4.2 For 3D Video
- EXS_MPEG4HighProfileLevel4_2_For3DVideo = 33,
- /// MPEG4 Stereo High Profile / Level 4.2
- EXS_MPEG4StereoHighProfileLevel4_2 = 34,
- /// JPEG 2000 part 2 multi-component extensions (lossless)
- EXS_JPEG2000MulticomponentLosslessOnly = 35,
- /// JPEG 2000 part 2 multi-component extensions (lossless or lossy)
- EXS_JPEG2000Multicomponent = 36,
- /// JPIP Referenced
- EXS_JPIPReferenced = 37,
- /// JPIP Referenced Deflate
- EXS_JPIPReferencedDeflate = 38
-
-*/
-        DJ_RPLossy JP2KParamsLossLess( DCMLosslessQuality);
+#pragma mark J2KR
+        //choose param
+        DJ_RPLossless JP2KParamsLossLess(0);
         DcmRepresentationParameter *params = &JP2KParamsLossLess;
+        
+        //encode
+        /*
+         DcmDatset.cc 694-698
+         pixelStack.top().top())->
+         chooseRepresentation(repType, repParam, pixelStack.top()
+         
+         dcpixel.cc 274ss
+         encode((*original)->repType, (*original)->repParam,
+         (*original)->pixSeq, toType, repParam, pixelStack)
+         
+         */
         dataset->chooseRepresentation(EXS_JPEG2000LosslessOnly, params);
+        
+        
         fileformat.loadAllDataIntoMemory();
         if (dataset->canWriteXfer(EXS_JPEG2000LosslessOnly))
         {
            cond = fileformat.saveFile([o UTF8String], EXS_JPEG2000LosslessOnly);
         }
         else NSLog(@"NOT possible EXS_JPEG2000LosslessOnly");
+#pragma mark JPEG Baseline lossy
         /*
         DJ_RPLossy param;
-        
         dataset->chooseRepresentation(EXS_JPEGProcess1, &param);
         if (dataset->canWriteXfer(EXS_JPEGProcess1))
         {
             NSLog(@"possible JPEGProcess1");
         }
         else NSLog(@"not possible JPEGProcess1");
-        */
-        /*
         fileformat.loadAllDataIntoMemory();
         cond = fileformat.saveFile([o UTF8String], EXS_JPEGProcess1);//EXS_LittleEndianExplicit);//
          */
-        
-#pragma mark TODO compress (revisar bien a que corresponde toda esta sintaxis!!!)
-        /*
-        DJ_RPLossy JP2KParamsLossLess( DCMLosslessQuality);
-        DcmRepresentationParameter *params = &JP2KParamsLossLess;        
-        DcmXfer oxferSyn( EXS_JPEG2000LosslessOnly);
-        dataset->chooseRepresentation(EXS_JPEG2000LosslessOnly, params);
-        if (!dataset->canWriteXfer(EXS_JPEG2000LosslessOnly))
-        {
-            NSLog(@"symlink in err (cannot J2KR for:%@)",i);
-            //myunlink([i fileSystemRepresentation]);
-            if (![fileManager createSymbolicLinkAtPath:e
-                                   withDestinationPath:i
-                                                 error:&err]
-                )
-                NSLog(@"can not make symlink: %@\r\n%@",e,[err description]);
-            continue;
-        }
-        fileformat.loadAllDataIntoMemory();
-        
-        //write compressed file
-        cond = fileformat.saveFile( [o UTF8String], EXS_JPEG2000LosslessOnly);
-        if (!cond.good())
-        {
-            NSLog(@"symlink in err (cannot save J2KR for:%@)",i);
-            //myunlink([i fileSystemRepresentation]);
-            if (![fileManager createSymbolicLinkAtPath:e
-                                   withDestinationPath:i
-                                                 error:&err]
-                )
-            continue;
-        }
- */
-
     }
     [pool release];
     return 0;

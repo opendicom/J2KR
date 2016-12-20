@@ -15,7 +15,7 @@
 #define DJDECEXT_H
 
 #include "dcmtk/config/osconfig.h"
-#import "dcmtk/dcmjpeg/dec/djcodecd.h" /* for class DJCodecDecoder */
+#import "dcmtk/dcmdataImplementation/dccodec/djcodecd.h" /* for class DJCodecDecoder */
 
 
 /** Decoder class for JPEG Extended Sequential (lossy, 8/12-bit)
