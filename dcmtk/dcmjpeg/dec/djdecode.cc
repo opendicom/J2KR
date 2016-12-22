@@ -21,8 +21,8 @@
 #include "dcmtk/dcmjpeg/dec/ijg/pro/djdecpro.h"
 #include "dcmtk/dcmjpeg/dec/ijg/sv1/djdecsv1.h"
 #include "dcmtk/dcmjpeg/dec/ijg/lol/djdeclol.h"
-#include "dcmtk/dcmdataImplementation/dccodec/dec/djdec2k.h"
-#include "dcmtk/dcmdataImplementation/dccodec/djcparam.h"
+//#include "dcmtk/j2k/dccodec/dec/djdec2k.h"
+#include "dcmtk/dcmjpeg/dccodec/djcparam.h"
 
 // initialization of static members
 OFBool DJDecoderRegistration::registered                  = OFFalse;
@@ -33,8 +33,8 @@ DJDecoderSpectralSelection *DJDecoderRegistration::decsps = NULL;
 DJDecoderProgressive *DJDecoderRegistration::decpro       = NULL;
 DJDecoderP14SV1 *DJDecoderRegistration::decsv1            = NULL;
 DJDecoderLossless *DJDecoderRegistration::declol          = NULL;
-DJDecoderJP2k *DJDecoderRegistration::dec2k               = NULL;
-DJDecoderJP2kLossLess *DJDecoderRegistration::dec2kLossLess    = NULL;
+//DJDecoderJP2k *DJDecoderRegistration::dec2k               = NULL;
+//DJDecoderJP2kLossLess *DJDecoderRegistration::dec2kLossLess    = NULL;
 
 void DJDecoderRegistration::registerCodecs(
     E_DecompressionColorSpaceConversion pDecompressionCSConversion,
@@ -77,12 +77,12 @@ void DJDecoderRegistration::registerCodecs(
       if (declol) DcmCodecList::registerCodec(declol, NULL, cp);
         
       // JPEG 2K Lossy
-      dec2k = new DJDecoderJP2k();
-      if (dec2k) DcmCodecList::registerCodec(dec2k, NULL, cp);
+      //dec2k = new DJDecoderJP2k();
+      //if (dec2k) DcmCodecList::registerCodec(dec2k, NULL, cp);
         
       // JPEG 2K
-      dec2kLossLess = new DJDecoderJP2kLossLess();
-      if (dec2kLossLess) DcmCodecList::registerCodec(dec2kLossLess, NULL, cp);
+      //dec2kLossLess = new DJDecoderJP2kLossLess();
+      //if (dec2kLossLess) DcmCodecList::registerCodec(dec2kLossLess, NULL, cp);
 
       registered = OFTrue;
     }
@@ -106,10 +106,10 @@ void DJDecoderRegistration::cleanup()
     DcmCodecList::deregisterCodec(declol);
     delete declol;
     delete cp;
-    DcmCodecList::deregisterCodec(dec2k);
-    delete dec2k;
-    DcmCodecList::deregisterCodec(dec2kLossLess);
-    delete dec2kLossLess;
+    //DcmCodecList::deregisterCodec(dec2k);
+    //delete dec2k;
+    //DcmCodecList::deregisterCodec(dec2kLossLess);
+    //delete dec2kLossLess;
     registered = OFFalse;
 #ifdef DEBUG
     // not needed but useful for debugging purposes
@@ -119,8 +119,8 @@ void DJDecoderRegistration::cleanup()
     decpro = NULL;
     decsv1 = NULL;
     declol = NULL;
-    dec2K  = NULL;
-    dec2KLoL = NULL;
+    //dec2K  = NULL;
+    //dec2KLoL = NULL;
     cp     = NULL;
 #endif
 

@@ -13,7 +13,7 @@
 
 #include "dcmtk/config/osconfig.h"
 #include "dcmtk/dcmjpeg/enc/ijg/djeijg16.h"
-#include "dcmtk/dcmdataImplementation/dccodec/djcparam.h"
+#include "dcmtk/dcmjpeg/dccodec/djcparam.h"
 #include "dcmtk/dcmdata/dcerror.h"
 
 #define INCLUDE_CSTDIO

@@ -15,7 +15,7 @@
 #define DJDIJG16_H
 
 #include "dcmtk/config/osconfig.h"
-#include "dcmtk/dcmjpeg/dec/djdecabs.h" /* for class DJDecoder */
+#include "dcmtk/djdecabs.h" /* for class DJDecoder */
 
 extern "C"
 {

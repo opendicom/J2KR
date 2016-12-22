@@ -15,7 +15,7 @@
 #define DJENCBAS_H
 
 #include "dcmtk/config/osconfig.h"
-#import "dcmtk/dcmdataImplementation/dccodec/djcodece.h" /* for class DJCodecEncoder */
+#import "dcmtk/dcmjpeg/dccodec/enc/djcodece.h" /* for class DJCodecEncoder */
 
 
 /** Encoder class for JPEG Baseline (lossy, 8-bit)

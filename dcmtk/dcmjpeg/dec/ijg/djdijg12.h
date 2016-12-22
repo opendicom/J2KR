@@ -11,7 +11,7 @@
  */
 
 #include "dcmtk/config/osconfig.h"
-#import "dcmtk/dcmjpeg/dec/djdecabs.h" /* for class DJDecoder */
+#import "dcmtk/djdecabs.h" /* for class DJDecoder */
 
 extern "C"
 {

@@ -15,7 +15,7 @@
 #define DJENCPRO_H
 
 #include "dcmtk/config/osconfig.h"
-#import "dcmtk/dcmdataImplementation/dccodec/djcodece.h" /* for class DJCodecEncoder */
+#import "dcmtk/dcmjpeg/dccodec/enc/djcodece.h" /* for class DJCodecEncoder */
 
 
 /** Encoder class for JPEG Progressive (lossy, 8/12-bit)

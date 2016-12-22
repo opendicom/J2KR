@@ -17,13 +17,15 @@
 
 
 /*------------------------*
- *  forward declarations  *------------------------*/
+ *  forward declarations  
+ *------------------------*/
 
 class DiImage;
 
 
 /*---------------------*
- *  class declaration  *---------------------*/
+ *  class declaration  
+ *---------------------*/
 
 /** Implementation of a JPEG plugin for the dcmimgle/dcmimage library
  */

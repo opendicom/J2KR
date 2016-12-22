@@ -13,8 +13,8 @@
 
 #include "dcmtk/config/osconfig.h"
 #include "dcmtk/dcmjpeg/dec/ijg/sv1/djdecsv1.h"
-#include "dcmtk/dcmdataImplementation/dccodec/djcparam.h"
-#include "dcmdataImplementation/dcpixel/jpegReversibleParams.h"
+#include "dcmtk/dcmjpeg/dccodec/djcparam.h"
+#include "dcmtk/dcmjpeg/dcpixel/jpegReversibleParams.h"
 #include "dcmtk/dcmjpeg/dec/ijg/djdijg8.h"
 #include "dcmtk/dcmjpeg/dec/ijg/djdijg12.h"
 #include "dcmtk/dcmjpeg/dec/ijg/djdijg16.h"

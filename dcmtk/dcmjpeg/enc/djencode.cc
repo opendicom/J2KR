@@ -20,8 +20,8 @@
 #include "dcmtk/dcmjpeg/enc/ijg/pro/djencpro.h"
 #include "dcmtk/dcmjpeg/enc/ijg/sv1/djencsv1.h"
 #include "dcmtk/dcmjpeg/enc/ijg/lol/djenclol.h"
-#include "dcmtk/dcmdataImplementation/dccodec/enc/djenc2k.h"
-#include "dcmtk/dcmdataImplementation/dccodec/djcparam.h"
+//#include "dcmtk/j2k/dccodec/enc/djenc2k.h"
+#include "dcmtk/dcmjpeg/dccodec/djcparam.h"
 
 // initialization of static members
 OFBool DJEncoderRegistration::registered                  = OFFalse;
@@ -32,8 +32,8 @@ DJEncoderSpectralSelection *DJEncoderRegistration::encsps = NULL;
 DJEncoderProgressive *DJEncoderRegistration::encpro       = NULL;
 DJEncoderP14SV1 *DJEncoderRegistration::encsv1            = NULL;
 DJEncoderLossless *DJEncoderRegistration::enclol          = NULL;
-DJEncoder2K *DJEncoderRegistration::enc2K				  = NULL;
-DJEncoder2KLossLess *DJEncoderRegistration::enc2KLoL	  = NULL;
+//DJEncoder2K *DJEncoderRegistration::enc2K				  = NULL;
+//DJEncoder2KLossLess *DJEncoderRegistration::enc2KLoL	  = NULL;
 
 void DJEncoderRegistration::registerCodecs(
     E_CompressionColorSpaceConversion pCompressionCSConversion,
@@ -116,12 +116,12 @@ void DJEncoderRegistration::registerCodecs(
       if (enclol) DcmCodecList::registerCodec(enclol, NULL, cp);
 
       // JPEG 2K
-      enc2K = new DJEncoder2K();
-      if (enc2K) DcmCodecList::registerCodec(enc2K, NULL, cp);
+      //enc2K = new DJEncoder2K();
+      //if (enc2K) DcmCodecList::registerCodec(enc2K, NULL, cp);
         
       // JPEG 2K Lossy
-      enc2KLoL = new DJEncoder2KLossLess();
-      if (enc2KLoL) DcmCodecList::registerCodec(enc2KLoL, NULL, cp);
+      //enc2KLoL = new DJEncoder2KLossLess();
+      //if (enc2KLoL) DcmCodecList::registerCodec(enc2KLoL, NULL, cp);
 
       registered = OFTrue;
     }
@@ -144,10 +144,10 @@ void DJEncoderRegistration::cleanup()
     delete encsv1;
     DcmCodecList::deregisterCodec(enclol);
     delete enclol;
-    DcmCodecList::deregisterCodec(enc2K);
-    delete enc2K;
-    DcmCodecList::deregisterCodec(enc2KLoL);
-    delete enc2KLoL;
+    //DcmCodecList::deregisterCodec(enc2K);
+    //delete enc2K;
+    //DcmCodecList::deregisterCodec(enc2KLoL);
+    //delete enc2KLoL;
     delete cp;
     registered = OFFalse;
 #ifdef DEBUG

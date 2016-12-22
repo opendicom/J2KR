@@ -15,7 +15,7 @@
 #define DJDECSV1_H
 
 #include "dcmtk/config/osconfig.h"
-#import "dcmtk/dcmdataImplementation/dccodec/djcodecd.h" /* for class DJCodecDecoder */
+#import "dcmtk/dcmjpeg/dccodec/dec/djcodecd.h" /* for class DJCodecDecoder */
 
 
 /** Decoder class for JPEG Lossless Selection Value 1 (8/12/16-bit)

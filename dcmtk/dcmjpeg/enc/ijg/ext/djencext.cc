@@ -13,8 +13,8 @@
 
 #include "dcmtk/config/osconfig.h"
 #include "djencext.h"
-#include "dcmtk/dcmdataImplementation/dccodec/djcparam.h"
-#include "dcmtk/dcmdataImplementation/dcpixel/jpegParams.h"
+#include "dcmtk/dcmjpeg/dccodec/djcparam.h"
+#include "dcmtk/dcmjpeg/dcpixel/jpegParams.h"
 #include "dcmtk/dcmjpeg/enc/ijg/djeijg8.h"
 #include "dcmtk/dcmjpeg/enc/ijg/djeijg12.h"
 
