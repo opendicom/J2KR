@@ -1,7 +1,7 @@
 #include "dcmtk/config/osconfig.h"
 #include "dcmtk/ofstd/oftypes.h"  /* for OFBool */
 #include "djutils.h"
-#include "dcmtk/dcmj2k/dccodec/k2j/k2jCodecParameter.h"
+#include "dcmtk/dcmk2j/dccodec/k2jCodecParameter.h"
 
 class k2jCodecParameter;
 class DJDecoderJP2k;
@@ -9,7 +9,7 @@ class DJDecoderJP2kLossLess;
 
 /** singleton class that registers decoders for all supported j2 processes.
  */
-class j2kDecoderRegistration
+class k2jCodecRegistration
 {
 public:
   /** registers decoders for all supported j2 processes.

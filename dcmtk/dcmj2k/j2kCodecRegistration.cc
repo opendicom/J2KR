@@ -1,18 +1,18 @@
 #include "dcmtk/config/osconfig.h"
-#include "dcmtk/dcmj2k/j2kRegistration.h"
+#include "dcmtk/dcmj2k/j2kCodecRegistration.h"
 
 #include "dcmtk/dcmdata/dccodec.h"  /* for DcmCodecStruct */
 #include "dcmtk/dcmj2k/dccodec/enc/kdu.h"
 #include "dcmtk/dcmj2k/dccodec/enc/kdur.h"
-#include "dcmtk/dcmj2k/dccodec/j2k/j2kCodecParameter.h"
+#include "dcmtk/dcmj2k/dccodec/j2kCodecParameter.h"
 
 // initialization of static members
-OFBool j2kRegistration::registered      = OFFalse;
-j2kCodecParameter *j2kRegistration::cp  = NULL;
-kdu *j2kRegistration::enc2K				= NULL;
-kdur *j2kRegistration::enc2KLoL	        = NULL;
+OFBool j2kCodecRegistration::registered      = OFFalse;
+j2kCodecParameter *j2kCodecRegistration::cp  = NULL;
+kdu *j2kCodecRegistration::enc2K				= NULL;
+kdur *j2kCodecRegistration::enc2KLoL	        = NULL;
 
-void j2kRegistration::registerCodecs(
+void j2kCodecRegistration::registerCodecs(
     E_CompressionColorSpaceConversion pCompressionCSConversion,
     E_UIDCreation pCreateSOPInstanceUID,
     OFBool pOptimizeHuffman,
@@ -55,7 +55,7 @@ void j2kRegistration::registerCodecs(
   }
 }
 
-void j2kRegistration::cleanup()
+void j2kCodecRegistration::cleanup()
 {
   if (registered)
   {

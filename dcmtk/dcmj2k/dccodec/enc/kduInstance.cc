@@ -1,6 +1,6 @@
 #include "dcmtk/config/osconfig.h"
 #include "dcmtk/dcmj2k/dccodec/enc/kduInstance.h"
-#include "dcmtk/dcmj2k/dccodec/j2k/j2kCodecParameter.h"
+#include "dcmtk/dcmj2k/dccodec/j2kCodecParameter.h"
 #include "dcmtk/ofstd/ofconsol.h"
 #include "dcmtk/ofstd/ofstdinc.h"
 

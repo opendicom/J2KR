@@ -6,8 +6,8 @@
 #include "dcmtk/oflog/oflog.h"
 #include "dcmtk/dcmjpeg/dec/djdecode.h"
 #include "dcmtk/dcmjpeg/enc/djencode.h"
-#include "dcmtk/dcmj2k/j2kDecoderRegistration.h"
-#include "dcmtk/dcmj2k/j2kRegistration.h"
+#include "dcmtk/dcmk2j/k2jCodecRegistration.h"
+#include "dcmtk/dcmj2k/j2kCodecRegistration.h"
 #include "dcmtk/dcmjpls/djdecode.h"
 #include "dcmtk/dcmjpls/djencode.h"
 
@@ -260,8 +260,8 @@ int main(int argc, const char *argv[])
 //--------------------------------------------------------------------------
 #pragma mark encoders registration
     
-    DJEncoderRegistration::registerCodecs();    
-    j2kRegistration::registerCodecs();
+    DJEncoderRegistration::registerCodecs();
+    j2kCodecRegistration::registerCodecs();
     //DcmRLEEncoderRegistration::registerCodecs();
     DJLSEncoderRegistration::registerCodecs();
 
@@ -276,7 +276,7 @@ int main(int argc, const char *argv[])
         OFFalse //OFBool predictor6WorkaroundEnable [OFFalse,OFTrue]
     );
 
-    j2kDecoderRegistration::registerCodecs(
+    k2jCodecRegistration::registerCodecs(
         EDC_photometricInterpretation,//E_DecompressionColorSpaceConversion [EDC_photometricInterpretation, EDC_lossyOnly,EDC_always,EDC_never,EDC_guessLossyOnly,EDC_guess]
         EUC_never,//E_UIDCreation [EUC_default,EUC_always,EUC_never]
         EPC_default,//E_PlanarConfiguration [EPC_default,EPC_colorByPixel,EPC_colorByPlane]
@@ -299,8 +299,8 @@ int main(int argc, const char *argv[])
         if (DJEncoderRegistration::encpro != NULL) fprintf(stdout,"      (Retired)                dcmtk ijg encpro\r\n");
         if (DJEncoderRegistration::encsv1 != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.70) dcmtk ijg encsv1 \r\n");
         if (DJEncoderRegistration::enclol != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.57) dcmtk ijg enclol \r\n");
-        if (j2kRegistration::enc2K != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.91) kdu enc2K \r\n");
-        if (j2kRegistration::enc2KLoL != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.90) kdu enc2KLoL \r\n");
+        if (j2kCodecRegistration::enc2K != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.91) kdu enc2K \r\n");
+        if (j2kCodecRegistration::enc2KLoL != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.90) kdu enc2KLoL \r\n");
         if (DJLSEncoderRegistration::registered_==OFTrue)
         {            
             if (DJLSEncoderRegistration::losslessencoder_ != nullptr) fprintf(stdout,"      (1.2.840.10008.1.2.4.80) %s losslessencoder \r\n",DJLSEncoderRegistration::getLibraryVersionString().c_str());
@@ -317,8 +317,8 @@ int main(int argc, const char *argv[])
         if (DJDecoderRegistration::decpro != NULL) fprintf(stdout,"      (Retired)                dcmtk ijg encpro\r\n");
         if (DJDecoderRegistration::decsv1 != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.70) dcmtk ijg encsv1 \r\n");
         if (DJDecoderRegistration::declol != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.57) dcmtk ijg enclol \r\n");
-        if (j2kDecoderRegistration::dec2k != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.91) kdu enc2K \r\n");
-        if (j2kDecoderRegistration::dec2kLossLess != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.90) kdu enc2KLoL \r\n");
+        if (k2jCodecRegistration::dec2k != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.91) kdu enc2K \r\n");
+        if (k2jCodecRegistration::dec2kLossLess != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.90) kdu enc2KLoL \r\n");
         if (DJLSEncoderRegistration::registered_==OFTrue)
         {
             if (DJLSEncoderRegistration::losslessencoder_ != nullptr) fprintf(stdout,"      (1.2.840.10008.1.2.4.80) %s losslessencoder \r\n",DJLSEncoderRegistration::getLibraryVersionString().c_str());

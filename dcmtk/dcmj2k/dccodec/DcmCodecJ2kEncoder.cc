@@ -20,7 +20,7 @@
 #include "dcmtk/dcmdata/dcswap.h"     /* for swapIfNecessary */
 
 // j2 includes
-#include "dcmtk/dcmj2k/dccodec/j2k/j2kCodecParameter.h"
+#include "dcmtk/dcmj2k/dccodec/j2kCodecParameter.h"
 #include "djencabs.h"   /* for class DJEncoder */
 
 // dcmimgle includes

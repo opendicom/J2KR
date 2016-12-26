@@ -1,6 +1,6 @@
 #include "osconfig.h"
 #include "dcmtk/dcmj2k/dccodec/dec/djdec2k.h"
-#include "dcmtk/dcmj2k/dccodec/k2j/k2jCodecParameter.h"
+#include "dcmtk/dcmk2j/dccodec/k2jCodecParameter.h"
 #include "djdijp2k.h"
 #include "dcpixseq.h"  /* for class DcmPixelSequence */
 

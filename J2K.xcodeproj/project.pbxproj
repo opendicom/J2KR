@@ -425,10 +425,12 @@
 		4A3AD8351E1179D300C9F9E6 /* jdct8.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A3AD8281E1179D300C9F9E6 /* jdct8.h */; };
 		4A3AD8361E1179D300C9F9E6 /* jlossls8.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A3AD8291E1179D300C9F9E6 /* jlossls8.h */; };
 		4A3AD8371E1179D300C9F9E6 /* jpegint8.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A3AD82A1E1179D300C9F9E6 /* jpegint8.h */; };
-		4A3AD8441E118D1A00C9F9E6 /* j2kCodecParameter.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4A3AD8421E118D1A00C9F9E6 /* j2kCodecParameter.cc */; };
-		4A3AD8451E118D1A00C9F9E6 /* j2kCodecParameter.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A3AD8431E118D1A00C9F9E6 /* j2kCodecParameter.h */; };
-		4A3AD8481E118D2800C9F9E6 /* k2jCodecParameter.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4A3AD8461E118D2800C9F9E6 /* k2jCodecParameter.cc */; };
-		4A3AD8491E118D2800C9F9E6 /* k2jCodecParameter.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A3AD8471E118D2800C9F9E6 /* k2jCodecParameter.h */; };
+		4A3AD84D1E11C3B400C9F9E6 /* k2jCodecRegistration.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4A3AD84B1E11C3B400C9F9E6 /* k2jCodecRegistration.cc */; };
+		4A3AD84E1E11C3B400C9F9E6 /* k2jCodecRegistration.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A3AD84C1E11C3B400C9F9E6 /* k2jCodecRegistration.h */; };
+		4A3AD8521E11C3E400C9F9E6 /* k2jCodecParameter.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4A3AD8501E11C3E400C9F9E6 /* k2jCodecParameter.cc */; };
+		4A3AD8531E11C3E400C9F9E6 /* k2jCodecParameter.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A3AD8511E11C3E400C9F9E6 /* k2jCodecParameter.h */; };
+		4A3AD8561E11C41200C9F9E6 /* j2kCodecParameter.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A3AD8541E11C41200C9F9E6 /* j2kCodecParameter.h */; };
+		4A3AD8571E11C41200C9F9E6 /* j2kCodecParameter.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4A3AD8551E11C41200C9F9E6 /* j2kCodecParameter.cc */; };
 		4A3F81961E0AAD1400DEAED0 /* DcmCodecJ2kEncoder.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F81921E0AAD1400DEAED0 /* DcmCodecJ2kEncoder.cc */; };
 		4A3F81971E0AAD1400DEAED0 /* DcmCodecJ2kDecoder.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F81931E0AAD1400DEAED0 /* DcmCodecJ2kDecoder.cc */; };
 		4A3F81981E0AAD1400DEAED0 /* DcmCodecJ2kEncoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A3F81941E0AAD1400DEAED0 /* DcmCodecJ2kEncoder.h */; };
@@ -437,10 +439,8 @@
 		4A3F81A51E0ABC7A00DEAED0 /* kdu.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F819D1E0ABC7A00DEAED0 /* kdu.cc */; };
 		4A3F81A61E0ABC7A00DEAED0 /* kduInstance.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F819E1E0ABC7A00DEAED0 /* kduInstance.cc */; };
 		4A3F81A71E0ABC7A00DEAED0 /* kduInstance.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A3F819F1E0ABC7A00DEAED0 /* kduInstance.h */; };
-		4A3F81B61E0B56D200DEAED0 /* j2kRegistration.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F81B21E0B56D200DEAED0 /* j2kRegistration.cc */; };
-		4A3F81B71E0B56D200DEAED0 /* j2kRegistration.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A3F81B31E0B56D200DEAED0 /* j2kRegistration.h */; };
-		4A3F81B81E0B56D200DEAED0 /* j2kDecoderRegistration.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F81B41E0B56D200DEAED0 /* j2kDecoderRegistration.cc */; };
-		4A3F81B91E0B56D200DEAED0 /* j2kDecoderRegistration.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A3F81B51E0B56D200DEAED0 /* j2kDecoderRegistration.h */; };
+		4A3F81B61E0B56D200DEAED0 /* j2kCodecRegistration.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F81B21E0B56D200DEAED0 /* j2kCodecRegistration.cc */; };
+		4A3F81B71E0B56D200DEAED0 /* j2kCodecRegistration.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A3F81B31E0B56D200DEAED0 /* j2kCodecRegistration.h */; };
 		4A3F81BE1E0B5BA100DEAED0 /* kdurInstance.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F81BA1E0B5BA100DEAED0 /* kdurInstance.cc */; };
 		4A3F81BF1E0B5BA100DEAED0 /* kdurInstance.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A3F81BB1E0B5BA100DEAED0 /* kdurInstance.h */; };
 		4A3F81C01E0B5BA100DEAED0 /* kdur.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A3F81BC1E0B5BA100DEAED0 /* kdur.h */; };
@@ -877,10 +877,12 @@
 		4A3AD8281E1179D300C9F9E6 /* jdct8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = jdct8.h; path = libijg8/jdct8.h; sourceTree = "<group>"; };
 		4A3AD8291E1179D300C9F9E6 /* jlossls8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = jlossls8.h; path = libijg8/jlossls8.h; sourceTree = "<group>"; };
 		4A3AD82A1E1179D300C9F9E6 /* jpegint8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = jpegint8.h; path = libijg8/jpegint8.h; sourceTree = "<group>"; };
-		4A3AD8421E118D1A00C9F9E6 /* j2kCodecParameter.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = j2kCodecParameter.cc; path = dcmj2k/dccodec/j2k/j2kCodecParameter.cc; sourceTree = "<group>"; };
-		4A3AD8431E118D1A00C9F9E6 /* j2kCodecParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = j2kCodecParameter.h; path = dcmj2k/dccodec/j2k/j2kCodecParameter.h; sourceTree = "<group>"; };
-		4A3AD8461E118D2800C9F9E6 /* k2jCodecParameter.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = k2jCodecParameter.cc; path = dcmj2k/dccodec/k2j/k2jCodecParameter.cc; sourceTree = "<group>"; };
-		4A3AD8471E118D2800C9F9E6 /* k2jCodecParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = k2jCodecParameter.h; path = dcmj2k/dccodec/k2j/k2jCodecParameter.h; sourceTree = "<group>"; };
+		4A3AD84B1E11C3B400C9F9E6 /* k2jCodecRegistration.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = k2jCodecRegistration.cc; path = dcmk2j/k2jCodecRegistration.cc; sourceTree = "<group>"; };
+		4A3AD84C1E11C3B400C9F9E6 /* k2jCodecRegistration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = k2jCodecRegistration.h; path = dcmk2j/k2jCodecRegistration.h; sourceTree = "<group>"; };
+		4A3AD8501E11C3E400C9F9E6 /* k2jCodecParameter.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = k2jCodecParameter.cc; path = dcmk2j/dccodec/k2jCodecParameter.cc; sourceTree = "<group>"; };
+		4A3AD8511E11C3E400C9F9E6 /* k2jCodecParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = k2jCodecParameter.h; path = dcmk2j/dccodec/k2jCodecParameter.h; sourceTree = "<group>"; };
+		4A3AD8541E11C41200C9F9E6 /* j2kCodecParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = j2kCodecParameter.h; path = dcmj2k/dccodec/j2kCodecParameter.h; sourceTree = "<group>"; };
+		4A3AD8551E11C41200C9F9E6 /* j2kCodecParameter.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = j2kCodecParameter.cc; path = dcmj2k/dccodec/j2kCodecParameter.cc; sourceTree = "<group>"; };
 		4A3F81921E0AAD1400DEAED0 /* DcmCodecJ2kEncoder.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DcmCodecJ2kEncoder.cc; path = dcmj2k/dccodec/DcmCodecJ2kEncoder.cc; sourceTree = "<group>"; };
 		4A3F81931E0AAD1400DEAED0 /* DcmCodecJ2kDecoder.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DcmCodecJ2kDecoder.cc; path = dcmj2k/dccodec/DcmCodecJ2kDecoder.cc; sourceTree = "<group>"; };
 		4A3F81941E0AAD1400DEAED0 /* DcmCodecJ2kEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DcmCodecJ2kEncoder.h; path = dcmj2k/dccodec/DcmCodecJ2kEncoder.h; sourceTree = "<group>"; };
@@ -889,10 +891,8 @@
 		4A3F819D1E0ABC7A00DEAED0 /* kdu.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = kdu.cc; path = dcmj2k/dccodec/enc/kdu.cc; sourceTree = "<group>"; };
 		4A3F819E1E0ABC7A00DEAED0 /* kduInstance.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = kduInstance.cc; path = dcmj2k/dccodec/enc/kduInstance.cc; sourceTree = "<group>"; };
 		4A3F819F1E0ABC7A00DEAED0 /* kduInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = kduInstance.h; path = dcmj2k/dccodec/enc/kduInstance.h; sourceTree = "<group>"; };
-		4A3F81B21E0B56D200DEAED0 /* j2kRegistration.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = j2kRegistration.cc; path = dcmj2k/j2kRegistration.cc; sourceTree = "<group>"; };
-		4A3F81B31E0B56D200DEAED0 /* j2kRegistration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = j2kRegistration.h; path = dcmj2k/j2kRegistration.h; sourceTree = "<group>"; };
-		4A3F81B41E0B56D200DEAED0 /* j2kDecoderRegistration.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = j2kDecoderRegistration.cc; path = dcmj2k/j2kDecoderRegistration.cc; sourceTree = "<group>"; };
-		4A3F81B51E0B56D200DEAED0 /* j2kDecoderRegistration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = j2kDecoderRegistration.h; path = dcmj2k/j2kDecoderRegistration.h; sourceTree = "<group>"; };
+		4A3F81B21E0B56D200DEAED0 /* j2kCodecRegistration.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = j2kCodecRegistration.cc; path = dcmj2k/j2kCodecRegistration.cc; sourceTree = "<group>"; };
+		4A3F81B31E0B56D200DEAED0 /* j2kCodecRegistration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = j2kCodecRegistration.h; path = dcmj2k/j2kCodecRegistration.h; sourceTree = "<group>"; };
 		4A3F81BA1E0B5BA100DEAED0 /* kdurInstance.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = kdurInstance.cc; path = dcmj2k/dccodec/enc/kdurInstance.cc; sourceTree = "<group>"; };
 		4A3F81BB1E0B5BA100DEAED0 /* kdurInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = kdurInstance.h; path = dcmj2k/dccodec/enc/kdurInstance.h; sourceTree = "<group>"; };
 		4A3F81BC1E0B5BA100DEAED0 /* kdur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = kdur.h; path = dcmj2k/dccodec/enc/kdur.h; sourceTree = "<group>"; };
@@ -1007,6 +1007,7 @@
 		4A13D6E11E023C9C00D4ED4D /* dcmtk */ = {
 			isa = PBXGroup;
 			children = (
+				4A3AD84A1E11C0B600C9F9E6 /* dcmk2j */,
 				4A13DEB21E0A39DF00D4ED4D /* dcmj2k */,
 				4A13DEAE1E0A39B400D4ED4D /* djdecabs.h */,
 				4A13DEAF1E0A39B400D4ED4D /* djencabs.h */,
@@ -1691,10 +1692,8 @@
 		4A13DEB21E0A39DF00D4ED4D /* dcmj2k */ = {
 			isa = PBXGroup;
 			children = (
-				4A3F81B21E0B56D200DEAED0 /* j2kRegistration.cc */,
-				4A3F81B31E0B56D200DEAED0 /* j2kRegistration.h */,
-				4A3F81B41E0B56D200DEAED0 /* j2kDecoderRegistration.cc */,
-				4A3F81B51E0B56D200DEAED0 /* j2kDecoderRegistration.h */,
+				4A3F81B21E0B56D200DEAED0 /* j2kCodecRegistration.cc */,
+				4A3F81B31E0B56D200DEAED0 /* j2kCodecRegistration.h */,
 				4A13DEB41E0A3A1500D4ED4D /* dcpixel */,
 				4A13DEB31E0A39F800D4ED4D /* dccodec */,
 			);
@@ -1704,8 +1703,8 @@
 		4A13DEB31E0A39F800D4ED4D /* dccodec */ = {
 			isa = PBXGroup;
 			children = (
-				4A3AD8411E118D0300C9F9E6 /* j2k */,
-				4A3AD8401E118CF800C9F9E6 /* k2j */,
+				4A3AD8541E11C41200C9F9E6 /* j2kCodecParameter.h */,
+				4A3AD8551E11C41200C9F9E6 /* j2kCodecParameter.cc */,
 				4A3F81921E0AAD1400DEAED0 /* DcmCodecJ2kEncoder.cc */,
 				4A3F81931E0AAD1400DEAED0 /* DcmCodecJ2kDecoder.cc */,
 				4A3F81941E0AAD1400DEAED0 /* DcmCodecJ2kEncoder.h */,
@@ -1813,22 +1812,23 @@
 			name = libijg12;
 			sourceTree = "<group>";
 		};
-		4A3AD8401E118CF800C9F9E6 /* k2j */ = {
+		4A3AD84A1E11C0B600C9F9E6 /* dcmk2j */ = {
 			isa = PBXGroup;
 			children = (
-				4A3AD8461E118D2800C9F9E6 /* k2jCodecParameter.cc */,
-				4A3AD8471E118D2800C9F9E6 /* k2jCodecParameter.h */,
+				4A3AD84F1E11C3C500C9F9E6 /* dccodec */,
+				4A3AD84B1E11C3B400C9F9E6 /* k2jCodecRegistration.cc */,
+				4A3AD84C1E11C3B400C9F9E6 /* k2jCodecRegistration.h */,
 			);
-			name = k2j;
+			name = dcmk2j;
 			sourceTree = "<group>";
 		};
-		4A3AD8411E118D0300C9F9E6 /* j2k */ = {
+		4A3AD84F1E11C3C500C9F9E6 /* dccodec */ = {
 			isa = PBXGroup;
 			children = (
-				4A3AD8421E118D1A00C9F9E6 /* j2kCodecParameter.cc */,
-				4A3AD8431E118D1A00C9F9E6 /* j2kCodecParameter.h */,
+				4A3AD8501E11C3E400C9F9E6 /* k2jCodecParameter.cc */,
+				4A3AD8511E11C3E400C9F9E6 /* k2jCodecParameter.h */,
 			);
-			name = j2k;
+			name = dccodec;
 			sourceTree = "<group>";
 		};
 		4AF940601CE5720100551476 /* OD */ = {
@@ -1910,7 +1910,6 @@
 				4A13D93C1E023C9D00D4ED4D /* diquant.h in Headers */,
 				4A13DA3E1E023C9E00D4ED4D /* ofexport.h in Headers */,
 				4A3AD8321E1179D300C9F9E6 /* jmorecfg8.h in Headers */,
-				4A3AD8491E118D2800C9F9E6 /* k2jCodecParameter.h in Headers */,
 				4A13DA4A1E023C9E00D4ED4D /* ofoset.h in Headers */,
 				4A13DA281E023C9E00D4ED4D /* threads.h in Headers */,
 				4A13D8E51E023C9D00D4ED4D /* dcrleerg.h in Headers */,
@@ -1930,6 +1929,7 @@
 				4A13D9F71E023C9E00D4ED4D /* lloguser.h in Headers */,
 				4A13D92C1E023C9D00D4ED4D /* dilogger.h in Headers */,
 				4A13D8BA1E023C9D00D4ED4D /* dcbytstr.h in Headers */,
+				4A3AD8561E11C41200C9F9E6 /* j2kCodecParameter.h in Headers */,
 				4A13D9001E023C9D00D4ED4D /* dcvrol.h in Headers */,
 				4A13D9311E023C9D00D4ED4D /* diqtcmap.h in Headers */,
 				4A13D8EF1E023C9D00D4ED4D /* dcuid.h in Headers */,
@@ -2003,6 +2003,7 @@
 				4A13DA321E023C9E00D4ED4D /* ofcast.h in Headers */,
 				4A3AD7FD1E11776600C9F9E6 /* jpeglib16.h in Headers */,
 				4A13DA121E023C9E00D4ED4D /* nullap.h in Headers */,
+				4A3AD84E1E11C3B400C9F9E6 /* k2jCodecRegistration.h in Headers */,
 				4A13D9071E023C9D00D4ED4D /* dcvrtm.h in Headers */,
 				4A13DE7C1E09E6E200D4ED4D /* jpegParams.h in Headers */,
 				4A13D94E1E023C9D00D4ED4D /* didocu.h in Headers */,
@@ -2060,7 +2061,6 @@
 				4A13DA2A1E023C9E00D4ED4D /* tstring.h in Headers */,
 				4A13DA451E023C9E00D4ED4D /* ofmap.h in Headers */,
 				4A3F81981E0AAD1400DEAED0 /* DcmCodecJ2kEncoder.h in Headers */,
-				4A3F81B91E0B56D200DEAED0 /* j2kDecoderRegistration.h in Headers */,
 				4A13DA5C1E023C9E00D4ED4D /* ofutil.h in Headers */,
 				4A13D9281E023C9D00D4ED4D /* dicorot.h in Headers */,
 				4A13D93B1E023C9D00D4ED4D /* diqttype.h in Headers */,
@@ -2177,7 +2177,7 @@
 				4A13DA461E023C9E00D4ED4D /* ofmath.h in Headers */,
 				4A13DA021E023C9E00D4ED4D /* threadcf.h in Headers */,
 				4A13DA141E023C9E00D4ED4D /* socketap.h in Headers */,
-				4A3F81B71E0B56D200DEAED0 /* j2kRegistration.h in Headers */,
+				4A3F81B71E0B56D200DEAED0 /* j2kCodecRegistration.h in Headers */,
 				4A13DEDC1E0A3AC900D4ED4D /* kdurRepresentationParameter.h in Headers */,
 				4A13DA0E1E023C9E00D4ED4D /* logmacro.h in Headers */,
 				4A13DA241E023C9E00D4ED4D /* thredimp.h in Headers */,
@@ -2222,7 +2222,6 @@
 				4A13D8FD1E023C9D00D4ED4D /* dcvrobow.h in Headers */,
 				4A13D95A1E023C9D00D4ED4D /* dimoimg.h in Headers */,
 				4A13D9FF1E023C9E00D4ED4D /* sockbuff.h in Headers */,
-				4A3AD8451E118D1A00C9F9E6 /* j2kCodecParameter.h in Headers */,
 				4A13DAAF1E05E23B00D4ED4D /* ddpiimpl.h in Headers */,
 				4A13DA001E023C9E00D4ED4D /* socket.h in Headers */,
 				4A13DA231E023C9E00D4ED4D /* syncwin.h in Headers */,
@@ -2264,6 +2263,7 @@
 				4A13D9191E023C9D00D4ED4D /* i2dplvlp.h in Headers */,
 				4A3AD82C1E1179D300C9F9E6 /* jconfig8.h in Headers */,
 				4A13D9421E023C9D00D4ED4D /* diyf2img.h in Headers */,
+				4A3AD8531E11C3E400C9F9E6 /* k2jCodecParameter.h in Headers */,
 				4A3AD8341E1179D300C9F9E6 /* jversion8.h in Headers */,
 				4A13D9561E023C9D00D4ED4D /* dimo1img.h in Headers */,
 				4A13DA2D1E023C9E00D4ED4D /* windebap.h in Headers */,
@@ -2369,23 +2369,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A3AD8481E118D2800C9F9E6 /* k2jCodecParameter.cc in Sources */,
 				4A3F81C11E0B5BA100DEAED0 /* kdur.cc in Sources */,
 				4A13DED21E0A3AA800D4ED4D /* djdijp2k.cc in Sources */,
 				4A13DAAE1E05E23B00D4ED4D /* ddpiimpl.cc in Sources */,
+				4A3AD8521E11C3E400C9F9E6 /* k2jCodecParameter.cc in Sources */,
+				4A3AD84D1E11C3B400C9F9E6 /* k2jCodecRegistration.cc in Sources */,
 				4A13DED01E0A3AA800D4ED4D /* djdec2k.cc in Sources */,
 				4A13DEDA1E0A3AC900D4ED4D /* kdurRepresentationParameter.cc in Sources */,
+				4A3AD8571E11C41200C9F9E6 /* j2kCodecParameter.cc in Sources */,
 				4A3F81971E0AAD1400DEAED0 /* DcmCodecJ2kDecoder.cc in Sources */,
 				4A13DED91E0A3AC900D4ED4D /* kduRepresentationParameter.cc in Sources */,
-				4A3F81B61E0B56D200DEAED0 /* j2kRegistration.cc in Sources */,
+				4A3F81B61E0B56D200DEAED0 /* j2kCodecRegistration.cc in Sources */,
 				4A13D3641E02196000D4ED4D /* NSString+opendicom.mm in Sources */,
 				4A3F81961E0AAD1400DEAED0 /* DcmCodecJ2kEncoder.cc in Sources */,
 				4A3F81A51E0ABC7A00DEAED0 /* kdu.cc in Sources */,
 				4A3F81BE1E0B5BA100DEAED0 /* kdurInstance.cc in Sources */,
 				4A3F81A61E0ABC7A00DEAED0 /* kduInstance.cc in Sources */,
 				4A1B7ADF1E01D93500288437 /* J2K.mm in Sources */,
-				4A3AD8441E118D1A00C9F9E6 /* j2kCodecParameter.cc in Sources */,
-				4A3F81B81E0B56D200DEAED0 /* j2kDecoderRegistration.cc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

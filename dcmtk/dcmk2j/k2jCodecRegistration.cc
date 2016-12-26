@@ -1,16 +1,16 @@
 #include "dcmtk/config/osconfig.h"
-#include "dcmtk/dcmj2k/j2kDecoderRegistration.h"
+#include "dcmtk/dcmk2j/k2jCodecRegistration.h"
 
 #include "dcmtk/dcmdata/dccodec.h"  /* for DcmCodecStruct */
 #include "dcmtk/dcmj2k/dccodec/dec/djdec2k.h"
 
 // initialization of static members
-OFBool j2kDecoderRegistration::registered                       = OFFalse;
-k2jCodecParameter *j2kDecoderRegistration::cp                   = NULL;
-DJDecoderJP2k *j2kDecoderRegistration::dec2k                    = NULL;
-DJDecoderJP2kLossLess *j2kDecoderRegistration::dec2kLossLess    = NULL;
+OFBool k2jCodecRegistration::registered                       = OFFalse;
+k2jCodecParameter *k2jCodecRegistration::cp                   = NULL;
+DJDecoderJP2k *k2jCodecRegistration::dec2k                    = NULL;
+DJDecoderJP2kLossLess *k2jCodecRegistration::dec2kLossLess    = NULL;
 
-void j2kDecoderRegistration::registerCodecs(
+void k2jCodecRegistration::registerCodecs(
     E_DecompressionColorSpaceConversion pDecompressionCSConversion,
     E_UIDCreation pCreateSOPInstanceUID,
     E_PlanarConfiguration pPlanarConfiguration,
@@ -39,7 +39,7 @@ void j2kDecoderRegistration::registerCodecs(
   }
 }
 
-void j2kDecoderRegistration::cleanup()
+void k2jCodecRegistration::cleanup()
 {
   if (registered)
   {

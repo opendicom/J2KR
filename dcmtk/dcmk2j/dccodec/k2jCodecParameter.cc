@@ -1,5 +1,5 @@
 #include "dcmtk/config/osconfig.h"
-#include "dcmtk/dcmj2k/dccodec/k2j/k2jCodecParameter.h"
+#include "dcmtk/dcmk2j/dccodec/k2jCodecParameter.h"
 
 k2jCodecParameter::k2jCodecParameter(
     E_CompressionColorSpaceConversion pCompressionCSConversion,

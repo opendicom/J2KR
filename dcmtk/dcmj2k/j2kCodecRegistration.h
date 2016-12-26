@@ -9,7 +9,7 @@ class kdur;
 
 // singleton class registering all j2k processes.
 
-class j2kRegistration
+class j2kCodecRegistration
 {
 public:
 
