@@ -4,7 +4,7 @@
 #include "dcmtk/dcmdata/dccodec.h"  /* for DcmCodecStruct */
 #include "dcmtk/dcmj2k/dccodec/enc/kdu.h"
 #include "dcmtk/dcmj2k/dccodec/enc/kdur.h"
-#include "dcmtk/dcmj2k/dccodec/param.h"
+#include "dcmtk/dcmj2k/dccodec/j2k/j2kCodecParameter.h"
 
 // initialization of static members
 OFBool j2kRegistration::registered      = OFFalse;
@@ -39,33 +39,7 @@ void j2kRegistration::registerCodecs(
 {
   if (! registered)
   {
-    cp = new j2kCodecParameter(
-      pCompressionCSConversion,
-      EDC_photometricInterpretation,  // not relevant, used for decompression only
-      pCreateSOPInstanceUID,
-      EPC_default, // not relevant, used for decompression only
-      OFFalse, // not relevant, used for decompression only
-      pOptimizeHuffman,
-      pSmoothingFactor,
-      pForcedBitDepth,
-      pFragmentSize,
-      pCreateOffsetTable,
-      pSampleFactors,
-      pWriteYBR422,
-      pConvertToSC,
-      pWindowType,
-      pWindowParameter,
-      pVoiCenter,
-      pVoiWidth,
-      pRoiLeft,
-      pRoiTop,
-      pRoiWidth,
-      pRoiHeight,
-      pUsePixelValues,
-      pUseModalityRescale,
-      pAcceptWrongPaletteTags,
-      pAcrNemaCompatibility,
-      pRealLossless);
+    cp = new j2kCodecParameter();
     if (cp)
     {
       // JPEG 2K

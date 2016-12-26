@@ -1,5 +1,5 @@
 #include "dcmtk/config/osconfig.h"
-#include "dcmtk/dcmj2k/dccodec/param.h"
+#include "dcmtk/dcmj2k/dccodec/j2k/j2kCodecParameter.h"
 #include "dcmtk/dcmj2k/dcpixel/kduRepresentationParameter.h"
 #include "dcmtk/dcmj2k/dcpixel/kdurRepresentationParameter.h"
 #include "dcmtk/dcmj2k/dccodec/enc/kdur.h"

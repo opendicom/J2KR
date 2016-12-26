@@ -260,32 +260,7 @@ int main(int argc, const char *argv[])
 //--------------------------------------------------------------------------
 #pragma mark encoders registration
     
-    DJEncoderRegistration::registerCodecs(
-        ECC_lossyRGB, //E_CompressionColorSpaceConversion [ECC_lossyYCbCr,ECC_lossyRGB,ECC_monochrome]
-        EUC_never,  //E_UIDCreation [EUC_default,EUC_always,EUC_never]
-        OFFalse,    //OFBool opt_huffmanOptimize for 8 bits/pixel
-        0,          //OFCmdUnsignedInt OFstatic_cast(int, opt_smoothing) [0..100]
-        0,          //int opt_compressedBits pForcedBitDepth [0(auto) | 8 | 12 | 16]
-        0,          //OFstatic_cast(Uint32, opt_fragmentSize) (in kbytes | 0=unlimited)
-        OFTrue,     //OFBool opt_createOffsetTable during image compression
-        ESS_444,    //E_SubSampling opt_sampleFactors subsampling mode for color image compression
-        OFFalse,    //OFBool opt_useYBR422 [YBR_FULL or YBR_FULL_422]
-        OFFalse,    //OFBool opt_secondarycapture
-        0,          //int OFstatic_cast(Uint32, opt_windowType) mode [1..7] VOI transformation of monochrome images
-        0,          //OFCmdUnsignedInt OFstatic_cast(Uint32, opt_windowParameter) param form modes 1, 2, 4, 6
-        0.0,        //OFCmdFloat opt_windowCenter for mode 5
-        0.0,        //OFCmdFloat opt_windowWidth for mode 5
-        0,          //OFCmdUnsignedInt OFstatic_cast(Uint32, opt_roiLeft) for monochrome images, mode 7
-        0,          //OFCmdUnsignedInt OFstatic_cast(Uint32, opt_roiTop) for monochrome images, mode 7
-        0,          //OFCmdUnsignedInt OFstatic_cast(Uint32, opt_roiWidth) for monochrome images, mode 7
-        0,          //OFCmdUnsignedInt OFstatic_cast(Uint32, opt_roiHeight) for monochrome images, mode 7
-        OFTrue,     //OFBool opt_usePixelValues Check smallest, largest pixel value and optimize, mode 0 only
-        OFTrue,     //OFBool opt_useModalityRescale to scale back, to original pixel range, mode 0 only
-        OFFalse,    //OFBool opt_acceptWrongPaletteTags (only "pseudo lossless" encoder)
-        OFFalse,    //OFBool opt_acrNemaCompatibility
-        OFTrue      //OFBool opt_trueLossless
-        );
-    
+    DJEncoderRegistration::registerCodecs();    
     j2kRegistration::registerCodecs();
     //DcmRLEEncoderRegistration::registerCodecs();
     DJLSEncoderRegistration::registerCodecs();

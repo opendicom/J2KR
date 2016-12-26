@@ -3,12 +3,11 @@
 
 #include "dcmtk/dcmdata/dccodec.h"  /* for DcmCodecStruct */
 #include "dcmtk/dcmj2k/dccodec/dec/djdec2k.h"
-#include "dcmtk/dcmj2k/dccodec/param.h"
 
 // initialization of static members
-OFBool j2kDecoderRegistration::registered                  = OFFalse;
-j2kCodecParameter *j2kDecoderRegistration::cp               = NULL;
-DJDecoderJP2k *j2kDecoderRegistration::dec2k               = NULL;
+OFBool j2kDecoderRegistration::registered                       = OFFalse;
+k2jCodecParameter *j2kDecoderRegistration::cp                   = NULL;
+DJDecoderJP2k *j2kDecoderRegistration::dec2k                    = NULL;
 DJDecoderJP2kLossLess *j2kDecoderRegistration::dec2kLossLess    = NULL;
 
 void j2kDecoderRegistration::registerCodecs(
@@ -19,7 +18,7 @@ void j2kDecoderRegistration::registerCodecs(
 {
   if (! registered)
   {
-    cp = new j2kCodecParameter(
+    cp = new k2jCodecParameter(
       ECC_lossyYCbCr, // ignored, compression only
       pDecompressionCSConversion, 
       pCreateSOPInstanceUID, 

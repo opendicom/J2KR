@@ -1,8 +1,9 @@
 #include "dcmtk/config/osconfig.h"
 #include "dcmtk/ofstd/oftypes.h"  /* for OFBool */
 #include "djutils.h"
+#include "dcmtk/dcmj2k/dccodec/k2j/k2jCodecParameter.h"
 
-class j2kCodecParameter;
+class k2jCodecParameter;
 class DJDecoderJP2k;
 class DJDecoderJP2kLossLess;
 
@@ -40,7 +41,7 @@ public:
   static OFBool registered;
 
   /// pointer to codec parameter shared by all decoders
-  static j2kCodecParameter *cp;
+  static k2jCodecParameter *cp;
     
   // pointer to decoder for lossless SV1 JPEG
   static DJDecoderJP2k *dec2k;

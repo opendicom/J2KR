@@ -20,7 +20,7 @@
 #include "dcmtk/dcmdata/dcswap.h"     /* for swapIfNecessary */
 
 // j2 includes
-#include "dcmtk/dcmj2k/dccodec/param.h"
+#include "dcmtk/dcmj2k/dccodec/j2k/j2kCodecParameter.h"
 #include "djencabs.h"   /* for class DJEncoder */
 
 // dcmimgle includes
@@ -106,6 +106,8 @@ OFCondition DcmCodecJ2kEncoder::encode(
   const DcmCodecParameter *cp,
   DcmStack & objStack) const
 {
+  return encodeTrueLossless(toRepParam, pixSeq, cp, objStack);
+  /*
   OFCondition result = EC_Normal;
   // assume we can cast the codec parameter to what we need
   const j2kCodecParameter *djcp = OFreinterpret_cast(const j2kCodecParameter*, cp);
@@ -194,6 +196,7 @@ OFCondition DcmCodecJ2kEncoder::encode(
     }
   }
   return result;
+    */
 }
 
 
@@ -255,12 +258,6 @@ OFCondition DcmCodecJ2kEncoder::encodeColorImage(
     if (cp->getWriteYBR422()) photometricInterpretation = "YBR_FULL_422";
     else photometricInterpretation = "YBR_FULL";
   }
-
-  // integrate DicomImage flags transported by j2kCodecParameter into "flags"-variable
-  if (cp->getAcceptWrongPaletteTags())
-    flags |= CIF_WrongPaletteAttributeTags;
-  if (cp->getAcrNemaCompatibility())
-    flags |= CIF_AcrNemaCompatibility;
 
   // create dcmimage object. Will fail if dcmimage has not been activated in main().
   // transfer syntax can be any uncompressed one.
@@ -643,24 +640,6 @@ OFCondition DcmCodecJ2kEncoder::encodeTrueLossless(
     // update derivation description reflecting the JPEG compression applied
     result = updateLosslessDerivationDescription(datsetItem, toRepParam, djcp, OFstatic_cast(Uint8, bitsAllocated), compressionRatio, md5, pixelDataLength);
 
-    if ( (datsetItem->ident() == EVR_dataset) && result.good() )
-    {
-      // convert to Secondary Capture if requested by user.
-      // This method creates a new SOP class UID, so it should be executed
-      // after the call to newInstance() which creates a Source Image Sequence.
-      if ( djcp->getConvertToSC() || (djcp->getUIDCreation() == EUC_always) )
-      {
-        if (djcp->getConvertToSC())
-        {
-          result = DcmCodec::convertToSecondaryCapture(datsetItem);
-        }
-        // update image type (set to DERIVED)
-        if (result.good())
-          result = DcmCodec::updateImageType(datsetItem);
-        if (result.good())
-          result = DcmCodec::newInstance(OFreinterpret_cast(DcmItem*, datsetItem), "DCM", "121320", "Uncompressed predecessor");
-      }
-    }
     // switch _original_ pixel data back to "color by plane", if required
     if (planConfSwitched)
     {
@@ -780,13 +759,7 @@ OFCondition DcmCodecJ2kEncoder::updateDerivationDescription(
   OFCondition result = dataset->putAndInsertString(DCM_DerivationDescription, derivationDescription.c_str());
   if (result.good())
   {
-    // assume we can cast the codec parameter to what we need
-    j2kCodecParameter *djcp = OFconst_cast(j2kCodecParameter*, cp);
-
-    if (djcp->getTrueLosslessMode())
-      result = DcmCodec::insertCodeSequence(dataset, DCM_DerivationCodeSequence, "DCM", "121327", "Full fidelity image");
-    else // pseudo-lossless mode may also result in lossy compression
-      result = DcmCodec::insertCodeSequence(dataset, DCM_DerivationCodeSequence, "DCM", "113040", "Lossy Compression");
+    result = DcmCodec::insertCodeSequence(dataset, DCM_DerivationCodeSequence, "DCM", "121327", "Full fidelity image");
   }
   return result;
 }
@@ -838,13 +811,7 @@ OFCondition DcmCodecJ2kEncoder::updateLosslessDerivationDescription(
     OFCondition result = dataset->putAndInsertString(DCM_DerivationDescription, derivationDescription.c_str());
     if (result.good())
     {
-        // assume we can cast the codec parameter to what we need
-        j2kCodecParameter *djcp = (j2kCodecParameter *)cp;
-        
-        if (djcp->getTrueLosslessMode())
-            result = DcmCodec::insertCodeSequence(dataset, DCM_DerivationCodeSequence, "DCM", "121327", "Full fidelity image, uncompressed or lossless compressed");
-        else
-            result = DcmCodec::insertCodeSequence(dataset, DCM_DerivationCodeSequence, "DCM", "113040", "Lossy Compression");
+        result = DcmCodec::insertCodeSequence(dataset, DCM_DerivationCodeSequence, "DCM", "121327", "Full fidelity image, uncompressed or lossless compressed");
     }
     return result;
 }
@@ -950,11 +917,6 @@ OFCondition DcmCodecJ2kEncoder::encodeMonochromeImage(
   OFBool mode_usePixelValues = cp->getUsePixelValues();
   OFBool mode_useModalityRescale = cp->getUseModalityRescale();
 
-  //create flags for DicomImage corresponding to j2kCodecParameter options
-  if (cp->getAcceptWrongPaletteTags())
-    flags |= CIF_WrongPaletteAttributeTags;
-  if (cp->getAcrNemaCompatibility())
-    flags |= CIF_AcrNemaCompatibility;
 
   // create DicomImage object. Will fail if dcmimage has not been activated in main().
   // transfer syntax can be any uncompressed one.
@@ -1000,7 +962,7 @@ OFCondition DcmCodecJ2kEncoder::encodeMonochromeImage(
           dataset->findAndGetString(DCM_SOPClassUID, classUID);
 
           // SOP Class specifics.
-          if (classUID && ! cp->getConvertToSC())
+          if (classUID)
           {
             // these three SOP classes use the X-Ray Image Module in which the meaning
             // of the Modality LUT transformation is "inversed" and, therefore,
@@ -1073,13 +1035,13 @@ OFCondition DcmCodecJ2kEncoder::encodeMonochromeImage(
       case 6: // Compute VOI window using min-max algorithm ignoring extremes
         if (!dimage.setMinMaxWindow(1)) result = EC_IllegalCall;
         break;
-      case 7: // Compute region of interest VOI window
+      /*case 7: // Compute region of interest VOI window
         {
          size_t left_pos=0, top_pos=0, width=0, height=0;
          cp->getROI(left_pos, top_pos, width, height);
           if (!dimage.setRoiWindow(left_pos, top_pos, width, height)) result = EC_IllegalCall;
         }
-        break;
+        break;*/
       default: // includes case 0, which must not occur here
         result = EC_IllegalCall;
         break;
