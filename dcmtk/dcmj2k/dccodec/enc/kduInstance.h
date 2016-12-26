@@ -1,7 +1,7 @@
 #include "dcmtk/config/osconfig.h"
 #include "dcmtk/ofstd/oflist.h"
 #include "dcmtk/djencabs.h" //DJEncoder
-#include "dcmtk/dcmj2k/dccodec/DcmCodecJ2kEncoder.h"
+#include "dcmtk/dcmj2k/dccodec/j2kCoder.h"
 
 class DJEncoder;
 

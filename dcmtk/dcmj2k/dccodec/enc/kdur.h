@@ -1,8 +1,8 @@
 #include "dcmtk/config/osconfig.h"
-#import "dcmtk/dcmj2k/dccodec/DcmCodecJ2kEncoder.h"
+#import "dcmtk/dcmj2k/dccodec/j2kCoder.h"
 #import "dcmtk/djencabs.h"
 
-class kdur : public DcmCodecJ2kEncoder
+class kdur : public j2kCoder
 {
 public: 
 

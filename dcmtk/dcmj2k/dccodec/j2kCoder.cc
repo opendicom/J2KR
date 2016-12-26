@@ -1,5 +1,5 @@
 #include "dcmtk/config/osconfig.h"
-#include "dcmtk/dcmj2k/dccodec/DcmCodecJ2kEncoder.h"
+#include "dcmtk/dcmj2k/dccodec/j2kCoder.h"
 
 // ofstd includes
 #include "dcmtk/ofstd/oflist.h"
@@ -35,14 +35,14 @@ char hexmap[] = {'0', '1', '2', '3', '4', '5', '6', '7',
     '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
 
 
-DcmCodecJ2kEncoder::DcmCodecJ2kEncoder()
+j2kCoder::j2kCoder()
 : DcmCodec()
 {}
 
-DcmCodecJ2kEncoder::~DcmCodecJ2kEncoder()
+j2kCoder::~j2kCoder()
 {}
 
-OFBool DcmCodecJ2kEncoder::canChangeCoding(
+OFBool j2kCoder::canChangeCoding(
   const E_TransferSyntax oldRepType,
   const E_TransferSyntax newRepType) const
 {
@@ -56,7 +56,7 @@ OFBool DcmCodecJ2kEncoder::canChangeCoding(
 }
 
 
-OFCondition DcmCodecJ2kEncoder::decode(
+OFCondition j2kCoder::decode(
   const DcmRepresentationParameter * /* fromRepParam */,
   DcmPixelSequence * /* pixSeq */,
   DcmPolymorphOBOW& /* uncompressedPixelData */,
@@ -68,7 +68,7 @@ OFCondition DcmCodecJ2kEncoder::decode(
 }
 
 
-OFCondition DcmCodecJ2kEncoder::decodeFrame(
+OFCondition j2kCoder::decodeFrame(
   const DcmRepresentationParameter * /* fromParam */ ,
   DcmPixelSequence * /* fromPixSeq */ ,
   const DcmCodecParameter * /* cp */ ,
@@ -84,7 +84,7 @@ OFCondition DcmCodecJ2kEncoder::decodeFrame(
 }
 
 
-OFCondition DcmCodecJ2kEncoder::encode(
+OFCondition j2kCoder::encode(
   const E_TransferSyntax /* fromRepType */,
   const DcmRepresentationParameter * /* fromRepParam */,
   DcmPixelSequence * /* fromPixSeq */,
@@ -98,7 +98,7 @@ OFCondition DcmCodecJ2kEncoder::encode(
 }
 
 
-OFCondition DcmCodecJ2kEncoder::encode(
+OFCondition j2kCoder::encode(
   const Uint16 * /* pixelData */,
   const Uint32 /* length */,
   const DcmRepresentationParameter * toRepParam,
@@ -200,7 +200,7 @@ OFCondition DcmCodecJ2kEncoder::encode(
 }
 
 
-OFCondition DcmCodecJ2kEncoder::determineDecompressedColorModel(
+OFCondition j2kCoder::determineDecompressedColorModel(
     const DcmRepresentationParameter * /* fromParam */,
     DcmPixelSequence * /* fromPixSeq */,
     const DcmCodecParameter * /* cp */,
@@ -211,7 +211,7 @@ OFCondition DcmCodecJ2kEncoder::determineDecompressedColorModel(
 }
 
 
-OFCondition DcmCodecJ2kEncoder::encodeColorImage(
+OFCondition j2kCoder::encodeColorImage(
   OFBool YBRmode,
   DcmItem *dataset,
   const DcmRepresentationParameter * toRepParam,
@@ -411,7 +411,7 @@ OFCondition DcmCodecJ2kEncoder::encodeColorImage(
 }
 
 
-OFCondition DcmCodecJ2kEncoder::encodeTrueLossless(
+OFCondition j2kCoder::encodeTrueLossless(
   const DcmRepresentationParameter * toRepParam,
   DcmPixelSequence * & pixSeq,
   const DcmCodecParameter *cp,
@@ -666,7 +666,7 @@ OFCondition DcmCodecJ2kEncoder::encodeTrueLossless(
 }
 
 
-void DcmCodecJ2kEncoder::appendCompressionRatio(
+void j2kCoder::appendCompressionRatio(
   OFString& arg,
   double ratio)
 {
@@ -676,7 +676,7 @@ void DcmCodecJ2kEncoder::appendCompressionRatio(
 }
 
 
-OFCondition DcmCodecJ2kEncoder::updateLossyCompressionRatio(
+OFCondition j2kCoder::updateLossyCompressionRatio(
   DcmItem *dataset,
   double ratio) const
 {
@@ -729,7 +729,7 @@ OFCondition DcmCodecJ2kEncoder::updateLossyCompressionRatio(
 }
 
 
-OFCondition DcmCodecJ2kEncoder::updateDerivationDescription(
+OFCondition j2kCoder::updateDerivationDescription(
   DcmItem *dataset,
   const DcmRepresentationParameter * toRepParam,
   const j2kCodecParameter *cp,
@@ -764,7 +764,7 @@ OFCondition DcmCodecJ2kEncoder::updateDerivationDescription(
   return result;
 }
 
-OFCondition DcmCodecJ2kEncoder::updateLosslessDerivationDescription(
+OFCondition j2kCoder::updateLosslessDerivationDescription(
   DcmItem *dataset,
   const DcmRepresentationParameter * toRepParam,
   const j2kCodecParameter *cp,
@@ -817,7 +817,7 @@ OFCondition DcmCodecJ2kEncoder::updateLosslessDerivationDescription(
 }
 
 
-OFCondition DcmCodecJ2kEncoder::adjustOverlays(
+OFCondition j2kCoder::adjustOverlays(
   DcmItem *dataset,
   DicomImage& image) const
 {
@@ -881,7 +881,7 @@ OFCondition DcmCodecJ2kEncoder::adjustOverlays(
 }
 
 
-OFCondition DcmCodecJ2kEncoder::encodeMonochromeImage(
+OFCondition j2kCoder::encodeMonochromeImage(
   DcmItem *dataset,
   const DcmRepresentationParameter * toRepParam,
   DcmPixelSequence * & pixSeq,
@@ -1326,7 +1326,7 @@ OFCondition DcmCodecJ2kEncoder::encodeMonochromeImage(
 }
 
 
-OFCondition DcmCodecJ2kEncoder::correctVOIWindows(
+OFCondition j2kCoder::correctVOIWindows(
   DcmItem *dataset,
   double voiOffset,
   double voiFactor)
@@ -1416,7 +1416,7 @@ OFCondition DcmCodecJ2kEncoder::correctVOIWindows(
 }
 
 
-OFCondition DcmCodecJ2kEncoder::togglePlanarConfiguration8(
+OFCondition j2kCoder::togglePlanarConfiguration8(
   Uint8 *pixelData,
   const size_t numValues,
   const Uint16 samplesPerPixel,
@@ -1452,7 +1452,7 @@ OFCondition DcmCodecJ2kEncoder::togglePlanarConfiguration8(
 }
 
 
-OFCondition DcmCodecJ2kEncoder::togglePlanarConfiguration16(
+OFCondition j2kCoder::togglePlanarConfiguration16(
   Uint16 *pixelData,
   const size_t numValues, //number of 16-bit components
   const Uint16 samplesPerPixel,
@@ -1488,7 +1488,7 @@ OFCondition DcmCodecJ2kEncoder::togglePlanarConfiguration16(
 }
 
 
-OFCondition DcmCodecJ2kEncoder::updatePlanarConfiguration(
+OFCondition j2kCoder::updatePlanarConfiguration(
   DcmItem *item,
   const Uint16 newPlanConf) const
 {

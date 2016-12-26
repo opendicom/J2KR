@@ -1,5 +1,5 @@
 #include "dcmtk/config/osconfig.h"
-#include "dcmtk/dcmj2k/dccodec/DcmCodecJ2kDecoder.h"
+#include "dcmtk/dcmk2j/dccodec/k2jCoder.h"
 
 #include "dcmtk/dcmdata/dcdatset.h"  /* for class DcmDataset */
 #include "dcmtk/dcmdata/dcdeftag.h"  /* for tag constants */
@@ -13,13 +13,13 @@
 #include "dcmtk/djdecabs.h"  /* for class DJDecoder */
 
 
-DcmCodecJ2kDecoder::DcmCodecJ2kDecoder()
+k2jCoder::k2jCoder()
 : DcmCodec()
 {}
-DcmCodecJ2kDecoder::~DcmCodecJ2kDecoder()
+k2jCoder::~k2jCoder()
 {}
 
-OFBool DcmCodecJ2kDecoder::canChangeCoding(
+OFBool k2jCoder::canChangeCoding(
     const E_TransferSyntax oldRepType,
     const E_TransferSyntax newRepType) const
 {
@@ -33,7 +33,7 @@ OFBool DcmCodecJ2kDecoder::canChangeCoding(
 }
 
 
-OFCondition DcmCodecJ2kDecoder::decode(
+OFCondition k2jCoder::decode(
     const DcmRepresentationParameter * fromRepParam,
     DcmPixelSequence * pixSeq,
     DcmPolymorphOBOW& uncompressedPixelData,
@@ -310,7 +310,7 @@ OFCondition DcmCodecJ2kDecoder::decode(
 }
 
 
-OFCondition DcmCodecJ2kDecoder::decodeFrame(
+OFCondition k2jCoder::decodeFrame(
     const DcmRepresentationParameter *fromParam,
     DcmPixelSequence *fromPixSeq,
     const DcmCodecParameter *cp,
@@ -502,7 +502,7 @@ OFCondition DcmCodecJ2kDecoder::decodeFrame(
 }
 
 
-OFCondition DcmCodecJ2kDecoder::encode(
+OFCondition k2jCoder::encode(
     const Uint16 * /* pixelData */,
     const Uint32 /* length */,
     const DcmRepresentationParameter * /* toRepParam */,
@@ -515,7 +515,7 @@ OFCondition DcmCodecJ2kDecoder::encode(
 }
 
 
-OFCondition DcmCodecJ2kDecoder::encode(
+OFCondition k2jCoder::encode(
     const E_TransferSyntax /* fromRepType */,
     const DcmRepresentationParameter * /* fromRepParam */,
     DcmPixelSequence * /* fromPixSeq */,
@@ -529,7 +529,7 @@ OFCondition DcmCodecJ2kDecoder::encode(
 }
 
 
-OFCondition DcmCodecJ2kDecoder::determineDecompressedColorModel(
+OFCondition k2jCoder::determineDecompressedColorModel(
     const DcmRepresentationParameter *fromParam,
     DcmPixelSequence *fromPixSeq,
     const DcmCodecParameter *cp,
@@ -577,13 +577,13 @@ E_TransferSyntax supportedTransferSyntax() const = 0;
  */
 
 
-Uint16 DcmCodecJ2kDecoder::readUint16(const Uint8 *data)
+Uint16 k2jCoder::readUint16(const Uint8 *data)
 {
   return OFstatic_cast(Uint16, (OFstatic_cast(Uint16, *data) << 8) | OFstatic_cast(Uint16, *(data+1)));
 }
 
 
-Uint8 DcmCodecJ2kDecoder::scanJpegDataForBitDepth(
+Uint8 k2jCoder::scanJpegDataForBitDepth(
   const Uint8 *data,
   const Uint32 fragmentLength)
 {
@@ -739,7 +739,7 @@ Uint8 DcmCodecJ2kDecoder::scanJpegDataForBitDepth(
 }
 
 
-OFCondition DcmCodecJ2kDecoder::createPlanarConfigurationByte(
+OFCondition k2jCoder::createPlanarConfigurationByte(
   Uint8 *imageFrame,
   Uint16 columns,
   Uint16 rows)
@@ -768,7 +768,7 @@ OFCondition DcmCodecJ2kDecoder::createPlanarConfigurationByte(
   return EC_Normal;
 }
 
-OFCondition DcmCodecJ2kDecoder::createPlanarConfigurationWord(
+OFCondition k2jCoder::createPlanarConfigurationWord(
   Uint16 *imageFrame,
   Uint16 columns,
   Uint16 rows)
@@ -803,7 +803,7 @@ OFCondition DcmCodecJ2kDecoder::createPlanarConfigurationWord(
  * are handled correctly.
  */
 
-OFBool DcmCodecJ2kDecoder::requiresPlanarConfiguration(
+OFBool k2jCoder::requiresPlanarConfiguration(
   const char *sopClassUID,
   EP_Interpretation photometricInterpretation)
 {

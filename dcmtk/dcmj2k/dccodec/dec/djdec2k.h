@@ -1,8 +1,8 @@
 #include "dcmtk/config/osconfig.h"
-#include "dcmtk/dcmj2k/dccodec/DcmCodecJ2kDecoder.h"
+#include "dcmtk/dcmk2j/dccodec/k2jCoder.h"
 
 
-class DJDecoderJP2k : public DcmCodecJ2kDecoder
+class DJDecoderJP2k : public k2jCoder
 {
 public: 
   DJDecoderJP2k();
@@ -102,7 +102,7 @@ private:
 #pragma mark -
 #pragma mark Decoder class for JPEG 2K Lossless
 
-class DJDecoderJP2kLossLess : public DcmCodecJ2kDecoder
+class DJDecoderJP2kLossLess : public k2jCoder
 {
 public: 
   DJDecoderJP2kLossLess();

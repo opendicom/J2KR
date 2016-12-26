@@ -24,15 +24,15 @@ class DcmTagKey;
  *  decoding nor transcoding.
  */
 
-class DcmCodecJ2kEncoder : public DcmCodec
+class j2kCoder : public DcmCodec
 {
 public:
 
   /// default constructor
-  DcmCodecJ2kEncoder();
+  j2kCoder();
 
   /// destructor
-  virtual ~DcmCodecJ2kEncoder();
+  virtual ~j2kCoder();
 
   /** decompresses the given pixel sequence and
    *  stores the result in the given uncompressedPixelData element.

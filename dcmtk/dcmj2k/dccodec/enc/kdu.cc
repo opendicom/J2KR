@@ -8,7 +8,7 @@
 #pragma mark kdu
 
 kdu::kdu()
-: DcmCodecJ2kEncoder()
+: j2kCoder()
 {}
 
 kdu::~kdu()

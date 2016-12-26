@@ -5,7 +5,7 @@
 #include "dcpixseq.h"  /* for class DcmPixelSequence */
 
 DJDecoderJP2k::DJDecoderJP2k()
-: DcmCodecJ2kDecoder()
+: k2jCoder()
 {}
 DJDecoderJP2k::~DJDecoderJP2k()
 {}
@@ -125,7 +125,7 @@ DJDecoder *DJDecoderJP2k::createDecoderInstance(
 #pragma mark -
 #pragma mark Decoder class for JPEG 2K Lossless
 DJDecoderJP2kLossLess::DJDecoderJP2kLossLess()
-: DcmCodecJ2kDecoder()
+: k2jCoder()
 {}
 DJDecoderJP2kLossLess::~DJDecoderJP2kLossLess()
 {}

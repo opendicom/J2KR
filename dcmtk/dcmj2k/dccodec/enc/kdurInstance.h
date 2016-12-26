@@ -1,7 +1,7 @@
 #include "dcmtk/config/osconfig.h"
 #include "dcmtk/ofstd/oflist.h"
 #include "dcmtk/djencabs.h"  //DJEncoder
-#include "dcmtk/dcmj2k/dccodec/DcmCodecJ2kEncoder.h" //kduInstance constructor +
+#include "dcmtk/dcmj2k/dccodec/j2kCoder.h" //kduInstance constructor +
 
 class j2kCodecParameter;
 

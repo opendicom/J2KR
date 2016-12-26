@@ -18,11 +18,11 @@ class DJDecoder;
  *  This class only supports decompression, it neither implements
  *  encoding nor transcoding.
  */
-class DcmCodecJ2kDecoder : public DcmCodec
+class k2jCoder : public DcmCodec
 {
 public:
-  DcmCodecJ2kDecoder();
-  virtual ~DcmCodecJ2kDecoder();
+  k2jCoder();
+  virtual ~k2jCoder();
 
     /** checks if this codec is able to convert from the
      *  given current transfer syntax to the given new

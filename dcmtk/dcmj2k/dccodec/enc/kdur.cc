@@ -6,7 +6,7 @@
 #include "dcmtk/dcmj2k/dccodec/enc/kdurInstance.h"
 
 kdur::kdur()
-: DcmCodecJ2kEncoder()
+: j2kCoder()
 {}
 
 kdur::~kdur()
