@@ -16,10 +16,10 @@ class DicomImage;
 class DcmTagKey;
 
 
-/** abstract codec class for JPEG encoders.
+/** abstract codec class for j2k encoders.
  *  This abstract class contains most of the application logic
- *  needed for a dcmdata codec object that implements a JPEG encoder
- *  using the DJEncoder interface to the underlying JPEG implementation.
+ *  needed for a dcmdata codec object that implements a j2k encoder
+ *  using the j2kEncoder interface to the underlying j2k implementation.
  *  This class only supports compression, it neither implements
  *  decoding nor transcoding.
  */
@@ -87,6 +87,30 @@ public:
     Uint32 bufSize,
     OFString& decompressedColorModel) const;
 
+    
+    /** transcodes (re-compresses) the given compressed DICOM image and stores
+     *  the result in the given toPixSeq element.
+     *  @param fromRepType current transfer syntax of the compressed image
+     *  @param fromRepParam current representation parameter of compressed data, may be NULL
+     *  @param fromPixSeq compressed pixel sequence
+     *  @param toRepParam representation parameter describing the desired
+     *    new compressed representation (e.g. JPEG quality)
+     *  @param toPixSeq compressed pixel sequence (pointer to new DcmPixelSequence object
+     *    allocated on heap) returned in this parameter upon success.
+     *  @param cp codec parameters for this codec
+     *  @param objStack stack pointing to the location of the pixel data
+     *    element in the current dataset.
+     *  @return EC_Normal if successful, an error code otherwise.
+     */
+    virtual OFCondition encode(
+                               const E_TransferSyntax fromRepType,
+                               const DcmRepresentationParameter * fromRepParam,
+                               DcmPixelSequence * fromPixSeq,
+                               const DcmRepresentationParameter * toRepParam,
+                               DcmPixelSequence * & toPixSeq,
+                               const DcmCodecParameter * cp,
+                               DcmStack & objStack) const;
+
   /** compresses the given uncompressed DICOM image and stores
    *  the result in the given pixSeq element.
    *  @param pixelData pointer to the uncompressed image data in OW format
@@ -107,29 +131,6 @@ public:
     const DcmRepresentationParameter * toRepParam,
     DcmPixelSequence * & pixSeq,
     const DcmCodecParameter *cp,
-    DcmStack & objStack) const;
-
-  /** transcodes (re-compresses) the given compressed DICOM image and stores
-   *  the result in the given toPixSeq element.
-   *  @param fromRepType current transfer syntax of the compressed image
-   *  @param fromRepParam current representation parameter of compressed data, may be NULL
-   *  @param fromPixSeq compressed pixel sequence
-   *  @param toRepParam representation parameter describing the desired
-   *    new compressed representation (e.g. JPEG quality)
-   *  @param toPixSeq compressed pixel sequence (pointer to new DcmPixelSequence object
-   *    allocated on heap) returned in this parameter upon success.
-   *  @param cp codec parameters for this codec
-   *  @param objStack stack pointing to the location of the pixel data
-   *    element in the current dataset.
-   *  @return EC_Normal if successful, an error code otherwise.
-   */
-  virtual OFCondition encode(
-    const E_TransferSyntax fromRepType,
-    const DcmRepresentationParameter * fromRepParam,
-    DcmPixelSequence * fromPixSeq,
-    const DcmRepresentationParameter * toRepParam,
-    DcmPixelSequence * & toPixSeq,
-    const DcmCodecParameter * cp,
     DcmStack & objStack) const;
 
   /** checks if this codec is able to convert from the
