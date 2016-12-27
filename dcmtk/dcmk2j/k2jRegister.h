@@ -1,7 +1,7 @@
 #include "dcmtk/config/osconfig.h"
 #include "dcmtk/ofstd/oftypes.h"  /* for OFBool */
 #include "djutils.h"
-#include "dcmtk/dcmk2j/dccodec/k2jParams.h"
+#include "dcmtk/dcmk2j/k2jParams.h"
 
 class k2jParams;
 class udk;

@@ -1,5 +1,5 @@
 #include "dcmtk/config/osconfig.h"
-#include "dcmtk/dcmk2j/dccodec/k2jParams.h"
+#include "dcmtk/dcmk2j/k2jParams.h"
 
 k2jParams::k2jParams(
     E_CompressionColorSpaceConversion pCompressionCSConversion,

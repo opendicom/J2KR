@@ -2,7 +2,7 @@
 #include "dcmtk/ofstd/oftypes.h"  /* for OFBool */
 #include "dcmtk/dcmdata/dctypes.h"  /* for Uint32 */
 #include "djutils.h"
-#include "dcmtk/dcmj2k/dccodec/j2kParams.h"
+#include "dcmtk/dcmj2k/j2kParams.h"
 
 class j2kParams;
 class kdu90;

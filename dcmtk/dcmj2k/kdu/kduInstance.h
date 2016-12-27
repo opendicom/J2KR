@@ -1,26 +1,25 @@
 #include "dcmtk/config/osconfig.h"
 #include "dcmtk/ofstd/oflist.h"
-#include "dcmtk/djencabs.h" //DJEncoder
-#include "dcmtk/dcmj2k/dccodec/j2kCoder.h"
+#include "dcmtk/djencabs.h"  //DJEncoder
+#include "dcmtk/dcmj2k/j2kCoder.h" //kduInstance constructor +
 
-class DJEncoder;
+class j2kParams;
 
-class kdu90Instance: public DJEncoder
+class kduInstance: public DJEncoder
 {
 public:
-    
+
   /** constructor for J2PK
    *  @param cp codec parameters
    *  @param mode mode of operation
    *  @param quality compression quality
    */
-kdu90Instance(
+kduInstance(
   const j2kParams& cp,
   EJ_Mode mode,
-  Uint8 quality,
   Uint8 bitsPerSample);
     
-virtual ~kdu90Instance();
+virtual ~kduInstance();
 
     
 //imageBuffer 16bit - abstract class DJEncoder
@@ -89,19 +88,18 @@ virtual OFCondition encode(
     Uint8 pixelRepresentation,
     double minUsed,
     double maxUsed);
-
-#pragma mark methods to be added to fullfill abstract definition
     
-    virtual E_TransferSyntax supportedTransferSyntax();
+#pragma mark methods to be added to fullfill abstract definition
 
+  virtual E_TransferSyntax supportedTransferSyntax();
 
 private:
 
   /// private undefined copy constructor
-  kdu90Instance(const kdu90Instance&);
+  kduInstance(const kduInstance&);
 
   /// private undefined copy assignment operator
-  kdu90Instance& operator=(const kdu90Instance&);
+  kduInstance& operator=(const kduInstance&);
 
   /// codec parameters
   const j2kParams *cparam;
@@ -109,7 +107,6 @@ private:
   void findMinMax( int &_min, int &_max, char *bytes, long length, OFBool isSigned, int rows, int columns, int bitsAllocated);
   
   /// for lossy compression, defines compression quality factor
-  Uint8 quality;
   Uint8 bitsPerSampleValue;
 
   /// enum for mode of operation (baseline, sequential, progressive etc.)

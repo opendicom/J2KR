@@ -13,8 +13,8 @@
 
 #include "dcmtk/dcmjpeg/dcpixel/jpegParams.h"
 #include "dcmtk/dcmjpeg/dcpixel/jpegReversibleParams.h"
-#include "dcmtk/dcmj2k/dccodec/kdu90/kdu90Params.h"
-#include "dcmtk/dcmj2k/dccodec/kdu/kduParams.h"
+#include "dcmtk/dcmj2k/kdu90/kdu90Params.h"
+#include "dcmtk/dcmj2k/kdu/kduParams.h"
 
 #include "dcmtk/dcmdata/dcdatset.h"
 #include "dcmtk/dcmdata/dcmetinf.h"

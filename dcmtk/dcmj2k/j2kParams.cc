@@ -1,5 +1,5 @@
 #include "dcmtk/config/osconfig.h"
-#include "dcmtk/dcmj2k/dccodec/j2kParams.h"
+#include "dcmtk/dcmj2k/j2kParams.h"
 
 j2kParams::j2kParams()
 : DcmCodecParameter()

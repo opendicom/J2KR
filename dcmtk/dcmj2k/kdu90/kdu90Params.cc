@@ -1,5 +1,5 @@
 #include "dcmtk/config/osconfig.h"
-#include "dcmtk/dcmj2k/dccodec/kdu90/kdu90Params.h"
+#include "dcmtk/dcmj2k/kdu90/kdu90Params.h"
 
 kdu90Params::kdu90Params(int aQuality)
 : DcmRepresentationParameter()

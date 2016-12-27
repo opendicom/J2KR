@@ -1,6 +1,6 @@
 #include "dcmtk/config/osconfig.h"
-#include "dcmtk/dcmj2k/dccodec/kdu/kduInstance.h"
-#include "dcmtk/dcmj2k/dccodec/j2kParams.h"
+#include "dcmtk/dcmj2k/kdu90/kdu90Instance.h"
+#include "dcmtk/dcmj2k/j2kParams.h"
 #include "dcmtk/ofstd/ofconsol.h"
 #include "dcmtk/ofstd/ofstdinc.h"
 
@@ -25,20 +25,23 @@ extern "C" void* kdu_compressJPEG2K( void *data, int samplesPerPixel, int rows, 
 // use 16K blocks for temporary storage of compressed JPEG data
 #define IJGE12_BLOCKSIZE 16384
 
-kduInstance::kduInstance(const j2kParams& cp, EJ_Mode mode,
+kdu90Instance::kdu90Instance(const j2kParams& cp,
+    EJ_Mode mode,
+    Uint8 quality,
     Uint8 bitsPerSample)
-                                : DJEncoder()
-                                , cparam(&cp)
-                                , bitsPerSampleValue(bitsPerSample)
-                                , modeofOperation(mode)
+: DJEncoder()
+, cparam(&cp)
+, quality(quality)
+, bitsPerSampleValue(bitsPerSample)
+, modeofOperation(mode)
 {}
 
-kduInstance::~kduInstance()
+kdu90Instance::~kdu90Instance()
 {}
 
 
 //imageBuffer 16bit - abstract class DJEncoder
-OFCondition kduInstance::encode(
+OFCondition kdu90Instance::encode(
   Uint16 columns,
   Uint16 rows,
   EP_Interpretation interpr,
@@ -53,7 +56,7 @@ OFCondition kduInstance::encode(
 }
 
 //imageBuffer 16bit - used
-OFCondition kduInstance::encode(
+OFCondition kdu90Instance::encode(
   Uint16 columns,
   Uint16 rows,
   EP_Interpretation interpr,
@@ -71,7 +74,7 @@ OFCondition kduInstance::encode(
 
 
 //imageBuffer 8bit - abstract class DJEncoder
-OFCondition kduInstance::encode(
+OFCondition kdu90Instance::encode(
   Uint16 columns,
   Uint16 rows,
   EP_Interpretation interpr,
@@ -85,7 +88,7 @@ OFCondition kduInstance::encode(
 }
 
 //imageBuffer 8bit
-OFCondition kduInstance::encode(
+OFCondition kdu90Instance::encode(
   Uint16 columns,
   Uint16 rows,
   EP_Interpretation colorSpace,
@@ -102,19 +105,19 @@ OFCondition kduInstance::encode(
 }
 
 //abstract class DJEncoder
-Uint16 kduInstance::bytesPerSample() const
+Uint16 kdu90Instance::bytesPerSample() const
 {
 	if( bitsPerSampleValue <= 8) return 1;
 	else return 2;
 }
 
 //abstract class DJEncoder
-Uint16 kduInstance::bitsPerSample() const
+Uint16 kdu90Instance::bitsPerSample() const
 {
 	return bitsPerSampleValue;
 }
 
-OFCondition kduInstance::encode( 
+OFCondition kdu90Instance::encode(
   Uint16 columns,
   Uint16 rows,
   EP_Interpretation colorSpace,
@@ -177,8 +180,7 @@ OFCondition kduInstance::encode(
     return EC_NoEncodingLibrary;
 }
 
-
-E_TransferSyntax kduInstance::supportedTransferSyntax()
+E_TransferSyntax kdu90Instance::supportedTransferSyntax()
 {
-    return EXS_JPEG2000LosslessOnly;
+    return EXS_JPEG2000;
 }

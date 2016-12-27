@@ -2,8 +2,8 @@
 #include "dcmtk/dcmj2k/j2kRegister.h"
 
 #include "dcmtk/dcmdata/dccodec.h"  /* for DcmCodecStruct */
-#include "dcmtk/dcmj2k/dccodec/kdu90/kdu90.h"
-#include "dcmtk/dcmj2k/dccodec/kdu/kdu.h"
+#include "dcmtk/dcmj2k/kdu90/kdu90.h"
+#include "dcmtk/dcmj2k/kdu/kdu.h"
 
 // initialization of static members
 OFBool j2kRegister::registered      = OFFalse;

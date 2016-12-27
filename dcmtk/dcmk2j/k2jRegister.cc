@@ -3,7 +3,7 @@
 
 #include "dcmtk/dcmdata/dccodec.h"  /* for DcmCodecStruct */
 
-#include "dcmtk/dcmk2j/dccodec/udk/udk.h"
+#include "dcmtk/dcmk2j/udk/udk.h"
 
 // initialization of static members
 OFBool k2jRegister::registered                       = OFFalse;

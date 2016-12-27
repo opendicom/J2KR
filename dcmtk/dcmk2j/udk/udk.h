@@ -1,5 +1,5 @@
 #include "dcmtk/config/osconfig.h"
-#include "dcmtk/dcmk2j/dccodec/k2jCoder.h"
+#include "dcmtk/dcmk2j/k2jCoder.h"
 
 
 class udk : public k2jCoder

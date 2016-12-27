@@ -1,5 +1,5 @@
 #include "dcmtk/config/osconfig.h"
-#include "dcmtk/dcmk2j/dccodec/k2jCoder.h"
+#include "dcmtk/dcmk2j/k2jCoder.h"
 
 #include "dcmtk/dcmdata/dcdatset.h"  /* for class DcmDataset */
 #include "dcmtk/dcmdata/dcdeftag.h"  /* for tag constants */
@@ -9,8 +9,8 @@
 #include "dcmtk/dcmdata/dcswap.h"    /* for swapIfNecessary() */
 #include "dcmtk/dcmdata/dcuid.h"     /* for dcmGenerateUniqueIdentifer()*/
 
-#include "dcmtk/dcmk2j/dccodec/k2jParams.h"  /* for class DJCodecParameter */
-//JF #include "dcmtk/dcmjpeg/dccodec/djcparam.h"  /* for class DJCodecParameter */
+#include "dcmtk/dcmk2j/k2jParams.h"  /* for class DJCodecParameter */
+//JF #include "dcmtk/dcmjpeg/djcparam.h"  /* for class DJCodecParameter */
 #include "dcmtk/djdecabs.h"  /* for class DJDecoder */
 
 

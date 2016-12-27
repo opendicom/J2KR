@@ -1,8 +1,8 @@
 #include "dcmtk/config/osconfig.h"
-#include "dcmtk/dcmj2k/dccodec/j2kParams.h"
-#include "dcmtk/dcmj2k/dccodec/kdu/kduParams.h"
-#include "dcmtk/dcmj2k/dccodec/kdu/kdu.h"
-#include "dcmtk/dcmj2k/dccodec/kdu/kduInstance.h"
+#include "dcmtk/dcmj2k/j2kParams.h"
+#include "dcmtk/dcmj2k/kdu/kduParams.h"
+#include "dcmtk/dcmj2k/kdu/kdu.h"
+#include "dcmtk/dcmj2k/kdu/kduInstance.h"
 
 kdu::kdu()
 : j2kCoder()

@@ -1,6 +1,6 @@
 #include "osconfig.h"
-#include "dcmtk/dcmk2j/dccodec/udk/udkInstance.h"
-#include "dcmtk/dcmk2j/dccodec/k2jParams.h"
+#include "dcmtk/dcmk2j/udk/udkInstance.h"
+#include "dcmtk/dcmk2j/k2jParams.h"
 #include "ofconsol.h"
 #include "ofstdinc.h"
 

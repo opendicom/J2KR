@@ -1,8 +1,8 @@
 #include "dcmtk/config/osconfig.h"
-#include "dcmtk/dcmj2k/dccodec/j2kParams.h"
-#include "dcmtk/dcmj2k/dccodec/kdu90/kdu90Params.h"
-#include "dcmtk/dcmj2k/dccodec/kdu90/kdu90.h"
-#include "dcmtk/dcmj2k/dccodec/kdu90/kdu90Instance.h"
+#include "dcmtk/dcmj2k/j2kParams.h"
+#include "dcmtk/dcmj2k/kdu90/kdu90Params.h"
+#include "dcmtk/dcmj2k/kdu90/kdu90.h"
+#include "dcmtk/dcmj2k/kdu90/kdu90Instance.h"
 
 kdu90::kdu90()
 : j2kCoder()

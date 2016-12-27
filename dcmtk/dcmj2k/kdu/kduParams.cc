@@ -1,5 +1,5 @@
 #include "dcmtk/config/osconfig.h"
-#include "dcmtk/dcmj2k/dccodec/kdu/kduParams.h"
+#include "dcmtk/dcmj2k/kdu/kduParams.h"
 
 
 kduParams::kduParams(int aPrediction, int aPt)

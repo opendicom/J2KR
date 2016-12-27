@@ -1,5 +1,5 @@
 #include "dcmtk/config/osconfig.h"
-#include "dcmtk/dcmj2k/dccodec/j2kCoder.h"
+#include "dcmtk/dcmj2k/j2kCoder.h"
 
 // ofstd includes
 #include "dcmtk/ofstd/oflist.h"
@@ -20,7 +20,7 @@
 #include "dcmtk/dcmdata/dcswap.h"     /* for swapIfNecessary */
 
 // j2 includes
-#include "dcmtk/dcmj2k/dccodec/j2kParams.h"
+#include "dcmtk/dcmj2k/j2kParams.h"
 #include "djencabs.h"   /* for class DJEncoder */
 
 // dcmimgle includes
