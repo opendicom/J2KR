@@ -1,18 +1,17 @@
 #include "dcmtk/config/osconfig.h"
-#include "dcmtk/dcmj2k/j2kCodecRegistration.h"
+#include "dcmtk/dcmj2k/j2kRegister.h"
 
 #include "dcmtk/dcmdata/dccodec.h"  /* for DcmCodecStruct */
-#include "dcmtk/dcmj2k/dccodec/enc/kdu.h"
-#include "dcmtk/dcmj2k/dccodec/enc/kdur.h"
-#include "dcmtk/dcmj2k/dccodec/j2kCodecParameter.h"
+#include "dcmtk/dcmj2k/dccodec/kdu90/kdu90.h"
+#include "dcmtk/dcmj2k/dccodec/kdu/kdur.h"
 
 // initialization of static members
-OFBool j2kCodecRegistration::registered      = OFFalse;
-j2kCodecParameter *j2kCodecRegistration::cp  = NULL;
-kdu *j2kCodecRegistration::enc2K				= NULL;
-kdur *j2kCodecRegistration::enc2KLoL	        = NULL;
+OFBool j2kRegister::registered      = OFFalse;
+j2kParams *j2kRegister::cp          = NULL;
+kdu90 *j2kRegister::enc2K			= NULL;
+kdur *j2kRegister::enc2KLoL	        = NULL;
 
-void j2kCodecRegistration::registerCodecs(
+void j2kRegister::registerCodecs(
     E_CompressionColorSpaceConversion pCompressionCSConversion,
     E_UIDCreation pCreateSOPInstanceUID,
     OFBool pOptimizeHuffman,
@@ -39,14 +38,14 @@ void j2kCodecRegistration::registerCodecs(
 {
   if (! registered)
   {
-    cp = new j2kCodecParameter();
+    cp = new j2kParams();
     if (cp)
     {
-      // JPEG 2K
-      enc2K = new kdu();
+      // JPEG 2K Lossy
+      enc2K = new kdu90();
       if (enc2K) DcmCodecList::registerCodec(enc2K, NULL, cp);
         
-      // JPEG 2K Lossy
+      // JPEG 2K LossLess
       enc2KLoL = new kdur();
       if (enc2KLoL) DcmCodecList::registerCodec(enc2KLoL, NULL, cp);
 
@@ -55,7 +54,7 @@ void j2kCodecRegistration::registerCodecs(
   }
 }
 
-void j2kCodecRegistration::cleanup()
+void j2kRegister::cleanup()
 {
   if (registered)
   {

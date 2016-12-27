@@ -2,11 +2,11 @@
 #include "dcmtk/dcmk2j/dccodec/k2jCoder.h"
 
 
-class DJDecoderJP2k : public k2jCoder
+class udk : public k2jCoder
 {
 public: 
-  DJDecoderJP2k();
-  virtual ~DJDecoderJP2k();
+  udk();
+  virtual ~udk();
 
     
   virtual OFBool canChangeCoding(
@@ -92,55 +92,7 @@ private:
    */
   virtual DJDecoder *createDecoderInstance(
     const DcmRepresentationParameter * toRepParam,
-    const DJCodecParameter *cp,
-    Uint8 bitsPerSample,
-    OFBool isYBR) const;
-};
-
-
-#pragma mark -
-#pragma mark -
-#pragma mark Decoder class for JPEG 2K Lossless
-
-class DJDecoderJP2kLossLess : public k2jCoder
-{
-public: 
-  DJDecoderJP2kLossLess();
-  virtual ~DJDecoderJP2kLossLess();
-
-  virtual OFBool canChangeCoding(
-    const E_TransferSyntax oldRepType,
-    const E_TransferSyntax newRepType) const;
-
-  /** returns the transfer syntax that this particular codec
-   *  is able to encode and decode.
-   *  @return supported transfer syntax
-   */
-  virtual E_TransferSyntax supportedTransferSyntax() const;
-  
-  virtual OFBool isJPEG2000() const;
-  
-  virtual OFCondition encode(
-    const E_TransferSyntax fromRepType,
-    const DcmRepresentationParameter * fromRepParam,
-    DcmPixelSequence *fromPixSeq,
-    const DcmRepresentationParameter *toRepParam,
-    DcmPixelSequence * & toPixSeq,
-    const DcmCodecParameter * cp,
-    DcmStack & objStack) const;
-	
-private:
-
-  /** creates an instance of the compression library to be used for decoding.
-   *  @param toRepParam representation parameter passed to decode()
-   *  @param cp codec parameter passed to decode()
-   *  @param bitsPerSample bits per sample for the image data
-   *  @param isYBR flag indicating whether DICOM photometric interpretation is YCbCr
-   *  @return pointer to newly allocated decoder object
-   */
-  virtual DJDecoder *createDecoderInstance(
-    const DcmRepresentationParameter * toRepParam,
-    const DJCodecParameter *cp,
+    const k2jParams *cp,
     Uint8 bitsPerSample,
     OFBool isYBR) const;
 };

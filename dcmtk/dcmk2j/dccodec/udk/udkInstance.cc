@@ -1,6 +1,6 @@
 #include "osconfig.h"
-#include "djdijp2k.h"
-#include "dcmtk/dcmjpeg/dccodec/djcparam.h"
+#include "dcmtk/dcmk2j/dccodec/udk/udkInstance.h"
+#include "dcmtk/dcmk2j/dccodec/k2jParams.h"
 #include "ofconsol.h"
 #include "ofstdinc.h"
 
@@ -43,7 +43,7 @@ BEGIN_EXTERN_C
 #undef boolean
 
 
-DJDecompressJP2k::DJDecompressJP2k(const DJCodecParameter& cp, OFBool isYBR)
+udkInstance::udkInstance(const k2jParams& cp, OFBool isYBR)
 : DJDecoder()
 , cparam(&cp)
 , cinfo(NULL)
@@ -51,28 +51,20 @@ DJDecompressJP2k::DJDecompressJP2k(const DJCodecParameter& cp, OFBool isYBR)
 , jsampBuffer(NULL)
 , dicomPhotometricInterpretationIsYCbCr(isYBR)
 , decompressedColorModel(EPI_Unknown)
-{
-}
+{}
 
-DJDecompressJP2k::~DJDecompressJP2k()
-{
-  cleanup();
-}
+udkInstance::~udkInstance()
+{}
 
 
-OFCondition DJDecompressJP2k::init()
+OFCondition udkInstance::init()
 {
   // everything OK
   return EC_Normal;
 }
 
 
-void DJDecompressJP2k::cleanup()
-{
-}
-
-
-OFCondition DJDecompressJP2k::decode(
+OFCondition udkInstance::decode(
   Uint8 *compressedFrameBuffer,
   Uint32 compressedFrameBufferSize,
   Uint8 *uncompressedFrameBuffer,
@@ -88,7 +80,7 @@ OFCondition DJDecompressJP2k::decode(
 	return EC_Normal;
 }
 
-void DJDecompressJP2k::outputMessage() const
+void udkInstance::outputMessage() const
 {
 
 }

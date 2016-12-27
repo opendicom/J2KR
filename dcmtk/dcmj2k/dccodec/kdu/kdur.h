@@ -1,16 +1,16 @@
 #include "dcmtk/config/osconfig.h"
 #import "dcmtk/dcmj2k/dccodec/j2kCoder.h"
+//#import "dcmtk/djencabs.h"
 
-
-class kdu : public j2kCoder
+class kdur : public j2kCoder
 {
 public: 
 
   /// default constructor
-  kdu();
+  kdur();
 
   /// destructor
-  virtual ~kdu();
+  virtual ~kdur();
 
   /** returns the transfer syntax that this particular codec
    *  is able to encode and decode.
@@ -38,7 +38,7 @@ private:
    */
   virtual void createDerivationDescription(
     const DcmRepresentationParameter * toRepParam,
-    const j2kCodecParameter *cp,
+    const j2kParams *cp,
     Uint8 bitsPerSample,
     double ratio,
     OFString& derivationDescription) const;
@@ -52,7 +52,6 @@ private:
    */
   virtual DJEncoder *createEncoderInstance(
     const DcmRepresentationParameter * toRepParam,
-    const j2kCodecParameter *cp,
+    const j2kParams *cp,
     Uint8 bitsPerSample) const;
-    
 };

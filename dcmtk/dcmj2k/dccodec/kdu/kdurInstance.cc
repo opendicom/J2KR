@@ -1,6 +1,6 @@
 #include "dcmtk/config/osconfig.h"
-#include "dcmtk/dcmj2k/dccodec/enc/kdurInstance.h"
-#include "dcmtk/dcmj2k/dccodec/j2kCodecParameter.h"
+#include "dcmtk/dcmj2k/dccodec/kdu/kdurInstance.h"
+#include "dcmtk/dcmj2k/dccodec/j2kParams.h"
 #include "dcmtk/ofstd/ofconsol.h"
 #include "dcmtk/ofstd/ofstdinc.h"
 
@@ -25,14 +25,14 @@ extern "C" void* kdu_compressJPEG2K( void *data, int samplesPerPixel, int rows, 
 // use 16K blocks for temporary storage of compressed JPEG data
 #define IJGE12_BLOCKSIZE 16384
 
-kdurInstance::kdurInstance(const j2kCodecParameter& cp, EJ_Mode mode, Uint8 quality,
+kdurInstance::kdurInstance(const j2kParams& cp, EJ_Mode mode,
     Uint8 bitsPerSample)
                                 : DJEncoder()
                                 , cparam(&cp)
-                                , quality(quality)
                                 , bitsPerSampleValue(bitsPerSample)
                                 , modeofOperation(mode)
 {}
+
 kdurInstance::~kdurInstance()
 {}
 

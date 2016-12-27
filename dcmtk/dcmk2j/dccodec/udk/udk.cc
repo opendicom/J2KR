@@ -1,16 +1,16 @@
 #include "osconfig.h"
-#include "dcmtk/dcmj2k/dccodec/dec/djdec2k.h"
-#include "dcmtk/dcmk2j/dccodec/k2jCodecParameter.h"
-#include "djdijp2k.h"
+#include "dcmtk/dcmk2j/dccodec/udk/udk.h"
+#include "dcmtk/dcmk2j/dccodec/k2jParams.h"
+#include "dcmtk/dcmk2j/dccodec/udk/udkInstance.h"
 #include "dcpixseq.h"  /* for class DcmPixelSequence */
 
-DJDecoderJP2k::DJDecoderJP2k()
+udk::udk()
 : k2jCoder()
 {}
-DJDecoderJP2k::~DJDecoderJP2k()
+udk::~udk()
 {}
 
-OFBool DJDecoderJP2k::canChangeCoding(
+OFBool udk::canChangeCoding(
     const E_TransferSyntax oldRepType,
     const E_TransferSyntax newRepType) const
 {
@@ -63,7 +63,7 @@ OFBool DJDecoderJP2k::canChangeCoding(
  */
 
 
-OFCondition DJDecoderJP2k::encode(
+OFCondition udk::encode(
     const E_TransferSyntax fromRepType,
     const DcmRepresentationParameter * fromRepParam,
     DcmPixelSequence *fromPixSeq,
@@ -95,13 +95,13 @@ OFCondition DJDecoderJP2k::encode(
  */
 
 #pragma mark abstract implemented
-E_TransferSyntax DJDecoderJP2k::supportedTransferSyntax() const
+E_TransferSyntax udk::supportedTransferSyntax() const
 {
   return EXS_JPEG2000;
 }
 
 #pragma mark additional public
-OFBool DJDecoderJP2k::isJPEG2000() const
+OFBool udk::isJPEG2000() const
 {
     return OFTrue;
 }
@@ -111,83 +111,13 @@ OFBool DJDecoderJP2k::isJPEG2000() const
 #pragma mark private
 
 #pragma mark abstract implemented
-DJDecoder *DJDecoderJP2k::createDecoderInstance(
-    const DcmRepresentationParameter * /* toRepParam */,
-    const DJCodecParameter *cp,
-    Uint8 bitsPerSample,
-    OFBool isYBR) const
-{
-	return new DJDecompressJP2k(*cp, isYBR);
-}
-
-
-#pragma mark -
-#pragma mark -
-#pragma mark Decoder class for JPEG 2K Lossless
-DJDecoderJP2kLossLess::DJDecoderJP2kLossLess()
-: k2jCoder()
-{}
-DJDecoderJP2kLossLess::~DJDecoderJP2kLossLess()
-{}
-
-OFBool DJDecoderJP2kLossLess::canChangeCoding(
-    const E_TransferSyntax oldRepType,
-    const E_TransferSyntax newRepType) const
-{
-  E_TransferSyntax myXfer = supportedTransferSyntax();
-  DcmXfer newRep(newRepType);
-  if (newRep.isNotEncapsulated() && (oldRepType == myXfer))
-	return OFTrue; // decompress requested
-
-  if (newRep.getXfer() == EXS_JPEG2000 && (oldRepType == myXfer))
-	return OFTrue;
-
-  // we don't support re-coding for now.
-  return OFFalse;
-}
-
-OFCondition DJDecoderJP2kLossLess::encode(
-    const E_TransferSyntax fromRepType,
-    const DcmRepresentationParameter * fromRepParam,
-    DcmPixelSequence *fromPixSeq,
+DJDecoder *udk::createDecoderInstance(
     const DcmRepresentationParameter *toRepParam,
-    DcmPixelSequence * & toPixSeq,
-    const DcmCodecParameter * cp,
-    DcmStack & objStack) const
-{
-  if( fromRepType == EXS_JPEG2000LosslessOnly)
-  {
-	toPixSeq = new DcmPixelSequence( *fromPixSeq);
-	toPixSeq->changeXfer( EXS_JPEG2000);
-	
-	return EC_Normal;
-  }
-  
-  // we don't support re-coding for now.
-  return EC_IllegalCall;
-}
-
-E_TransferSyntax DJDecoderJP2kLossLess::supportedTransferSyntax() const
-{
-  return EXS_JPEG2000LosslessOnly;
-}
-
-
-#pragma mark -
-#pragma mark private
-
-#pragma mark abstract implemented
-
-DJDecoder *DJDecoderJP2kLossLess::createDecoderInstance(
-    const DcmRepresentationParameter * /* toRepParam */,
-    const DJCodecParameter *cp,
+    const k2jParams *cp,
     Uint8 bitsPerSample,
     OFBool isYBR) const
 {
-	return new DJDecompressJP2k(*cp, isYBR);
-}
-
-OFBool DJDecoderJP2kLossLess::isJPEG2000() const
-{
-	return OFTrue;
+    DJDecoder * result = NULL;
+    result =  new udkInstance(*cp, isYBR);
+    return result;
 }

@@ -5,7 +5,7 @@
 
 class DJEncoder;
 
-class kduInstance: public DJEncoder
+class kdu90Instance: public DJEncoder
 {
 public:
     
@@ -14,13 +14,13 @@ public:
    *  @param mode mode of operation
    *  @param quality compression quality
    */
-kduInstance(
-  const j2kCodecParameter& cp,
+kdu90Instance(
+  const j2kParams& cp,
   EJ_Mode mode,
   Uint8 quality,
   Uint8 bitsPerSample);
     
-virtual ~kduInstance();
+virtual ~kdu90Instance();
 
     
 //imageBuffer 16bit - abstract class DJEncoder
@@ -98,13 +98,13 @@ virtual OFCondition encode(
 private:
 
   /// private undefined copy constructor
-  kduInstance(const kduInstance&);
+  kdu90Instance(const kdu90Instance&);
 
   /// private undefined copy assignment operator
-  kduInstance& operator=(const kduInstance&);
+  kdu90Instance& operator=(const kdu90Instance&);
 
   /// codec parameters
-  const j2kCodecParameter *cparam;
+  const j2kParams *cparam;
   
   void findMinMax( int &_min, int &_max, char *bytes, long length, OFBool isSigned, int rows, int columns, int bitsAllocated);
   

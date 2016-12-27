@@ -3,7 +3,7 @@
 #include "dcmtk/djencabs.h"  //DJEncoder
 #include "dcmtk/dcmj2k/dccodec/j2kCoder.h" //kduInstance constructor +
 
-class j2kCodecParameter;
+class j2kParams;
 
 class kdurInstance: public DJEncoder
 {
@@ -15,9 +15,8 @@ public:
    *  @param quality compression quality
    */
 kdurInstance(
-  const j2kCodecParameter& cp,
+  const j2kParams& cp,
   EJ_Mode mode,
-  Uint8 quality,
   Uint8 bitsPerSample);
     
 virtual ~kdurInstance();
@@ -103,12 +102,11 @@ private:
   kdurInstance& operator=(const kdurInstance&);
 
   /// codec parameters
-  const j2kCodecParameter *cparam;
+  const j2kParams *cparam;
   
   void findMinMax( int &_min, int &_max, char *bytes, long length, OFBool isSigned, int rows, int columns, int bitsAllocated);
   
   /// for lossy compression, defines compression quality factor
-  Uint8 quality;
   Uint8 bitsPerSampleValue;
 
   /// enum for mode of operation (baseline, sequential, progressive etc.)

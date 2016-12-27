@@ -8,7 +8,7 @@ class DataInterface;
 class DJEncoder;
 class DcmDataset;
 class DcmItem;
-class DJCodecParameter;
+class k2jParams;
 class DJDecoder;
 
 /** abstract codec class for JPEG decoders.
@@ -173,7 +173,7 @@ private:
    */
   virtual DJDecoder *createDecoderInstance(
     const DcmRepresentationParameter * toRepParam,
-    const DJCodecParameter *cp,
+    const k2jParams *cp,
     Uint8 bitsPerSample,
     OFBool isYBR) const = 0;
 

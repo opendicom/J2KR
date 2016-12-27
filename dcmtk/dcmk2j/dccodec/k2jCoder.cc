@@ -9,7 +9,8 @@
 #include "dcmtk/dcmdata/dcswap.h"    /* for swapIfNecessary() */
 #include "dcmtk/dcmdata/dcuid.h"     /* for dcmGenerateUniqueIdentifer()*/
 
-#include "dcmtk/dcmjpeg/dccodec/djcparam.h"  /* for class DJCodecParameter */
+#include "dcmtk/dcmk2j/dccodec/k2jParams.h"  /* for class DJCodecParameter */
+//JF #include "dcmtk/dcmjpeg/dccodec/djcparam.h"  /* for class DJCodecParameter */
 #include "dcmtk/djdecabs.h"  /* for class DJDecoder */
 
 
@@ -42,7 +43,7 @@ OFCondition k2jCoder::decode(
 {
   OFCondition result = EC_Normal;
   // assume we can cast the codec parameter to what we need
-  const DJCodecParameter *djcp = OFreinterpret_cast(const DJCodecParameter*, cp);
+  const k2jParams *djcp = OFreinterpret_cast(const k2jParams*, cp);
 
   DcmStack localStack(objStack);
   (void)localStack.pop();             // pop pixel data element from stack
@@ -324,7 +325,7 @@ OFCondition k2jCoder::decodeFrame(
 
   OFCondition result = EC_Normal;
   // assume we can cast the codec parameter to what we need
-  const DJCodecParameter *djcp = OFreinterpret_cast(const DJCodecParameter*, cp);
+  const k2jParams *djcp = OFreinterpret_cast(const k2jParams*, cp);
 
   if ((!dataset)||((dataset->ident()!= EVR_dataset) && (dataset->ident()!= EVR_item))) result = EC_InvalidTag;
   else

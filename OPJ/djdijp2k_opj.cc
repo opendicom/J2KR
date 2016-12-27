@@ -22,7 +22,7 @@
  */
 
 #include "osconfig.h"
-#include "djdijp2k.h"
+#include "dcmtk/dcmk2j/dccodec/udk/udkInstance.h"
 #include "dcmtk/dcmdataImplementation/dccodec/djcparam.h"
 #include "ofconsol.h"
 #include "OPJSupport.h"

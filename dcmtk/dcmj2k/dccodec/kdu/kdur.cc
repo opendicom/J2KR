@@ -1,9 +1,8 @@
 #include "dcmtk/config/osconfig.h"
-#include "dcmtk/dcmj2k/dccodec/j2kCodecParameter.h"
-#include "dcmtk/dcmj2k/dcpixel/kduRepresentationParameter.h"
+#include "dcmtk/dcmj2k/dccodec/j2kParams.h"
 #include "dcmtk/dcmj2k/dcpixel/kdurRepresentationParameter.h"
-#include "dcmtk/dcmj2k/dccodec/enc/kdur.h"
-#include "dcmtk/dcmj2k/dccodec/enc/kdurInstance.h"
+#include "dcmtk/dcmj2k/dccodec/kdu/kdur.h"
+#include "dcmtk/dcmj2k/dccodec/kdu/kdurInstance.h"
 
 kdur::kdur()
 : j2kCoder()
@@ -26,12 +25,12 @@ OFBool kdur::isLosslessProcess() const
 
 void kdur::createDerivationDescription(
   const DcmRepresentationParameter * toRepParam,
-  const j2kCodecParameter * /* cp */ ,
+  const j2kParams * /* cp */ ,
   Uint8 /* bitsPerSample */ ,
   double ratio,
   OFString& derivationDescription) const
 {
-  kduRepresentationParameter defaultRP;
+  kdurRepresentationParameter defaultRP;
 //  const DJ_RPLossy *rp = toRepParam ? (const DJ_RPLossy *)toRepParam : &defaultRP ;
 //  char buf[64];
  
@@ -43,15 +42,15 @@ void kdur::createDerivationDescription(
 
 DJEncoder *kdur::createEncoderInstance(
     const DcmRepresentationParameter * toRepParam,
-    const j2kCodecParameter *cp,
+    const j2kParams *cp,
     Uint8 bitsPerSample) const
 {
-  kduRepresentationParameter defaultRP;
-  const kduRepresentationParameter *rp = toRepParam ? (const kduRepresentationParameter *)toRepParam : &defaultRP ;
-
-  //DJCompressJP2K
   DJEncoder * result = NULL;
-  result = new kdurInstance(*cp, EJM_JP2K_lossless, rp->getQuality(), bitsPerSample);
+  result = new kdurInstance(
+                            *cp,
+                            EJM_JP2K_lossless,
+                            bitsPerSample
+                            );
   return result;  
 }
 

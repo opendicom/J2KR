@@ -1,7 +1,7 @@
 #include "dcmtk/config/osconfig.h"
-#include "dcmtk/dcmk2j/dccodec/k2jCodecParameter.h"
+#include "dcmtk/dcmk2j/dccodec/k2jParams.h"
 
-k2jCodecParameter::k2jCodecParameter(
+k2jParams::k2jParams(
     E_CompressionColorSpaceConversion pCompressionCSConversion,
     E_DecompressionColorSpaceConversion pDecompressionCSConversion,
     E_UIDCreation pCreateSOPInstanceUID,
@@ -59,7 +59,7 @@ k2jCodecParameter::k2jCodecParameter(
 }
 
 
-k2jCodecParameter::k2jCodecParameter(const k2jCodecParameter& arg)
+k2jParams::k2jParams(const k2jParams& arg)
 : DcmCodecParameter(arg)
 , compressionCSConversion(arg.compressionCSConversion)
 , decompressionCSConversion(arg.decompressionCSConversion)
@@ -90,16 +90,16 @@ k2jCodecParameter::k2jCodecParameter(const k2jCodecParameter& arg)
 {
 }
 
-k2jCodecParameter::~k2jCodecParameter()
+k2jParams::~k2jParams()
 {
 }
 
-DcmCodecParameter *k2jCodecParameter::clone() const
+DcmCodecParameter *k2jParams::clone() const
 {
-  return new k2jCodecParameter(*this);
+  return new k2jParams(*this);
 }
 
-const char *k2jCodecParameter::className() const
+const char *k2jParams::className() const
 {
-  return "k2jCodecParameter";
+  return "k2jParams";
 }

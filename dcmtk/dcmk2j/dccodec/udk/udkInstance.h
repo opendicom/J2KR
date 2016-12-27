@@ -1,22 +1,3 @@
-/*
- *  Copyright (C) 1997-2005, OFFIS
- *  This software and supporting documentation were developed by
- *    Kuratorium OFFIS e.V.
- *    Healthcare Information and Communication Systems
- *    Escherweg 2
- *    D-26121 Oldenburg, Germany
- *  THIS SOFTWARE IS MADE AVAILABLE,  AS IS,  AND OFFIS MAKES NO  WARRANTY
- *  REGARDING  THE  SOFTWARE,  ITS  PERFORMANCE,  ITS  MERCHANTABILITY  OR
- *  FITNESS FOR ANY PARTICULAR USE, FREEDOM FROM ANY COMPUTER DISEASES  OR
- *  ITS CONFORMITY TO ANY SPECIFICATION. THE ENTIRE RISK AS TO QUALITY AND
- *  PERFORMANCE OF THE SOFTWARE IS WITH THE USER.
- *  Module:  dcmjpeg
- *  Author:  Norbert Olges, Marco Eichelberg
- *  Purpose: decompression routines of JP2K.
- *  Last Update:      $Author: lpysher $
- *  Update Date:      $Date: 2006/03/01 20:15:44 $
- */
-
 #include "osconfig.h"
 #include "djdecabs.h" /* for class DJDecoder */
 
@@ -25,12 +6,12 @@ extern "C"
   struct jpeg_decompress_struct;
 }
 
-class DJCodecParameter;
+class k2jParams;
 
 /** this class encapsulates the decompression routines of the
  *  IJG JPEG library configured for 16 bits/sample.
  */
-class DJDecompressJP2k : public DJDecoder
+class udkInstance : public DJDecoder
 {
 public:
 
@@ -38,10 +19,10 @@ public:
    *  @param cp codec parameters
    *  @param isYBR flag indicating if DICOM photometric interpretation is YCbCr
    */
-  DJDecompressJP2k(const DJCodecParameter& cp, OFBool isYBR);
+  udkInstance(const k2jParams& cp, OFBool isYBR);
 
   /// destructor
-  virtual ~DJDecompressJP2k();
+  virtual ~udkInstance();
 
   /** initializes internal object structures.
    *  Must be called before a new frame is decompressed.
@@ -91,16 +72,13 @@ public:
 private:
 
   /// private undefined copy constructor
-  DJDecompressJP2k(const DJDecompressJP2k&);
+  udkInstance(const udkInstance&);
 
   /// private undefined copy assignment operator
-  DJDecompressJP2k& operator=(const DJDecompressJP2k&);
-
-  /// cleans up cinfo structure, called from destructor and error handlers
-  void cleanup();
+  udkInstance& operator=(const udkInstance&);
 
   /// codec parameters
-  const DJCodecParameter *cparam;
+  const k2jParams *cparam;
 
   /// decompression structure
   jpeg_decompress_struct *cinfo;

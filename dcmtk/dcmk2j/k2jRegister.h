@@ -1,15 +1,14 @@
 #include "dcmtk/config/osconfig.h"
 #include "dcmtk/ofstd/oftypes.h"  /* for OFBool */
 #include "djutils.h"
-#include "dcmtk/dcmk2j/dccodec/k2jCodecParameter.h"
+#include "dcmtk/dcmk2j/dccodec/k2jParams.h"
 
-class k2jCodecParameter;
-class DJDecoderJP2k;
-class DJDecoderJP2kLossLess;
+class k2jParams;
+class udk;
 
 /** singleton class that registers decoders for all supported j2 processes.
  */
-class k2jCodecRegistration
+class k2jRegister
 {
 public:
   /** registers decoders for all supported j2 processes.
@@ -41,12 +40,9 @@ public:
   static OFBool registered;
 
   /// pointer to codec parameter shared by all decoders
-  static k2jCodecParameter *cp;
-    
-  // pointer to decoder for lossless SV1 JPEG
-  static DJDecoderJP2k *dec2k;
+  static k2jParams *cp;
     
   /// pointer to decoder for lossless JPEG
-  static DJDecoderJP2kLossLess *dec2kLossLess;
+  static udk *dec2KLoL;
 
 };

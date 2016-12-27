@@ -2,16 +2,16 @@
 #include "dcmtk/dcmdata/dccodec.h" /* for DcmCodecParameter */
 #include "djutils.h" /* for enums */
 
-class j2kCodecParameter: public DcmCodecParameter
+class j2kParams: public DcmCodecParameter
 {
 public:
-  j2kCodecParameter();
+  j2kParams();
 
   /// copy constructor
-  j2kCodecParameter(const j2kCodecParameter& arg);
+  j2kParams(const j2kParams& arg);
 
   /// destructor
-  virtual ~j2kCodecParameter();
+  virtual ~j2kParams();
 
   /** this methods creates a copy of type DcmCodecParameter   *  it must be overweritten in every subclass.
    *  @return copy of this object
@@ -112,6 +112,6 @@ public:
 private:
 
   /// private undefined copy assignment operator
-  j2kCodecParameter& operator=(const j2kCodecParameter&);
+  j2kParams& operator=(const j2kParams&);
 
 };

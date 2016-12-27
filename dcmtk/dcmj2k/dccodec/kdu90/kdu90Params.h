@@ -2,20 +2,20 @@
 #include "dcmtk/dcmdata/dcpixel.h" /* for class DcmRepresentationParameter */
 #include "djdefine.h"
 
-class kduRepresentationParameter: public DcmRepresentationParameter
+class kdu90Params: public DcmRepresentationParameter
 {
 public:
 
   /** constructor
    *  @param aQuality quality factor
    */
-  kduRepresentationParameter(int aQuality=90);
+  kdu90Params(int aQuality=90);
 
   /// copy constructor
-  kduRepresentationParameter(const kduRepresentationParameter& arg);
+  kdu90Params(const kdu90Params& arg);
 
   /// destructor
-  virtual ~kduRepresentationParameter();
+  virtual ~kdu90Params();
   
   /** this methods creates a copy of type DcmRepresentationParameter   *  it must be overweritten in every subclass.
    *  @return copy of this object

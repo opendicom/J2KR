@@ -20,7 +20,7 @@
 #include "dcmtk/dcmdata/dcswap.h"     /* for swapIfNecessary */
 
 // j2 includes
-#include "dcmtk/dcmj2k/dccodec/j2kCodecParameter.h"
+#include "dcmtk/dcmj2k/dccodec/j2kParams.h"
 #include "djencabs.h"   /* for class DJEncoder */
 
 // dcmimgle includes
@@ -110,7 +110,7 @@ OFCondition j2kCoder::encode(
   /*
   OFCondition result = EC_Normal;
   // assume we can cast the codec parameter to what we need
-  const j2kCodecParameter *djcp = OFreinterpret_cast(const j2kCodecParameter*, cp);
+  const j2kParams *djcp = OFreinterpret_cast(const j2kParams*, cp);
 
   // if true lossless mode is enabled, and we're supposed to do lossless compression,
   // call the "true lossless encoding"-engine
@@ -216,7 +216,7 @@ OFCondition j2kCoder::encodeColorImage(
   DcmItem *dataset,
   const DcmRepresentationParameter * toRepParam,
   DcmPixelSequence * & pixSeq,
-  const j2kCodecParameter *cp,
+  const j2kParams *cp,
   double& compressionRatio) const
 {
   OFCondition result = EC_Normal;
@@ -419,7 +419,7 @@ OFCondition j2kCoder::encodeTrueLossless(
 {
   OFCondition result = EC_Normal;
   // assume we can cast the codec parameter to what we need
-  j2kCodecParameter *djcp = OFreinterpret_cast(j2kCodecParameter*, OFconst_cast(DcmCodecParameter*, cp));
+  j2kParams *djcp = OFreinterpret_cast(j2kParams*, OFconst_cast(DcmCodecParameter*, cp));
   // get dataset from stack
   DcmStack localStack(objStack);
   (void)localStack.pop();
@@ -732,7 +732,7 @@ OFCondition j2kCoder::updateLossyCompressionRatio(
 OFCondition j2kCoder::updateDerivationDescription(
   DcmItem *dataset,
   const DcmRepresentationParameter * toRepParam,
-  const j2kCodecParameter *cp,
+  const j2kParams *cp,
   Uint8 bitsPerSample,
   double ratio) const
 {
@@ -767,7 +767,7 @@ OFCondition j2kCoder::updateDerivationDescription(
 OFCondition j2kCoder::updateLosslessDerivationDescription(
   DcmItem *dataset,
   const DcmRepresentationParameter * toRepParam,
-  const j2kCodecParameter *cp,
+  const j2kParams *cp,
   Uint8 bitsPerSample,
   double ratio,
   unsigned char *md5,
@@ -885,7 +885,7 @@ OFCondition j2kCoder::encodeMonochromeImage(
   DcmItem *dataset,
   const DcmRepresentationParameter * toRepParam,
   DcmPixelSequence * & pixSeq,
-  const j2kCodecParameter *cp,
+  const j2kParams *cp,
   double& compressionRatio) const
 {
   OFCondition result = EC_Normal;

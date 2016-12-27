@@ -8,7 +8,7 @@
 class DataInterface;
 class DJEncoder;
 class DcmDataset;
-class j2kCodecParameter;
+class j2kParams;
 class DJDecoder;
 class DcmItem;
 class DcmPixelItem;
@@ -235,7 +235,7 @@ private:
     DcmItem *dataset,
     const DcmRepresentationParameter * toRepParam,
     DcmPixelSequence * & pixSeq,
-    const j2kCodecParameter *cp,
+    const j2kParams *cp,
     double& compressionRatio) const;
 
   /** compresses the given uncompressed monochrome DICOM image and stores
@@ -255,7 +255,7 @@ private:
         DcmItem *dataset,
         const DcmRepresentationParameter * toRepParam,
         DcmPixelSequence * & pixSeq,
-        const j2kCodecParameter *cp,
+        const j2kParams *cp,
         double& compressionRatio) const;
 
   /** compresses the given uncompressed DICOM image and stores
@@ -298,14 +298,14 @@ private:
   virtual OFCondition updateDerivationDescription(
     DcmItem *dataset,
     const DcmRepresentationParameter * toRepParam,
-    const j2kCodecParameter *cp,
+    const j2kParams *cp,
     Uint8 bitsPerSample,
     double ratio) const;
 
   virtual OFCondition updateLosslessDerivationDescription(
     DcmItem *dataset,
     const DcmRepresentationParameter * toRepParam,
-    const j2kCodecParameter *cp,
+    const j2kParams *cp,
     Uint8 bitsPerSample,
     double ratio,
     unsigned char *md5,
@@ -336,7 +336,7 @@ private:
    */
   virtual void createDerivationDescription(
     const DcmRepresentationParameter * toRepParam,
-    const j2kCodecParameter *cp,
+    const j2kParams *cp,
     Uint8 bitsPerSample,
     double ratio,
     OFString& derivationDescription) const = 0;
@@ -350,7 +350,7 @@ private:
    */
   virtual DJEncoder *createEncoderInstance(
     const DcmRepresentationParameter * toRepParam,
-    const j2kCodecParameter *cp,
+    const j2kParams *cp,
     Uint8 bitsPerSample) const = 0;
 
   /** modifies all VOI window center/width settings in the image.
