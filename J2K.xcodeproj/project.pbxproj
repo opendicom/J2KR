@@ -374,8 +374,6 @@
 		4A13DE971E09EE8E00D4ED4D /* djcodecd.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A13DE951E09EE8E00D4ED4D /* djcodecd.h */; };
 		4A13DEB01E0A39B400D4ED4D /* djdecabs.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A13DEAE1E0A39B400D4ED4D /* djdecabs.h */; };
 		4A13DEB11E0A39B400D4ED4D /* djencabs.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A13DEAF1E0A39B400D4ED4D /* djencabs.h */; };
-		4A13DEDA1E0A3AC900D4ED4D /* kdurRepresentationParameter.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4A13DED61E0A3AC900D4ED4D /* kdurRepresentationParameter.cc */; };
-		4A13DEDC1E0A3AC900D4ED4D /* kdurRepresentationParameter.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A13DED81E0A3AC900D4ED4D /* kdurRepresentationParameter.h */; };
 		4A16858A1DE6584D007E10B2 /* libz.1.2.8.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A1685891DE6584D007E10B2 /* libz.1.2.8.tbd */; };
 		4A16870B1DE75970007E10B2 /* libz.1.2.8.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A1685891DE6584D007E10B2 /* libz.1.2.8.tbd */; };
 		4A16870C1DE75970007E10B2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29B97325FDCFA39411CA2CEA /* Foundation.framework */; };
@@ -433,14 +431,16 @@
 		4A3AD8661E11E58100C9F9E6 /* kdu90.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A3AD8601E11E58100C9F9E6 /* kdu90.h */; };
 		4A3AD8671E11E58100C9F9E6 /* kdu90Params.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A3AD8611E11E58100C9F9E6 /* kdu90Params.h */; };
 		4A3AD8681E11E58100C9F9E6 /* kdu90Params.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4A3AD8621E11E58100C9F9E6 /* kdu90Params.cc */; };
-		4A3AD86E1E11E5BB00C9F9E6 /* kdur.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4A3AD86A1E11E5BB00C9F9E6 /* kdur.cc */; };
-		4A3AD86F1E11E5BB00C9F9E6 /* kdurInstance.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4A3AD86B1E11E5BB00C9F9E6 /* kdurInstance.cc */; };
-		4A3AD8701E11E5BB00C9F9E6 /* kdurInstance.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A3AD86C1E11E5BB00C9F9E6 /* kdurInstance.h */; };
-		4A3AD8711E11E5BB00C9F9E6 /* kdur.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A3AD86D1E11E5BB00C9F9E6 /* kdur.h */; };
+		4A3AD86E1E11E5BB00C9F9E6 /* kdu.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4A3AD86A1E11E5BB00C9F9E6 /* kdu.cc */; };
+		4A3AD86F1E11E5BB00C9F9E6 /* kduInstance.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4A3AD86B1E11E5BB00C9F9E6 /* kduInstance.cc */; };
+		4A3AD8701E11E5BB00C9F9E6 /* kduInstance.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A3AD86C1E11E5BB00C9F9E6 /* kduInstance.h */; };
+		4A3AD8711E11E5BB00C9F9E6 /* kdu.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A3AD86D1E11E5BB00C9F9E6 /* kdu.h */; };
 		4A3AD8771E11ED3200C9F9E6 /* udk.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4A3AD8731E11ED3200C9F9E6 /* udk.cc */; };
 		4A3AD8781E11ED3200C9F9E6 /* udk.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A3AD8741E11ED3200C9F9E6 /* udk.h */; };
 		4A3AD8791E11ED3200C9F9E6 /* udkInstance.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4A3AD8751E11ED3200C9F9E6 /* udkInstance.cc */; };
 		4A3AD87A1E11ED3200C9F9E6 /* udkInstance.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A3AD8761E11ED3200C9F9E6 /* udkInstance.h */; };
+		4A3AD87D1E126F8700C9F9E6 /* kduParams.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A3AD87B1E126F8700C9F9E6 /* kduParams.h */; };
+		4A3AD87E1E126F8700C9F9E6 /* kduParams.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4A3AD87C1E126F8700C9F9E6 /* kduParams.cc */; };
 		4A3F81961E0AAD1400DEAED0 /* j2kCoder.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F81921E0AAD1400DEAED0 /* j2kCoder.cc */; };
 		4A3F81981E0AAD1400DEAED0 /* j2kCoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A3F81941E0AAD1400DEAED0 /* j2kCoder.h */; };
 		4A3F81B61E0B56D200DEAED0 /* j2kRegister.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F81B21E0B56D200DEAED0 /* j2kRegister.cc */; };
@@ -825,8 +825,6 @@
 		4A13DE951E09EE8E00D4ED4D /* djcodecd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = djcodecd.h; path = dccodec/dec/djcodecd.h; sourceTree = "<group>"; };
 		4A13DEAE1E0A39B400D4ED4D /* djdecabs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = djdecabs.h; sourceTree = "<group>"; };
 		4A13DEAF1E0A39B400D4ED4D /* djencabs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = djencabs.h; sourceTree = "<group>"; };
-		4A13DED61E0A3AC900D4ED4D /* kdurRepresentationParameter.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = kdurRepresentationParameter.cc; path = dcmj2k/dcpixel/kdurRepresentationParameter.cc; sourceTree = "<group>"; };
-		4A13DED81E0A3AC900D4ED4D /* kdurRepresentationParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = kdurRepresentationParameter.h; path = dcmj2k/dcpixel/kdurRepresentationParameter.h; sourceTree = "<group>"; };
 		4A1685891DE6584D007E10B2 /* libz.1.2.8.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.8.tbd; path = usr/lib/libz.1.2.8.tbd; sourceTree = SDKROOT; };
 		4A1687121DE75970007E10B2 /* OPJ */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OPJ; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A169D771DE7B8DC007E10B2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -885,14 +883,16 @@
 		4A3AD8601E11E58100C9F9E6 /* kdu90.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = kdu90.h; path = dcmj2k/dccodec/kdu90/kdu90.h; sourceTree = "<group>"; };
 		4A3AD8611E11E58100C9F9E6 /* kdu90Params.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = kdu90Params.h; path = dcmj2k/dccodec/kdu90/kdu90Params.h; sourceTree = "<group>"; };
 		4A3AD8621E11E58100C9F9E6 /* kdu90Params.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = kdu90Params.cc; path = dcmj2k/dccodec/kdu90/kdu90Params.cc; sourceTree = "<group>"; };
-		4A3AD86A1E11E5BB00C9F9E6 /* kdur.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = kdur.cc; path = dcmj2k/dccodec/kdu/kdur.cc; sourceTree = "<group>"; };
-		4A3AD86B1E11E5BB00C9F9E6 /* kdurInstance.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = kdurInstance.cc; path = dcmj2k/dccodec/kdu/kdurInstance.cc; sourceTree = "<group>"; };
-		4A3AD86C1E11E5BB00C9F9E6 /* kdurInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = kdurInstance.h; path = dcmj2k/dccodec/kdu/kdurInstance.h; sourceTree = "<group>"; };
-		4A3AD86D1E11E5BB00C9F9E6 /* kdur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = kdur.h; path = dcmj2k/dccodec/kdu/kdur.h; sourceTree = "<group>"; };
+		4A3AD86A1E11E5BB00C9F9E6 /* kdu.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = kdu.cc; path = dcmj2k/dccodec/kdu/kdu.cc; sourceTree = "<group>"; };
+		4A3AD86B1E11E5BB00C9F9E6 /* kduInstance.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = kduInstance.cc; path = dcmj2k/dccodec/kdu/kduInstance.cc; sourceTree = "<group>"; };
+		4A3AD86C1E11E5BB00C9F9E6 /* kduInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = kduInstance.h; path = dcmj2k/dccodec/kdu/kduInstance.h; sourceTree = "<group>"; };
+		4A3AD86D1E11E5BB00C9F9E6 /* kdu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = kdu.h; path = dcmj2k/dccodec/kdu/kdu.h; sourceTree = "<group>"; };
 		4A3AD8731E11ED3200C9F9E6 /* udk.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = udk.cc; path = dcmk2j/dccodec/udk/udk.cc; sourceTree = "<group>"; };
 		4A3AD8741E11ED3200C9F9E6 /* udk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = udk.h; path = dcmk2j/dccodec/udk/udk.h; sourceTree = "<group>"; };
 		4A3AD8751E11ED3200C9F9E6 /* udkInstance.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = udkInstance.cc; path = dcmk2j/dccodec/udk/udkInstance.cc; sourceTree = "<group>"; };
 		4A3AD8761E11ED3200C9F9E6 /* udkInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = udkInstance.h; path = dcmk2j/dccodec/udk/udkInstance.h; sourceTree = "<group>"; };
+		4A3AD87B1E126F8700C9F9E6 /* kduParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = kduParams.h; path = dcmj2k/dccodec/kdu/kduParams.h; sourceTree = "<group>"; };
+		4A3AD87C1E126F8700C9F9E6 /* kduParams.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = kduParams.cc; path = dcmj2k/dccodec/kdu/kduParams.cc; sourceTree = "<group>"; };
 		4A3F81921E0AAD1400DEAED0 /* j2kCoder.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = j2kCoder.cc; path = dcmj2k/dccodec/j2kCoder.cc; sourceTree = "<group>"; };
 		4A3F81941E0AAD1400DEAED0 /* j2kCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = j2kCoder.h; path = dcmj2k/dccodec/j2kCoder.h; sourceTree = "<group>"; };
 		4A3F81B21E0B56D200DEAED0 /* j2kRegister.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = j2kRegister.cc; path = dcmj2k/j2kRegister.cc; sourceTree = "<group>"; };
@@ -1694,7 +1694,6 @@
 			children = (
 				4A3F81B21E0B56D200DEAED0 /* j2kRegister.cc */,
 				4A3F81B31E0B56D200DEAED0 /* j2kRegister.h */,
-				4A13DEB41E0A3A1500D4ED4D /* dcpixel */,
 				4A13DEB31E0A39F800D4ED4D /* dccodec */,
 			);
 			name = dcmj2k;
@@ -1712,15 +1711,6 @@
 				4A13DEBC1E0A3A7800D4ED4D /* enc */,
 			);
 			name = dccodec;
-			sourceTree = "<group>";
-		};
-		4A13DEB41E0A3A1500D4ED4D /* dcpixel */ = {
-			isa = PBXGroup;
-			children = (
-				4A13DED61E0A3AC900D4ED4D /* kdurRepresentationParameter.cc */,
-				4A13DED81E0A3AC900D4ED4D /* kdurRepresentationParameter.h */,
-			);
-			name = dcpixel;
 			sourceTree = "<group>";
 		};
 		4A13DEBC1E0A3A7800D4ED4D /* enc */ = {
@@ -1828,10 +1818,12 @@
 		4A3AD8691E11E5A200C9F9E6 /* kdu */ = {
 			isa = PBXGroup;
 			children = (
-				4A3AD86A1E11E5BB00C9F9E6 /* kdur.cc */,
-				4A3AD86B1E11E5BB00C9F9E6 /* kdurInstance.cc */,
-				4A3AD86C1E11E5BB00C9F9E6 /* kdurInstance.h */,
-				4A3AD86D1E11E5BB00C9F9E6 /* kdur.h */,
+				4A3AD87B1E126F8700C9F9E6 /* kduParams.h */,
+				4A3AD87C1E126F8700C9F9E6 /* kduParams.cc */,
+				4A3AD86A1E11E5BB00C9F9E6 /* kdu.cc */,
+				4A3AD86B1E11E5BB00C9F9E6 /* kduInstance.cc */,
+				4A3AD86C1E11E5BB00C9F9E6 /* kduInstance.h */,
+				4A3AD86D1E11E5BB00C9F9E6 /* kdu.h */,
 			);
 			name = kdu;
 			sourceTree = "<group>";
@@ -1911,6 +1903,7 @@
 				4A13D92D1E023C9D00D4ED4D /* dipalimg.h in Headers */,
 				4A13D8E61E023C9D00D4ED4D /* dcrlerp.h in Headers */,
 				4A13D99E1E023C9E00D4ED4D /* djeijg12.h in Headers */,
+				4A3AD87D1E126F8700C9F9E6 /* kduParams.h in Headers */,
 				4A13D9681E023C9D00D4ED4D /* dipixel.h in Headers */,
 				4A13D9541E023C9D00D4ED4D /* diinpxt.h in Headers */,
 				4A13D91A1E023C9D00D4ED4D /* vrscan.h in Headers */,
@@ -2024,7 +2017,7 @@
 				4A13DE7C1E09E6E200D4ED4D /* jpegParams.h in Headers */,
 				4A13D94E1E023C9D00D4ED4D /* didocu.h in Headers */,
 				4A13D95C1E023C9D00D4ED4D /* dimomod.h in Headers */,
-				4A3AD8701E11E5BB00C9F9E6 /* kdurInstance.h in Headers */,
+				4A3AD8701E11E5BB00C9F9E6 /* kduInstance.h in Headers */,
 				4A13D9161E023C9D00D4ED4D /* i2doutpl.h in Headers */,
 				4A13DA351E023C9E00D4ED4D /* ofconapp.h in Headers */,
 				4A13D9A01E023C9E00D4ED4D /* djeijg16.h in Headers */,
@@ -2192,7 +2185,6 @@
 				4A13DA021E023C9E00D4ED4D /* threadcf.h in Headers */,
 				4A13DA141E023C9E00D4ED4D /* socketap.h in Headers */,
 				4A3F81B71E0B56D200DEAED0 /* j2kRegister.h in Headers */,
-				4A13DEDC1E0A3AC900D4ED4D /* kdurRepresentationParameter.h in Headers */,
 				4A13DA0E1E023C9E00D4ED4D /* logmacro.h in Headers */,
 				4A13DA241E023C9E00D4ED4D /* thredimp.h in Headers */,
 				4A13D8FF1E023C9D00D4ED4D /* dcvrof.h in Headers */,
@@ -2201,7 +2193,7 @@
 				4A13D8E71E023C9D00D4ED4D /* dcsequen.h in Headers */,
 				4A13D90A1E023C9D00D4ED4D /* dcvrul.h in Headers */,
 				4A13D90F1E023C9D00D4ED4D /* dcwcache.h in Headers */,
-				4A3AD8711E11E5BB00C9F9E6 /* kdur.h in Headers */,
+				4A3AD8711E11E5BB00C9F9E6 /* kdu.h in Headers */,
 				4A3AD8141E1179C100C9F9E6 /* jdhuff12.h in Headers */,
 				4A13D9FE1E023C9E00D4ED4D /* snprintf.h in Headers */,
 				4A13D8C81E023C9D00D4ED4D /* dcfcache.h in Headers */,
@@ -2385,20 +2377,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A3AD86E1E11E5BB00C9F9E6 /* kdur.cc in Sources */,
+				4A3AD86E1E11E5BB00C9F9E6 /* kdu.cc in Sources */,
 				4A3AD8681E11E58100C9F9E6 /* kdu90Params.cc in Sources */,
 				4A13DAAE1E05E23B00D4ED4D /* ddpiimpl.cc in Sources */,
 				4A3AD8641E11E58100C9F9E6 /* kdu90Instance.cc in Sources */,
 				4A3AD8521E11C3E400C9F9E6 /* k2jParams.cc in Sources */,
 				4A3AD8631E11E58100C9F9E6 /* kdu90.cc in Sources */,
 				4A3AD84D1E11C3B400C9F9E6 /* k2jRegister.cc in Sources */,
-				4A3AD86F1E11E5BB00C9F9E6 /* kdurInstance.cc in Sources */,
-				4A13DEDA1E0A3AC900D4ED4D /* kdurRepresentationParameter.cc in Sources */,
+				4A3AD86F1E11E5BB00C9F9E6 /* kduInstance.cc in Sources */,
 				4A3AD8571E11C41200C9F9E6 /* j2kParams.cc in Sources */,
 				4A3F81B61E0B56D200DEAED0 /* j2kRegister.cc in Sources */,
 				4A13D3641E02196000D4ED4D /* NSString+opendicom.mm in Sources */,
 				4A3AD8791E11ED3200C9F9E6 /* udkInstance.cc in Sources */,
 				4A3F81961E0AAD1400DEAED0 /* j2kCoder.cc in Sources */,
+				4A3AD87E1E126F8700C9F9E6 /* kduParams.cc in Sources */,
 				4A1B7ADF1E01D93500288437 /* J2K.mm in Sources */,
 				4A3AD8771E11ED3200C9F9E6 /* udk.cc in Sources */,
 				4A3AD85B1E11C85200C9F9E6 /* k2jCoder.cc in Sources */,

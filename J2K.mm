@@ -14,7 +14,7 @@
 #include "dcmtk/dcmjpeg/dcpixel/jpegParams.h"
 #include "dcmtk/dcmjpeg/dcpixel/jpegReversibleParams.h"
 #include "dcmtk/dcmj2k/dccodec/kdu90/kdu90Params.h"
-#include "dcmtk/dcmj2k/dcpixel/kdurRepresentationParameter.h"
+#include "dcmtk/dcmj2k/dccodec/kdu/kduParams.h"
 
 #include "dcmtk/dcmdata/dcdatset.h"
 #include "dcmtk/dcmdata/dcmetinf.h"
@@ -463,7 +463,7 @@ int main(int argc, const char *argv[])
 
 #pragma mark J2KR
         //choose param
-        kdurRepresentationParameter JP2KParamsLossLess(0);
+        kduParams JP2KParamsLossLess(0);
         DcmRepresentationParameter *params = &JP2KParamsLossLess;
         
         //encode

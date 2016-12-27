@@ -2,15 +2,15 @@
 #import "dcmtk/dcmj2k/dccodec/j2kCoder.h"
 //#import "dcmtk/djencabs.h"
 
-class kdur : public j2kCoder
+class kdu : public j2kCoder
 {
 public: 
 
   /// default constructor
-  kdur();
+  kdu();
 
   /// destructor
-  virtual ~kdur();
+  virtual ~kdu();
 
   /** returns the transfer syntax that this particular codec
    *  is able to encode and decode.

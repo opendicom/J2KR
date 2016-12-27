@@ -1,5 +1,5 @@
 #include "dcmtk/config/osconfig.h"
-#include "dcmtk/dcmj2k/dccodec/kdu/kdurInstance.h"
+#include "dcmtk/dcmj2k/dccodec/kdu/kduInstance.h"
 #include "dcmtk/dcmj2k/dccodec/j2kParams.h"
 #include "dcmtk/ofstd/ofconsol.h"
 #include "dcmtk/ofstd/ofstdinc.h"
@@ -25,7 +25,7 @@ extern "C" void* kdu_compressJPEG2K( void *data, int samplesPerPixel, int rows, 
 // use 16K blocks for temporary storage of compressed JPEG data
 #define IJGE12_BLOCKSIZE 16384
 
-kdurInstance::kdurInstance(const j2kParams& cp, EJ_Mode mode,
+kduInstance::kduInstance(const j2kParams& cp, EJ_Mode mode,
     Uint8 bitsPerSample)
                                 : DJEncoder()
                                 , cparam(&cp)
@@ -33,12 +33,12 @@ kdurInstance::kdurInstance(const j2kParams& cp, EJ_Mode mode,
                                 , modeofOperation(mode)
 {}
 
-kdurInstance::~kdurInstance()
+kduInstance::~kduInstance()
 {}
 
 
 //imageBuffer 16bit - abstract class DJEncoder
-OFCondition kdurInstance::encode(
+OFCondition kduInstance::encode(
   Uint16 columns,
   Uint16 rows,
   EP_Interpretation interpr,
@@ -53,7 +53,7 @@ OFCondition kdurInstance::encode(
 }
 
 //imageBuffer 16bit - used
-OFCondition kdurInstance::encode(
+OFCondition kduInstance::encode(
   Uint16 columns,
   Uint16 rows,
   EP_Interpretation interpr,
@@ -71,7 +71,7 @@ OFCondition kdurInstance::encode(
 
 
 //imageBuffer 8bit - abstract class DJEncoder
-OFCondition kdurInstance::encode(
+OFCondition kduInstance::encode(
   Uint16 columns,
   Uint16 rows,
   EP_Interpretation interpr,
@@ -85,7 +85,7 @@ OFCondition kdurInstance::encode(
 }
 
 //imageBuffer 8bit
-OFCondition kdurInstance::encode(
+OFCondition kduInstance::encode(
   Uint16 columns,
   Uint16 rows,
   EP_Interpretation colorSpace,
@@ -102,19 +102,19 @@ OFCondition kdurInstance::encode(
 }
 
 //abstract class DJEncoder
-Uint16 kdurInstance::bytesPerSample() const
+Uint16 kduInstance::bytesPerSample() const
 {
 	if( bitsPerSampleValue <= 8) return 1;
 	else return 2;
 }
 
 //abstract class DJEncoder
-Uint16 kdurInstance::bitsPerSample() const
+Uint16 kduInstance::bitsPerSample() const
 {
 	return bitsPerSampleValue;
 }
 
-OFCondition kdurInstance::encode( 
+OFCondition kduInstance::encode( 
   Uint16 columns,
   Uint16 rows,
   EP_Interpretation colorSpace,
@@ -178,7 +178,7 @@ OFCondition kdurInstance::encode(
 }
 
 
-E_TransferSyntax kdurInstance::supportedTransferSyntax()
+E_TransferSyntax kduInstance::supportedTransferSyntax()
 {
     return EXS_JPEG2000LosslessOnly;
 }

@@ -5,7 +5,7 @@
 
 class j2kParams;
 
-class kdurInstance: public DJEncoder
+class kduInstance: public DJEncoder
 {
 public:
 
@@ -14,12 +14,12 @@ public:
    *  @param mode mode of operation
    *  @param quality compression quality
    */
-kdurInstance(
+kduInstance(
   const j2kParams& cp,
   EJ_Mode mode,
   Uint8 bitsPerSample);
     
-virtual ~kdurInstance();
+virtual ~kduInstance();
 
     
 //imageBuffer 16bit - abstract class DJEncoder
@@ -96,10 +96,10 @@ virtual OFCondition encode(
 private:
 
   /// private undefined copy constructor
-  kdurInstance(const kdurInstance&);
+  kduInstance(const kduInstance&);
 
   /// private undefined copy assignment operator
-  kdurInstance& operator=(const kdurInstance&);
+  kduInstance& operator=(const kduInstance&);
 
   /// codec parameters
   const j2kParams *cparam;

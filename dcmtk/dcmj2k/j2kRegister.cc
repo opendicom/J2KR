@@ -3,13 +3,13 @@
 
 #include "dcmtk/dcmdata/dccodec.h"  /* for DcmCodecStruct */
 #include "dcmtk/dcmj2k/dccodec/kdu90/kdu90.h"
-#include "dcmtk/dcmj2k/dccodec/kdu/kdur.h"
+#include "dcmtk/dcmj2k/dccodec/kdu/kdu.h"
 
 // initialization of static members
 OFBool j2kRegister::registered      = OFFalse;
 j2kParams *j2kRegister::cp          = NULL;
 kdu90 *j2kRegister::enc2K			= NULL;
-kdur *j2kRegister::enc2KLoL	        = NULL;
+kdu *j2kRegister::enc2KLoL	        = NULL;
 
 void j2kRegister::registerCodecs(
     E_CompressionColorSpaceConversion pCompressionCSConversion,
@@ -46,7 +46,7 @@ void j2kRegister::registerCodecs(
       if (enc2K) DcmCodecList::registerCodec(enc2K, NULL, cp);
         
       // JPEG 2K LossLess
-      enc2KLoL = new kdur();
+      enc2KLoL = new kdu();
       if (enc2KLoL) DcmCodecList::registerCodec(enc2KLoL, NULL, cp);
 
       registered = OFTrue;

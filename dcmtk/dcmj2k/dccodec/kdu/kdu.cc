@@ -1,36 +1,36 @@
 #include "dcmtk/config/osconfig.h"
 #include "dcmtk/dcmj2k/dccodec/j2kParams.h"
-#include "dcmtk/dcmj2k/dcpixel/kdurRepresentationParameter.h"
-#include "dcmtk/dcmj2k/dccodec/kdu/kdur.h"
-#include "dcmtk/dcmj2k/dccodec/kdu/kdurInstance.h"
+#include "dcmtk/dcmj2k/dccodec/kdu/kduParams.h"
+#include "dcmtk/dcmj2k/dccodec/kdu/kdu.h"
+#include "dcmtk/dcmj2k/dccodec/kdu/kduInstance.h"
 
-kdur::kdur()
+kdu::kdu()
 : j2kCoder()
 {}
 
-kdur::~kdur()
+kdu::~kdu()
 {}
 
-E_TransferSyntax kdur::supportedTransferSyntax() const
+E_TransferSyntax kdu::supportedTransferSyntax() const
 {
   return EXS_JPEG2000LosslessOnly;
 }
 
 
-OFBool kdur::isLosslessProcess() const
+OFBool kdu::isLosslessProcess() const
 {
   return OFTrue;
 }
 
 
-void kdur::createDerivationDescription(
+void kdu::createDerivationDescription(
   const DcmRepresentationParameter * toRepParam,
   const j2kParams * /* cp */ ,
   Uint8 /* bitsPerSample */ ,
   double ratio,
   OFString& derivationDescription) const
 {
-  kdurRepresentationParameter defaultRP;
+  kduParams defaultRP;
 //  const DJ_RPLossy *rp = toRepParam ? (const DJ_RPLossy *)toRepParam : &defaultRP ;
 //  char buf[64];
  
@@ -40,13 +40,13 @@ void kdur::createDerivationDescription(
 }
 
 
-DJEncoder *kdur::createEncoderInstance(
+DJEncoder *kdu::createEncoderInstance(
     const DcmRepresentationParameter * toRepParam,
     const j2kParams *cp,
     Uint8 bitsPerSample) const
 {
   DJEncoder * result = NULL;
-  result = new kdurInstance(
+  result = new kduInstance(
                             *cp,
                             EJM_JP2K_lossless,
                             bitsPerSample

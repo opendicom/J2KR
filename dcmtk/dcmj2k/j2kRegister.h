@@ -6,7 +6,7 @@
 
 class j2kParams;
 class kdu90;
-class kdur;
+class kdu;
 
 // singleton class registering all j2k processes.
 
@@ -88,6 +88,6 @@ public:
   static kdu90 *enc2K;
     
   /// pointer to encoder for JPEG 2K LossLess
-  static kdur *enc2KLoL;
+  static kdu *enc2KLoL;
 
 };

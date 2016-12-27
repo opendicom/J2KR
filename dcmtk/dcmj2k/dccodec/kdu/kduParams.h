@@ -2,7 +2,7 @@
 #include "dcmtk/dcmdata/dcpixel.h" /* for class DcmRepresentationParameter */
 #include "djdefine.h"
 
-class kdurRepresentationParameter : public DcmRepresentationParameter
+class kduParams : public DcmRepresentationParameter
 {
 public:
 
@@ -10,13 +10,13 @@ public:
    *  @param aPrediction prediction value
    *  @param aPt point transform value
    */
-  kdurRepresentationParameter(int aPrediction=1, int aPt=0);
+  kduParams(int aPrediction=1, int aPt=0);
 
   /// copy constructor
-  kdurRepresentationParameter(const kdurRepresentationParameter& arg);
+  kduParams(const kduParams& arg);
 
   /// destructor
-  virtual ~kdurRepresentationParameter();
+  virtual ~kduParams();
   
   /** this methods creates a copy of type DcmRepresentationParameter   *  it must be overweritten in every subclass.
    *  @return copy of this object
