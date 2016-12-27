@@ -85,5 +85,5 @@ public:
   static j2kParams *cp;
     
   /// pointer to encoder for JPEG 2K
-  static kdu *enc2K;
+  static kdu *kakadu;
 };

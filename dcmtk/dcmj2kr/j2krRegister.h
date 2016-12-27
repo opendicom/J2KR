@@ -84,6 +84,6 @@ public:
   static j2krParams *cp;
     
   /// pointer to encoder for JPEG 2K LossLess
-  static kdur *enc2KLoL;
+  static kdur *kakaduReversible;
 
 };

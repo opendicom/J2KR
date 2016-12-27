@@ -7,7 +7,7 @@
 // initialization of static members
 OFBool j2kRegister::registered      = OFFalse;
 j2kParams *j2kRegister::cp          = NULL;
-kdu *j2kRegister::enc2K             = NULL;
+kdu *j2kRegister::kakadu             = NULL;
 
 void j2kRegister::registerCodecs(
     E_CompressionColorSpaceConversion pCompressionCSConversion,
@@ -40,8 +40,8 @@ void j2kRegister::registerCodecs(
     if (cp)
     {
       // JPEG 2K Lossy
-      enc2K = new kdu();
-      if (enc2K) DcmCodecList::registerCodec(enc2K, NULL, cp);
+      kakadu = new kdu();
+      if (kakadu) DcmCodecList::registerCodec(kakadu, NULL, cp);
         
       registered = OFTrue;
     }
@@ -52,13 +52,13 @@ void j2kRegister::cleanup()
 {
   if (registered)
   {
-    DcmCodecList::deregisterCodec(enc2K);
-    delete enc2K;
+    DcmCodecList::deregisterCodec(kakadu);
+    delete kakadu;
     delete cp;
     registered = OFFalse;
 #ifdef DEBUG
     // not needed but useful for debugging purposes
-    enc2K = NULL;
+    kakadu = NULL;
     cp     = NULL;
 #endif
 

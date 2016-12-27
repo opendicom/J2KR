@@ -121,9 +121,9 @@ public:
   static DJEncoderLossless *enclol;
     
   /// pointer to encoder for JPEG 2K
-  //static DJEncoder2K *enc2K;
+  //static DJEncoder2K *kakadu;
     
   /// pointer to encoder for JPEG 2K LossLess
-  //static DJEncoder2KLossLess *enc2KLoL;
+  //static DJEncoder2KLossLess *kakaduReversible;
 
 };

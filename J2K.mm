@@ -47,8 +47,12 @@ enum baseArgs {
 
 static NSFileManager *fileManager=nil;
 static NSError *err=nil;
-static BOOL kdu=false;
-static BOOL opj=false;
+static BOOL kakaduReversible=false;
+static BOOL kakadu=false;
+static BOOL openjpegReversible=false;
+static BOOL kakaduReversibleDecode=false;
+static BOOL kakaduDecode=false;
+static BOOL openjpegReversibleDecode=false;
 
 BOOL folderExists(NSString *f, BOOL shouldBeEmptyAndWritable)
 {
@@ -119,8 +123,12 @@ int main(int argc, const char *argv[])
 
     fileManager=[NSFileManager defaultManager];
 
-    kdu=[args[codec] isEqualToString:@"kdu"];
-    opj=[args[codec] isEqualToString:@"opj"];
+    kakadu=[args[codec] isEqualToString:@"kdu"];
+    kakaduReversible=[args[codec] isEqualToString:@"kdur"];
+    openjpegReversible=[args[codec] isEqualToString:@"opjr"];
+    kakaduDecode=[args[codec] isEqualToString:@"udk"];
+    kakaduReversibleDecode=[args[codec] isEqualToString:@"rudk"];
+    openjpegReversibleDecode=[args[codec] isEqualToString:@"rjpo"];
 #pragma mark arg[5] log level
     enum loglevel {
         FATAL_LOG_LEVEL,
@@ -321,8 +329,8 @@ int main(int argc, const char *argv[])
         if (DJEncoderRegistration::encpro != NULL) fprintf(stdout,"      (Retired)                dcmtk ijg encpro\r\n");
         if (DJEncoderRegistration::encsv1 != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.70) dcmtk ijg encsv1 \r\n");
         if (DJEncoderRegistration::enclol != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.57) dcmtk ijg enclol \r\n");
-        if (j2kRegister::enc2K != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.91) kdu enc2K \r\n");
-        if (j2krRegister::enc2KLoL != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.90) kdu enc2KLoL \r\n");
+        if (j2kRegister::kakadu != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.91) dcmtk kakadu \r\n");
+        if (j2krRegister::kakaduReversible != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.90) dcmtk kakaduReversible \r\n");
         if (DJLSEncoderRegistration::registered_==OFTrue)
         {            
             if (DJLSEncoderRegistration::losslessencoder_ != nullptr) fprintf(stdout,"      (1.2.840.10008.1.2.4.80) %s losslessencoder \r\n",DJLSEncoderRegistration::getLibraryVersionString().c_str());
@@ -339,7 +347,7 @@ int main(int argc, const char *argv[])
         if (DJDecoderRegistration::decpro != NULL) fprintf(stdout,"      (Retired)                dcmtk ijg encpro\r\n");
         if (DJDecoderRegistration::decsv1 != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.70) dcmtk ijg encsv1 \r\n");
         if (DJDecoderRegistration::declol != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.57) dcmtk ijg enclol \r\n");
-        if (k2jRegister::dec2KLoL != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.90) kdu enc2KLoL \r\n");
+        if (k2jRegister::dec2KLoL != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.90) kdu kakaduReversible \r\n");
         if (DJLSEncoderRegistration::registered_==OFTrue)
         {
             if (DJLSEncoderRegistration::losslessencoder_ != nullptr) fprintf(stdout,"      (1.2.840.10008.1.2.4.80) %s losslessencoder \r\n",DJLSEncoderRegistration::getLibraryVersionString().c_str());
