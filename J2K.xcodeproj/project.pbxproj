@@ -38,6 +38,16 @@
 		4A0D92511E128FCD00E2DE7B /* kdurInstance.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A0D924B1E128FCD00E2DE7B /* kdurInstance.h */; };
 		4A0D92521E128FCD00E2DE7B /* kdurParams.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4A0D924C1E128FCD00E2DE7B /* kdurParams.cc */; };
 		4A0D92531E128FCD00E2DE7B /* kdurParams.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A0D924D1E128FCD00E2DE7B /* kdurParams.h */; };
+		4A0D925B1E12ADF700E2DE7B /* rk2jRegister.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4A0D92551E12ADF700E2DE7B /* rk2jRegister.cc */; };
+		4A0D925C1E12ADF700E2DE7B /* rk2jRegister.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A0D92561E12ADF700E2DE7B /* rk2jRegister.h */; };
+		4A0D925D1E12ADF700E2DE7B /* rk2jParams.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A0D92571E12ADF700E2DE7B /* rk2jParams.h */; };
+		4A0D925E1E12ADF700E2DE7B /* rk2jParams.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4A0D92581E12ADF700E2DE7B /* rk2jParams.cc */; };
+		4A0D925F1E12ADF700E2DE7B /* rk2jCoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A0D92591E12ADF700E2DE7B /* rk2jCoder.h */; };
+		4A0D92601E12ADF700E2DE7B /* rk2jCoder.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4A0D925A1E12ADF700E2DE7B /* rk2jCoder.cc */; };
+		4A0D92661E12AF2200E2DE7B /* rudkInstance.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A0D92621E12AF2200E2DE7B /* rudkInstance.h */; };
+		4A0D92671E12AF2200E2DE7B /* rudkInstance.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4A0D92631E12AF2200E2DE7B /* rudkInstance.cc */; };
+		4A0D92681E12AF2200E2DE7B /* rudk.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A0D92641E12AF2200E2DE7B /* rudk.h */; };
+		4A0D92691E12AF2200E2DE7B /* rudk.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4A0D92651E12AF2200E2DE7B /* rudk.cc */; };
 		4A13D3601E02193400D4ED4D /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A13D35F1E02193400D4ED4D /* libstdc++.6.0.9.dylib */; };
 		4A13D3631E02196000D4ED4D /* NSString+opendicom.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A13D3611E02196000D4ED4D /* NSString+opendicom.h */; };
 		4A13D3641E02196000D4ED4D /* NSString+opendicom.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A13D3621E02196000D4ED4D /* NSString+opendicom.mm */; };
@@ -488,6 +498,16 @@
 		4A0D924B1E128FCD00E2DE7B /* kdurInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = kdurInstance.h; path = dcmj2kr/kdur/kdurInstance.h; sourceTree = "<group>"; };
 		4A0D924C1E128FCD00E2DE7B /* kdurParams.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = kdurParams.cc; path = dcmj2kr/kdur/kdurParams.cc; sourceTree = "<group>"; };
 		4A0D924D1E128FCD00E2DE7B /* kdurParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = kdurParams.h; path = dcmj2kr/kdur/kdurParams.h; sourceTree = "<group>"; };
+		4A0D92551E12ADF700E2DE7B /* rk2jRegister.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = rk2jRegister.cc; path = dcmrk2j/rk2jRegister.cc; sourceTree = "<group>"; };
+		4A0D92561E12ADF700E2DE7B /* rk2jRegister.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rk2jRegister.h; path = dcmrk2j/rk2jRegister.h; sourceTree = "<group>"; };
+		4A0D92571E12ADF700E2DE7B /* rk2jParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rk2jParams.h; path = dcmrk2j/rk2jParams.h; sourceTree = "<group>"; };
+		4A0D92581E12ADF700E2DE7B /* rk2jParams.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = rk2jParams.cc; path = dcmrk2j/rk2jParams.cc; sourceTree = "<group>"; };
+		4A0D92591E12ADF700E2DE7B /* rk2jCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rk2jCoder.h; path = dcmrk2j/rk2jCoder.h; sourceTree = "<group>"; };
+		4A0D925A1E12ADF700E2DE7B /* rk2jCoder.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = rk2jCoder.cc; path = dcmrk2j/rk2jCoder.cc; sourceTree = "<group>"; };
+		4A0D92621E12AF2200E2DE7B /* rudkInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rudkInstance.h; path = dcmrk2j/rudk/rudkInstance.h; sourceTree = "<group>"; };
+		4A0D92631E12AF2200E2DE7B /* rudkInstance.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = rudkInstance.cc; path = dcmrk2j/rudk/rudkInstance.cc; sourceTree = "<group>"; };
+		4A0D92641E12AF2200E2DE7B /* rudk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rudk.h; path = dcmrk2j/rudk/rudk.h; sourceTree = "<group>"; };
+		4A0D92651E12AF2200E2DE7B /* rudk.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = rudk.cc; path = dcmrk2j/rudk/rudk.cc; sourceTree = "<group>"; };
 		4A13D35F1E02193400D4ED4D /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "libstdc++.6.0.9.dylib"; sourceTree = "<group>"; };
 		4A13D3611E02196000D4ED4D /* NSString+opendicom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+opendicom.h"; path = "objective-c categories/NSString+opendicom.h"; sourceTree = "<group>"; };
 		4A13D3621E02196000D4ED4D /* NSString+opendicom.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "NSString+opendicom.mm"; path = "objective-c categories/NSString+opendicom.mm"; sourceTree = "<group>"; };
@@ -1052,6 +1072,31 @@
 			name = kdur;
 			sourceTree = "<group>";
 		};
+		4A0D92541E12AD8900E2DE7B /* dcmrk2j */ = {
+			isa = PBXGroup;
+			children = (
+				4A0D92611E12ADFE00E2DE7B /* rudk */,
+				4A0D92551E12ADF700E2DE7B /* rk2jRegister.cc */,
+				4A0D92561E12ADF700E2DE7B /* rk2jRegister.h */,
+				4A0D92571E12ADF700E2DE7B /* rk2jParams.h */,
+				4A0D92581E12ADF700E2DE7B /* rk2jParams.cc */,
+				4A0D92591E12ADF700E2DE7B /* rk2jCoder.h */,
+				4A0D925A1E12ADF700E2DE7B /* rk2jCoder.cc */,
+			);
+			name = dcmrk2j;
+			sourceTree = "<group>";
+		};
+		4A0D92611E12ADFE00E2DE7B /* rudk */ = {
+			isa = PBXGroup;
+			children = (
+				4A0D92621E12AF2200E2DE7B /* rudkInstance.h */,
+				4A0D92631E12AF2200E2DE7B /* rudkInstance.cc */,
+				4A0D92641E12AF2200E2DE7B /* rudk.h */,
+				4A0D92651E12AF2200E2DE7B /* rudk.cc */,
+			);
+			name = rudk;
+			sourceTree = "<group>";
+		};
 		4A13D6BF1E0220C900D4ED4D /* OPJ */ = {
 			isa = PBXGroup;
 			children = (
@@ -1070,6 +1115,7 @@
 		4A13D6E11E023C9C00D4ED4D /* dcmtk */ = {
 			isa = PBXGroup;
 			children = (
+				4A0D92541E12AD8900E2DE7B /* dcmrk2j */,
 				4A0D923A1E128F8F00E2DE7B /* dcmj2kr */,
 				4A3AD84A1E11C0B600C9F9E6 /* dcmk2j */,
 				4A13DEB21E0A39DF00D4ED4D /* dcmj2k */,
@@ -1892,6 +1938,7 @@
 				4A13D8D41E023C9D00D4ED4D /* dcofsetl.h in Headers */,
 				4A13D9351E023C9D00D4ED4D /* diqthitl.h in Headers */,
 				4A13DA171E023C9E00D4ED4D /* filter.h in Headers */,
+				4A0D925F1E12ADF700E2DE7B /* rk2jCoder.h in Headers */,
 				4A13D8EA1E023C9D00D4ED4D /* dcswap.h in Headers */,
 				4A13DA181E023C9E00D4ED4D /* logevent.h in Headers */,
 				4A13D9181E023C9D00D4ED4D /* i2dplsc.h in Headers */,
@@ -2063,6 +2110,7 @@
 				4A3AD7FB1E11776600C9F9E6 /* jmorecfg16.h in Headers */,
 				4A13D8DB1E023C9D00D4ED4D /* dcpcache.h in Headers */,
 				4A13DA3F1E023C9E00D4ED4D /* offile.h in Headers */,
+				4A0D925C1E12ADF700E2DE7B /* rk2jRegister.h in Headers */,
 				4A0D92431E128FB100E2DE7B /* j2krParams.h in Headers */,
 				4A13DA031E023C9E00D4ED4D /* timehelp.h in Headers */,
 				4A13DA291E023C9E00D4ED4D /* tracelog.h in Headers */,
@@ -2104,6 +2152,7 @@
 				4A13DA421E023C9E00D4ED4D /* ofgrp.h in Headers */,
 				4A13D9171E023C9D00D4ED4D /* i2dplnsc.h in Headers */,
 				4A13D8E41E023C9D00D4ED4D /* dcrleenc.h in Headers */,
+				4A0D92661E12AF2200E2DE7B /* rudkInstance.h in Headers */,
 				4A13DA5A1E023C9E00D4ED4D /* oftypes.h in Headers */,
 				4A13DA561E023C9E00D4ED4D /* oftime.h in Headers */,
 				4A13DA491E023C9E00D4ED4D /* ofoption.h in Headers */,
@@ -2208,7 +2257,9 @@
 				4A13D9591E023C9D00D4ED4D /* dimoflt.h in Headers */,
 				4A13DA161E023C9E00D4ED4D /* factory.h in Headers */,
 				4A13D8F81E023C9D00D4ED4D /* dcvrfd.h in Headers */,
+				4A0D92681E12AF2200E2DE7B /* rudk.h in Headers */,
 				4A13D9EA1E023C9E00D4ED4D /* clfsap.h in Headers */,
+				4A0D925D1E12ADF700E2DE7B /* rk2jParams.h in Headers */,
 				4A13D90B1E023C9D00D4ED4D /* dcvrulup.h in Headers */,
 				4A13DA411E023C9E00D4ED4D /* ofglobal.h in Headers */,
 				4A13D8D71E023C9D00D4ED4D /* dcostrmf.h in Headers */,
@@ -2384,18 +2435,23 @@
 			files = (
 				4A0D92391E128F8100E2DE7B /* kdu.cc in Sources */,
 				4A13DAAE1E05E23B00D4ED4D /* ddpiimpl.cc in Sources */,
+				4A0D92601E12ADF700E2DE7B /* rk2jCoder.cc in Sources */,
+				4A0D92691E12AF2200E2DE7B /* rudk.cc in Sources */,
 				4A0D92421E128FB100E2DE7B /* j2krRegister.cc in Sources */,
 				4A0D92001E1285A600E2DE7B /* k2jParams.cc in Sources */,
 				4A0D91FE1E1285A600E2DE7B /* k2jCoder.cc in Sources */,
 				4A0D92461E128FB100E2DE7B /* j2krCoder.cc in Sources */,
+				4A0D925E1E12ADF700E2DE7B /* rk2jParams.cc in Sources */,
 				4A0D920F1E1285EF00E2DE7B /* j2kCoder.cc in Sources */,
 				4A3AD84D1E11C3B400C9F9E6 /* k2jRegister.cc in Sources */,
 				4A3F81B61E0B56D200DEAED0 /* j2kRegister.cc in Sources */,
 				4A13D3641E02196000D4ED4D /* NSString+opendicom.mm in Sources */,
 				4A0D92111E1285EF00E2DE7B /* j2kParams.cc in Sources */,
 				4A0D92351E128F8100E2DE7B /* kduParams.cc in Sources */,
+				4A0D92671E12AF2200E2DE7B /* rudkInstance.cc in Sources */,
 				4A0D92091E1285C200E2DE7B /* udkInstance.cc in Sources */,
 				4A0D92501E128FCD00E2DE7B /* kdurInstance.cc in Sources */,
+				4A0D925B1E12ADF700E2DE7B /* rk2jRegister.cc in Sources */,
 				4A0D92071E1285C200E2DE7B /* udk.cc in Sources */,
 				4A0D92371E128F8100E2DE7B /* kduInstance.cc in Sources */,
 				4A0D924E1E128FCD00E2DE7B /* kdur.cc in Sources */,

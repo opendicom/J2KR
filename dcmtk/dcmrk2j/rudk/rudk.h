@@ -1,12 +1,12 @@
 #include "dcmtk/config/osconfig.h"
-#include "dcmtk/dcmk2j/k2jCoder.h"
+#include "dcmtk/dcmrk2j/rk2jCoder.h"
 
 
-class udk : public k2jCoder
+class rudk : public rk2jCoder
 {
 public: 
-  udk();
-  virtual ~udk();
+  rudk();
+  virtual ~rudk();
 
     
   virtual OFBool canChangeCoding(
@@ -92,7 +92,7 @@ private:
    */
   virtual DJDecoder *createDecoderInstance(
     const DcmRepresentationParameter * toRepParam,
-    const k2jParams *cp,
+    const rk2jParams *cp,
     Uint8 bitsPerSample,
     OFBool isYBR) const;
 };

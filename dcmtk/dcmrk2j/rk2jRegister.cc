@@ -1,16 +1,16 @@
 #include "dcmtk/config/osconfig.h"
-#include "dcmtk/dcmk2j/k2jRegister.h"
+#include "dcmtk/dcmrk2j/rk2jRegister.h"
 
 #include "dcmtk/dcmdata/dccodec.h"  /* for DcmCodecStruct */
 
-#include "dcmtk/dcmk2j/udk/udk.h"
+#include "dcmtk/dcmrk2j/rudk/rudk.h"
 
 // initialization of static members
-OFBool k2jRegister::registered                       = OFFalse;
-k2jParams *k2jRegister::cp                           = NULL;
-udk *k2jRegister::dec2KLoL                           = NULL;
+OFBool rk2jRegister::registered                       = OFFalse;
+rk2jParams *rk2jRegister::cp                           = NULL;
+rudk *rk2jRegister::dec2KLoL                           = NULL;
 
-void k2jRegister::registerCodecs(
+void rk2jRegister::registerCodecs(
     E_DecompressionColorSpaceConversion pDecompressionCSConversion,
     E_UIDCreation pCreateSOPInstanceUID,
     E_PlanarConfiguration pPlanarConfiguration,
@@ -18,7 +18,7 @@ void k2jRegister::registerCodecs(
 {
   if (! registered)
   {
-    cp = new k2jParams(
+    cp = new rk2jParams(
       ECC_lossyYCbCr, // ignored, compression only
       pDecompressionCSConversion, 
       pCreateSOPInstanceUID, 
@@ -26,7 +26,7 @@ void k2jRegister::registerCodecs(
       predictor6WorkaroundEnable);
     if (cp)
     {
-      dec2KLoL = new udk();
+      dec2KLoL = new rudk();
       if (dec2KLoL) DcmCodecList::registerCodec(dec2KLoL, NULL, cp);
 
       registered = OFTrue;
@@ -34,7 +34,7 @@ void k2jRegister::registerCodecs(
   }
 }
 
-void k2jRegister::cleanup()
+void rk2jRegister::cleanup()
 {
   if (registered)
   {

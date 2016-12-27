@@ -1,5 +1,5 @@
 #include "dcmtk/config/osconfig.h"
-#include "dcmtk/dcmk2j/k2jCoder.h"
+#include "dcmtk/dcmrk2j/rk2jCoder.h"
 
 #include "dcmtk/dcmdata/dcdatset.h"  /* for class DcmDataset */
 #include "dcmtk/dcmdata/dcdeftag.h"  /* for tag constants */
@@ -9,18 +9,18 @@
 #include "dcmtk/dcmdata/dcswap.h"    /* for swapIfNecessary() */
 #include "dcmtk/dcmdata/dcuid.h"     /* for dcmGenerateUniqueIdentifer()*/
 
-#include "dcmtk/dcmk2j/k2jParams.h"  /* for class DJCodecParameter */
+#include "dcmtk/dcmrk2j/rk2jParams.h"  /* for class DJCodecParameter */
 //JF #include "dcmtk/dcmjpeg/djcparam.h"  /* for class DJCodecParameter */
 #include "dcmtk/djdecabs.h"  /* for class DJDecoder */
 
 
-k2jCoder::k2jCoder()
+rk2jCoder::rk2jCoder()
 : DcmCodec()
 {}
-k2jCoder::~k2jCoder()
+rk2jCoder::~rk2jCoder()
 {}
 
-OFBool k2jCoder::canChangeCoding(
+OFBool rk2jCoder::canChangeCoding(
     const E_TransferSyntax oldRepType,
     const E_TransferSyntax newRepType) const
 {
@@ -34,7 +34,7 @@ OFBool k2jCoder::canChangeCoding(
 }
 
 
-OFCondition k2jCoder::decode(
+OFCondition rk2jCoder::decode(
     const DcmRepresentationParameter * fromRepParam,
     DcmPixelSequence * pixSeq,
     DcmPolymorphOBOW& uncompressedPixelData,
@@ -43,7 +43,7 @@ OFCondition k2jCoder::decode(
 {
   OFCondition result = EC_Normal;
   // assume we can cast the codec parameter to what we need
-  const k2jParams *djcp = OFreinterpret_cast(const k2jParams*, cp);
+  const rk2jParams *djcp = OFreinterpret_cast(const rk2jParams*, cp);
 
   DcmStack localStack(objStack);
   (void)localStack.pop();             // pop pixel data element from stack
@@ -311,7 +311,7 @@ OFCondition k2jCoder::decode(
 }
 
 
-OFCondition k2jCoder::decodeFrame(
+OFCondition rk2jCoder::decodeFrame(
     const DcmRepresentationParameter *fromParam,
     DcmPixelSequence *fromPixSeq,
     const DcmCodecParameter *cp,
@@ -325,7 +325,7 @@ OFCondition k2jCoder::decodeFrame(
 
   OFCondition result = EC_Normal;
   // assume we can cast the codec parameter to what we need
-  const k2jParams *djcp = OFreinterpret_cast(const k2jParams*, cp);
+  const rk2jParams *djcp = OFreinterpret_cast(const rk2jParams*, cp);
 
   if ((!dataset)||((dataset->ident()!= EVR_dataset) && (dataset->ident()!= EVR_item))) result = EC_InvalidTag;
   else
@@ -503,7 +503,7 @@ OFCondition k2jCoder::decodeFrame(
 }
 
 
-OFCondition k2jCoder::encode(
+OFCondition rk2jCoder::encode(
     const Uint16 * /* pixelData */,
     const Uint32 /* length */,
     const DcmRepresentationParameter * /* toRepParam */,
@@ -516,7 +516,7 @@ OFCondition k2jCoder::encode(
 }
 
 
-OFCondition k2jCoder::encode(
+OFCondition rk2jCoder::encode(
     const E_TransferSyntax /* fromRepType */,
     const DcmRepresentationParameter * /* fromRepParam */,
     DcmPixelSequence * /* fromPixSeq */,
@@ -530,7 +530,7 @@ OFCondition k2jCoder::encode(
 }
 
 
-OFCondition k2jCoder::determineDecompressedColorModel(
+OFCondition rk2jCoder::determineDecompressedColorModel(
     const DcmRepresentationParameter *fromParam,
     DcmPixelSequence *fromPixSeq,
     const DcmCodecParameter *cp,
@@ -578,13 +578,13 @@ E_TransferSyntax supportedTransferSyntax() const = 0;
  */
 
 
-Uint16 k2jCoder::readUint16(const Uint8 *data)
+Uint16 rk2jCoder::readUint16(const Uint8 *data)
 {
   return OFstatic_cast(Uint16, (OFstatic_cast(Uint16, *data) << 8) | OFstatic_cast(Uint16, *(data+1)));
 }
 
 
-Uint8 k2jCoder::scanJpegDataForBitDepth(
+Uint8 rk2jCoder::scanJpegDataForBitDepth(
   const Uint8 *data,
   const Uint32 fragmentLength)
 {
@@ -740,7 +740,7 @@ Uint8 k2jCoder::scanJpegDataForBitDepth(
 }
 
 
-OFCondition k2jCoder::createPlanarConfigurationByte(
+OFCondition rk2jCoder::createPlanarConfigurationByte(
   Uint8 *imageFrame,
   Uint16 columns,
   Uint16 rows)
@@ -769,7 +769,7 @@ OFCondition k2jCoder::createPlanarConfigurationByte(
   return EC_Normal;
 }
 
-OFCondition k2jCoder::createPlanarConfigurationWord(
+OFCondition rk2jCoder::createPlanarConfigurationWord(
   Uint16 *imageFrame,
   Uint16 columns,
   Uint16 rows)
@@ -804,7 +804,7 @@ OFCondition k2jCoder::createPlanarConfigurationWord(
  * are handled correctly.
  */
 
-OFBool k2jCoder::requiresPlanarConfiguration(
+OFBool rk2jCoder::requiresPlanarConfiguration(
   const char *sopClassUID,
   EP_Interpretation photometricInterpretation)
 {

@@ -6,12 +6,12 @@ extern "C"
   struct jpeg_decompress_struct;
 }
 
-class k2jParams;
+class rk2jParams;
 
 /** this class encapsulates the decompression routines of the
  *  IJG JPEG library configured for 16 bits/sample.
  */
-class udkInstance : public DJDecoder
+class rudkInstance : public DJDecoder
 {
 public:
 
@@ -19,10 +19,10 @@ public:
    *  @param cp codec parameters
    *  @param isYBR flag indicating if DICOM photometric interpretation is YCbCr
    */
-  udkInstance(const k2jParams& cp, OFBool isYBR);
+  rudkInstance(const rk2jParams& cp, OFBool isYBR);
 
   /// destructor
-  virtual ~udkInstance();
+  virtual ~rudkInstance();
 
   /** initializes internal object structures.
    *  Must be called before a new frame is decompressed.
@@ -72,13 +72,13 @@ public:
 private:
 
   /// private undefined copy constructor
-  udkInstance(const udkInstance&);
+  rudkInstance(const rudkInstance&);
 
   /// private undefined copy assignment operator
-  udkInstance& operator=(const udkInstance&);
+  rudkInstance& operator=(const rudkInstance&);
 
   /// codec parameters
-  const k2jParams *cparam;
+  const rk2jParams *cparam;
 
   /// decompression structure
   jpeg_decompress_struct *cinfo;

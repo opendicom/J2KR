@@ -4,24 +4,35 @@
 #undef verify
 #include "dcmtk/config/osconfig.h"
 #include "dcmtk/oflog/oflog.h"
-#include "dcmtk/dcmjpeg/dec/djdecode.h"
-#include "dcmtk/dcmjpeg/enc/djencode.h"
-#include "dcmtk/dcmk2j/k2jRegister.h"
-#include "dcmtk/dcmj2k/j2kRegister.h"
-#include "dcmtk/dcmj2kr/j2krRegister.h"
-#include "dcmtk/dcmjpls/djdecode.h"
-#include "dcmtk/dcmjpls/djencode.h"
-
-#include "dcmtk/dcmjpeg/dcpixel/jpegParams.h"
-#include "dcmtk/dcmjpeg/dcpixel/jpegReversibleParams.h"
-#include "dcmtk/dcmj2k/kdu/kduParams.h"
-#include "dcmtk/dcmj2kr/kdur/kdurParams.h"
-
 #include "dcmtk/dcmdata/dcdatset.h"
 #include "dcmtk/dcmdata/dcmetinf.h"
 #include "dcmtk/dcmdata/dcfilefo.h"
 #include "dcmtk/dcmdata/dcdict.h"
 #include "dcmtk/dcmdata/dcdeftag.h"
+
+//jpeg
+#include "dcmtk/dcmjpeg/dec/djdecode.h"
+#include "dcmtk/dcmjpeg/enc/djencode.h"
+#include "dcmtk/dcmjpeg/dcpixel/jpegParams.h"
+#include "dcmtk/dcmjpeg/dcpixel/jpegReversibleParams.h"
+
+//jpls
+#include "dcmtk/dcmjpls/djdecode.h"
+#include "dcmtk/dcmjpls/djencode.h"
+
+//k2j
+#include "dcmtk/dcmk2j/k2jRegister.h"
+
+//rk2j
+#include "dcmtk/dcmrk2j/rk2jRegister.h"
+
+//j2k
+#include "dcmtk/dcmj2k/j2kRegister.h"
+#include "dcmtk/dcmj2k/kdu/kduParams.h"
+
+//j2kr
+#include "dcmtk/dcmj2kr/j2krRegister.h"
+#include "dcmtk/dcmj2kr/kdur/kdurParams.h"
 
 enum baseArgs {
     codec=1,
@@ -262,10 +273,11 @@ int main(int argc, const char *argv[])
 #pragma mark encoders registration
     
     DJEncoderRegistration::registerCodecs();
+    DJLSEncoderRegistration::registerCodecs();
+
     j2kRegister::registerCodecs();
     j2krRegister::registerCodecs();
     //DcmRLEEncoderRegistration::registerCodecs();
-    DJLSEncoderRegistration::registerCodecs();
 
     
 //--------------------------------------------------------------------------
@@ -278,15 +290,23 @@ int main(int argc, const char *argv[])
         OFFalse //OFBool predictor6WorkaroundEnable [OFFalse,OFTrue]
     );
 
+    DJLSDecoderRegistration::registerCodecs();
+
     k2jRegister::registerCodecs(
         EDC_photometricInterpretation,//E_DecompressionColorSpaceConversion [EDC_photometricInterpretation, EDC_lossyOnly,EDC_always,EDC_never,EDC_guessLossyOnly,EDC_guess]
         EUC_never,//E_UIDCreation [EUC_default,EUC_always,EUC_never]
         EPC_default,//E_PlanarConfiguration [EPC_default,EPC_colorByPixel,EPC_colorByPlane]
         OFFalse //OFBool predictor6WorkaroundEnable [OFFalse,OFTrue]
     );
+    
+    rk2jRegister::registerCodecs(
+        EDC_photometricInterpretation,//E_DecompressionColorSpaceConversion [EDC_photometricInterpretation, EDC_lossyOnly,EDC_always,EDC_never,EDC_guessLossyOnly,EDC_guess]
+        EUC_never,//E_UIDCreation [EUC_default,EUC_always,EUC_never]
+        EPC_default,//E_PlanarConfiguration [EPC_default,EPC_colorByPixel,EPC_colorByPlane]
+        OFFalse //OFBool predictor6WorkaroundEnable [OFFalse,OFTrue]
+                                );
 
     //DcmRLEDecoderRegistration::registerCodecs();
-    DJLSDecoderRegistration::registerCodecs();
     
     
     if (DEBUG)

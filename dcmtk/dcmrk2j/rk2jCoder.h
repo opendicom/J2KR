@@ -8,7 +8,7 @@ class DataInterface;
 class DJEncoder;
 class DcmDataset;
 class DcmItem;
-class k2jParams;
+class rk2jParams;
 class DJDecoder;
 
 /** abstract codec class for JPEG decoders.
@@ -18,11 +18,11 @@ class DJDecoder;
  *  This class only supports decompression, it neither implements
  *  encoding nor transcoding.
  */
-class k2jCoder : public DcmCodec
+class rk2jCoder : public DcmCodec
 {
 public:
-  k2jCoder();
-  virtual ~k2jCoder();
+  rk2jCoder();
+  virtual ~rk2jCoder();
 
     /** checks if this codec is able to convert from the
      *  given current transfer syntax to the given new
@@ -173,7 +173,7 @@ private:
    */
   virtual DJDecoder *createDecoderInstance(
     const DcmRepresentationParameter * toRepParam,
-    const k2jParams *cp,
+    const rk2jParams *cp,
     Uint8 bitsPerSample,
     OFBool isYBR) const = 0;
 

@@ -1,16 +1,16 @@
 #include "osconfig.h"
-#include "dcmtk/dcmk2j/udk/udk.h"
-#include "dcmtk/dcmk2j/k2jParams.h"
-#include "dcmtk/dcmk2j/udk/udkInstance.h"
+#include "dcmtk/dcmrk2j/rudk/rudk.h"
+#include "dcmtk/dcmrk2j/rk2jParams.h"
+#include "dcmtk/dcmrk2j/rudk/rudkInstance.h"
 #include "dcpixseq.h"  /* for class DcmPixelSequence */
 
-udk::udk()
-: k2jCoder()
+rudk::rudk()
+: rk2jCoder()
 {}
-udk::~udk()
+rudk::~rudk()
 {}
 
-OFBool udk::canChangeCoding(
+OFBool rudk::canChangeCoding(
     const E_TransferSyntax oldRepType,
     const E_TransferSyntax newRepType) const
 {
@@ -63,7 +63,7 @@ OFBool udk::canChangeCoding(
  */
 
 
-OFCondition udk::encode(
+OFCondition rudk::encode(
     const E_TransferSyntax fromRepType,
     const DcmRepresentationParameter * fromRepParam,
     DcmPixelSequence *fromPixSeq,
@@ -95,13 +95,13 @@ OFCondition udk::encode(
  */
 
 #pragma mark abstract implemented
-E_TransferSyntax udk::supportedTransferSyntax() const
+E_TransferSyntax rudk::supportedTransferSyntax() const
 {
   return EXS_JPEG2000;
 }
 
 #pragma mark additional public
-OFBool udk::isJPEG2000() const
+OFBool rudk::isJPEG2000() const
 {
     return OFTrue;
 }
@@ -111,13 +111,13 @@ OFBool udk::isJPEG2000() const
 #pragma mark private
 
 #pragma mark abstract implemented
-DJDecoder *udk::createDecoderInstance(
+DJDecoder *rudk::createDecoderInstance(
     const DcmRepresentationParameter *toRepParam,
-    const k2jParams *cp,
+    const rk2jParams *cp,
     Uint8 bitsPerSample,
     OFBool isYBR) const
 {
     DJDecoder * result = NULL;
-    result =  new udkInstance(*cp, isYBR);
+    result =  new rudkInstance(*cp, isYBR);
     return result;
 }

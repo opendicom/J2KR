@@ -1,6 +1,6 @@
 #include "osconfig.h"
-#include "dcmtk/dcmk2j/udk/udkInstance.h"
-#include "dcmtk/dcmk2j/k2jParams.h"
+#include "dcmtk/dcmrk2j/rudk/rudkInstance.h"
+#include "dcmtk/dcmrk2j/rk2jParams.h"
 #include "ofconsol.h"
 #include "ofstdinc.h"
 
@@ -43,7 +43,7 @@ BEGIN_EXTERN_C
 #undef boolean
 
 
-udkInstance::udkInstance(const k2jParams& cp, OFBool isYBR)
+rudkInstance::rudkInstance(const rk2jParams& cp, OFBool isYBR)
 : DJDecoder()
 , cparam(&cp)
 , cinfo(NULL)
@@ -53,18 +53,18 @@ udkInstance::udkInstance(const k2jParams& cp, OFBool isYBR)
 , decompressedColorModel(EPI_Unknown)
 {}
 
-udkInstance::~udkInstance()
+rudkInstance::~rudkInstance()
 {}
 
 
-OFCondition udkInstance::init()
+OFCondition rudkInstance::init()
 {
   // everything OK
   return EC_Normal;
 }
 
 
-OFCondition udkInstance::decode(
+OFCondition rudkInstance::decode(
   Uint8 *compressedFrameBuffer,
   Uint32 compressedFrameBufferSize,
   Uint8 *uncompressedFrameBuffer,
@@ -80,7 +80,7 @@ OFCondition udkInstance::decode(
 	return EC_Normal;
 }
 
-void udkInstance::outputMessage() const
+void rudkInstance::outputMessage() const
 {
 
 }

@@ -2,7 +2,7 @@
 #include "dcmtk/dcmdata/dccodec.h" /* for DcmCodecParameter */
 #include "djutils.h" /* for enums */
 
-class k2jParams: public DcmCodecParameter
+class rk2jParams: public DcmCodecParameter
 {
 public:
 
@@ -39,7 +39,7 @@ public:
    *    (only "pseudo" lossless encoder)
    *  @param pTrueLosslessMode Enables true lossless compression (replaces old "pseudo lossless" encoder)
    */
-  k2jParams(
+  rk2jParams(
     E_CompressionColorSpaceConversion pCompressionCSConversion,
     E_DecompressionColorSpaceConversion pDecompressionCSConversion,
     E_UIDCreation pCreateSOPInstanceUID,
@@ -68,10 +68,10 @@ public:
     OFBool pTrueLosslessMode = OFTrue);
 
   /// copy constructor
-  k2jParams(const k2jParams& arg);
+  rk2jParams(const rk2jParams& arg);
 
   /// destructor
-  virtual ~k2jParams();
+  virtual ~rk2jParams();
 
   /** this methods creates a copy of type DcmCodecParameter   *  it must be overweritten in every subclass.
    *  @return copy of this object
@@ -277,7 +277,7 @@ public:
 private:
 
   /// private undefined copy assignment operator
-  k2jParams& operator=(const k2jParams&);
+  rk2jParams& operator=(const rk2jParams&);
 
   /// color conversion mode for compression
   E_CompressionColorSpaceConversion compressionCSConversion;
