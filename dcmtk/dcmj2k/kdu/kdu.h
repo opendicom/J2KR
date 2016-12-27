@@ -1,6 +1,6 @@
 #include "dcmtk/config/osconfig.h"
 #import "dcmtk/dcmj2k/j2kCoder.h"
-//#import "dcmtk/djencabs.h"
+
 
 class kdu : public j2kCoder
 {
@@ -54,4 +54,5 @@ private:
     const DcmRepresentationParameter * toRepParam,
     const j2kParams *cp,
     Uint8 bitsPerSample) const;
+    
 };

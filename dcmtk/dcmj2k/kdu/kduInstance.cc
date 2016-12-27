@@ -25,12 +25,15 @@ extern "C" void* kdu_compressJPEG2K( void *data, int samplesPerPixel, int rows, 
 // use 16K blocks for temporary storage of compressed JPEG data
 #define IJGE12_BLOCKSIZE 16384
 
-kduInstance::kduInstance(const j2kParams& cp, EJ_Mode mode,
+kduInstance::kduInstance(const j2kParams& cp,
+    EJ_Mode mode,
+    Uint8 quality,
     Uint8 bitsPerSample)
-                                : DJEncoder()
-                                , cparam(&cp)
-                                , bitsPerSampleValue(bitsPerSample)
-                                , modeofOperation(mode)
+: DJEncoder()
+, cparam(&cp)
+, quality(quality)
+, bitsPerSampleValue(bitsPerSample)
+, modeofOperation(mode)
 {}
 
 kduInstance::~kduInstance()
@@ -114,7 +117,7 @@ Uint16 kduInstance::bitsPerSample() const
 	return bitsPerSampleValue;
 }
 
-OFCondition kduInstance::encode( 
+OFCondition kduInstance::encode(
   Uint16 columns,
   Uint16 rows,
   EP_Interpretation colorSpace,
@@ -177,8 +180,7 @@ OFCondition kduInstance::encode(
     return EC_NoEncodingLibrary;
 }
 
-
 E_TransferSyntax kduInstance::supportedTransferSyntax()
 {
-    return EXS_JPEG2000LosslessOnly;
+    return EXS_JPEG2000;
 }

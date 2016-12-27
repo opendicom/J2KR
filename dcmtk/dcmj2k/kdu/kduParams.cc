@@ -1,18 +1,15 @@
 #include "dcmtk/config/osconfig.h"
 #include "dcmtk/dcmj2k/kdu/kduParams.h"
 
-
-kduParams::kduParams(int aPrediction, int aPt)
+kduParams::kduParams(int aQuality)
 : DcmRepresentationParameter()
-, prediction(aPrediction)
-, pt(aPt)
+, quality(aQuality)
 {
 }
 
 kduParams::kduParams(const kduParams& arg)
 : DcmRepresentationParameter(arg)
-, prediction(arg.prediction)
-, pt(arg.pt)
+, quality(arg.quality)
 {
 }
 
@@ -39,7 +36,7 @@ OFBool kduParams::operator==(const DcmRepresentationParameter &arg) const
     if (argstring == className())
     {
       const kduParams& argll = OFstatic_cast(const kduParams&, arg);
-      if ((prediction == argll.prediction) && (pt == argll.pt)) return OFTrue;
+      if (quality == argll.quality) return OFTrue;
     }
   }
   return OFFalse;

@@ -8,7 +8,7 @@
 class DataInterface;
 class DJEncoder;
 class DcmDataset;
-class j2kParams;
+class j2krParams;
 class DJDecoder;
 class DcmItem;
 class DcmPixelItem;
@@ -16,23 +16,23 @@ class DicomImage;
 class DcmTagKey;
 
 
-/** abstract codec class for j2k encoders.
+/** abstract codec class for j2kr encoders.
  *  This abstract class contains most of the application logic
- *  needed for a dcmdata codec object that implements a j2k encoder
- *  using the j2kEncoder interface to the underlying j2k implementation.
+ *  needed for a dcmdata codec object that implements a j2kr encoder
+ *  using the j2krEncoder interface to the underlying j2kr implementation.
  *  This class only supports compression, it neither implements
  *  decoding nor transcoding.
  */
 
-class j2kCoder : public DcmCodec
+class j2krCoder : public DcmCodec
 {
 public:
 
   /// default constructor
-  j2kCoder();
+  j2krCoder();
 
   /// destructor
-  virtual ~j2kCoder();
+  virtual ~j2krCoder();
 
   /** decompresses the given pixel sequence and
    *  stores the result in the given uncompressedPixelData element.
@@ -235,7 +235,7 @@ private:
     DcmItem *dataset,
     const DcmRepresentationParameter * toRepParam,
     DcmPixelSequence * & pixSeq,
-    const j2kParams *cp,
+    const j2krParams *cp,
     double& compressionRatio) const;
 
   /** compresses the given uncompressed monochrome DICOM image and stores
@@ -255,7 +255,7 @@ private:
         DcmItem *dataset,
         const DcmRepresentationParameter * toRepParam,
         DcmPixelSequence * & pixSeq,
-        const j2kParams *cp,
+        const j2krParams *cp,
         double& compressionRatio) const;
 
   /** compresses the given uncompressed DICOM image and stores
@@ -298,9 +298,18 @@ private:
   virtual OFCondition updateDerivationDescription(
     DcmItem *dataset,
     const DcmRepresentationParameter * toRepParam,
-    const j2kParams *cp,
+    const j2krParams *cp,
     Uint8 bitsPerSample,
     double ratio) const;
+
+  virtual OFCondition updateLosslessDerivationDescription(
+    DcmItem *dataset,
+    const DcmRepresentationParameter * toRepParam,
+    const j2krParams *cp,
+    Uint8 bitsPerSample,
+    double ratio,
+    unsigned char *md5,
+    unsigned int pixelDataLength) const;
 
   /** for all overlay groups create (60xx,3000) Overlay Data.
    *  @param dataset dataset to be modified
@@ -327,7 +336,7 @@ private:
    */
   virtual void createDerivationDescription(
     const DcmRepresentationParameter * toRepParam,
-    const j2kParams *cp,
+    const j2krParams *cp,
     Uint8 bitsPerSample,
     double ratio,
     OFString& derivationDescription) const = 0;
@@ -341,7 +350,7 @@ private:
    */
   virtual DJEncoder *createEncoderInstance(
     const DcmRepresentationParameter * toRepParam,
-    const j2kParams *cp,
+    const j2krParams *cp,
     Uint8 bitsPerSample) const = 0;
 
   /** modifies all VOI window center/width settings in the image.

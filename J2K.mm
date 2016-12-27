@@ -8,13 +8,14 @@
 #include "dcmtk/dcmjpeg/enc/djencode.h"
 #include "dcmtk/dcmk2j/k2jRegister.h"
 #include "dcmtk/dcmj2k/j2kRegister.h"
+#include "dcmtk/dcmj2kr/j2krRegister.h"
 #include "dcmtk/dcmjpls/djdecode.h"
 #include "dcmtk/dcmjpls/djencode.h"
 
 #include "dcmtk/dcmjpeg/dcpixel/jpegParams.h"
 #include "dcmtk/dcmjpeg/dcpixel/jpegReversibleParams.h"
-#include "dcmtk/dcmj2k/kdu90/kdu90Params.h"
 #include "dcmtk/dcmj2k/kdu/kduParams.h"
+#include "dcmtk/dcmj2kr/kdur/kdurParams.h"
 
 #include "dcmtk/dcmdata/dcdatset.h"
 #include "dcmtk/dcmdata/dcmetinf.h"
@@ -262,6 +263,7 @@ int main(int argc, const char *argv[])
     
     DJEncoderRegistration::registerCodecs();
     j2kRegister::registerCodecs();
+    j2krRegister::registerCodecs();
     //DcmRLEEncoderRegistration::registerCodecs();
     DJLSEncoderRegistration::registerCodecs();
 
@@ -300,7 +302,7 @@ int main(int argc, const char *argv[])
         if (DJEncoderRegistration::encsv1 != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.70) dcmtk ijg encsv1 \r\n");
         if (DJEncoderRegistration::enclol != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.57) dcmtk ijg enclol \r\n");
         if (j2kRegister::enc2K != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.91) kdu enc2K \r\n");
-        if (j2kRegister::enc2KLoL != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.90) kdu enc2KLoL \r\n");
+        if (j2krRegister::enc2KLoL != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.90) kdu enc2KLoL \r\n");
         if (DJLSEncoderRegistration::registered_==OFTrue)
         {            
             if (DJLSEncoderRegistration::losslessencoder_ != nullptr) fprintf(stdout,"      (1.2.840.10008.1.2.4.80) %s losslessencoder \r\n",DJLSEncoderRegistration::getLibraryVersionString().c_str());

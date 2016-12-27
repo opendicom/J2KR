@@ -2,15 +2,14 @@
 #include "dcmtk/ofstd/oftypes.h"  /* for OFBool */
 #include "dcmtk/dcmdata/dctypes.h"  /* for Uint32 */
 #include "djutils.h"
-#include "dcmtk/dcmj2k/j2kParams.h"
+#include "dcmtk/dcmj2kr/j2krParams.h"
 
-class j2kParams;
-class kdu90;
-class kdu;
+class j2krParams;
+class kdur;
 
-// singleton class registering all j2k processes.
+// singleton class registering all j2kr processes.
 
-class j2kRegister
+class j2krRegister
 {
 public:
 
@@ -82,8 +81,9 @@ public:
   static OFBool registered;
 
   /// pointer to codec parameter shared by all encoders
-  static j2kParams *cp;
+  static j2krParams *cp;
     
-  /// pointer to encoder for JPEG 2K
-  static kdu *enc2K;
+  /// pointer to encoder for JPEG 2K LossLess
+  static kdur *enc2KLoL;
+
 };

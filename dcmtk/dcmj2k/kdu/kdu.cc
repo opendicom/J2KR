@@ -13,13 +13,13 @@ kdu::~kdu()
 
 E_TransferSyntax kdu::supportedTransferSyntax() const
 {
-  return EXS_JPEG2000LosslessOnly;
+  return EXS_JPEG2000;
 }
 
 
 OFBool kdu::isLosslessProcess() const
 {
-  return OFTrue;
+  return OFFalse;
 }
 
 
@@ -31,10 +31,13 @@ void kdu::createDerivationDescription(
   OFString& derivationDescription) const
 {
   kduParams defaultRP;
-//  const DJ_RPLossy *rp = toRepParam ? (const DJ_RPLossy *)toRepParam : &defaultRP ;
-//  char buf[64];
+  const kduParams *rp = toRepParam ? (const kduParams *)toRepParam : &defaultRP ;
+  char buf[64];
  
-  derivationDescription =  "LossLess compression with JPEG 2K";
+  derivationDescription =  "Lossy compression with JPEG 2K ";
+  derivationDescription += ", quality factor ";
+  sprintf(buf, "%u", rp->getQuality());
+  derivationDescription += buf;
   derivationDescription += ", compression ratio ";
   appendCompressionRatio(derivationDescription, ratio);
 }
@@ -45,13 +48,10 @@ DJEncoder *kdu::createEncoderInstance(
     const j2kParams *cp,
     Uint8 bitsPerSample) const
 {
+  kduParams defaultRP;
+  const kduParams *rp = toRepParam ? (const kduParams *)toRepParam : &defaultRP ;
+
   DJEncoder * result = NULL;
-  result = new kduInstance(
-                            *cp,
-                            EJM_JP2K_lossless,
-                            bitsPerSample
-                            );
-  return result;  
+  result = new kduInstance(*cp, EJM_JP2K_lossy, rp->getQuality(), bitsPerSample);
+  return result;
 }
-
-

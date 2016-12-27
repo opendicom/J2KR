@@ -1,10 +1,10 @@
 #include "dcmtk/config/osconfig.h"
-#include "dcmtk/dcmj2k/kdu90/kdu90Instance.h"
-#include "dcmtk/dcmj2k/j2kParams.h"
+#include "dcmtk/dcmj2kr/kdur/kdurInstance.h"
+#include "dcmtk/dcmj2kr/j2krParams.h"
 #include "dcmtk/ofstd/ofconsol.h"
 #include "dcmtk/ofstd/ofstdinc.h"
 
-//kdu_osirix59 32bit compressed lib
+//kdur_osirix59 32bit compressed lib
 extern "C" void* kdu_compressJPEG2K( void *data, int samplesPerPixel, int rows, int columns, int precision, bool sign, int rate, long *compressedDataSize, int num_threads);
 
 //openjpeg 2
@@ -25,23 +25,20 @@ extern "C" void* kdu_compressJPEG2K( void *data, int samplesPerPixel, int rows, 
 // use 16K blocks for temporary storage of compressed JPEG data
 #define IJGE12_BLOCKSIZE 16384
 
-kdu90Instance::kdu90Instance(const j2kParams& cp,
-    EJ_Mode mode,
-    Uint8 quality,
+kdurInstance::kdurInstance(const j2krParams& cp, EJ_Mode mode,
     Uint8 bitsPerSample)
-: DJEncoder()
-, cparam(&cp)
-, quality(quality)
-, bitsPerSampleValue(bitsPerSample)
-, modeofOperation(mode)
+                                : DJEncoder()
+                                , cparam(&cp)
+                                , bitsPerSampleValue(bitsPerSample)
+                                , modeofOperation(mode)
 {}
 
-kdu90Instance::~kdu90Instance()
+kdurInstance::~kdurInstance()
 {}
 
 
 //imageBuffer 16bit - abstract class DJEncoder
-OFCondition kdu90Instance::encode(
+OFCondition kdurInstance::encode(
   Uint16 columns,
   Uint16 rows,
   EP_Interpretation interpr,
@@ -56,7 +53,7 @@ OFCondition kdu90Instance::encode(
 }
 
 //imageBuffer 16bit - used
-OFCondition kdu90Instance::encode(
+OFCondition kdurInstance::encode(
   Uint16 columns,
   Uint16 rows,
   EP_Interpretation interpr,
@@ -74,7 +71,7 @@ OFCondition kdu90Instance::encode(
 
 
 //imageBuffer 8bit - abstract class DJEncoder
-OFCondition kdu90Instance::encode(
+OFCondition kdurInstance::encode(
   Uint16 columns,
   Uint16 rows,
   EP_Interpretation interpr,
@@ -88,7 +85,7 @@ OFCondition kdu90Instance::encode(
 }
 
 //imageBuffer 8bit
-OFCondition kdu90Instance::encode(
+OFCondition kdurInstance::encode(
   Uint16 columns,
   Uint16 rows,
   EP_Interpretation colorSpace,
@@ -105,19 +102,19 @@ OFCondition kdu90Instance::encode(
 }
 
 //abstract class DJEncoder
-Uint16 kdu90Instance::bytesPerSample() const
+Uint16 kdurInstance::bytesPerSample() const
 {
 	if( bitsPerSampleValue <= 8) return 1;
 	else return 2;
 }
 
 //abstract class DJEncoder
-Uint16 kdu90Instance::bitsPerSample() const
+Uint16 kdurInstance::bitsPerSample() const
 {
 	return bitsPerSampleValue;
 }
 
-OFCondition kdu90Instance::encode(
+OFCondition kdurInstance::encode( 
   Uint16 columns,
   Uint16 rows,
   EP_Interpretation colorSpace,
@@ -180,7 +177,8 @@ OFCondition kdu90Instance::encode(
     return EC_NoEncodingLibrary;
 }
 
-E_TransferSyntax kdu90Instance::supportedTransferSyntax()
+
+E_TransferSyntax kdurInstance::supportedTransferSyntax()
 {
-    return EXS_JPEG2000;
+    return EXS_JPEG2000LosslessOnly;
 }

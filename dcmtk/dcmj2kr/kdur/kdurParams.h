@@ -2,20 +2,21 @@
 #include "dcmtk/dcmdata/dcpixel.h" /* for class DcmRepresentationParameter */
 #include "djdefine.h"
 
-class kdu90Params: public DcmRepresentationParameter
+class kdurParams : public DcmRepresentationParameter
 {
 public:
 
   /** constructor
-   *  @param aQuality quality factor
+   *  @param aPrediction prediction value
+   *  @param aPt point transform value
    */
-  kdu90Params(int aQuality=90);
+  kdurParams(int aPrediction=1, int aPt=0);
 
   /// copy constructor
-  kdu90Params(const kdu90Params& arg);
+  kdurParams(const kdurParams& arg);
 
   /// destructor
-  virtual ~kdu90Params();
+  virtual ~kdurParams();
   
   /** this methods creates a copy of type DcmRepresentationParameter   *  it must be overweritten in every subclass.
    *  @return copy of this object
@@ -34,17 +35,27 @@ public:
    */
   virtual OFBool operator==(const DcmRepresentationParameter &arg) const;
 
-  /** returns the compression quality factor
-   *  @return compression quality factor
+  /** returns the prediction value
+   *  @return prediction value
    */
-  int getQuality() const
+  int getPrediction() const
   {
-    return quality;
+    return prediction;
+  }
+
+  /** returns the point transform 
+   *  @return point transform 
+   */
+  int getPointTransformation() const 
+  {
+    return pt;
   }
 
 private:
 
-  /// compression quality factor
-  int quality;
+  /// prediction value
+  int prediction; 
 
+  /// point transform value
+  int pt;
 };
