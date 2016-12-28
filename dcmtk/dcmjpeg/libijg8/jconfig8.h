@@ -1,16 +1,24 @@
 /*
+ *
  *  Copyright (C) 1998-2010, OFFIS e.V.
  *  All rights reserved.  See COPYRIGHT file for details.
+ *
  *  This software and supporting documentation were developed by
+ *
  *    OFFIS e.V.
  *    R&D Division Health
  *    Escherweg 2
  *    D-26121 Oldenburg, Germany
+ *
+ *
  *  Module: dcmjpeg
+ *
  *  Author: Marco Eichelberg
+ *
  *  Purpose:
  *    this file derives the preprocessor symbols required to compile
  *    the IJG library from the central DCMTK configuration file osconfig.h
+ *
  */
 
 #include "dcmtk/config/osconfig.h"

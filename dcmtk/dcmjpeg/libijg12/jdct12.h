@@ -1,8 +1,10 @@
 /*
  * jdct.h
+ *
  * Copyright (C) 1994-1996, Thomas G. Lane.
  * This file is part of the Independent JPEG Group's software.
  * For conditions of distribution and use, see the accompanying README file.
+ *
  * This include file contains common declarations for the forward and
  * inverse DCT modules.  These declarations are private to the DCT managers
  * (jcdctmgr.c, jddctmgr.c) and the individual DCT algorithms.
@@ -119,6 +121,7 @@ EXTERN(void) jpeg_idct_1x1
 /*
  * Macros for handling fixed-point arithmetic; these are used by many
  * but not all of the DCT/IDCT modules.
+ *
  * All values are expected to be of type IJG_INT32.
  * Fractional constants are scaled left by CONST_BITS bits.
  * CONST_BITS is defined within each module using these macros,

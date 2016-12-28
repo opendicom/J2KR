@@ -1,6 +1,6 @@
 #include "dcmtk/config/osconfig.h"
 #import "dcmtk/dcmj2kr/j2krCoder.h"
-//#import "dcmtk/djencabs.h"
+//#import "dcmtk/dcmjpeg/djencabs.h"
 
 class opjr : public j2krCoder
 {

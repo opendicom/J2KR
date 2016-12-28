@@ -11,10 +11,9 @@
 #include "dcmtk/dcmdata/dcdeftag.h"
 
 //jpeg
-#include "dcmtk/dcmjpeg/dec/djdecode.h"
-#include "dcmtk/dcmjpeg/enc/djencode.h"
-#include "dcmtk/dcmjpeg/dcpixel/jpegParams.h"
-#include "dcmtk/dcmjpeg/dcpixel/jpegReversibleParams.h"
+#include "dcmtk/dcmjpeg/djdecode.h"
+#include "dcmtk/dcmjpeg/djencode.h"
+#include "dcmtk/dcmjpeg/djcparam.h"
 
 //jpls
 #include "dcmtk/dcmjpls/djdecode.h"
@@ -25,10 +24,6 @@
 
 //rk2j
 #include "dcmtk/dcmrk2j/rk2jRegister.h"
-
-//j2k
-#include "dcmtk/dcmj2k/j2kRegister.h"
-#include "dcmtk/dcmj2k/kdu/kduParams.h"
 
 //j2kr
 #include "dcmtk/dcmj2kr/j2krRegister.h"
@@ -284,7 +279,6 @@ int main(int argc, const char *argv[])
     DJEncoderRegistration::registerCodecs();
     DJLSEncoderRegistration::registerCodecs();
 
-    j2kRegister::registerCodecs();
     j2krRegister::registerCodecs();
     //DcmRLEEncoderRegistration::registerCodecs();
 
@@ -322,26 +316,33 @@ int main(int argc, const char *argv[])
     {
         //http://www.dicomlibrary.com/dicom/transfer-syntax/
         
-        fprintf(stdout,"D: encoders registered [\r\n");
+        fprintf(stdout,"D: additional encoders registered [\r\n");
+        
+        /*
         //we removed the private character of encoding codec registrations
+
         if (DJEncoderRegistration::encbas != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.50) dcmtk ijg encbas \r\n");
         if (DJEncoderRegistration::encext != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.51) dcmtk ijg encext \r\n");
         if (DJEncoderRegistration::encsps != NULL) fprintf(stdout,"      (Retired)                dcmtk ijg encsps\r\n");
         if (DJEncoderRegistration::encpro != NULL) fprintf(stdout,"      (Retired)                dcmtk ijg encpro\r\n");
         if (DJEncoderRegistration::encsv1 != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.70) dcmtk ijg encsv1 \r\n");
         if (DJEncoderRegistration::enclol != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.57) dcmtk ijg enclol \r\n");
-        if (j2kRegister::kakadu != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.91) dcmtk kakadu \r\n");
+         */
+
         if (j2krRegister::kakaduReversible != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.90) dcmtk kakaduReversible \r\n");
         if (j2krRegister::openjpegReversible != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.90) dcmtk openjpegReversible \r\n");
+        /*
         if (DJLSEncoderRegistration::registered_==OFTrue)
         {            
             if (DJLSEncoderRegistration::losslessencoder_ != nullptr) fprintf(stdout,"      (1.2.840.10008.1.2.4.80) %s losslessencoder \r\n",DJLSEncoderRegistration::getLibraryVersionString().c_str());
             if (DJLSEncoderRegistration::nearlosslessencoder_ != nullptr) fprintf(stdout,"      (1.2.840.10008.1.2.4.81) %s nearlosslessencoder \r\n",DJLSEncoderRegistration::getLibraryVersionString().c_str());
         }
+         */
         fprintf(stdout,"   ]\r\n");
 
         
-        fprintf(stdout,"D: decoders registered [\r\n");
+        fprintf(stdout,"D: additional decoders registered [\r\n");
+        /*
         //we removed the private character of encoding codec registrations
         if (DJDecoderRegistration::decbas != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.50) dcmtk ijg encbas \r\n");
         if (DJDecoderRegistration::decext != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.51) dcmtk ijg encext \r\n");
@@ -349,12 +350,15 @@ int main(int argc, const char *argv[])
         if (DJDecoderRegistration::decpro != NULL) fprintf(stdout,"      (Retired)                dcmtk ijg encpro\r\n");
         if (DJDecoderRegistration::decsv1 != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.70) dcmtk ijg encsv1 \r\n");
         if (DJDecoderRegistration::declol != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.57) dcmtk ijg enclol \r\n");
+         */
         if (k2jRegister::kakaduReversibleDecode != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.90) kdu kakaduReversible \r\n");
+        /*
         if (DJLSEncoderRegistration::registered_==OFTrue)
         {
             if (DJLSEncoderRegistration::losslessencoder_ != nullptr) fprintf(stdout,"      (1.2.840.10008.1.2.4.80) %s losslessencoder \r\n",DJLSEncoderRegistration::getLibraryVersionString().c_str());
             if (DJLSEncoderRegistration::nearlosslessencoder_ != nullptr) fprintf(stdout,"      (1.2.840.10008.1.2.4.81) %s nearlosslessencoder \r\n",DJLSEncoderRegistration::getLibraryVersionString().c_str());
         }
+         */
         fprintf(stdout,"   ]\r\n");
     
     

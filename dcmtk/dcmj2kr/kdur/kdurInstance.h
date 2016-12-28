@@ -2,7 +2,7 @@
 #include "dcmtk/ofstd/oflist.h"
 #include "dcmtk/dcmj2kr/j2krCoder.h" //kdurInstance constructor +
 
-#include "dcmtk/djencabs.h"
+#include "dcmtk/dcmjpeg/djencabs.h"
 /*DJEncoder
  
  métodos:

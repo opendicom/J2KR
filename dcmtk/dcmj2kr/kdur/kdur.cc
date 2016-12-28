@@ -48,7 +48,7 @@ DJEncoder *kdur::createEncoderInstance(
   DJEncoder * result = NULL;
   result = new kdurInstance(
                             *cp,
-                            EJM_JP2K_lossless,
+                            EJM_lossless,
                             bitsPerSample
                             );
   return result;  

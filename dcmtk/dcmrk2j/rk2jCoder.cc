@@ -11,7 +11,7 @@
 
 #include "dcmtk/dcmrk2j/rk2jParams.h"  /* for class DJCodecParameter */
 //JF #include "dcmtk/dcmjpeg/djcparam.h"  /* for class DJCodecParameter */
-#include "dcmtk/djdecabs.h"  /* for class DJDecoder */
+#include "dcmtk/dcmjpeg/djdecabs.h"  /* for class DJDecoder */
 
 
 rk2jCoder::rk2jCoder()

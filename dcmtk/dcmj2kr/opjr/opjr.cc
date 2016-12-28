@@ -48,7 +48,7 @@ DJEncoder *opjr::createEncoderInstance(
   DJEncoder * result = NULL;
   result = new opjrInstance(
                             *cp,
-                            EJM_JP2K_lossless,
+                            EJM_lossless,
                             bitsPerSample
                             );
   return result;  

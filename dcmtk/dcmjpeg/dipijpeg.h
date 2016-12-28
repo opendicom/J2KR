@@ -1,30 +1,43 @@
 /*
+ *
  *  Copyright (C) 2001-2011, OFFIS e.V.
  *  All rights reserved.  See COPYRIGHT file for details.
+ *
  *  This software and supporting documentation were developed by
+ *
  *    OFFIS e.V.
  *    R&D Division Health
  *    Escherweg 2
  *    D-26121 Oldenburg, Germany
+ *
+ *
  *  Module:  dcmjpeg
+ *
  *  Author:  Joerg Riesmeier
+ *
  *  Purpose: Implements JPEG interface for plugable image formats
+ *
  */
 
+
+#ifndef DIPIJPEG_H
+#define DIPIJPEG_H
+
 #include "dcmtk/config/osconfig.h"
+
 #include "dcmtk/dcmimgle/diplugin.h"
-#include "djutils.h"
+#include "dcmtk/dcmjpeg/djutils.h"
 
 
 /*------------------------*
- *  forward declarations  
+ *  forward declarations  *
  *------------------------*/
 
 class DiImage;
 
 
 /*---------------------*
- *  class declaration  
+ *  class declaration  *
  *---------------------*/
 
 /** Implementation of a JPEG plugin for the dcmimgle/dcmimage library
@@ -86,3 +99,6 @@ class DCMTK_DCMJPEG_EXPORT DiJPEGPlugin
     /// (sub) sampling: ESS_444, ESS_422 (default), ESS_411
     E_SubSampling Sampling;
 };
+
+
+#endif

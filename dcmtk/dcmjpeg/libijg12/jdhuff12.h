@@ -1,8 +1,10 @@
 /*
  * jdhuff.h
+ *
  * Copyright (C) 1991-1998, Thomas G. Lane.
  * This file is part of the Independent JPEG Group's software.
  * For conditions of distribution and use, see the accompanying README file.
+ *
  * This file contains declarations for Huffman entropy decoding routines
  * that are shared between the sequential decoder (jdhuff.c), the
  * progressive decoder (jdphuff.c) and the lossless decoder (jdlhuff.c).
@@ -55,6 +57,7 @@ EXTERN(void) jpeg_make_d_derived_tbl
  * for the Huffman decoders.  We implement it with a combination of inline
  * macros and out-of-line subroutines.  Note that N (the number of bits
  * demanded at one time) never exceeds 15 for JPEG use.
+ *
  * We read source bytes into get_buffer and dole out bits as needed.
  * If get_buffer already contains enough bits, they are fetched in-line
  * by the macros CHECK_BIT_BUFFER and GET_BITS.  When there aren't enough
@@ -157,10 +160,12 @@ EXTERN(boolean) jpeg_fill_bit_buffer
 /*
  * Code for extracting next Huffman-coded symbol from input bit stream.
  * Again, this is time-critical and we make the main paths be macros.
+ *
  * We use a lookahead table to process codes of up to HUFF_LOOKAHEAD bits
  * without looping.  Usually, more than 95% of the Huffman codes will be 8
  * or fewer bits long.  The few overlength codes are handled with a loop,
  * which need not be inline code.
+ *
  * Notes about the HUFF_DECODE macro:
  * 1. Near the end of the data segment, we may fail to get enough bits
  *    for a lookahead.  In that case, we do it the hard way.

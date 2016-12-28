@@ -38,8 +38,8 @@ extern "C" void* kdu_decompressJPEG2KWithBuffer(
 
 BEGIN_EXTERN_C
 #define boolean ijg_boolean
-#include "jpeglib16.h"
-#include "jerror16.h"
+#include "dcmtk/dcmjpeg/libijg16/jpeglib16.h"
+#include "dcmtk/dcmjpeg/libijg16/jerror16.h"
 #undef boolean
 
 
