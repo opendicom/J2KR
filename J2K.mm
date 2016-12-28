@@ -4,23 +4,31 @@
 #undef verify
 #include "dcmtk/config/osconfig.h"
 #include "dcmtk/oflog/oflog.h"
-#include "dcmtk/dcmjpeg/dec/djdecode.h"
-#include "dcmtk/dcmjpeg/enc/djencode.h"
-#include "dcmtk/dcmj2k/j2kDecoderRegistration.h"
-#include "dcmtk/dcmj2k/j2kEncoderRegistration.h"
-#include "dcmtk/dcmjpls/djdecode.h"
-#include "dcmtk/dcmjpls/djencode.h"
-
-#include "dcmtk/dcmjpeg/dcpixel/jpegParams.h"
-#include "dcmtk/dcmjpeg/dcpixel/jpegReversibleParams.h"
-#include "dcmtk/dcmj2k/dcpixel/kduRepresentationParameter.h"
-#include "dcmtk/dcmj2k/dcpixel/kdurRepresentationParameter.h"
-
 #include "dcmtk/dcmdata/dcdatset.h"
 #include "dcmtk/dcmdata/dcmetinf.h"
 #include "dcmtk/dcmdata/dcfilefo.h"
 #include "dcmtk/dcmdata/dcdict.h"
 #include "dcmtk/dcmdata/dcdeftag.h"
+
+//jpeg
+#include "dcmtk/dcmjpeg/djdecode.h"
+#include "dcmtk/dcmjpeg/djencode.h"
+#include "dcmtk/dcmjpeg/djcparam.h"
+
+//jpls
+#include "dcmtk/dcmjpls/djdecode.h"
+#include "dcmtk/dcmjpls/djencode.h"
+
+//k2j
+#include "dcmtk/dcmk2j/k2jRegister.h"
+
+//rk2j
+#include "dcmtk/dcmrk2j/rk2jRegister.h"
+
+//j2kr
+#include "dcmtk/dcmj2kr/j2krRegister.h"
+#include "dcmtk/dcmj2kr/kdur/kdurParams.h"
+#include "dcmtk/dcmj2kr/opjr/opjrParams.h"
 
 enum baseArgs {
     codec=1,
@@ -35,8 +43,12 @@ enum baseArgs {
 
 static NSFileManager *fileManager=nil;
 static NSError *err=nil;
-static BOOL kdu=false;
-static BOOL opj=false;
+static BOOL kakaduReversible=false;
+static BOOL kakadu=false;
+static BOOL openjpegReversible=false;
+static BOOL kakaduReversibleDecode=false;
+static BOOL kakaduDecode=false;
+static BOOL openjpegReversibleDecode=false;
 
 BOOL folderExists(NSString *f, BOOL shouldBeEmptyAndWritable)
 {
@@ -107,8 +119,12 @@ int main(int argc, const char *argv[])
 
     fileManager=[NSFileManager defaultManager];
 
-    kdu=[args[codec] isEqualToString:@"kdu"];
-    opj=[args[codec] isEqualToString:@"opj"];
+    kakadu=[args[codec] isEqualToString:@"kdu"];
+    kakaduReversible=[args[codec] isEqualToString:@"kdur"];
+    openjpegReversible=[args[codec] isEqualToString:@"opjr"];
+    kakaduDecode=[args[codec] isEqualToString:@"udk"];
+    kakaduReversibleDecode=[args[codec] isEqualToString:@"rudk"];
+    openjpegReversibleDecode=[args[codec] isEqualToString:@"rjpo"];
 #pragma mark arg[5] log level
     enum loglevel {
         FATAL_LOG_LEVEL,
@@ -260,59 +276,11 @@ int main(int argc, const char *argv[])
 //--------------------------------------------------------------------------
 #pragma mark encoders registration
     
-    DJEncoderRegistration::registerCodecs(
-        ECC_lossyRGB, //E_CompressionColorSpaceConversion [ECC_lossyYCbCr,ECC_lossyRGB,ECC_monochrome]
-        EUC_never,  //E_UIDCreation [EUC_default,EUC_always,EUC_never]
-        OFFalse,    //OFBool opt_huffmanOptimize for 8 bits/pixel
-        0,          //OFCmdUnsignedInt OFstatic_cast(int, opt_smoothing) [0..100]
-        0,          //int opt_compressedBits pForcedBitDepth [0(auto) | 8 | 12 | 16]
-        0,          //OFstatic_cast(Uint32, opt_fragmentSize) (in kbytes | 0=unlimited)
-        OFTrue,     //OFBool opt_createOffsetTable during image compression
-        ESS_444,    //E_SubSampling opt_sampleFactors subsampling mode for color image compression
-        OFFalse,    //OFBool opt_useYBR422 [YBR_FULL or YBR_FULL_422]
-        OFFalse,    //OFBool opt_secondarycapture
-        0,          //int OFstatic_cast(Uint32, opt_windowType) mode [1..7] VOI transformation of monochrome images
-        0,          //OFCmdUnsignedInt OFstatic_cast(Uint32, opt_windowParameter) param form modes 1, 2, 4, 6
-        0.0,        //OFCmdFloat opt_windowCenter for mode 5
-        0.0,        //OFCmdFloat opt_windowWidth for mode 5
-        0,          //OFCmdUnsignedInt OFstatic_cast(Uint32, opt_roiLeft) for monochrome images, mode 7
-        0,          //OFCmdUnsignedInt OFstatic_cast(Uint32, opt_roiTop) for monochrome images, mode 7
-        0,          //OFCmdUnsignedInt OFstatic_cast(Uint32, opt_roiWidth) for monochrome images, mode 7
-        0,          //OFCmdUnsignedInt OFstatic_cast(Uint32, opt_roiHeight) for monochrome images, mode 7
-        OFTrue,     //OFBool opt_usePixelValues Check smallest, largest pixel value and optimize, mode 0 only
-        OFTrue,     //OFBool opt_useModalityRescale to scale back, to original pixel range, mode 0 only
-        OFFalse,    //OFBool opt_acceptWrongPaletteTags (only "pseudo lossless" encoder)
-        OFFalse,    //OFBool opt_acrNemaCompatibility
-        OFTrue      //OFBool opt_trueLossless
-        );
-    
-    j2kEncoderRegistration::registerCodecs(
-        ECC_lossyRGB, //E_CompressionColorSpaceConversion [ECC_lossyYCbCr,ECC_lossyRGB,ECC_monochrome]
-        EUC_never,  //E_UIDCreation [EUC_default,EUC_always,EUC_never]
-        OFFalse,    //OFBool opt_huffmanOptimize for 8 bits/pixel
-        0,          //OFCmdUnsignedInt OFstatic_cast(int, opt_smoothing) [0..100]
-        0,          //int opt_compressedBits pForcedBitDepth [0(auto) | 8 | 12 | 16]
-        0,          //OFstatic_cast(Uint32, opt_fragmentSize) (in kbytes | 0=unlimited)
-        OFTrue,     //OFBool opt_createOffsetTable during image compression
-        ESS_444,    //E_SubSampling opt_sampleFactors subsampling mode for color image compression
-        OFFalse,    //OFBool opt_useYBR422 [YBR_FULL or YBR_FULL_422]
-        OFFalse,    //OFBool opt_secondarycapture
-        0,          //int OFstatic_cast(Uint32, opt_windowType) mode [1..7] VOI transformation of monochrome images
-        0,          //OFCmdUnsignedInt OFstatic_cast(Uint32, opt_windowParameter) param form modes 1, 2, 4, 6
-        0.0,        //OFCmdFloat opt_windowCenter for mode 5
-        0.0,        //OFCmdFloat opt_windowWidth for mode 5
-        0,          //OFCmdUnsignedInt OFstatic_cast(Uint32, opt_roiLeft) for monochrome images, mode 7
-        0,          //OFCmdUnsignedInt OFstatic_cast(Uint32, opt_roiTop) for monochrome images, mode 7
-        0,          //OFCmdUnsignedInt OFstatic_cast(Uint32, opt_roiWidth) for monochrome images, mode 7
-        0,          //OFCmdUnsignedInt OFstatic_cast(Uint32, opt_roiHeight) for monochrome images, mode 7
-        OFTrue,     //OFBool opt_usePixelValues Check smallest, largest pixel value and optimize, mode 0 only
-        OFTrue,     //OFBool opt_useModalityRescale to scale back, to original pixel range, mode 0 only
-        OFFalse,    //OFBool opt_acceptWrongPaletteTags (only "pseudo lossless" encoder)
-        OFFalse,    //OFBool opt_acrNemaCompatibility
-        OFTrue      //OFBool opt_trueLossless
-    );
-    //DcmRLEEncoderRegistration::registerCodecs();
+    DJEncoderRegistration::registerCodecs();
     DJLSEncoderRegistration::registerCodecs();
+
+    j2krRegister::registerCodecs();
+    //DcmRLEEncoderRegistration::registerCodecs();
 
     
 //--------------------------------------------------------------------------
@@ -325,40 +293,56 @@ int main(int argc, const char *argv[])
         OFFalse //OFBool predictor6WorkaroundEnable [OFFalse,OFTrue]
     );
 
-    j2kDecoderRegistration::registerCodecs(
+    DJLSDecoderRegistration::registerCodecs();
+
+    k2jRegister::registerCodecs(
         EDC_photometricInterpretation,//E_DecompressionColorSpaceConversion [EDC_photometricInterpretation, EDC_lossyOnly,EDC_always,EDC_never,EDC_guessLossyOnly,EDC_guess]
         EUC_never,//E_UIDCreation [EUC_default,EUC_always,EUC_never]
         EPC_default,//E_PlanarConfiguration [EPC_default,EPC_colorByPixel,EPC_colorByPlane]
         OFFalse //OFBool predictor6WorkaroundEnable [OFFalse,OFTrue]
     );
+    
+    rk2jRegister::registerCodecs(
+        EDC_photometricInterpretation,//E_DecompressionColorSpaceConversion [EDC_photometricInterpretation, EDC_lossyOnly,EDC_always,EDC_never,EDC_guessLossyOnly,EDC_guess]
+        EUC_never,//E_UIDCreation [EUC_default,EUC_always,EUC_never]
+        EPC_default,//E_PlanarConfiguration [EPC_default,EPC_colorByPixel,EPC_colorByPlane]
+        OFFalse //OFBool predictor6WorkaroundEnable [OFFalse,OFTrue]
+                                );
 
     //DcmRLEDecoderRegistration::registerCodecs();
-    DJLSDecoderRegistration::registerCodecs();
     
     
     if (DEBUG)
     {
         //http://www.dicomlibrary.com/dicom/transfer-syntax/
         
-        fprintf(stdout,"D: encoders registered [\r\n");
+        fprintf(stdout,"D: additional encoders registered [\r\n");
+        
+        /*
         //we removed the private character of encoding codec registrations
+
         if (DJEncoderRegistration::encbas != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.50) dcmtk ijg encbas \r\n");
         if (DJEncoderRegistration::encext != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.51) dcmtk ijg encext \r\n");
         if (DJEncoderRegistration::encsps != NULL) fprintf(stdout,"      (Retired)                dcmtk ijg encsps\r\n");
         if (DJEncoderRegistration::encpro != NULL) fprintf(stdout,"      (Retired)                dcmtk ijg encpro\r\n");
         if (DJEncoderRegistration::encsv1 != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.70) dcmtk ijg encsv1 \r\n");
         if (DJEncoderRegistration::enclol != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.57) dcmtk ijg enclol \r\n");
-        if (j2kEncoderRegistration::enc2K != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.91) kdu enc2K \r\n");
-        if (j2kEncoderRegistration::enc2KLoL != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.90) kdu enc2KLoL \r\n");
+         */
+
+        if (j2krRegister::kakaduReversible != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.90) dcmtk kakaduReversible \r\n");
+        if (j2krRegister::openjpegReversible != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.90) dcmtk openjpegReversible \r\n");
+        /*
         if (DJLSEncoderRegistration::registered_==OFTrue)
         {            
             if (DJLSEncoderRegistration::losslessencoder_ != nullptr) fprintf(stdout,"      (1.2.840.10008.1.2.4.80) %s losslessencoder \r\n",DJLSEncoderRegistration::getLibraryVersionString().c_str());
             if (DJLSEncoderRegistration::nearlosslessencoder_ != nullptr) fprintf(stdout,"      (1.2.840.10008.1.2.4.81) %s nearlosslessencoder \r\n",DJLSEncoderRegistration::getLibraryVersionString().c_str());
         }
+         */
         fprintf(stdout,"   ]\r\n");
 
         
-        fprintf(stdout,"D: decoders registered [\r\n");
+        fprintf(stdout,"D: additional decoders registered [\r\n");
+        /*
         //we removed the private character of encoding codec registrations
         if (DJDecoderRegistration::decbas != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.50) dcmtk ijg encbas \r\n");
         if (DJDecoderRegistration::decext != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.51) dcmtk ijg encext \r\n");
@@ -366,13 +350,15 @@ int main(int argc, const char *argv[])
         if (DJDecoderRegistration::decpro != NULL) fprintf(stdout,"      (Retired)                dcmtk ijg encpro\r\n");
         if (DJDecoderRegistration::decsv1 != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.70) dcmtk ijg encsv1 \r\n");
         if (DJDecoderRegistration::declol != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.57) dcmtk ijg enclol \r\n");
-        if (j2kDecoderRegistration::dec2k != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.91) kdu enc2K \r\n");
-        if (j2kDecoderRegistration::dec2kLossLess != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.90) kdu enc2KLoL \r\n");
+         */
+        if (k2jRegister::kakaduReversibleDecode != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.90) kdu kakaduReversible \r\n");
+        /*
         if (DJLSEncoderRegistration::registered_==OFTrue)
         {
             if (DJLSEncoderRegistration::losslessencoder_ != nullptr) fprintf(stdout,"      (1.2.840.10008.1.2.4.80) %s losslessencoder \r\n",DJLSEncoderRegistration::getLibraryVersionString().c_str());
             if (DJLSEncoderRegistration::nearlosslessencoder_ != nullptr) fprintf(stdout,"      (1.2.840.10008.1.2.4.81) %s nearlosslessencoder \r\n",DJLSEncoderRegistration::getLibraryVersionString().c_str());
         }
+         */
         fprintf(stdout,"   ]\r\n");
     
     
@@ -512,10 +498,6 @@ int main(int argc, const char *argv[])
         }
 
 #pragma mark J2KR
-        //choose param
-        kdurRepresentationParameter JP2KParamsLossLess(0);
-        DcmRepresentationParameter *params = &JP2KParamsLossLess;
-        
         //encode
         /*
          DcmDatset.cc 694-698
@@ -527,6 +509,18 @@ int main(int argc, const char *argv[])
          (*original)->pixSeq, toType, repParam, pixelStack)
          
          */
+        
+        DcmRepresentationParameter *params;
+        if (kakaduReversible)
+        {
+            kdurParams JP2KParamsLossLess(0);
+            params = &JP2KParamsLossLess;
+        }
+        else if (openjpegReversible)
+        {
+            opjrParams JP2KParamsLossLess(0);
+            params = &JP2KParamsLossLess;
+        }        
         dataset->chooseRepresentation(EXS_JPEG2000LosslessOnly, params);
         
         

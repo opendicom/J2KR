@@ -1,8 +1,10 @@
 /*
  * jerror.h
+ *
  * Copyright (C) 1994-1998, Thomas G. Lane.
  * This file is part of the Independent JPEG Group's software.
  * For conditions of distribution and use, see the accompanying README file.
+ *
  * This file defines the error and message codes for the JPEG library.
  * Edit this file to add new codes, or to translate the message strings to
  * some other language.

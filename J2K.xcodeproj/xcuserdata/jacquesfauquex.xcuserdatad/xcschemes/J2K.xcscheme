@@ -63,7 +63,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "KDU"
+            argument = "opjr"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument

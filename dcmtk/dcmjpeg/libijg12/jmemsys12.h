@@ -1,12 +1,15 @@
 /*
  * jmemsys.h
+ *
  * Copyright (C) 1992-1997, Thomas G. Lane.
  * This file is part of the Independent JPEG Group's software.
  * For conditions of distribution and use, see the accompanying README file.
+ *
  * This include file defines the interface between the system-independent
  * and system-dependent portions of the JPEG memory manager.  No other
  * modules need include it.  (The system-independent portion is jmemmgr.c;
  * there are several different versions of the system-dependent portion.)
+ *
  * This file works as-is for the system-dependent memory managers supplied
  * in the IJG distribution.  You may need to modify it if you write a
  * custom memory manager.  If system-dependent changes are needed in
@@ -66,6 +69,7 @@ EXTERN(void) jpeg_free_large JPP((j_common_ptr cinfo, void FAR * object,
  * to model the 64Kb-segment-size limit of far addressing on 80x86 machines.
  * On those machines, we expect that jconfig.h will provide a proper value.
  * On machines with 32-bit flat address spaces, any large constant may be used.
+ *
  * NB: jmemmgr.c expects that MAX_ALLOC_CHUNK will be representable as type
  * size_t and will be a multiple of sizeof(align_type).
  */
@@ -78,6 +82,7 @@ EXTERN(void) jpeg_free_large JPP((j_common_ptr cinfo, void FAR * object,
  * This routine computes the total space still available for allocation by
  * jpeg_get_large.  If more space than this is needed, backing store will be
  * used.  NOTE: any memory already allocated must not be counted.
+ *
  * There is a minimum space requirement, corresponding to the minimum
  * feasible buffer sizes; jmemmgr.c will request that much space even if
  * jpeg_mem_available returns zero.  The maximum space needed, enough to hold
@@ -85,10 +90,12 @@ EXTERN(void) jpeg_free_large JPP((j_common_ptr cinfo, void FAR * object,
  * Finally, the total space already allocated is passed.  If no better
  * method is available, cinfo->mem->max_memory_to_use - already_allocated
  * is often a suitable calculation.
+ *
  * It is OK for jpeg_mem_available to underestimate the space available
  * (that'll just lead to more backing-store access than is really necessary).
  * However, an overestimate will lead to failure.  Hence it's wise to subtract
  * a slop factor from the true available space.  5% should be enough.
+ *
  * On machines with lots of virtual memory, any large constant may be returned.
  * Conversely, zero may be returned to always use the minimum amount of memory.
  */

@@ -697,7 +697,7 @@ opj_image_t* rawtoimage(char *inputbuffer, opj_cparameters_t *parameters,
 
 
 
-unsigned charOPJSupport::compressJPEG2K(void *data,
+unsigned char *OPJSupport::compressJPEG2K(void *data,
                            int samplesPerPixel,
                            int rows,
                            int columns,

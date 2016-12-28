@@ -1,13 +1,22 @@
-/*  Copyright (C) 1997-2014, OFFIS e.V.
+/*
+ *
+ *  Copyright (C) 1997-2014, OFFIS e.V.
  *  All rights reserved.  See COPYRIGHT file for details.
+ *
  *  This software and supporting documentation were developed by
+ *
  *    OFFIS e.V.
  *    R&D Division Health
  *    Escherweg 2
  *    D-26121 Oldenburg, Germany
+ *
+ *
  *  Module:  dcmjpeg
+ *
  *  Author:  Norbert Olges, Marco Eichelberg
+ *
  *  Purpose: enumerations, error constants and helper functions for dcmjpeg
+ *
  */
 
 #ifndef DJUTILS_H
@@ -17,7 +26,7 @@
 #include "dcmtk/ofstd/ofcond.h"      /* for class OFCondition */
 #include "dcmtk/dcmimgle/diutils.h"  /* for EP_Interpretation */
 #include "dcmtk/oflog/oflog.h"
-#include "djdefine.h"
+#include "dcmtk/dcmjpeg/djdefine.h"
 
 
 // global definitions for logging mechanism provided by the oflog module
@@ -31,23 +40,42 @@ extern DCMTK_DCMJPEG_EXPORT OFLogger DCM_dcmjpegLogger;
 #define DCMJPEG_ERROR(msg) OFLOG_ERROR(DCM_dcmjpegLogger, msg)
 #define DCMJPEG_FATAL(msg) OFLOG_FATAL(DCM_dcmjpegLogger, msg)
 
+
+// include this file in doxygen documentation
+
+/** @file djutils.h
+ *  @brief enumerations, error constants and helper functions for the dcmjpeg module
+ */
+
+
 // forward declarations
+
 class DcmItem;
 
 
-//modes of operation of a JPEG codec
+/** describes the different modes of operation of a JPEG codec
+ */
 enum EJ_Mode
 {
+  /// JPEG baseline
   EJM_baseline,
+
+  /// JPEG extended sequential
   EJM_sequential,
+
+  /// JPEG spectral selection
   EJM_spectralSelection,
+
+  /// JPEG full progression
   EJM_progressive,
-  EJM_lossless,
-  EJM_JP2K_lossy,
-  EJM_JP2K_lossless
+
+  /// JPEG lossless
+  EJM_lossless
 };
 
-//types of component sub-sampling
+/** describes the different types of component sub-sampling
+ *  to be used with lossy image compression.
+ */
 enum E_SubSampling
 {
   /// 4:4:4 sampling (no subsampling)
