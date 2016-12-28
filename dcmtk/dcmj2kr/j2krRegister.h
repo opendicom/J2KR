@@ -6,6 +6,7 @@
 
 class j2krParams;
 class kdur;
+class opjr;
 
 // singleton class registering all j2kr processes.
 
@@ -85,5 +86,6 @@ public:
     
   /// pointer to encoder for JPEG 2K LossLess
   static kdur *kakaduReversible;
+  static opjr *openjpegReversible;
 
 };

@@ -3,11 +3,13 @@
 
 #include "dcmtk/dcmdata/dccodec.h"  /* for DcmCodecStruct */
 #include "dcmtk/dcmj2kr/kdur/kdur.h"
+#include "dcmtk/dcmj2kr/opjr/opjr.h"
 
 // initialization of static members
 OFBool j2krRegister::registered      = OFFalse;
 j2krParams *j2krRegister::cp          = NULL;
 kdur *j2krRegister::kakaduReversible	        = NULL;
+opjr *j2krRegister::openjpegReversible	        = NULL;
 
 void j2krRegister::registerCodecs(
     E_CompressionColorSpaceConversion pCompressionCSConversion,
@@ -39,10 +41,12 @@ void j2krRegister::registerCodecs(
     cp = new j2krParams();
     if (cp)
     {
-      // JPEG 2K LossLess
-      kakaduReversible = new kdur();
-      if (kakaduReversible) DcmCodecList::registerCodec(kakaduReversible, NULL, cp);
-
+      openjpegReversible = new opjr();
+      if (openjpegReversible) DcmCodecList::registerCodec(openjpegReversible, NULL, cp);
+        
+        kakaduReversible = new kdur();
+        if (kakaduReversible) DcmCodecList::registerCodec(kakaduReversible, NULL, cp);
+        
       registered = OFTrue;
     }
   }
@@ -54,11 +58,14 @@ void j2krRegister::cleanup()
   {
     DcmCodecList::deregisterCodec(kakaduReversible);
     delete kakaduReversible;
+    DcmCodecList::deregisterCodec(openjpegReversible);
+    delete openjpegReversible;
     delete cp;
     registered = OFFalse;
 #ifdef DEBUG
     // not needed but useful for debugging purposes
     kakaduReversible = NULL;
+    openjpegReversible = NULL;
     cp     = NULL;
 #endif
 

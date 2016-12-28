@@ -8,7 +8,7 @@
 // initialization of static members
 OFBool rk2jRegister::registered                       = OFFalse;
 rk2jParams *rk2jRegister::cp                           = NULL;
-rudk *rk2jRegister::dec2KLoL                           = NULL;
+rudk *rk2jRegister::kakaduReversibleDecode                           = NULL;
 
 void rk2jRegister::registerCodecs(
     E_DecompressionColorSpaceConversion pDecompressionCSConversion,
@@ -26,8 +26,8 @@ void rk2jRegister::registerCodecs(
       predictor6WorkaroundEnable);
     if (cp)
     {
-      dec2KLoL = new rudk();
-      if (dec2KLoL) DcmCodecList::registerCodec(dec2KLoL, NULL, cp);
+      kakaduReversibleDecode = new rudk();
+      if (kakaduReversibleDecode) DcmCodecList::registerCodec(kakaduReversibleDecode, NULL, cp);
 
       registered = OFTrue;
     }
@@ -39,8 +39,8 @@ void rk2jRegister::cleanup()
   if (registered)
   {
     delete cp;
-    DcmCodecList::deregisterCodec(dec2KLoL);
-    delete dec2KLoL;
+    DcmCodecList::deregisterCodec(kakaduReversibleDecode);
+    delete kakaduReversibleDecode;
     registered = OFFalse;
 #ifdef DEBUG
     // not needed but useful for debugging purposes

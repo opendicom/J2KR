@@ -48,6 +48,17 @@
 		4A0D92671E12AF2200E2DE7B /* rudkInstance.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4A0D92631E12AF2200E2DE7B /* rudkInstance.cc */; };
 		4A0D92681E12AF2200E2DE7B /* rudk.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A0D92641E12AF2200E2DE7B /* rudk.h */; };
 		4A0D92691E12AF2200E2DE7B /* rudk.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4A0D92651E12AF2200E2DE7B /* rudk.cc */; };
+		4A0D92711E12EF5400E2DE7B /* opjrParams.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A0D926B1E12EF5400E2DE7B /* opjrParams.h */; };
+		4A0D92721E12EF5400E2DE7B /* opjrParams.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4A0D926C1E12EF5400E2DE7B /* opjrParams.cc */; };
+		4A0D92731E12EF5400E2DE7B /* opjrInstance.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A0D926D1E12EF5400E2DE7B /* opjrInstance.h */; };
+		4A0D92741E12EF5400E2DE7B /* opjrInstance.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4A0D926E1E12EF5400E2DE7B /* opjrInstance.cc */; };
+		4A0D92751E12EF5400E2DE7B /* opjr.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4A0D926F1E12EF5400E2DE7B /* opjr.cc */; };
+		4A0D92761E12EF5400E2DE7B /* opjr.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A0D92701E12EF5400E2DE7B /* opjr.h */; };
+		4A0D92771E12FFBD00E2DE7B /* format_defs.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A13D6C21E02213700D4ED4D /* format_defs.h */; };
+		4A0D92781E12FFC200E2DE7B /* openjpeg.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A13D6C41E02213700D4ED4D /* openjpeg.h */; };
+		4A0D92791E12FFC700E2DE7B /* opj_stdint.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A13D6C51E02213700D4ED4D /* opj_stdint.h */; };
+		4A0D927A1E12FFCA00E2DE7B /* OPJSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A13D6C71E02213700D4ED4D /* OPJSupport.h */; };
+		4A0D927B1E12FFE500E2DE7B /* OPJSupport.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A13D6C61E02213700D4ED4D /* OPJSupport.cpp */; };
 		4A13D3601E02193400D4ED4D /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A13D35F1E02193400D4ED4D /* libstdc++.6.0.9.dylib */; };
 		4A13D3631E02196000D4ED4D /* NSString+opendicom.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A13D3611E02196000D4ED4D /* NSString+opendicom.h */; };
 		4A13D3641E02196000D4ED4D /* NSString+opendicom.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A13D3621E02196000D4ED4D /* NSString+opendicom.mm */; };
@@ -508,6 +519,12 @@
 		4A0D92631E12AF2200E2DE7B /* rudkInstance.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = rudkInstance.cc; path = dcmrk2j/rudk/rudkInstance.cc; sourceTree = "<group>"; };
 		4A0D92641E12AF2200E2DE7B /* rudk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rudk.h; path = dcmrk2j/rudk/rudk.h; sourceTree = "<group>"; };
 		4A0D92651E12AF2200E2DE7B /* rudk.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = rudk.cc; path = dcmrk2j/rudk/rudk.cc; sourceTree = "<group>"; };
+		4A0D926B1E12EF5400E2DE7B /* opjrParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = opjrParams.h; path = dcmj2kr/opjr/opjrParams.h; sourceTree = "<group>"; };
+		4A0D926C1E12EF5400E2DE7B /* opjrParams.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = opjrParams.cc; path = dcmj2kr/opjr/opjrParams.cc; sourceTree = "<group>"; };
+		4A0D926D1E12EF5400E2DE7B /* opjrInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = opjrInstance.h; path = dcmj2kr/opjr/opjrInstance.h; sourceTree = "<group>"; };
+		4A0D926E1E12EF5400E2DE7B /* opjrInstance.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = opjrInstance.cc; path = dcmj2kr/opjr/opjrInstance.cc; sourceTree = "<group>"; };
+		4A0D926F1E12EF5400E2DE7B /* opjr.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = opjr.cc; path = dcmj2kr/opjr/opjr.cc; sourceTree = "<group>"; };
+		4A0D92701E12EF5400E2DE7B /* opjr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = opjr.h; path = dcmj2kr/opjr/opjr.h; sourceTree = "<group>"; };
 		4A13D35F1E02193400D4ED4D /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "libstdc++.6.0.9.dylib"; sourceTree = "<group>"; };
 		4A13D3611E02196000D4ED4D /* NSString+opendicom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+opendicom.h"; path = "objective-c categories/NSString+opendicom.h"; sourceTree = "<group>"; };
 		4A13D3621E02196000D4ED4D /* NSString+opendicom.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "NSString+opendicom.mm"; path = "objective-c categories/NSString+opendicom.mm"; sourceTree = "<group>"; };
@@ -1048,6 +1065,7 @@
 		4A0D923A1E128F8F00E2DE7B /* dcmj2kr */ = {
 			isa = PBXGroup;
 			children = (
+				4A0D926A1E12EF2C00E2DE7B /* opjr */,
 				4A0D92471E128FB800E2DE7B /* kdur */,
 				4A0D923B1E128FB100E2DE7B /* j2krRegister.h */,
 				4A0D923C1E128FB100E2DE7B /* j2krRegister.cc */,
@@ -1095,6 +1113,19 @@
 				4A0D92651E12AF2200E2DE7B /* rudk.cc */,
 			);
 			name = rudk;
+			sourceTree = "<group>";
+		};
+		4A0D926A1E12EF2C00E2DE7B /* opjr */ = {
+			isa = PBXGroup;
+			children = (
+				4A0D926B1E12EF5400E2DE7B /* opjrParams.h */,
+				4A0D926C1E12EF5400E2DE7B /* opjrParams.cc */,
+				4A0D926D1E12EF5400E2DE7B /* opjrInstance.h */,
+				4A0D926E1E12EF5400E2DE7B /* opjrInstance.cc */,
+				4A0D926F1E12EF5400E2DE7B /* opjr.cc */,
+				4A0D92701E12EF5400E2DE7B /* opjr.h */,
+			);
+			name = opjr;
 			sourceTree = "<group>";
 		};
 		4A13D6BF1E0220C900D4ED4D /* OPJ */ = {
@@ -1926,7 +1957,11 @@
 				4A13D8BC1E023C9D00D4ED4D /* dccodec.h in Headers */,
 				4A3AD84E1E11C3B400C9F9E6 /* k2jRegister.h in Headers */,
 				4A13D9DD1E023C9E00D4ED4D /* dldefine.h in Headers */,
+				4A0D92781E12FFC200E2DE7B /* openjpeg.h in Headers */,
+				4A0D927A1E12FFCA00E2DE7B /* OPJSupport.h in Headers */,
 				4A13D9DC1E023C9E00D4ED4D /* djrparam.h in Headers */,
+				4A0D92771E12FFBD00E2DE7B /* format_defs.h in Headers */,
+				4A0D92791E12FFC700E2DE7B /* opj_stdint.h in Headers */,
 				4A13D9DB1E023C9E00D4ED4D /* djlsutil.h in Headers */,
 				4A13D9DA1E023C9E00D4ED4D /* djencode.h in Headers */,
 				4A13D9D91E023C9E00D4ED4D /* djdecode.h in Headers */,
@@ -2063,6 +2098,7 @@
 				4A13DA121E023C9E00D4ED4D /* nullap.h in Headers */,
 				4A13D9071E023C9D00D4ED4D /* dcvrtm.h in Headers */,
 				4A13DE7C1E09E6E200D4ED4D /* jpegParams.h in Headers */,
+				4A0D92761E12EF5400E2DE7B /* opjr.h in Headers */,
 				4A13D94E1E023C9D00D4ED4D /* didocu.h in Headers */,
 				4A13D95C1E023C9D00D4ED4D /* dimomod.h in Headers */,
 				4A13D9161E023C9D00D4ED4D /* i2doutpl.h in Headers */,
@@ -2161,6 +2197,7 @@
 				4A13D9891E023C9E00D4ED4D /* djdecsv1.h in Headers */,
 				4A13D93A1E023C9D00D4ED4D /* diqtstab.h in Headers */,
 				4A13D9871E023C9E00D4ED4D /* djdecsps.h in Headers */,
+				4A0D92731E12EF5400E2DE7B /* opjrInstance.h in Headers */,
 				4A13D9EB1E023C9E00D4ED4D /* clogger.h in Headers */,
 				4A3AD8301E1179D300C9F9E6 /* jlossy8.h in Headers */,
 				4A13D99A1E023C9E00D4ED4D /* djencode.h in Headers */,
@@ -2203,6 +2240,7 @@
 				4A13DA0B1E023C9E00D4ED4D /* log4judp.h in Headers */,
 				4A13D8DA1E023C9D00D4ED4D /* dcpath.h in Headers */,
 				4A13DA4D1E023C9E00D4ED4D /* ofsetit.h in Headers */,
+				4A0D92711E12EF5400E2DE7B /* opjrParams.h in Headers */,
 				4A13D92F1E023C9D00D4ED4D /* dipipng.h in Headers */,
 				4A13DA1D1E023C9E00D4ED4D /* streams.h in Headers */,
 				4A13D9411E023C9D00D4ED4D /* diybrpxt.h in Headers */,
@@ -2437,6 +2475,8 @@
 				4A13DAAE1E05E23B00D4ED4D /* ddpiimpl.cc in Sources */,
 				4A0D92601E12ADF700E2DE7B /* rk2jCoder.cc in Sources */,
 				4A0D92691E12AF2200E2DE7B /* rudk.cc in Sources */,
+				4A0D92721E12EF5400E2DE7B /* opjrParams.cc in Sources */,
+				4A0D92741E12EF5400E2DE7B /* opjrInstance.cc in Sources */,
 				4A0D92421E128FB100E2DE7B /* j2krRegister.cc in Sources */,
 				4A0D92001E1285A600E2DE7B /* k2jParams.cc in Sources */,
 				4A0D91FE1E1285A600E2DE7B /* k2jCoder.cc in Sources */,
@@ -2445,11 +2485,13 @@
 				4A0D920F1E1285EF00E2DE7B /* j2kCoder.cc in Sources */,
 				4A3AD84D1E11C3B400C9F9E6 /* k2jRegister.cc in Sources */,
 				4A3F81B61E0B56D200DEAED0 /* j2kRegister.cc in Sources */,
+				4A0D92751E12EF5400E2DE7B /* opjr.cc in Sources */,
 				4A13D3641E02196000D4ED4D /* NSString+opendicom.mm in Sources */,
 				4A0D92111E1285EF00E2DE7B /* j2kParams.cc in Sources */,
 				4A0D92351E128F8100E2DE7B /* kduParams.cc in Sources */,
 				4A0D92671E12AF2200E2DE7B /* rudkInstance.cc in Sources */,
 				4A0D92091E1285C200E2DE7B /* udkInstance.cc in Sources */,
+				4A0D927B1E12FFE500E2DE7B /* OPJSupport.cpp in Sources */,
 				4A0D92501E128FCD00E2DE7B /* kdurInstance.cc in Sources */,
 				4A0D925B1E12ADF700E2DE7B /* rk2jRegister.cc in Sources */,
 				4A0D92071E1285C200E2DE7B /* udk.cc in Sources */,

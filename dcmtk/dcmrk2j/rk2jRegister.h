@@ -43,6 +43,6 @@ public:
   static rk2jParams *cp;
     
   /// pointer to decoder for lossless JPEG
-  static rudk *dec2KLoL;
+  static rudk *kakaduReversibleDecode;
 
 };

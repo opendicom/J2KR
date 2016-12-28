@@ -33,6 +33,7 @@
 //j2kr
 #include "dcmtk/dcmj2kr/j2krRegister.h"
 #include "dcmtk/dcmj2kr/kdur/kdurParams.h"
+#include "dcmtk/dcmj2kr/opjr/opjrParams.h"
 
 enum baseArgs {
     codec=1,
@@ -331,6 +332,7 @@ int main(int argc, const char *argv[])
         if (DJEncoderRegistration::enclol != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.57) dcmtk ijg enclol \r\n");
         if (j2kRegister::kakadu != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.91) dcmtk kakadu \r\n");
         if (j2krRegister::kakaduReversible != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.90) dcmtk kakaduReversible \r\n");
+        if (j2krRegister::openjpegReversible != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.90) dcmtk openjpegReversible \r\n");
         if (DJLSEncoderRegistration::registered_==OFTrue)
         {            
             if (DJLSEncoderRegistration::losslessencoder_ != nullptr) fprintf(stdout,"      (1.2.840.10008.1.2.4.80) %s losslessencoder \r\n",DJLSEncoderRegistration::getLibraryVersionString().c_str());
@@ -347,7 +349,7 @@ int main(int argc, const char *argv[])
         if (DJDecoderRegistration::decpro != NULL) fprintf(stdout,"      (Retired)                dcmtk ijg encpro\r\n");
         if (DJDecoderRegistration::decsv1 != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.70) dcmtk ijg encsv1 \r\n");
         if (DJDecoderRegistration::declol != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.57) dcmtk ijg enclol \r\n");
-        if (k2jRegister::dec2KLoL != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.90) kdu kakaduReversible \r\n");
+        if (k2jRegister::kakaduReversibleDecode != NULL) fprintf(stdout,"      (1.2.840.10008.1.2.4.90) kdu kakaduReversible \r\n");
         if (DJLSEncoderRegistration::registered_==OFTrue)
         {
             if (DJLSEncoderRegistration::losslessencoder_ != nullptr) fprintf(stdout,"      (1.2.840.10008.1.2.4.80) %s losslessencoder \r\n",DJLSEncoderRegistration::getLibraryVersionString().c_str());
@@ -492,10 +494,6 @@ int main(int argc, const char *argv[])
         }
 
 #pragma mark J2KR
-        //choose param
-        kduParams JP2KParamsLossLess(0);
-        DcmRepresentationParameter *params = &JP2KParamsLossLess;
-        
         //encode
         /*
          DcmDatset.cc 694-698
@@ -507,6 +505,18 @@ int main(int argc, const char *argv[])
          (*original)->pixSeq, toType, repParam, pixelStack)
          
          */
+        
+        DcmRepresentationParameter *params;
+        if (kakaduReversible)
+        {
+            kdurParams JP2KParamsLossLess(0);
+            params = &JP2KParamsLossLess;
+        }
+        else if (openjpegReversible)
+        {
+            opjrParams JP2KParamsLossLess(0);
+            params = &JP2KParamsLossLess;
+        }        
         dataset->chooseRepresentation(EXS_JPEG2000LosslessOnly, params);
         
         
