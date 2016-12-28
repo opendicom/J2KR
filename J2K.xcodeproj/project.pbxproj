@@ -426,8 +426,6 @@
 		4A13DEB01E0A39B400D4ED4D /* djdecabs.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A13DEAE1E0A39B400D4ED4D /* djdecabs.h */; };
 		4A13DEB11E0A39B400D4ED4D /* djencabs.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A13DEAF1E0A39B400D4ED4D /* djencabs.h */; };
 		4A16858A1DE6584D007E10B2 /* libz.1.2.8.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A1685891DE6584D007E10B2 /* libz.1.2.8.tbd */; };
-		4A16870B1DE75970007E10B2 /* libz.1.2.8.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A1685891DE6584D007E10B2 /* libz.1.2.8.tbd */; };
-		4A16870C1DE75970007E10B2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29B97325FDCFA39411CA2CEA /* Foundation.framework */; };
 		4A1B7ADF1E01D93500288437 /* J2K.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A1B7ADE1E01D93500288437 /* J2K.mm */; };
 		4A3AD7F51E11776600C9F9E6 /* jconfig16.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A3AD7E81E11776600C9F9E6 /* jconfig16.h */; };
 		4A3AD7F61E11776600C9F9E6 /* jchuff16.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A3AD7E91E11776600C9F9E6 /* jchuff16.h */; };
@@ -528,8 +526,6 @@
 		4A13D35F1E02193400D4ED4D /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "libstdc++.6.0.9.dylib"; sourceTree = "<group>"; };
 		4A13D3611E02196000D4ED4D /* NSString+opendicom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+opendicom.h"; path = "objective-c categories/NSString+opendicom.h"; sourceTree = "<group>"; };
 		4A13D3621E02196000D4ED4D /* NSString+opendicom.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "NSString+opendicom.mm"; path = "objective-c categories/NSString+opendicom.mm"; sourceTree = "<group>"; };
-		4A13D6C01E02213700D4ED4D /* djdijp2k_opj.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = djdijp2k_opj.cc; path = OPJ/djdijp2k_opj.cc; sourceTree = "<group>"; };
-		4A13D6C11E02213700D4ED4D /* djeijg2k_opj.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = djeijg2k_opj.cc; path = OPJ/djeijg2k_opj.cc; sourceTree = "<group>"; };
 		4A13D6C21E02213700D4ED4D /* format_defs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = format_defs.h; path = OPJ/format_defs.h; sourceTree = "<group>"; };
 		4A13D6C31E02213700D4ED4D /* libopenjp2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libopenjp2.a; path = OPJ/libopenjp2.a; sourceTree = "<group>"; };
 		4A13D6C41E02213700D4ED4D /* openjpeg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = openjpeg.h; path = OPJ/openjpeg.h; sourceTree = "<group>"; };
@@ -899,10 +895,8 @@
 		4A13DEAE1E0A39B400D4ED4D /* djdecabs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = djdecabs.h; sourceTree = "<group>"; };
 		4A13DEAF1E0A39B400D4ED4D /* djencabs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = djencabs.h; sourceTree = "<group>"; };
 		4A1685891DE6584D007E10B2 /* libz.1.2.8.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.8.tbd; path = usr/lib/libz.1.2.8.tbd; sourceTree = SDKROOT; };
-		4A1687121DE75970007E10B2 /* OPJ */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OPJ; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A169D771DE7B8DC007E10B2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4A1B7ADE1E01D93500288437 /* J2K.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = J2K.mm; sourceTree = "<group>"; };
-		4A1B7AE01E01D9AB00288437 /* OPJ.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OPJ.mm; sourceTree = "<group>"; };
 		4A3AD7E81E11776600C9F9E6 /* jconfig16.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = jconfig16.h; path = libijg16/jconfig16.h; sourceTree = "<group>"; };
 		4A3AD7E91E11776600C9F9E6 /* jchuff16.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = jchuff16.h; path = libijg16/jchuff16.h; sourceTree = "<group>"; };
 		4A3AD7EA1E11776600C9F9E6 /* jerror16.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = jerror16.h; path = libijg16/jerror16.h; sourceTree = "<group>"; };
@@ -964,15 +958,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4A16870A1DE75970007E10B2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4A16870B1DE75970007E10B2 /* libz.1.2.8.tbd in Frameworks */,
-				4A16870C1DE75970007E10B2 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4AEAD3C41CC6E475000FEA7F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -1004,7 +989,6 @@
 			isa = PBXGroup;
 			children = (
 				4AEAD3DA1CC6E475000FEA7F /* J2K */,
-				4A1687121DE75970007E10B2 /* OPJ */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1015,7 +999,6 @@
 				4A13D6E11E023C9C00D4ED4D /* dcmtk */,
 				4A13D6BF1E0220C900D4ED4D /* OPJ */,
 				4A169D771DE7B8DC007E10B2 /* README.md */,
-				4A1B7AE01E01D9AB00288437 /* OPJ.mm */,
 				4A1B7ADE1E01D93500288437 /* J2K.mm */,
 				4AF940601CE5720100551476 /* OD */,
 				AB724F1C0ADE6CFC00A212A0 /* objective-c categories */,
@@ -1131,8 +1114,6 @@
 		4A13D6BF1E0220C900D4ED4D /* OPJ */ = {
 			isa = PBXGroup;
 			children = (
-				4A13D6C01E02213700D4ED4D /* djdijp2k_opj.cc */,
-				4A13D6C11E02213700D4ED4D /* djeijg2k_opj.cc */,
 				4A13D6C21E02213700D4ED4D /* format_defs.h */,
 				4A13D6C31E02213700D4ED4D /* libopenjp2.a */,
 				4A13D6C41E02213700D4ED4D /* openjpeg.h */,
@@ -2376,33 +2357,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4A16859B1DE75970007E10B2 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		4A16859A1DE75970007E10B2 /* OPJ */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4A1687101DE75970007E10B2 /* Build configuration list for PBXNativeTarget "OPJ" */;
-			buildPhases = (
-				4A16859B1DE75970007E10B2 /* Headers */,
-				4A16859E1DE75970007E10B2 /* Sources */,
-				4A16870A1DE75970007E10B2 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = OPJ;
-			productName = SafeDBRebuild;
-			productReference = 4A1687121DE75970007E10B2 /* OPJ */;
-			productType = "com.apple.product-type.tool";
-		};
 		4AEAD2471CC6E475000FEA7F /* J2K */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4AEAD3D81CC6E475000FEA7F /* Build configuration list for PBXNativeTarget "J2K" */;
@@ -2454,19 +2411,11 @@
 			projectRoot = "";
 			targets = (
 				4AEAD2471CC6E475000FEA7F /* J2K */,
-				4A16859A1DE75970007E10B2 /* OPJ */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4A16859E1DE75970007E10B2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4AEAD2481CC6E475000FEA7F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2506,42 +2455,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		4A1687111DE75970007E10B2 /* Development */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_CXX_LIBRARY = "libstdc++";
-				CODE_SIGN_RESOURCE_RULES_PATH = "";
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)";
-				COPY_PHASE_STRIP = YES;
-				DEPLOYMENT_LOCATION = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(FRAMEWORK_SEARCH_PATHS)",
-					"$(SRCROOT)",
-				);
-				GCC_C_LANGUAGE_STANDARD = "compiler-default";
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREFIX_HEADER = "";
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/**",
-					"$(PROJECT_DIR)/OPJ64",
-				);
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				STRIP_INSTALLED_PRODUCT = YES;
-				SYMROOT = build;
-			};
-			name = Development;
-		};
 		4AEAD3D91CC6E475000FEA7F /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2633,14 +2546,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4A1687101DE75970007E10B2 /* Build configuration list for PBXNativeTarget "OPJ" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4A1687111DE75970007E10B2 /* Development */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Development;
-		};
 		4AEAD3D81CC6E475000FEA7F /* Build configuration list for PBXNativeTarget "J2K" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
