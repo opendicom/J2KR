@@ -448,8 +448,6 @@
 		4A13DA641E023C9E00D4ED4D /* tuplefwd.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A13D8B51E023C9D00D4ED4D /* tuplefwd.h */; };
 		4A13DA651E023C9E00D4ED4D /* variant.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A13D8B61E023C9D00D4ED4D /* variant.h */; };
 		4A13DA7A1E02DEDE00D4ED4D /* djcodecd.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A13D81D1E023C9D00D4ED4D /* djcodecd.h */; };
-		4A13DAAE1E05E23B00D4ED4D /* ddpiimpl.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4A13DAAC1E05E23B00D4ED4D /* ddpiimpl.cc */; };
-		4A13DAAF1E05E23B00D4ED4D /* ddpiimpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A13DAAD1E05E23B00D4ED4D /* ddpiimpl.h */; };
 		4A13DE581E081D8900D4ED4D /* libkdu_v73R.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A13DE571E081D8900D4ED4D /* libkdu_v73R.a */; };
 		4A16858A1DE6584D007E10B2 /* libz.1.2.8.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A1685891DE6584D007E10B2 /* libz.1.2.8.tbd */; };
 		4A1B7ADF1E01D93500288437 /* J2K.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A1B7ADE1E01D93500288437 /* J2K.mm */; };
@@ -902,8 +900,6 @@
 		4A13D8B41E023C9D00D4ED4D /* tuplefrd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tuplefrd.h; sourceTree = "<group>"; };
 		4A13D8B51E023C9D00D4ED4D /* tuplefwd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tuplefwd.h; sourceTree = "<group>"; };
 		4A13D8B61E023C9D00D4ED4D /* variant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = variant.h; sourceTree = "<group>"; };
-		4A13DAAC1E05E23B00D4ED4D /* ddpiimpl.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ddpiimpl.cc; path = dcmdataImplementation/dcddirif/ddpiimpl.cc; sourceTree = "<group>"; };
-		4A13DAAD1E05E23B00D4ED4D /* ddpiimpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ddpiimpl.h; path = dcmdataImplementation/dcddirif/ddpiimpl.h; sourceTree = "<group>"; };
 		4A13DE571E081D8900D4ED4D /* libkdu_v73R.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libkdu_v73R.a; path = KDU_OsiriX59/libkdu_v73R.a; sourceTree = "<group>"; };
 		4A1685891DE6584D007E10B2 /* libz.1.2.8.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.8.tbd; path = usr/lib/libz.1.2.8.tbd; sourceTree = SDKROOT; };
 		4A169D771DE7B8DC007E10B2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -1185,7 +1181,6 @@
 				4A0D92541E12AD8900E2DE7B /* dcmrk2j */,
 				4A0D923A1E128F8F00E2DE7B /* dcmj2kr */,
 				4A3AD84A1E11C0B600C9F9E6 /* dcmk2j */,
-				4A13DA7F1E04A3DD00D4ED4D /* dcmdataImplementation */,
 				4A13D6E21E023C9C00D4ED4D /* config */,
 				4A13D6E51E023C9C00D4ED4D /* dcmdata */,
 				4A13D7491E023C9D00D4ED4D /* dcmimage */,
@@ -1647,23 +1642,6 @@
 			path = variadic;
 			sourceTree = "<group>";
 		};
-		4A13DA7F1E04A3DD00D4ED4D /* dcmdataImplementation */ = {
-			isa = PBXGroup;
-			children = (
-				4A13DAAB1E05E22A00D4ED4D /* dcddirif */,
-			);
-			name = dcmdataImplementation;
-			sourceTree = "<group>";
-		};
-		4A13DAAB1E05E22A00D4ED4D /* dcddirif */ = {
-			isa = PBXGroup;
-			children = (
-				4A13DAAC1E05E23B00D4ED4D /* ddpiimpl.cc */,
-				4A13DAAD1E05E23B00D4ED4D /* ddpiimpl.h */,
-			);
-			name = dcddirif;
-			sourceTree = "<group>";
-		};
 		4A3AD84A1E11C0B600C9F9E6 /* dcmk2j */ = {
 			isa = PBXGroup;
 			children = (
@@ -2078,7 +2056,6 @@
 				4A13D8FD1E023C9D00D4ED4D /* dcvrobow.h in Headers */,
 				4A13D95A1E023C9D00D4ED4D /* dimoimg.h in Headers */,
 				4A13D9FF1E023C9E00D4ED4D /* sockbuff.h in Headers */,
-				4A13DAAF1E05E23B00D4ED4D /* ddpiimpl.h in Headers */,
 				4A13DA001E023C9E00D4ED4D /* socket.h in Headers */,
 				4A13DA231E023C9E00D4ED4D /* syncwin.h in Headers */,
 				4A13D9F01E023C9E00D4ED4D /* config.h in Headers */,
@@ -2190,7 +2167,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A13DAAE1E05E23B00D4ED4D /* ddpiimpl.cc in Sources */,
 				4A0D92601E12ADF700E2DE7B /* rk2jCoder.cc in Sources */,
 				4A0D92691E12AF2200E2DE7B /* rudk.cc in Sources */,
 				4A0D92721E12EF5400E2DE7B /* opjrParams.cc in Sources */,
