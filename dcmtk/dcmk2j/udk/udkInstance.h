@@ -1,5 +1,32 @@
 #include "osconfig.h"
-#include "djdecabs.h" /* for class DJDecoder */
+#include "djdecabs.h"
+/* for class DJDecoder
+ abstract base class for decompression classes.
+ 
+ Implementations of this class must support suspended decompression
+ in which compressed data for one frame is fed block by block
+ into the decompression routine.
+ 
+ methods:
+ 
+ virtual OFCondition init() = 0;
+ virtual Uint16 bytesPerSample() const = 0;
+ virtual EP_Interpretation getDecompressedColorModel() const = 0;
+ 
+ Decompresses a JPEG frame until finished or out of data.
+ Can be called with new data until a frame is complete.
+ @return
+ EC_Normal if successful,
+ EC_Suspend if more data is needed,
+ error code otherwise.
+ 
+ virtual OFCondition decode(
+ Uint8 *compressedFrameBuffer,
+ Uint32 compressedFrameBufferSize,
+ Uint8 *uncompressedFrameBuffer,
+ Uint32 uncompressedFrameBufferSize, (in words???)
+ OFBool isSigned) = 0;
+ */
 
 extern "C"
 {

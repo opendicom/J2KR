@@ -1,7 +1,40 @@
 #include "dcmtk/config/osconfig.h"
 #include "dcmtk/ofstd/oflist.h"
-#include "dcmtk/djencabs.h"  //DJEncoder
 #include "dcmtk/dcmj2kr/j2krCoder.h" //opjrInstance constructor +
+
+#include "dcmtk/djencabs.h"
+/*DJEncoder
+ 
+métodos:
+ virtual Uint16 bytesPerSample() const = 0;
+ virtual Uint16 bitsPerSample() const = 0;
+
+ 
+Single frame compression routines for 16-bit raw pixel data (bytesPerSample()==2) and fo 8-bit raw pixel data (bytesPerSample()==1).
+
+@param *&to compressed frame returned in this parameter upon success
+@param length length of compressed frame (in bytes) returned in this parameter
+upon success; length guaranteed to be always even.
+@return EC_Normal if successful, an error code otherwise.
+
+virtual OFCondition encode(
+                           Uint16 columns,
+                           Uint16 rows,
+                           EP_Interpretation interpr,
+                           Uint16 samplesPerPixel,
+                           Uint16 *image_buffer,
+                           Uint8 *&to,
+                           Uint32 &length) = 0;
+ 
+ virtual OFCondition encode(
+                            Uint16 columns,
+                            Uint16 rows,
+                            EP_Interpretation interpr,
+                            Uint16 samplesPerPixel,
+                            Uint8 *image_buffer,
+                            Uint8 *&to,
+                            Uint32 &length) = 0;
+ */
 
 class j2krParams;
 
