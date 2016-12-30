@@ -65,19 +65,6 @@ virtual OFCondition encode(
   Uint8 *&to,
   Uint32 &length);
 
-//imageBuffer 16bit - used
-virtual OFCondition encode(
-  Uint16 columns,
-  Uint16 rows,
-  EP_Interpretation interpr,
-  Uint16 samplesPerPixel,
-  Uint16 *image_buffer,
-  Uint8 *&to,
-  Uint32 &length,
-  Uint8 pixelRepresentation,
-  double minUsed,
-  double maxUsed);
-
     
 //imageBuffer 8bit - abstract class DJEncoder
 virtual OFCondition encode(
@@ -88,19 +75,7 @@ virtual OFCondition encode(
   Uint8 *image_buffer,
   Uint8 *&to,
   Uint32 &length);
-    
-//imageBuffer 8bit -used
-  virtual OFCondition encode(
-    Uint16 columns,
-    Uint16 rows,
-    EP_Interpretation colorSpace,
-    Uint16 samplesPerPixel,
-    Uint8 *image_buffer,
-    Uint8 *&to,
-    Uint32 &length,
-	Uint8 pixelRepresentation,
-	double minUsed,
-    double maxUsed);
+
 
 //abstract class DJEncoder
   virtual Uint16 bytesPerSample() const;
@@ -117,10 +92,7 @@ virtual OFCondition encode(
     Uint8 *image_buffer,
     Uint8 *&to,
     Uint32 &length,
-    Uint8 bitsAllocated,
-    Uint8 pixelRepresentation,
-    double minUsed,
-    double maxUsed);
+    Uint8 bitsAllocated);
     
 #pragma mark methods to be added to fullfill abstract definition
 

@@ -4,15 +4,7 @@
 #include "dcmtk/ofstd/ofconsol.h"
 #include "dcmtk/ofstd/ofstdinc.h"
 
-//kdur_osirix59 32bit compressed lib
 extern "C" void* kdu_compressJPEG2K( void *data, int samplesPerPixel, int rows, int columns, int precision, bool sign, int rate, long *compressedDataSize, int num_threads);
-
-//openjpeg 2
-#include "OPJSupport.h"
-#include "openjpeg.h"
-
-// use 16K blocks for temporary storage of compressed JPEG data
-#define IJGE12_BLOCKSIZE 16384
 
 kdurInstance::kdurInstance(const j2krParams& cp, EJ_Mode mode,
     Uint8 bitsPerSample)
@@ -36,26 +28,8 @@ OFCondition kdurInstance::encode(
   Uint8 *&to,
   Uint32 &length)
 {
-    fprintf(stdout,"D: imageBuffer 16bit\r\n");
-    return encode( columns, rows, interpr, samplesPerPixel, (Uint16*) image_buffer, to, length, 0, 0.0L, 0.0L);
-    //pixel representation 0000H unsigned integer, 0001H 2's complement
-}
-
-//imageBuffer 16bit - used
-OFCondition kdurInstance::encode(
-  Uint16 columns,
-  Uint16 rows,
-  EP_Interpretation interpr,
-  Uint16 samplesPerPixel,
-  Uint16 *image_buffer,
-  Uint8 *&to ,
-  Uint32 &length,
-  Uint8 pixelRepresentation,
-  double minUsed,
-  double maxUsed)
-{
-    fprintf(stdout,"D: pixelRepresentation:0000H (unsigned) minUsed:0.0(fixed) maxUsed:0.0(fixed)\r\n");
-    return encode( columns, rows, interpr, samplesPerPixel, (Uint8*) image_buffer, to, length, 16, pixelRepresentation, minUsed, maxUsed);
+    fprintf(stdout,"D: kdurInstance (16)\r\n");
+    return encode( columns, rows, interpr, samplesPerPixel, (Uint8*) image_buffer, to, length, 16);
 }
 
 
@@ -69,25 +43,8 @@ OFCondition kdurInstance::encode(
   Uint8 *&to,
   Uint32 &length)
 {
-    fprintf(stdout,"D: imageBuffer 8bit\r\n");
-    return encode( columns, rows, interpr, samplesPerPixel, (Uint8*) image_buffer, to, length, 0, 0.0L, 0.0L);
-}
-
-//imageBuffer 8bit
-OFCondition kdurInstance::encode(
-  Uint16 columns,
-  Uint16 rows,
-  EP_Interpretation colorSpace,
-  Uint16 samplesPerPixel,
-  Uint8 *image_buffer,
-  Uint8 *&to,
-  Uint32 &length,
-  Uint8 pixelRepresentation,
-  double minUsed,
-  double maxUsed)
-{
-    fprintf(stdout,"D: pixelRepresentation:0000H (unsigned) minUsed:0.0(fixed) maxUsed:0.0(fixed)\r\n");
-    return encode( columns, rows, colorSpace, samplesPerPixel, (Uint8*) image_buffer, to, length, 8, pixelRepresentation, minUsed, maxUsed);
+    fprintf(stdout,"D: kdurInstance (8)\r\n");
+    return encode( columns, rows, interpr, samplesPerPixel, (Uint8*) image_buffer, to, length, 8);
 }
 
 //abstract class DJEncoder
@@ -111,10 +68,7 @@ OFCondition kdurInstance::encode(
   Uint8 *image_buffer,
   Uint8 *&to,
   Uint32 &length,
-  Uint8 bitsAllocated,
-  Uint8 pixelRepresentation,
-  double minUsed,
-  double maxUsed)
+  Uint8 bitsAllocated)
 {
     //to = (Uint8 *) results in segmantation fault
     long compressedLength = 0;

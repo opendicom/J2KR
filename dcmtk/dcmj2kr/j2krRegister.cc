@@ -25,11 +25,11 @@ void j2krRegister::registerCodecs()
         openjpegReversible = new opjr();
         openjpegParams = new opjrParams();
         if (openjpegReversible) DcmCodecList::registerCodec(openjpegReversible, openjpegParams, tsParams);
-
+                
         kakaduReversible = new kdur();
         kakaduParams = new kdurParams();
         if (kakaduReversible) DcmCodecList::registerCodec(kakaduReversible, kakaduParams, tsParams);
-        
+
       registered = OFTrue;
     }
   }
