@@ -24,7 +24,7 @@ Notas:
 
 Project folders:
 * dcmtk contains headers, c++ code and static libs of dcmtk
-* openjpeg contains headers, c++ code and static libs for openjpeg 2.1.2 integration
+* openjpeg contains headers, c++ code and static libs for newest openjpeg integration
 * objective-c wrappers make it easier to use dcmtk C++ classes from objecive-c
 * objective-c categories add functionality to objective-c classes
 * OD is an objective-c framework (in progress) for dicom file editing

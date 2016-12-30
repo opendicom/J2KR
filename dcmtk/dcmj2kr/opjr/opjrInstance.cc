@@ -7,15 +7,16 @@
 #include "OPJSupport.h"
 #include "openjpeg.h"
 
-// use 16K blocks for temporary storage of compressed JPEG data
-#define IJGE12_BLOCKSIZE 16384
 
-opjrInstance::opjrInstance(const j2krParams& cp, EJ_Mode mode,
-    Uint8 bitsPerSample)
-                                : DJEncoder()
-                                , cparam(&cp)
-                                , bitsPerSampleValue(bitsPerSample)
-                                , modeofOperation(mode)
+opjrInstance::opjrInstance(
+                           const j2krParams& cp,
+                           EJ_Mode mode,
+                           Uint8 bitsPerSample
+                           )
+                            : DJEncoder()
+                            , cparam(&cp)
+                            , bitsPerSampleValue(bitsPerSample)
+                            , modeofOperation(mode)
 {}
 
 opjrInstance::~opjrInstance()
@@ -32,7 +33,7 @@ OFCondition opjrInstance::encode(
   Uint8 *&to,
   Uint32 &length)
 {
-    fprintf(stdout,"D: imageBuffer 16bit\r\n");
+    fprintf(stdout,"D: (16bit) opjrInstance encode imageBuffer (abstract)\r\n");
     return encode( columns, rows, interpr, samplesPerPixel, (Uint16*) image_buffer, to, length, 0, 0.0L, 0.0L);
     //pixel representation 0000H unsigned integer, 0001H 2's complement
 }
@@ -50,7 +51,7 @@ OFCondition opjrInstance::encode(
   double minUsed,
   double maxUsed)
 {
-    fprintf(stdout,"D: pixelRepresentation:0000H (unsigned) minUsed:0.0(fixed) maxUsed:0.0(fixed)\r\n");
+    fprintf(stdout,"D: (16bit) opjrInstance pixelRepresentation:0000H (unsigned) minUsed:0.0(fixed) maxUsed:0.0(fixed)\r\n");
     return encode( columns, rows, interpr, samplesPerPixel, (Uint8*) image_buffer, to, length, 16, pixelRepresentation, minUsed, maxUsed);
 }
 
@@ -65,7 +66,7 @@ OFCondition opjrInstance::encode(
   Uint8 *&to,
   Uint32 &length)
 {
-    fprintf(stdout,"D: imageBuffer 8bit\r\n");
+    fprintf(stdout,"D: opjrInstance imageBuffer 8bit\r\n");
     return encode( columns, rows, interpr, samplesPerPixel, (Uint8*) image_buffer, to, length, 0, 0.0L, 0.0L);
 }
 
@@ -82,7 +83,7 @@ OFCondition opjrInstance::encode(
   double minUsed,
   double maxUsed)
 {
-    fprintf(stdout,"D: pixelRepresentation:0000H (unsigned) minUsed:0.0(fixed) maxUsed:0.0(fixed)\r\n");
+    fprintf(stdout,"D: opjrInstance pixelRepresentation:0000H (unsigned) minUsed:0.0(fixed) maxUsed:0.0(fixed)\r\n");
     return encode( columns, rows, colorSpace, samplesPerPixel, (Uint8*) image_buffer, to, length, 8, pixelRepresentation, minUsed, maxUsed);
 }
 
@@ -126,7 +127,9 @@ OFCondition opjrInstance::encode(
      &compressedLength);
      //[5] bitsstored, [7] signed, [8] rate=0=reversible
      length = compressedLength;
-     
+     if (length) fprintf(stdout,"D: OPJSupport.compressJPEG2K result length:%d\r\n",length);
+     else fprintf(stdout,"E: OPJSupport.compressJPEG2K empty output\r\n");
+    
      return EC_Normal;
 }
 

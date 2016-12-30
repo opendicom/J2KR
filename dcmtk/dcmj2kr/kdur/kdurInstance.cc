@@ -11,17 +11,6 @@ extern "C" void* kdu_compressJPEG2K( void *data, int samplesPerPixel, int rows, 
 #include "OPJSupport.h"
 #include "openjpeg.h"
 
-
-// These two macros are re-defined in the IJG header files.
-// We undefine them here and hope that IJG's configure has
-// come to the same conclusion that we have...
-//#ifdef HAVE_STDLIB_H
-//#undef HAVE_STDLIB_H
-//#endif
-//#ifdef HAVE_STDDEF_H
-//#undef HAVE_STDDEF_H
-//#endif
-
 // use 16K blocks for temporary storage of compressed JPEG data
 #define IJGE12_BLOCKSIZE 16384
 
@@ -127,9 +116,6 @@ OFCondition kdurInstance::encode(
   double minUsed,
   double maxUsed)
 {
-    //if ([args[codec] isEqualToString:@"KDU"])
-    //{
-    
     //to = (Uint8 *) results in segmantation fault
     long compressedLength = 0;
     void *outBuffer = (Uint8 *)kdu_compressJPEG2K(
@@ -153,28 +139,6 @@ OFCondition kdurInstance::encode(
         free( outBuffer);
     }
     return EC_Normal;
-    
-    /*} else if ([args[codec] isEqualToString:@"OPJ"])
-     {
-     long compressedLength = 0;//type mismatch
-     OPJSupport opj;
-     to = (Uint8 *)opj.compressJPEG2K(
-     (void*) image_buffer,
-     samplesPerPixel,
-     rows,
-     columns,
-     bitsAllocated,
-     bitsAllocated,
-     false,
-     0,
-     &compressedLength);
-     //[5] bitsstored, [7] signed, [8] rate=0=reversible
-     length = compressedLength;
-     
-     return EC_Normal;
-     }
-     */
-    return EC_NoEncodingLibrary;
 }
 
 

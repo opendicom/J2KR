@@ -20,21 +20,6 @@ extern "C" void* kdu_decompressJPEG2KWithBuffer(
                                                 int num_threads
                                                 );
 
-// These two macros are re-defined in the IJG header files.
-// We undefine them here and hope that IJG's configure has
-// come to the same conclusion that we have...
-#ifdef HAVE_STDLIB_H
-#undef HAVE_STDLIB_H
-#endif
-#ifdef HAVE_STDDEF_H
-#undef HAVE_STDDEF_H
-#endif
-
-// disable any preprocessor magic the IJG library might be doing with the "const" keyword
-#ifdef const
-#undef const
-#endif
-
 
 BEGIN_EXTERN_C
 #define boolean ijg_boolean

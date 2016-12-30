@@ -3,49 +3,32 @@
 
 #include "dcmtk/dcmdata/dccodec.h"  /* for DcmCodecStruct */
 #include "dcmtk/dcmj2kr/kdur/kdur.h"
+#include "dcmtk/dcmj2kr/kdur/kdurParams.h"
 #include "dcmtk/dcmj2kr/opjr/opjr.h"
+#include "dcmtk/dcmj2kr/opjr/opjrParams.h"
 
 // initialization of static members
-OFBool j2krRegister::registered      = OFFalse;
-j2krParams *j2krRegister::cp          = NULL;
-kdur *j2krRegister::kakaduReversible	        = NULL;
-opjr *j2krRegister::openjpegReversible	        = NULL;
+OFBool j2krRegister::registered           = OFFalse;
+j2krParams *j2krRegister::tsParams        = NULL;
+kdur *j2krRegister::kakaduReversible      = NULL;
+opjr *j2krRegister::openjpegReversible    = NULL;
+kdurParams *j2krRegister::kakaduParams    = NULL;
+opjrParams *j2krRegister::openjpegParams  = NULL;
 
-void j2krRegister::registerCodecs(
-    E_CompressionColorSpaceConversion pCompressionCSConversion,
-    E_UIDCreation pCreateSOPInstanceUID,
-    OFBool pOptimizeHuffman,
-    int pSmoothingFactor,
-    int pForcedBitDepth,
-    Uint32 pFragmentSize,
-    OFBool pCreateOffsetTable,
-    E_SubSampling pSampleFactors,
-    OFBool pWriteYBR422,
-    OFBool pConvertToSC,
-    unsigned long pWindowType,
-    unsigned long pWindowParameter,
-    double pVoiCenter,
-    double pVoiWidth,
-    unsigned long pRoiLeft,
-    unsigned long pRoiTop,
-    unsigned long pRoiWidth,
-    unsigned long pRoiHeight,
-    OFBool pUsePixelValues,
-    OFBool pUseModalityRescale,
-    OFBool pAcceptWrongPaletteTags,
-    OFBool pAcrNemaCompatibility,
-    OFBool pRealLossless)
+void j2krRegister::registerCodecs()
 {
   if (! registered)
   {
-    cp = new j2krParams();
-    if (cp)
+    tsParams = new j2krParams();
+    if (tsParams)
     {
-      openjpegReversible = new opjr();
-      if (openjpegReversible) DcmCodecList::registerCodec(openjpegReversible, NULL, cp);
-        
+        openjpegReversible = new opjr();
+        openjpegParams = new opjrParams();
+        if (openjpegReversible) DcmCodecList::registerCodec(openjpegReversible, openjpegParams, tsParams);
+
         kakaduReversible = new kdur();
-        if (kakaduReversible) DcmCodecList::registerCodec(kakaduReversible, NULL, cp);
+        kakaduParams = new kdurParams();
+        if (kakaduReversible) DcmCodecList::registerCodec(kakaduReversible, kakaduParams, tsParams);
         
       registered = OFTrue;
     }
@@ -58,16 +41,19 @@ void j2krRegister::cleanup()
   {
     DcmCodecList::deregisterCodec(kakaduReversible);
     delete kakaduReversible;
+    kakaduReversible = NULL;
+    delete kakaduParams;
+    kakaduParams = NULL;
+      
     DcmCodecList::deregisterCodec(openjpegReversible);
     delete openjpegReversible;
-    delete cp;
-    registered = OFFalse;
-#ifdef DEBUG
-    // not needed but useful for debugging purposes
-    kakaduReversible = NULL;
     openjpegReversible = NULL;
-    cp     = NULL;
-#endif
+    delete openjpegParams;
+    openjpegParams = NULL;
+      
+    delete tsParams;
+    tsParams     = NULL;
 
+    registered = OFFalse;
   }
 }

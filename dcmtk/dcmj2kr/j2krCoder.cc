@@ -23,6 +23,8 @@
 #include "dcmtk/dcmj2kr/j2krParams.h"
 #include "djencabs.h"   /* for class DJEncoder */
 
+#include "dcmtk/dcmj2kr/opjr/opjrParams.h"
+
 // dcmimgle includes
 #include "dcmtk/dcmimgle/dcmimage.h"  /* for class DicomImage */
 
@@ -417,6 +419,7 @@ OFCondition j2krCoder::encodeTrueLossless(
   const DcmCodecParameter *cp,
   DcmStack & objStack) const
 {
+  fprintf(stdout,"j2krCoder encodeTrueLossless\r\n");
   OFCondition result = EC_Normal;
   // assume we can cast the codec parameter to what we need
   j2krParams *djcp = OFreinterpret_cast(j2krParams*, OFconst_cast(DcmCodecParameter*, cp));
@@ -575,11 +578,14 @@ OFCondition j2krCoder::encodeTrueLossless(
     size_t compressedSize = 0;
 
     // create encoder corresponding to bit depth (8 or 16 bit)
+      
     DJEncoder *jpeg = createEncoderInstance(toRepParam, djcp, OFstatic_cast(Uint8, bitsAllocated));
       unsigned int pixelDataLength=0;
       unsigned char md5[CC_MD5_DIGEST_LENGTH];
     if (jpeg)
     {
+        printf("D: DJEncoder: %s/%s  (%d)\r\n",djcp->className(),toRepParam->className(),jpeg->bitsPerSample());
+
         pixelDataLength = columns * rows * samplesPerPixel * bytesAllocated * frameCount;
         
         CC_MD5((Uint8*)pixelData, pixelDataLength, md5);

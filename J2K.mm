@@ -523,7 +523,6 @@ int main(int argc, const char *argv[])
         }        
         dataset->chooseRepresentation(EXS_JPEG2000LosslessOnly, params);
         
-        
         fileformat.loadAllDataIntoMemory();
         if (dataset->canWriteXfer(EXS_JPEG2000LosslessOnly))
         {
