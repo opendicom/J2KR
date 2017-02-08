@@ -3,6 +3,7 @@
  * BSD License, included below. This software may be subject to other third 
  * party and contributor rights, including patent rights, and no such rights
  * are granted under this license.
+ *
  * Copyright (c) 2002-2014, Universite catholique de Louvain (UCL), Belgium
  * Copyright (c) 2002-2014, Professor Benoit Macq
  * Copyright (c) 2001-2003, David Janssens
@@ -16,6 +17,7 @@
  * Copyright (c) 2011-2012, Centre National d'Etudes Spatiales (CNES), France 
  * Copyright (c) 2012, CS Systemes d'Information, France
  * All rights reserved.
+ *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
  * are met:
@@ -24,6 +26,7 @@
  * 2. Redistributions in binary form must reproduce the above copyright
  *    notice, this list of conditions and the following disclaimer in the
  *    documentation and/or other materials provided with the distribution.
+ *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS `AS IS'
  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
  * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
@@ -94,7 +97,7 @@ The following ifdef block is the standard way of creating macros which make expo
 from a DLL simpler. All files within this DLL are compiled with the OPJ_EXPORTS
 symbol defined on the command line. this symbol should not be defined on any project
 that uses this DLL. This way any other project whose source files include this file see 
-OPJ_API functions as being imported from a DLL, wheras this DLL sees symbols
+OPJ_API functions as being imported from a DLL, whereas this DLL sees symbols
 defined with this macro as being exported.
 */
 #	if defined(OPJ_EXPORTS) || defined(DLL_EXPORT)
@@ -847,7 +850,7 @@ typedef struct opj_codestream_info {
 } opj_codestream_info_t;
 
 /* <----------------------------------------------------------- */
-/* new output managment of the codestream information and index */
+/* new output management of the codestream information and index */
 
 /**
  * Tile-component coding parameters information
@@ -1044,11 +1047,13 @@ typedef struct opj_buffer_info
     
 } opj_buffer_info_t;
 
+
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-OPJ_API opj_stream_t* OPJ_CALLCONV opj_stream_create_buffer_stream(opj_buffer_info_t* p_source_buffer,OPJ_BOOL p_is_read_stream);    
+OPJ_API opj_stream_t* OPJ_CALLCONV opj_stream_create_buffer_stream(opj_buffer_info_t* p_source_buffer,OPJ_BOOL p_is_read_stream);
+
 
 /* 
 ==========================================================
@@ -1067,6 +1072,7 @@ OPJ_API const char * OPJ_CALLCONV opj_version(void);
 
 /**
  * Create an image
+ *
  * @param numcmpts      number of components
  * @param cmptparms     components parameters
  * @param clrspc        image color space
@@ -1076,15 +1082,18 @@ OPJ_API opj_image_t* OPJ_CALLCONV opj_image_create(OPJ_UINT32 numcmpts, opj_imag
 
 /**
  * Deallocate any resources associated with an image
+ *
  * @param image         image to be destroyed
  */
 OPJ_API void OPJ_CALLCONV opj_image_destroy(opj_image_t *image);
 
 /**
  * Creates an image without allocating memory for the image (used in the new version of the library).
+ *
  * @param	numcmpts    the number of components
  * @param	cmptparms   the components parameters
  * @param	clrspc      the image color space
+ *
  * @return	a new image structure if successful, NULL otherwise.
 */
 OPJ_API opj_image_t* OPJ_CALLCONV opj_image_tile_create(OPJ_UINT32 numcmpts, opj_image_cmptparm_t *cmptparms, OPJ_COLOR_SPACE clrspc);
@@ -1097,15 +1106,19 @@ OPJ_API opj_image_t* OPJ_CALLCONV opj_image_tile_create(OPJ_UINT32 numcmpts, opj
 
 /**
  * Creates an abstract stream. This function does nothing except allocating memory and initializing the abstract stream.
+ *
  * @param	p_is_input		if set to true then the stream will be an input stream, an output stream else.
+ *
  * @return	a stream object.
 */
 OPJ_API opj_stream_t* OPJ_CALLCONV opj_stream_default_create(OPJ_BOOL p_is_input);
 
 /**
  * Creates an abstract stream. This function does nothing except allocating memory and initializing the abstract stream.
+ *
  * @param	p_buffer_size  FIXME DOC
  * @param	p_is_input		if set to true then the stream will be an input stream, an output stream else.
+ *
  * @return	a stream object.
 */
 OPJ_API opj_stream_t* OPJ_CALLCONV opj_stream_create(OPJ_SIZE_T p_buffer_size, OPJ_BOOL p_is_input);
@@ -1113,6 +1126,7 @@ OPJ_API opj_stream_t* OPJ_CALLCONV opj_stream_create(OPJ_SIZE_T p_buffer_size, O
 /**
  * Destroys a stream created by opj_create_stream. This function does NOT close the abstract stream. If needed the user must
  * close its own implementation of the stream.
+ *
  * @param	p_stream	the stream to destroy.
  */
 OPJ_API void OPJ_CALLCONV opj_stream_destroy(opj_stream_t* p_stream);
@@ -1155,6 +1169,7 @@ OPJ_API void OPJ_CALLCONV opj_stream_set_user_data (opj_stream_t* p_stream, void
 
 /**
  * Sets the length of the user data for the stream.
+ *
  * @param p_stream    the stream to modify
  * @param data_length length of the user_data.
 */
@@ -1218,12 +1233,14 @@ OPJ_API OPJ_BOOL OPJ_CALLCONV opj_set_error_handler(opj_codec_t * p_codec,
 /**
  * Creates a J2K/JP2 decompression structure
  * @param format 		Decoder to select
+ *
  * @return Returns a handle to a decompressor if successful, returns NULL otherwise
  * */
 OPJ_API opj_codec_t* OPJ_CALLCONV opj_create_decompress(OPJ_CODEC_FORMAT format);
 
 /**
  * Destroy a decompressor handle
+ *
  * @param	p_codec			decompressor handle to destroy
  */
 OPJ_API void OPJ_CALLCONV opj_destroy_codec(opj_codec_t * p_codec);
@@ -1246,8 +1263,10 @@ OPJ_API void OPJ_CALLCONV opj_set_default_decoder_parameters(opj_dparameters_t *
 /**
  * Setup the decoder with decompression parameters provided by the user and with the message handler
  * provided by the user.
+ *
  * @param p_codec 		decompressor handler
  * @param parameters 	decompression parameters
+ *
  * @return true			if the decoder is correctly set
  */
 OPJ_API OPJ_BOOL OPJ_CALLCONV opj_setup_decoder(opj_codec_t *p_codec,
@@ -1255,9 +1274,11 @@ OPJ_API OPJ_BOOL OPJ_CALLCONV opj_setup_decoder(opj_codec_t *p_codec,
 
 /**
  * Decodes an image header.
+ *
  * @param	p_stream		the jpeg2000 stream.
  * @param	p_codec			the jpeg2000 codec to read.
  * @param	p_image			the image structure initialized with the characteristics of encoded image.
+ *
  * @return true				if the main header of the codestream and the JP2 header is correctly read.
  */
 OPJ_API OPJ_BOOL OPJ_CALLCONV opj_read_header (	opj_stream_t *p_stream,
@@ -1266,12 +1287,14 @@ OPJ_API OPJ_BOOL OPJ_CALLCONV opj_read_header (	opj_stream_t *p_stream,
 
 /**
  * Sets the given area to be decoded. This function should be called right after opj_read_header and before any tile header reading.
+ *
  * @param	p_codec			the jpeg2000 codec.
  * @param	p_image         the decoded image previously setted by opj_read_header
  * @param	p_start_x		the left position of the rectangle to decode (in image coordinates).
  * @param	p_end_x			the right position of the rectangle to decode (in image coordinates).
  * @param	p_start_y		the up position of the rectangle to decode (in image coordinates).
  * @param	p_end_y			the bottom position of the rectangle to decode (in image coordinates).
+ *
  * @return	true			if the area could be set.
  */
 OPJ_API OPJ_BOOL OPJ_CALLCONV opj_set_decode_area(	opj_codec_t *p_codec,
@@ -1281,6 +1304,7 @@ OPJ_API OPJ_BOOL OPJ_CALLCONV opj_set_decode_area(	opj_codec_t *p_codec,
 
 /**
  * Decode an image from a JPEG-2000 codestream
+ *
  * @param p_decompressor 	decompressor handle
  * @param p_stream			Input buffer stream
  * @param p_image 			the decoded image
@@ -1292,10 +1316,12 @@ OPJ_API OPJ_BOOL OPJ_CALLCONV opj_decode(   opj_codec_t *p_decompressor,
 
 /**
  * Get the decoded tile from the codec
+ *
  * @param	p_codec			the jpeg2000 codec.
  * @param	p_stream		input streamm
  * @param	p_image			output image
  * @param	tile_index		index of the tile which will be decode
+ *
  * @return					true if success, otherwise false
  */
 OPJ_API OPJ_BOOL OPJ_CALLCONV opj_get_decoded_tile(	opj_codec_t *p_codec,
@@ -1307,18 +1333,21 @@ OPJ_API OPJ_BOOL OPJ_CALLCONV opj_get_decoded_tile(	opj_codec_t *p_codec,
  * Set the resolution factor of the decoded image
  * @param	p_codec			the jpeg2000 codec.
  * @param	res_factor		resolution factor to set
+ *
  * @return					true if success, otherwise false
  */
 OPJ_API OPJ_BOOL OPJ_CALLCONV opj_set_decoded_resolution_factor(opj_codec_t *p_codec, OPJ_UINT32 res_factor);
 
 /**
  * Writes a tile with the given data.
+ *
  * @param	p_codec		        the jpeg2000 codec.
  * @param	p_tile_index		the index of the tile to write. At the moment, the tiles must be written from 0 to n-1 in sequence.
  * @param	p_data				pointer to the data to write. Data is arranged in sequence, data_comp0, then data_comp1, then ... NO INTERLEAVING should be set.
  * @param	p_data_size			this value os used to make sure the data being written is correct. The size must be equal to the sum for each component of 
  *                              tile_width * tile_height * component_size. component_size can be 1,2 or 4 bytes, depending on the precision of the given component.
  * @param	p_stream			the stream to write data to.
+ *
  * @return	true if the data could be written.
  */
 OPJ_API OPJ_BOOL OPJ_CALLCONV opj_write_tile (	opj_codec_t *p_codec,
@@ -1328,8 +1357,9 @@ OPJ_API OPJ_BOOL OPJ_CALLCONV opj_write_tile (	opj_codec_t *p_codec,
 												opj_stream_t *p_stream );
 
 /**
- * Reads a tile header. This function is compulsory and allows one to know the size of the tile thta will be decoded.
+ * Reads a tile header. This function is compulsory and allows one to know the size of the tile that will be decoded.
  * The user may need to refer to the image got by opj_read_header to understand the size being taken by the tile.
+ *
  * @param	p_codec			the jpeg2000 codec.
  * @param	p_tile_index	pointer to a value that will hold the index of the tile being decoded, in case of success.
  * @param	p_data_size		pointer to a value that will hold the maximum size of the decoded data, in case of success. In case
@@ -1359,11 +1389,13 @@ OPJ_API OPJ_BOOL OPJ_CALLCONV opj_read_tile_header(	opj_codec_t *p_codec,
 /**
  * Reads a tile data. This function is compulsory and allows one to decode tile data. opj_read_tile_header should be called before.
  * The user may need to refer to the image got by opj_read_header to understand the size being taken by the tile.
+ *
  * @param	p_codec			the jpeg2000 codec.
  * @param	p_tile_index	the index of the tile being decoded, this should be the value set by opj_read_tile_header.
  * @param	p_data			pointer to a memory block that will hold the decoded data.
  * @param	p_data_size		size of p_data. p_data_size should be bigger or equal to the value set by opj_read_tile_header.
  * @param	p_stream		the stream to decode.
+ *
  * @return	true			if the data could be decoded.
  */
 OPJ_API OPJ_BOOL OPJ_CALLCONV opj_decode_tile_data(	opj_codec_t *p_codec,
@@ -1436,6 +1468,7 @@ OPJ_API OPJ_BOOL OPJ_CALLCONV opj_end_compress (opj_codec_t *p_codec,
  * Encode an image into a JPEG-2000 codestream
  * @param p_codec 		compressor handle
  * @param p_stream 		Output buffer stream
+ *
  * @return 				Returns true if successful, returns false otherwise
  */
 OPJ_API OPJ_BOOL OPJ_CALLCONV opj_encode(opj_codec_t *p_codec,
@@ -1456,9 +1489,11 @@ OPJ_API void OPJ_CALLCONV opj_destroy_cstr_info(opj_codestream_info_v2_t **cstr_
 
 /**
  * Dump the codec information into the output stream
+ *
  * @param	p_codec			the jpeg2000 codec.
  * @param	info_flag		type of information dump.
  * @param	output_stream	output stream where dump the informations get from the codec.
+ *
  */
 OPJ_API void OPJ_CALLCONV opj_dump_codec(	opj_codec_t *p_codec,
 											OPJ_INT32 info_flag,
@@ -1466,15 +1501,21 @@ OPJ_API void OPJ_CALLCONV opj_dump_codec(	opj_codec_t *p_codec,
 
 /**
  * Get the codestream information from the codec
+ *
  * @param	p_codec			the jpeg2000 codec.
+ *
  * @return					a pointer to a codestream information structure.
+ *
  */
 OPJ_API opj_codestream_info_v2_t* OPJ_CALLCONV opj_get_cstr_info(opj_codec_t *p_codec);
 
 /**
  * Get the codestream index from the codec
+ *
  * @param	p_codec			the jpeg2000 codec.
+ *
  * @return					a pointer to a codestream index structure.
+ *
  */
 OPJ_API opj_codestream_index_t * OPJ_CALLCONV opj_get_cstr_index(opj_codec_t *p_codec);
 
@@ -1483,15 +1524,21 @@ OPJ_API void OPJ_CALLCONV opj_destroy_cstr_index(opj_codestream_index_t **p_cstr
 
 /**
  * Get the JP2 file information from the codec FIXME
+ *
  * @param	p_codec			the jpeg2000 codec.
+ *
  * @return					a pointer to a JP2 metadata structure.
+ *
  */
 OPJ_API opj_jp2_metadata_t* OPJ_CALLCONV opj_get_jp2_metadata(opj_codec_t *p_codec);
 
 /**
  * Get the JP2 file index from the codec FIXME
+ *
  * @param	p_codec			the jpeg2000 codec.
+ *
  * @return					a pointer to a JP2 index structure.
+ *
  */
 OPJ_API opj_jp2_index_t* OPJ_CALLCONV opj_get_jp2_index(opj_codec_t *p_codec);
 
@@ -1504,10 +1551,12 @@ OPJ_API opj_jp2_index_t* OPJ_CALLCONV opj_get_jp2_index(opj_codec_t *p_codec);
 
 /**
  * Sets the MCT matrix to use.
+ *
  * @param	parameters		the parameters to change.
  * @param	pEncodingMatrix	the encoding matrix.
  * @param	p_dc_shift		the dc shift coefficients to use.
  * @param	pNbComp			the number of components of the image.
+ *
  * @return	true if the parameters could be set.
  */
 OPJ_API OPJ_BOOL OPJ_CALLCONV opj_set_MCT( opj_cparameters_t *parameters,

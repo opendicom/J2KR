@@ -1,6 +1,56 @@
 #include "dcmtk/config/osconfig.h"
 #include "dcmtk/dcmdata/dccodec.h" /* for DcmCodecParameter */
 #include "djutils.h" /* for enums */
+#include "openjpegDef.h"
+//v2
+
+#define OPJ_DPARAMETERS_IGNORE_PCLR_CMAP_CDEF_FLAG	0x0001
+typedef struct opj_dparameters {
+    /**
+     Set the number of highest resolution levels to be discarded.
+     The image resolution is effectively divided by 2 to the power of the number of discarded levels.
+     The reduce factor is limited by the smallest total number of decomposition levels among tiles.
+     if != 0, then original dimension divided by 2^(reduce);
+     if == 0 or not used, image is decoded to the full resolution
+     */
+    OPJ_UINT32 cp_reduce;
+    /**
+     Set the maximum number of quality layers to decode.
+     If there are less quality layers than the specified number, all the quality layers are decoded.
+     if != 0, then only the first "layer" layers are decoded;
+     if == 0 or not used, all the quality layers are decoded
+     */
+    OPJ_UINT32 cp_layer;
+    
+    /*
+     @name command line decoder parameters (not used inside the library)
+    @{
+    char infile[OPJ_PATH_LEN];//input file name
+    char outfile[OPJ_PATH_LEN];//output file name
+    int decod_format;//input file format 0: J2K, 1: JP2, 2: JPT
+    int cod_format;//output file format 0: PGX, 1: PxM, 2: BMP
+    OPJ_UINT32 DA_x0;//Decoding area left boundary
+    OPJ_UINT32 DA_x1;//Decoding area right boundary
+    OPJ_UINT32 DA_y0;//Decoding area up boundary
+    OPJ_UINT32 DA_y1;//Decoding area bottom boundary
+    OPJ_BOOL m_verbose;//Verbose mode
+    OPJ_UINT32 tile_index;//tile number ot the decoded tile
+    OPJ_UINT32 nb_tile_to_decode;//Nb of tile to decode
+    @}*/
+    
+    /* UniPG NOT YET USED IN THE V2 VERSION OF OPENJPEG
+    @name JPWL decoding parameters
+    @{
+    OPJ_BOOL jpwl_correct;//activates the JPWL correction capabilities
+    int jpwl_exp_comps;//expected number of components
+    int jpwl_max_tiles;//maximum number of tiles
+    @}
+     */
+    
+    unsigned int flags;
+    
+} opj_dparameters_t;
+
 
 class rk2jParams: public DcmCodecParameter
 {

@@ -4,7 +4,13 @@
  * party and contributor rights, including patent rights, and no such rights
  * are granted under this license.
  *
- * Copyright (c) 2012, Mathieu Malaterre <mathieu.malaterre@gmail.com>
+ * Copyright (c) 2002-2014, Universite catholique de Louvain (UCL), Belgium
+ * Copyright (c) 2002-2014, Professor Benoit Macq
+ * Copyright (c) 2001-2003, David Janssens
+ * Copyright (c) 2002-2003, Yannick Verschueren
+ * Copyright (c) 2003-2007, Francois-Olivier Devaux 
+ * Copyright (c) 2003-2014, Antonin Descampe
+ * Copyright (c) 2005, Herve Drolon, FreeImage Team
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -28,25 +34,22 @@
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  * POSSIBILITY OF SUCH DAMAGE.
  */
-#ifndef OPJ_STDINT_H
-#define OPJ_STDINT_H
 
-#include "opj_config.h"
-#ifdef OPJ_HAVE_STDINT_H
-#include <stdint.h>
-#else
-#if defined(_WIN32)
-typedef   signed __int8   int8_t;
-typedef unsigned __int8   uint8_t;
-typedef   signed __int16  int16_t;
-typedef unsigned __int16  uint16_t;
-typedef   signed __int32  int32_t;
-typedef unsigned __int32  uint32_t;
-typedef   signed __int64  int64_t;
-typedef unsigned __int64  uint64_t;
-#else
-#error unsupported platform
-#endif
-#endif
+#ifndef _OPJ_FORMAT_DEFS_H_
+#define _OPJ_FORMAT_DEFS_H_
 
-#endif /* OPJ_STDINT_H */
+#define J2K_CFMT 0
+#define JP2_CFMT 1
+#define JPT_CFMT 2
+
+#define PXM_DFMT 10
+#define PGX_DFMT 11
+#define BMP_DFMT 12
+#define YUV_DFMT 13
+#define TIF_DFMT 14
+#define RAW_DFMT 15 /* MSB / Big Endian */
+#define TGA_DFMT 16
+#define PNG_DFMT 17
+#define RAWL_DFMT 18 /* LSB / Little Endian */
+
+#endif /* _OPJ_FORMAT_DEFS_H_ */

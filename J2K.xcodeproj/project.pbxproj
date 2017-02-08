@@ -448,91 +448,9 @@
 		4A3AD84D1E11C3B400C9F9E6 /* k2jRegister.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4A3AD84B1E11C3B400C9F9E6 /* k2jRegister.cc */; };
 		4A3AD84E1E11C3B400C9F9E6 /* k2jRegister.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A3AD84C1E11C3B400C9F9E6 /* k2jRegister.h */; };
 		4A3F81C31E0C2FA800DEAED0 /* libdcmjpeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A3F81C21E0C2FA800DEAED0 /* libdcmjpeg.a */; };
-		4A8909DE1E167B43003753F4 /* openjpeg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A8909871E167B43003753F4 /* openjpeg.cpp */; };
-		4A8909DF1E167B43003753F4 /* OPJSupport.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A8909881E167B43003753F4 /* OPJSupport.cpp */; };
-		4A8909E01E167B43003753F4 /* openjpeg.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A8909891E167B43003753F4 /* openjpeg.h */; };
-		4A8909E11E167B43003753F4 /* OPJSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A89098A1E167B43003753F4 /* OPJSupport.h */; };
-		4A8909E21E167B43003753F4 /* Barrier.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A89098B1E167B43003753F4 /* Barrier.h */; };
-		4A8909E31E167B43003753F4 /* bio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A89098C1E167B43003753F4 /* bio.cpp */; };
-		4A8909E41E167B43003753F4 /* bio.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A89098D1E167B43003753F4 /* bio.h */; };
-		4A8909E51E167B43003753F4 /* BlockingQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A89098E1E167B43003753F4 /* BlockingQueue.h */; };
-		4A8909E61E167B43003753F4 /* cio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A89098F1E167B43003753F4 /* cio.cpp */; };
-		4A8909E71E167B43003753F4 /* cio.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A8909901E167B43003753F4 /* cio.h */; };
-		4A8909E81E167B43003753F4 /* dwt_region.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A8909911E167B43003753F4 /* dwt_region.cpp */; };
-		4A8909E91E167B43003753F4 /* dwt_region.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A8909921E167B43003753F4 /* dwt_region.h */; };
-		4A8909EA1E167B43003753F4 /* dwt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A8909931E167B43003753F4 /* dwt.cpp */; };
-		4A8909EB1E167B43003753F4 /* dwt.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A8909941E167B43003753F4 /* dwt.h */; };
-		4A8909EC1E167B44003753F4 /* event.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A8909951E167B43003753F4 /* event.cpp */; };
-		4A8909ED1E167B44003753F4 /* event.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A8909961E167B43003753F4 /* event.h */; };
-		4A8909EE1E167B44003753F4 /* format_defs.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A8909971E167B43003753F4 /* format_defs.h */; };
-		4A8909EF1E167B44003753F4 /* function_list.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A8909981E167B43003753F4 /* function_list.cpp */; };
-		4A8909F01E167B44003753F4 /* function_list.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A8909991E167B43003753F4 /* function_list.h */; };
-		4A8909F11E167B44003753F4 /* hashmap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A89099A1E167B43003753F4 /* hashmap.cpp */; };
-		4A8909F21E167B44003753F4 /* hashmap.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A89099B1E167B43003753F4 /* hashmap.h */; };
-		4A8909F31E167B44003753F4 /* image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A89099C1E167B43003753F4 /* image.cpp */; };
-		4A8909F41E167B44003753F4 /* image.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A89099D1E167B43003753F4 /* image.h */; };
-		4A8909F51E167B44003753F4 /* invert.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A89099E1E167B43003753F4 /* invert.cpp */; };
-		4A8909F61E167B44003753F4 /* invert.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A89099F1E167B43003753F4 /* invert.h */; };
-		4A8909F71E167B44003753F4 /* j2k.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A8909A01E167B43003753F4 /* j2k.cpp */; };
-		4A8909F81E167B44003753F4 /* j2k.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A8909A11E167B43003753F4 /* j2k.h */; };
-		4A8909F91E167B44003753F4 /* jp2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A8909A21E167B43003753F4 /* jp2.cpp */; };
-		4A8909FA1E167B44003753F4 /* jp2.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A8909A31E167B43003753F4 /* jp2.h */; };
-		4A8909FB1E167B44003753F4 /* mct.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A8909A41E167B43003753F4 /* mct.cpp */; };
-		4A8909FC1E167B44003753F4 /* mct.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A8909A51E167B43003753F4 /* mct.h */; };
-		4A8909FD1E167B44003753F4 /* mem_stream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A8909A61E167B43003753F4 /* mem_stream.cpp */; };
-		4A8909FE1E167B44003753F4 /* mem_stream.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A8909A71E167B43003753F4 /* mem_stream.h */; };
-		4A8909FF1E167B44003753F4 /* minpf_common.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A8909A81E167B43003753F4 /* minpf_common.h */; };
-		4A890A001E167B44003753F4 /* minpf_dynamic_library.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A8909A91E167B43003753F4 /* minpf_dynamic_library.cpp */; };
-		4A890A011E167B44003753F4 /* minpf_dynamic_library.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A8909AA1E167B43003753F4 /* minpf_dynamic_library.h */; };
-		4A890A021E167B44003753F4 /* minpf_plugin_manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A8909AB1E167B43003753F4 /* minpf_plugin_manager.cpp */; };
-		4A890A031E167B44003753F4 /* minpf_plugin_manager.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A8909AC1E167B43003753F4 /* minpf_plugin_manager.h */; };
-		4A890A041E167B44003753F4 /* minpf_plugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A8909AD1E167B43003753F4 /* minpf_plugin.h */; };
-		4A890A051E167B44003753F4 /* mqc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A8909AE1E167B43003753F4 /* mqc.cpp */; };
-		4A890A061E167B44003753F4 /* mqc.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A8909AF1E167B43003753F4 /* mqc.h */; };
-		4A890A071E167B44003753F4 /* opj_clock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A8909B01E167B43003753F4 /* opj_clock.cpp */; };
-		4A890A081E167B44003753F4 /* opj_clock.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A8909B11E167B43003753F4 /* opj_clock.h */; };
-		4A890A091E167B44003753F4 /* opj_codec.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A8909B21E167B43003753F4 /* opj_codec.h */; };
-		4A890A0A1E167B44003753F4 /* opj_includes.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A8909B31E167B43003753F4 /* opj_includes.h */; };
-		4A890A0B1E167B44003753F4 /* opj_intmath.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A8909B41E167B43003753F4 /* opj_intmath.h */; };
-		4A890A0C1E167B44003753F4 /* opj_malloc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A8909B51E167B43003753F4 /* opj_malloc.cpp */; };
-		4A890A0D1E167B44003753F4 /* opj_malloc.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A8909B61E167B43003753F4 /* opj_malloc.h */; };
-		4A890A0E1E167B44003753F4 /* overflow_utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A8909B71E167B43003753F4 /* overflow_utils.h */; };
-		4A890A0F1E167B44003753F4 /* pi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A8909B81E167B43003753F4 /* pi.cpp */; };
-		4A890A101E167B44003753F4 /* pi.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A8909B91E167B43003753F4 /* pi.h */; };
-		4A890A111E167B44003753F4 /* plugin_bridge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A8909BA1E167B43003753F4 /* plugin_bridge.cpp */; };
-		4A890A121E167B44003753F4 /* plugin_bridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A8909BB1E167B43003753F4 /* plugin_bridge.h */; };
-		4A890A131E167B44003753F4 /* plugin_interface.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A8909BC1E167B43003753F4 /* plugin_interface.h */; };
-		4A890A141E167B44003753F4 /* RateControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A8909BD1E167B43003753F4 /* RateControl.cpp */; };
-		4A890A151E167B44003753F4 /* RateControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A8909BE1E167B43003753F4 /* RateControl.h */; };
-		4A890A161E167B44003753F4 /* RateInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A8909BF1E167B43003753F4 /* RateInfo.cpp */; };
-		4A890A171E167B44003753F4 /* RateInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A8909C01E167B43003753F4 /* RateInfo.h */; };
-		4A890A181E167B44003753F4 /* raw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A8909C11E167B43003753F4 /* raw.cpp */; };
-		4A890A191E167B44003753F4 /* raw.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A8909C21E167B43003753F4 /* raw.h */; };
-		4A890A1A1E167B44003753F4 /* segmented_stream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A8909C31E167B43003753F4 /* segmented_stream.cpp */; };
-		4A890A1B1E167B44003753F4 /* segmented_stream.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A8909C41E167B43003753F4 /* segmented_stream.h */; };
-		4A890A1D1E167B44003753F4 /* t1_luts.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A8909C61E167B43003753F4 /* t1_luts.h */; };
-		4A890A1E1E167B44003753F4 /* t1_opt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A8909C71E167B43003753F4 /* t1_opt.cpp */; };
-		4A890A1F1E167B44003753F4 /* t1_opt.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A8909C81E167B43003753F4 /* t1_opt.h */; };
-		4A890A201E167B44003753F4 /* t1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A8909C91E167B43003753F4 /* t1.cpp */; };
-		4A890A211E167B44003753F4 /* t1.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A8909CA1E167B43003753F4 /* t1.h */; };
-		4A890A221E167B44003753F4 /* T1Decoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A8909CB1E167B43003753F4 /* T1Decoder.cpp */; };
-		4A890A231E167B44003753F4 /* T1Decoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A8909CC1E167B43003753F4 /* T1Decoder.h */; };
-		4A890A241E167B44003753F4 /* T1Encoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A8909CD1E167B43003753F4 /* T1Encoder.cpp */; };
-		4A890A251E167B44003753F4 /* T1Encoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A8909CE1E167B43003753F4 /* T1Encoder.h */; };
-		4A890A261E167B44003753F4 /* t2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A8909CF1E167B43003753F4 /* t2.cpp */; };
-		4A890A271E167B44003753F4 /* t2.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A8909D01E167B43003753F4 /* t2.h */; };
-		4A890A281E167B44003753F4 /* tcd.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A8909D11E167B43003753F4 /* tcd.cpp */; };
-		4A890A291E167B44003753F4 /* tcd.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A8909D21E167B43003753F4 /* tcd.h */; };
-		4A890A2A1E167B44003753F4 /* tgt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A8909D31E167B43003753F4 /* tgt.cpp */; };
-		4A890A2B1E167B44003753F4 /* tgt.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A8909D41E167B43003753F4 /* tgt.h */; };
-		4A890A2C1E167B44003753F4 /* ThreadPool.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A8909D51E167B43003753F4 /* ThreadPool.h */; };
-		4A890A2D1E167B44003753F4 /* tile_buf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A8909D61E167B43003753F4 /* tile_buf.cpp */; };
-		4A890A2E1E167B44003753F4 /* tile_buf.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A8909D71E167B43003753F4 /* tile_buf.h */; };
-		4A890A2F1E167B44003753F4 /* util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A8909D81E167B43003753F4 /* util.cpp */; };
-		4A890A301E167B44003753F4 /* util.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A8909D91E167B43003753F4 /* util.h */; };
-		4A890A311E167B44003753F4 /* vector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A8909DA1E167B43003753F4 /* vector.cpp */; };
-		4A890A321E167B44003753F4 /* vector.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A8909DB1E167B43003753F4 /* vector.h */; };
-		4A890A361E167BBC003753F4 /* opj_config_private.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A890A351E167BBC003753F4 /* opj_config_private.h */; };
+		4AA0A5F91E48F199005B3E9D /* libopenjp2.7.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA0A5F81E48F199005B3E9D /* libopenjp2.7.dylib */; };
+		4AA0A5FC1E48F679005B3E9D /* openjpeg.h in Headers */ = {isa = PBXBuildFile; fileRef = 4AA0A5FB1E48F679005B3E9D /* openjpeg.h */; };
+		4AD4990F1E49DD1F001486D7 /* openjpegDef.h in Headers */ = {isa = PBXBuildFile; fileRef = 4AD4990E1E49DD1F001486D7 /* openjpegDef.h */; };
 		4AEAD3C61CC6E475000FEA7F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29B97325FDCFA39411CA2CEA /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -974,99 +892,16 @@
 		4A13D8B51E023C9D00D4ED4D /* tuplefwd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tuplefwd.h; sourceTree = "<group>"; };
 		4A13D8B61E023C9D00D4ED4D /* variant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = variant.h; sourceTree = "<group>"; };
 		4A13DE571E081D8900D4ED4D /* libkdu_v73R.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libkdu_v73R.a; path = KDU_OsiriX59/libkdu_v73R.a; sourceTree = "<group>"; };
+		4A153BB51E1F7D0A00744FC9 /* codec.pages */ = {isa = PBXFileReference; lastKnownFileType = file; path = codec.pages; sourceTree = "<group>"; };
 		4A1685891DE6584D007E10B2 /* libz.1.2.8.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.8.tbd; path = usr/lib/libz.1.2.8.tbd; sourceTree = SDKROOT; };
 		4A169D771DE7B8DC007E10B2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4A1B7ADE1E01D93500288437 /* J2K.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = J2K.mm; sourceTree = "<group>"; };
 		4A3AD84B1E11C3B400C9F9E6 /* k2jRegister.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = k2jRegister.cc; path = dcmk2j/k2jRegister.cc; sourceTree = "<group>"; };
 		4A3AD84C1E11C3B400C9F9E6 /* k2jRegister.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = k2jRegister.h; path = dcmk2j/k2jRegister.h; sourceTree = "<group>"; };
 		4A3F81C21E0C2FA800DEAED0 /* libdcmjpeg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libdcmjpeg.a; path = ../../Shared/dcmtk/dcmtkXCode/lib/Debug/libdcmjpeg.a; sourceTree = "<group>"; };
-		4A8909871E167B43003753F4 /* openjpeg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = openjpeg.cpp; path = grok/openjpeg.cpp; sourceTree = "<group>"; };
-		4A8909881E167B43003753F4 /* OPJSupport.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OPJSupport.cpp; path = grok/OPJSupport.cpp; sourceTree = "<group>"; };
-		4A8909891E167B43003753F4 /* openjpeg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = openjpeg.h; path = grok/openjpeg.h; sourceTree = "<group>"; };
-		4A89098A1E167B43003753F4 /* OPJSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OPJSupport.h; path = grok/OPJSupport.h; sourceTree = "<group>"; };
-		4A89098B1E167B43003753F4 /* Barrier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Barrier.h; path = grok/Barrier.h; sourceTree = "<group>"; };
-		4A89098C1E167B43003753F4 /* bio.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = bio.cpp; path = grok/bio.cpp; sourceTree = "<group>"; };
-		4A89098D1E167B43003753F4 /* bio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bio.h; path = grok/bio.h; sourceTree = "<group>"; };
-		4A89098E1E167B43003753F4 /* BlockingQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlockingQueue.h; path = grok/BlockingQueue.h; sourceTree = "<group>"; };
-		4A89098F1E167B43003753F4 /* cio.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cio.cpp; path = grok/cio.cpp; sourceTree = "<group>"; };
-		4A8909901E167B43003753F4 /* cio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cio.h; path = grok/cio.h; sourceTree = "<group>"; };
-		4A8909911E167B43003753F4 /* dwt_region.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = dwt_region.cpp; path = grok/dwt_region.cpp; sourceTree = "<group>"; };
-		4A8909921E167B43003753F4 /* dwt_region.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = dwt_region.h; path = grok/dwt_region.h; sourceTree = "<group>"; };
-		4A8909931E167B43003753F4 /* dwt.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = dwt.cpp; path = grok/dwt.cpp; sourceTree = "<group>"; };
-		4A8909941E167B43003753F4 /* dwt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = dwt.h; path = grok/dwt.h; sourceTree = "<group>"; };
-		4A8909951E167B43003753F4 /* event.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = event.cpp; path = grok/event.cpp; sourceTree = "<group>"; };
-		4A8909961E167B43003753F4 /* event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = event.h; path = grok/event.h; sourceTree = "<group>"; };
-		4A8909971E167B43003753F4 /* format_defs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = format_defs.h; path = grok/format_defs.h; sourceTree = "<group>"; };
-		4A8909981E167B43003753F4 /* function_list.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = function_list.cpp; path = grok/function_list.cpp; sourceTree = "<group>"; };
-		4A8909991E167B43003753F4 /* function_list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = function_list.h; path = grok/function_list.h; sourceTree = "<group>"; };
-		4A89099A1E167B43003753F4 /* hashmap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = hashmap.cpp; path = grok/hashmap.cpp; sourceTree = "<group>"; };
-		4A89099B1E167B43003753F4 /* hashmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = hashmap.h; path = grok/hashmap.h; sourceTree = "<group>"; };
-		4A89099C1E167B43003753F4 /* image.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = image.cpp; path = grok/image.cpp; sourceTree = "<group>"; };
-		4A89099D1E167B43003753F4 /* image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = image.h; path = grok/image.h; sourceTree = "<group>"; };
-		4A89099E1E167B43003753F4 /* invert.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = invert.cpp; path = grok/invert.cpp; sourceTree = "<group>"; };
-		4A89099F1E167B43003753F4 /* invert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = invert.h; path = grok/invert.h; sourceTree = "<group>"; };
-		4A8909A01E167B43003753F4 /* j2k.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = j2k.cpp; path = grok/j2k.cpp; sourceTree = "<group>"; };
-		4A8909A11E167B43003753F4 /* j2k.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = j2k.h; path = grok/j2k.h; sourceTree = "<group>"; };
-		4A8909A21E167B43003753F4 /* jp2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = jp2.cpp; path = grok/jp2.cpp; sourceTree = "<group>"; };
-		4A8909A31E167B43003753F4 /* jp2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = jp2.h; path = grok/jp2.h; sourceTree = "<group>"; };
-		4A8909A41E167B43003753F4 /* mct.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = mct.cpp; path = grok/mct.cpp; sourceTree = "<group>"; };
-		4A8909A51E167B43003753F4 /* mct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mct.h; path = grok/mct.h; sourceTree = "<group>"; };
-		4A8909A61E167B43003753F4 /* mem_stream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = mem_stream.cpp; path = grok/mem_stream.cpp; sourceTree = "<group>"; };
-		4A8909A71E167B43003753F4 /* mem_stream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mem_stream.h; path = grok/mem_stream.h; sourceTree = "<group>"; };
-		4A8909A81E167B43003753F4 /* minpf_common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = minpf_common.h; path = grok/minpf_common.h; sourceTree = "<group>"; };
-		4A8909A91E167B43003753F4 /* minpf_dynamic_library.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = minpf_dynamic_library.cpp; path = grok/minpf_dynamic_library.cpp; sourceTree = "<group>"; };
-		4A8909AA1E167B43003753F4 /* minpf_dynamic_library.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = minpf_dynamic_library.h; path = grok/minpf_dynamic_library.h; sourceTree = "<group>"; };
-		4A8909AB1E167B43003753F4 /* minpf_plugin_manager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = minpf_plugin_manager.cpp; path = grok/minpf_plugin_manager.cpp; sourceTree = "<group>"; };
-		4A8909AC1E167B43003753F4 /* minpf_plugin_manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = minpf_plugin_manager.h; path = grok/minpf_plugin_manager.h; sourceTree = "<group>"; };
-		4A8909AD1E167B43003753F4 /* minpf_plugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = minpf_plugin.h; path = grok/minpf_plugin.h; sourceTree = "<group>"; };
-		4A8909AE1E167B43003753F4 /* mqc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = mqc.cpp; path = grok/mqc.cpp; sourceTree = "<group>"; };
-		4A8909AF1E167B43003753F4 /* mqc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mqc.h; path = grok/mqc.h; sourceTree = "<group>"; };
-		4A8909B01E167B43003753F4 /* opj_clock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = opj_clock.cpp; path = grok/opj_clock.cpp; sourceTree = "<group>"; };
-		4A8909B11E167B43003753F4 /* opj_clock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = opj_clock.h; path = grok/opj_clock.h; sourceTree = "<group>"; };
-		4A8909B21E167B43003753F4 /* opj_codec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = opj_codec.h; path = grok/opj_codec.h; sourceTree = "<group>"; };
-		4A8909B31E167B43003753F4 /* opj_includes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = opj_includes.h; path = grok/opj_includes.h; sourceTree = "<group>"; };
-		4A8909B41E167B43003753F4 /* opj_intmath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = opj_intmath.h; path = grok/opj_intmath.h; sourceTree = "<group>"; };
-		4A8909B51E167B43003753F4 /* opj_malloc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = opj_malloc.cpp; path = grok/opj_malloc.cpp; sourceTree = "<group>"; };
-		4A8909B61E167B43003753F4 /* opj_malloc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = opj_malloc.h; path = grok/opj_malloc.h; sourceTree = "<group>"; };
-		4A8909B71E167B43003753F4 /* overflow_utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = overflow_utils.h; path = grok/overflow_utils.h; sourceTree = "<group>"; };
-		4A8909B81E167B43003753F4 /* pi.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = pi.cpp; path = grok/pi.cpp; sourceTree = "<group>"; };
-		4A8909B91E167B43003753F4 /* pi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pi.h; path = grok/pi.h; sourceTree = "<group>"; };
-		4A8909BA1E167B43003753F4 /* plugin_bridge.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = plugin_bridge.cpp; path = grok/plugin_bridge.cpp; sourceTree = "<group>"; };
-		4A8909BB1E167B43003753F4 /* plugin_bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = plugin_bridge.h; path = grok/plugin_bridge.h; sourceTree = "<group>"; };
-		4A8909BC1E167B43003753F4 /* plugin_interface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = plugin_interface.h; path = grok/plugin_interface.h; sourceTree = "<group>"; };
-		4A8909BD1E167B43003753F4 /* RateControl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RateControl.cpp; path = grok/RateControl.cpp; sourceTree = "<group>"; };
-		4A8909BE1E167B43003753F4 /* RateControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RateControl.h; path = grok/RateControl.h; sourceTree = "<group>"; };
-		4A8909BF1E167B43003753F4 /* RateInfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RateInfo.cpp; path = grok/RateInfo.cpp; sourceTree = "<group>"; };
-		4A8909C01E167B43003753F4 /* RateInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RateInfo.h; path = grok/RateInfo.h; sourceTree = "<group>"; };
-		4A8909C11E167B43003753F4 /* raw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = raw.cpp; path = grok/raw.cpp; sourceTree = "<group>"; };
-		4A8909C21E167B43003753F4 /* raw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = raw.h; path = grok/raw.h; sourceTree = "<group>"; };
-		4A8909C31E167B43003753F4 /* segmented_stream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = segmented_stream.cpp; path = grok/segmented_stream.cpp; sourceTree = "<group>"; };
-		4A8909C41E167B43003753F4 /* segmented_stream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = segmented_stream.h; path = grok/segmented_stream.h; sourceTree = "<group>"; };
-		4A8909C51E167B43003753F4 /* t1_generate_luts.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = t1_generate_luts.cpp; path = grok/t1_generate_luts.cpp; sourceTree = "<group>"; };
-		4A8909C61E167B43003753F4 /* t1_luts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = t1_luts.h; path = grok/t1_luts.h; sourceTree = "<group>"; };
-		4A8909C71E167B43003753F4 /* t1_opt.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = t1_opt.cpp; path = grok/t1_opt.cpp; sourceTree = "<group>"; };
-		4A8909C81E167B43003753F4 /* t1_opt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = t1_opt.h; path = grok/t1_opt.h; sourceTree = "<group>"; };
-		4A8909C91E167B43003753F4 /* t1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = t1.cpp; path = grok/t1.cpp; sourceTree = "<group>"; };
-		4A8909CA1E167B43003753F4 /* t1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = t1.h; path = grok/t1.h; sourceTree = "<group>"; };
-		4A8909CB1E167B43003753F4 /* T1Decoder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = T1Decoder.cpp; path = grok/T1Decoder.cpp; sourceTree = "<group>"; };
-		4A8909CC1E167B43003753F4 /* T1Decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = T1Decoder.h; path = grok/T1Decoder.h; sourceTree = "<group>"; };
-		4A8909CD1E167B43003753F4 /* T1Encoder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = T1Encoder.cpp; path = grok/T1Encoder.cpp; sourceTree = "<group>"; };
-		4A8909CE1E167B43003753F4 /* T1Encoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = T1Encoder.h; path = grok/T1Encoder.h; sourceTree = "<group>"; };
-		4A8909CF1E167B43003753F4 /* t2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = t2.cpp; path = grok/t2.cpp; sourceTree = "<group>"; };
-		4A8909D01E167B43003753F4 /* t2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = t2.h; path = grok/t2.h; sourceTree = "<group>"; };
-		4A8909D11E167B43003753F4 /* tcd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = tcd.cpp; path = grok/tcd.cpp; sourceTree = "<group>"; };
-		4A8909D21E167B43003753F4 /* tcd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tcd.h; path = grok/tcd.h; sourceTree = "<group>"; };
-		4A8909D31E167B43003753F4 /* tgt.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = tgt.cpp; path = grok/tgt.cpp; sourceTree = "<group>"; };
-		4A8909D41E167B43003753F4 /* tgt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tgt.h; path = grok/tgt.h; sourceTree = "<group>"; };
-		4A8909D51E167B43003753F4 /* ThreadPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThreadPool.h; path = grok/ThreadPool.h; sourceTree = "<group>"; };
-		4A8909D61E167B43003753F4 /* tile_buf.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = tile_buf.cpp; path = grok/tile_buf.cpp; sourceTree = "<group>"; };
-		4A8909D71E167B43003753F4 /* tile_buf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tile_buf.h; path = grok/tile_buf.h; sourceTree = "<group>"; };
-		4A8909D81E167B43003753F4 /* util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = util.cpp; path = grok/util.cpp; sourceTree = "<group>"; };
-		4A8909D91E167B43003753F4 /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = util.h; path = grok/util.h; sourceTree = "<group>"; };
-		4A8909DA1E167B43003753F4 /* vector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = vector.cpp; path = grok/vector.cpp; sourceTree = "<group>"; };
-		4A8909DB1E167B43003753F4 /* vector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vector.h; path = grok/vector.h; sourceTree = "<group>"; };
-		4A890A351E167BBC003753F4 /* opj_config_private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = opj_config_private.h; path = grok/opj_config_private.h; sourceTree = "<group>"; };
 		4A9059EC1CEF908600A9CA2F /* ODvr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODvr.h; sourceTree = "<group>"; };
+		4AA0A5F81E48F199005B3E9D /* libopenjp2.7.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopenjp2.7.dylib; path = build/Development/libopenjp2.7.dylib; sourceTree = "<group>"; };
+		4AA0A5FB1E48F679005B3E9D /* openjpeg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = openjpeg.h; path = OPJ27/openjpeg.h; sourceTree = "<group>"; };
 		4AC642D81CE57FF500A25E46 /* ODMetaInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODMetaInfo.h; sourceTree = "<group>"; };
 		4AC642D91CE57FF500A25E46 /* ODMetaInfo.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ODMetaInfo.mm; sourceTree = "<group>"; };
 		4AC642DD1CE6275F00A25E46 /* ODSequence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODSequence.h; sourceTree = "<group>"; };
@@ -1075,6 +910,7 @@
 		4AC642E21CE6AAF000A25E46 /* ODElement.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ODElement.mm; sourceTree = "<group>"; };
 		4AC642E71CE9775900A25E46 /* ODItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODItem.h; sourceTree = "<group>"; };
 		4AC642E81CE9775900A25E46 /* ODItem.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ODItem.mm; sourceTree = "<group>"; };
+		4AD4990E1E49DD1F001486D7 /* openjpegDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = openjpegDef.h; path = OPJ27/openjpegDef.h; sourceTree = "<group>"; };
 		4AEAD3DA1CC6E475000FEA7F /* J2K */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = J2K; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AF940611CE5720100551476 /* ODDataset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODDataset.h; sourceTree = "<group>"; };
 		4AF940621CE5720100551476 /* ODDataset.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ODDataset.mm; sourceTree = "<group>"; };
@@ -1087,6 +923,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AA0A5F91E48F199005B3E9D /* libopenjp2.7.dylib in Frameworks */,
 				4A3F81C31E0C2FA800DEAED0 /* libdcmjpeg.a in Frameworks */,
 				4A13D9E71E023C9E00D4ED4D /* libofstd.a in Frameworks */,
 				4A13D9E01E023C9E00D4ED4D /* libdcmimage.a in Frameworks */,
@@ -1120,8 +957,9 @@
 		29B97314FDCFA39411CA2CEA /* OsiriX */ = {
 			isa = PBXGroup;
 			children = (
-				4A890A371E167F9B003753F4 /* grok_off */,
-				4A8909861E167B2F003753F4 /* grok */,
+				4AA0A5FB1E48F679005B3E9D /* openjpeg.h */,
+				4AD4990E1E49DD1F001486D7 /* openjpegDef.h */,
+				4A153BB51E1F7D0A00744FC9 /* codec.pages */,
 				4A13D6E11E023C9C00D4ED4D /* dcmtk */,
 				4A169D771DE7B8DC007E10B2 /* README.md */,
 				4A1B7ADE1E01D93500288437 /* J2K.mm */,
@@ -1136,6 +974,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4AA0A5F81E48F199005B3E9D /* libopenjp2.7.dylib */,
 				4A3F81C21E0C2FA800DEAED0 /* libdcmjpeg.a */,
 				4A13DE571E081D8900D4ED4D /* libkdu_v73R.a */,
 				4A13D35F1E02193400D4ED4D /* libstdc++.6.0.9.dylib */,
@@ -1802,106 +1641,6 @@
 			name = dcmk2j;
 			sourceTree = "<group>";
 		};
-		4A8909861E167B2F003753F4 /* grok */ = {
-			isa = PBXGroup;
-			children = (
-				4A890A351E167BBC003753F4 /* opj_config_private.h */,
-				4A8909871E167B43003753F4 /* openjpeg.cpp */,
-				4A8909881E167B43003753F4 /* OPJSupport.cpp */,
-				4A8909891E167B43003753F4 /* openjpeg.h */,
-				4A89098A1E167B43003753F4 /* OPJSupport.h */,
-				4A89098B1E167B43003753F4 /* Barrier.h */,
-				4A89098C1E167B43003753F4 /* bio.cpp */,
-				4A89098D1E167B43003753F4 /* bio.h */,
-				4A89098E1E167B43003753F4 /* BlockingQueue.h */,
-				4A89098F1E167B43003753F4 /* cio.cpp */,
-				4A8909901E167B43003753F4 /* cio.h */,
-				4A8909911E167B43003753F4 /* dwt_region.cpp */,
-				4A8909921E167B43003753F4 /* dwt_region.h */,
-				4A8909931E167B43003753F4 /* dwt.cpp */,
-				4A8909941E167B43003753F4 /* dwt.h */,
-				4A8909951E167B43003753F4 /* event.cpp */,
-				4A8909961E167B43003753F4 /* event.h */,
-				4A8909971E167B43003753F4 /* format_defs.h */,
-				4A8909981E167B43003753F4 /* function_list.cpp */,
-				4A8909991E167B43003753F4 /* function_list.h */,
-				4A89099A1E167B43003753F4 /* hashmap.cpp */,
-				4A89099B1E167B43003753F4 /* hashmap.h */,
-				4A89099C1E167B43003753F4 /* image.cpp */,
-				4A89099D1E167B43003753F4 /* image.h */,
-				4A89099E1E167B43003753F4 /* invert.cpp */,
-				4A89099F1E167B43003753F4 /* invert.h */,
-				4A8909A01E167B43003753F4 /* j2k.cpp */,
-				4A8909A11E167B43003753F4 /* j2k.h */,
-				4A8909A21E167B43003753F4 /* jp2.cpp */,
-				4A8909A31E167B43003753F4 /* jp2.h */,
-				4A8909A41E167B43003753F4 /* mct.cpp */,
-				4A8909A51E167B43003753F4 /* mct.h */,
-				4A8909A61E167B43003753F4 /* mem_stream.cpp */,
-				4A8909A71E167B43003753F4 /* mem_stream.h */,
-				4A8909A81E167B43003753F4 /* minpf_common.h */,
-				4A8909A91E167B43003753F4 /* minpf_dynamic_library.cpp */,
-				4A8909AA1E167B43003753F4 /* minpf_dynamic_library.h */,
-				4A8909AB1E167B43003753F4 /* minpf_plugin_manager.cpp */,
-				4A8909AC1E167B43003753F4 /* minpf_plugin_manager.h */,
-				4A8909AD1E167B43003753F4 /* minpf_plugin.h */,
-				4A8909AE1E167B43003753F4 /* mqc.cpp */,
-				4A8909AF1E167B43003753F4 /* mqc.h */,
-				4A8909B01E167B43003753F4 /* opj_clock.cpp */,
-				4A8909B11E167B43003753F4 /* opj_clock.h */,
-				4A8909B21E167B43003753F4 /* opj_codec.h */,
-				4A8909B31E167B43003753F4 /* opj_includes.h */,
-				4A8909B41E167B43003753F4 /* opj_intmath.h */,
-				4A8909B51E167B43003753F4 /* opj_malloc.cpp */,
-				4A8909B61E167B43003753F4 /* opj_malloc.h */,
-				4A8909B71E167B43003753F4 /* overflow_utils.h */,
-				4A8909B81E167B43003753F4 /* pi.cpp */,
-				4A8909B91E167B43003753F4 /* pi.h */,
-				4A8909BA1E167B43003753F4 /* plugin_bridge.cpp */,
-				4A8909BB1E167B43003753F4 /* plugin_bridge.h */,
-				4A8909BC1E167B43003753F4 /* plugin_interface.h */,
-				4A8909BD1E167B43003753F4 /* RateControl.cpp */,
-				4A8909BE1E167B43003753F4 /* RateControl.h */,
-				4A8909BF1E167B43003753F4 /* RateInfo.cpp */,
-				4A8909C01E167B43003753F4 /* RateInfo.h */,
-				4A8909C11E167B43003753F4 /* raw.cpp */,
-				4A8909C21E167B43003753F4 /* raw.h */,
-				4A8909C31E167B43003753F4 /* segmented_stream.cpp */,
-				4A8909C41E167B43003753F4 /* segmented_stream.h */,
-				4A8909C61E167B43003753F4 /* t1_luts.h */,
-				4A8909C71E167B43003753F4 /* t1_opt.cpp */,
-				4A8909C81E167B43003753F4 /* t1_opt.h */,
-				4A8909C91E167B43003753F4 /* t1.cpp */,
-				4A8909CA1E167B43003753F4 /* t1.h */,
-				4A8909CB1E167B43003753F4 /* T1Decoder.cpp */,
-				4A8909CC1E167B43003753F4 /* T1Decoder.h */,
-				4A8909CD1E167B43003753F4 /* T1Encoder.cpp */,
-				4A8909CE1E167B43003753F4 /* T1Encoder.h */,
-				4A8909CF1E167B43003753F4 /* t2.cpp */,
-				4A8909D01E167B43003753F4 /* t2.h */,
-				4A8909D11E167B43003753F4 /* tcd.cpp */,
-				4A8909D21E167B43003753F4 /* tcd.h */,
-				4A8909D31E167B43003753F4 /* tgt.cpp */,
-				4A8909D41E167B43003753F4 /* tgt.h */,
-				4A8909D51E167B43003753F4 /* ThreadPool.h */,
-				4A8909D61E167B43003753F4 /* tile_buf.cpp */,
-				4A8909D71E167B43003753F4 /* tile_buf.h */,
-				4A8909D81E167B43003753F4 /* util.cpp */,
-				4A8909D91E167B43003753F4 /* util.h */,
-				4A8909DA1E167B43003753F4 /* vector.cpp */,
-				4A8909DB1E167B43003753F4 /* vector.h */,
-			);
-			name = grok;
-			sourceTree = "<group>";
-		};
-		4A890A371E167F9B003753F4 /* grok_off */ = {
-			isa = PBXGroup;
-			children = (
-				4A8909C51E167B43003753F4 /* t1_generate_luts.cpp */,
-			);
-			name = grok_off;
-			sourceTree = "<group>";
-		};
 		4AF940601CE5720100551476 /* OD */ = {
 			isa = PBXGroup;
 			children = (
@@ -1938,6 +1677,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AA0A5FC1E48F679005B3E9D /* openjpeg.h in Headers */,
 				4A13D8BC1E023C9D00D4ED4D /* dccodec.h in Headers */,
 				4A3AD84E1E11C3B400C9F9E6 /* k2jRegister.h in Headers */,
 				4A13D9DD1E023C9E00D4ED4D /* dldefine.h in Headers */,
@@ -1965,11 +1705,9 @@
 				4A13D8C51E023C9D00D4ED4D /* dcdirrec.h in Headers */,
 				4A13D9601E023C9D00D4ED4D /* dimopxt.h in Headers */,
 				4A13D91D1E023C9D00D4ED4D /* dicdefin.h in Headers */,
-				4A890A211E167B44003753F4 /* t1.h in Headers */,
 				4A0D92E21E1457B000E2DE7B /* jdhuff12.h in Headers */,
 				4A13DA151E023C9E00D4ED4D /* apndatch.h in Headers */,
 				4A13DA331E023C9E00D4ED4D /* ofchrenc.h in Headers */,
-				4A8909F81E167B44003753F4 /* j2k.h in Headers */,
 				4A13D92D1E023C9D00D4ED4D /* dipalimg.h in Headers */,
 				4A0D92E41E1457B000E2DE7B /* jinclude12.h in Headers */,
 				4A13D8E61E023C9D00D4ED4D /* dcrlerp.h in Headers */,
@@ -1984,11 +1722,9 @@
 				4A13D8EE1E023C9D00D4ED4D /* dctypes.h in Headers */,
 				4A13D8DE1E023C9D00D4ED4D /* dcpxitem.h in Headers */,
 				4A13D8B91E023C9D00D4ED4D /* cmdlnarg.h in Headers */,
-				4A890A301E167B44003753F4 /* util.h in Headers */,
 				4A0D92A11E1451F200E2DE7B /* djdeclol.h in Headers */,
 				4A13DA2E1E023C9E00D4ED4D /* ofalgo.h in Headers */,
 				4A13D8BF1E023C9D00D4ED4D /* dcddirif.h in Headers */,
-				4A890A121E167B44003753F4 /* plugin_bridge.h in Headers */,
 				4A0D92A21E1451F200E2DE7B /* djdecode.h in Headers */,
 				4A13D93C1E023C9D00D4ED4D /* diquant.h in Headers */,
 				4A13DA3E1E023C9E00D4ED4D /* ofexport.h in Headers */,
@@ -2005,9 +1741,7 @@
 				4A0D92B31E1451F200E2DE7B /* djrploss.h in Headers */,
 				4A13D9211E023C9D00D4ED4D /* dicoflt.h in Headers */,
 				4A0D92511E128FCD00E2DE7B /* kdurInstance.h in Headers */,
-				4A890A231E167B44003753F4 /* T1Decoder.h in Headers */,
 				4A13DA381E023C9E00D4ED4D /* ofconsol.h in Headers */,
-				4A890A0A1E167B44003753F4 /* opj_includes.h in Headers */,
 				4A13D8C11E023C9D00D4ED4D /* dcdeftag.h in Headers */,
 				4A0D92C81E14579C00E2DE7B /* jdhuff16.h in Headers */,
 				4A13D9701E023C9D00D4ED4D /* diutils.h in Headers */,
@@ -2019,7 +1753,6 @@
 				4A0D929E1E1451F200E2DE7B /* djdecabs.h in Headers */,
 				4A13D9001E023C9D00D4ED4D /* dcvrol.h in Headers */,
 				4A0D92F91E1457C700E2DE7B /* jdct8.h in Headers */,
-				4A890A081E167B44003753F4 /* opj_clock.h in Headers */,
 				4A13D9311E023C9D00D4ED4D /* diqtcmap.h in Headers */,
 				4A0D92451E128FB100E2DE7B /* j2krCoder.h in Headers */,
 				4A13D8EF1E023C9D00D4ED4D /* dcuid.h in Headers */,
@@ -2029,7 +1762,6 @@
 				4A13D8FB1E023C9D00D4ED4D /* dcvrlo.h in Headers */,
 				4A13DA481E023C9E00D4ED4D /* ofnetdb.h in Headers */,
 				4A13D92E1E023C9D00D4ED4D /* dipalpxt.h in Headers */,
-				4A890A151E167B44003753F4 /* RateControl.h in Headers */,
 				4A0D92EA1E1457B000E2DE7B /* jpeglib12.h in Headers */,
 				4A13D91C1E023C9D00D4ED4D /* diargpxt.h in Headers */,
 				4A13D9FB1E023C9E00D4ED4D /* property.h in Headers */,
@@ -2043,14 +1775,10 @@
 				4A0D92FD1E1457C700E2DE7B /* jlossls8.h in Headers */,
 				4A13D9101E023C9D00D4ED4D /* dcxfer.h in Headers */,
 				4A13D96E1E023C9D00D4ED4D /* displint.h in Headers */,
-				4A890A0D1E167B44003753F4 /* opj_malloc.h in Headers */,
-				4A890A361E167BBC003753F4 /* opj_config_private.h in Headers */,
 				4A0D92E31E1457B000E2DE7B /* jerror12.h in Headers */,
 				4A13D94B1E023C9D00D4ED4D /* didefine.h in Headers */,
 				4A13D9261E023C9D00D4ED4D /* dicopx.h in Headers */,
-				4A890A0E1E167B44003753F4 /* overflow_utils.h in Headers */,
 				4A0D929D1E1451F200E2DE7B /* djcparam.h in Headers */,
-				4A890A2E1E167B44003753F4 /* tile_buf.h in Headers */,
 				4A13D8F71E023C9D00D4ED4D /* dcvrdt.h in Headers */,
 				4A0D92AD1E1451F200E2DE7B /* djenclol.h in Headers */,
 				4A13D9E81E023C9E00D4ED4D /* appender.h in Headers */,
@@ -2058,7 +1786,6 @@
 				4A13D94D1E023C9D00D4ED4D /* didispfn.h in Headers */,
 				4A0D92E11E1457B000E2DE7B /* jdct12.h in Headers */,
 				4A13D9371E023C9D00D4ED4D /* diqtid.h in Headers */,
-				4A890A131E167B44003753F4 /* plugin_interface.h in Headers */,
 				4A13D9061E023C9D00D4ED4D /* dcvrst.h in Headers */,
 				4A13DA441E023C9E00D4ED4D /* oflist.h in Headers */,
 				4A0D92D01E14579C00E2DE7B /* jpeglib16.h in Headers */,
@@ -2076,24 +1803,18 @@
 				4A13DA111E023C9E00D4ED4D /* ntelogap.h in Headers */,
 				4A13DA3D1E023C9E00D4ED4D /* ofexbl.h in Headers */,
 				4A0D92FB1E1457C700E2DE7B /* jerror8.h in Headers */,
-				4A8909FF1E167B44003753F4 /* minpf_common.h in Headers */,
 				4A13D8E81E023C9D00D4ED4D /* dcspchrs.h in Headers */,
 				4A13D9431E023C9D00D4ED4D /* diyf2pxt.h in Headers */,
 				4A13D9141E023C9D00D4ED4D /* i2dimgs.h in Headers */,
-				4A8909FC1E167B44003753F4 /* mct.h in Headers */,
 				4A13D9341E023C9D00D4ED4D /* diqthash.h in Headers */,
 				4A0D92C61E14579C00E2DE7B /* jconfig16.h in Headers */,
 				4A13D91E1E023C9D00D4ED4D /* dicmyimg.h in Headers */,
-				4A890A271E167B44003753F4 /* t2.h in Headers */,
 				4A13DA621E023C9E00D4ED4D /* tuple.h in Headers */,
 				4A0D92A01E1451F200E2DE7B /* djdecext.h in Headers */,
 				4A13D3631E02196000D4ED4D /* NSString+opendicom.h in Headers */,
 				4A13D8CD1E023C9D00D4ED4D /* dcistrmb.h in Headers */,
-				4A8909E51E167B43003753F4 /* BlockingQueue.h in Headers */,
 				4A13DA051E023C9E00D4ED4D /* hierlock.h in Headers */,
-				4A890A1D1E167B44003753F4 /* t1_luts.h in Headers */,
 				4A13D8E21E023C9D00D4ED4D /* dcrledec.h in Headers */,
-				4A890A011E167B44003753F4 /* minpf_dynamic_library.h in Headers */,
 				4A13D9321E023C9D00D4ED4D /* diqtctab.h in Headers */,
 				4A0D92CC1E14579C00E2DE7B /* jlossy16.h in Headers */,
 				4A13D8CF1E023C9D00D4ED4D /* dcistrmz.h in Headers */,
@@ -2102,11 +1823,11 @@
 				4A13D8C41E023C9D00D4ED4D /* dcdict.h in Headers */,
 				4A13D9ED1E023C9E00D4ED4D /* macosx.h in Headers */,
 				4A13DA391E023C9E00D4ED4D /* ofcrc32.h in Headers */,
-				4A890A091E167B44003753F4 /* opj_codec.h in Headers */,
 				4A13D8DF1E023C9D00D4ED4D /* dcrleccd.h in Headers */,
 				4A13D95B1E023C9D00D4ED4D /* dimoipxt.h in Headers */,
 				4A13DA321E023C9E00D4ED4D /* ofcast.h in Headers */,
 				4A13DA121E023C9E00D4ED4D /* nullap.h in Headers */,
+				4AD4990F1E49DD1F001486D7 /* openjpegDef.h in Headers */,
 				4A13D9071E023C9D00D4ED4D /* dcvrtm.h in Headers */,
 				4A0D92761E12EF5400E2DE7B /* opjr.h in Headers */,
 				4A13D94E1E023C9D00D4ED4D /* didocu.h in Headers */,
@@ -2119,7 +1840,6 @@
 				4A13DA0A1E023C9E00D4ED4D /* layout.h in Headers */,
 				4A13D8F31E023C9D00D4ED4D /* dcvrat.h in Headers */,
 				4A13D9391E023C9D00D4ED4D /* diqtpix.h in Headers */,
-				4A8909E71E167B43003753F4 /* cio.h in Headers */,
 				4A13D9121E023C9D00D4ED4D /* i2dbmps.h in Headers */,
 				4A13DA631E023C9E00D4ED4D /* tuplefrd.h in Headers */,
 				4A13D90C1E023C9D00D4ED4D /* dcvrur.h in Headers */,
@@ -2140,22 +1860,18 @@
 				4A13D90E1E023C9D00D4ED4D /* dcvrut.h in Headers */,
 				4A13D8E01E023C9D00D4ED4D /* dcrlecce.h in Headers */,
 				4A13D8BD1E023C9D00D4ED4D /* dcdatset.h in Headers */,
-				4A8909EB1E167B43003753F4 /* dwt.h in Headers */,
 				4A13DA5E1E023C9E00D4ED4D /* ofvector.h in Headers */,
 				4A13D8C01E023C9D00D4ED4D /* dcdefine.h in Headers */,
 				4A13DA311E023C9E00D4ED4D /* ofbmanip.h in Headers */,
 				4A0D92AB1E1451F200E2DE7B /* djencbas.h in Headers */,
 				4A13D9291E023C9D00D4ED4D /* dicosct.h in Headers */,
-				4A8909E91E167B43003753F4 /* dwt_region.h in Headers */,
 				4A13DA2B1E023C9E00D4ED4D /* version.h in Headers */,
 				4A13DA471E023C9E00D4ED4D /* ofmem.h in Headers */,
 				4A13D8DB1E023C9D00D4ED4D /* dcpcache.h in Headers */,
 				4A13DA3F1E023C9E00D4ED4D /* offile.h in Headers */,
 				4A0D925C1E12ADF700E2DE7B /* rk2jRegister.h in Headers */,
 				4A0D92431E128FB100E2DE7B /* j2krParams.h in Headers */,
-				4A8909E01E167B43003753F4 /* openjpeg.h in Headers */,
 				4A13DA031E023C9E00D4ED4D /* timehelp.h in Headers */,
-				4A890A291E167B44003753F4 /* tcd.h in Headers */,
 				4A13DA291E023C9E00D4ED4D /* tracelog.h in Headers */,
 				4A13D9661E023C9D00D4ED4D /* diovlimg.h in Headers */,
 				4A13DA5D1E023C9E00D4ED4D /* ofuuid.h in Headers */,
@@ -2168,7 +1884,6 @@
 				4A13D9281E023C9D00D4ED4D /* dicorot.h in Headers */,
 				4A13D93B1E023C9D00D4ED4D /* diqttype.h in Headers */,
 				4A13D96B1E023C9D00D4ED4D /* diregbas.h in Headers */,
-				4A890A2B1E167B44003753F4 /* tgt.h in Headers */,
 				4A13DA3B1E023C9E00D4ED4D /* ofdatime.h in Headers */,
 				4A13D9E91E023C9E00D4ED4D /* asyncap.h in Headers */,
 				4A13DA641E023C9E00D4ED4D /* tuplefwd.h in Headers */,
@@ -2179,16 +1894,13 @@
 				4A13D91B1E023C9D00D4ED4D /* diargimg.h in Headers */,
 				4A13D9511E023C9D00D4ED4D /* digsdlut.h in Headers */,
 				4A13D94C1E023C9D00D4ED4D /* didislut.h in Headers */,
-				4A890A1B1E167B44003753F4 /* segmented_stream.h in Headers */,
 				4A13D92B1E023C9D00D4ED4D /* dihsvpxt.h in Headers */,
 				4A0D92C91E14579C00E2DE7B /* jerror16.h in Headers */,
 				4A13D96A1E023C9D00D4ED4D /* dipxrept.h in Headers */,
 				4A13D9271E023C9D00D4ED4D /* dicopxt.h in Headers */,
-				4A8909F21E167B44003753F4 /* hashmap.h in Headers */,
 				4A13DA1F1E023C9E00D4ED4D /* tchar.h in Headers */,
 				4A13D9451E023C9D00D4ED4D /* diyp2pxt.h in Headers */,
 				4A13D9F81E023C9E00D4ED4D /* lockfile.h in Headers */,
-				4A890A251E167B44003753F4 /* T1Encoder.h in Headers */,
 				4A13DA1B1E023C9E00D4ED4D /* objreg.h in Headers */,
 				4A13DA191E023C9E00D4ED4D /* logfact.h in Headers */,
 				4A0D92AA1E1451F200E2DE7B /* djencabs.h in Headers */,
@@ -2199,14 +1911,11 @@
 				4A0D929F1E1451F200E2DE7B /* djdecbas.h in Headers */,
 				4A0D929B1E1451F200E2DE7B /* djcodecd.h in Headers */,
 				4A13D8E41E023C9D00D4ED4D /* dcrleenc.h in Headers */,
-				4A8909ED1E167B44003753F4 /* event.h in Headers */,
-				4A8909F61E167B44003753F4 /* invert.h in Headers */,
 				4A0D92661E12AF2200E2DE7B /* rudkInstance.h in Headers */,
 				4A13DA5A1E023C9E00D4ED4D /* oftypes.h in Headers */,
 				4A13DA561E023C9E00D4ED4D /* oftime.h in Headers */,
 				4A13DA491E023C9E00D4ED4D /* ofoption.h in Headers */,
 				4A0D92AE1E1451F200E2DE7B /* djencode.h in Headers */,
-				4A8909E11E167B43003753F4 /* OPJSupport.h in Headers */,
 				4A13D8FE1E023C9D00D4ED4D /* dcvrod.h in Headers */,
 				4A13D93A1E023C9D00D4ED4D /* diqtstab.h in Headers */,
 				4A0D92731E12EF5400E2DE7B /* opjrInstance.h in Headers */,
@@ -2221,7 +1930,6 @@
 				4A13D8B71E023C9D00D4ED4D /* arith.h in Headers */,
 				4A0D92D11E14579C00E2DE7B /* jversion16.h in Headers */,
 				4A13D9691E023C9D00D4ED4D /* diplugin.h in Headers */,
-				4A890A321E167B44003753F4 /* vector.h in Headers */,
 				4A13D8C31E023C9D00D4ED4D /* dcdicent.h in Headers */,
 				4A13D9491E023C9D00D4ED4D /* dicielut.h in Headers */,
 				4A13D8DD1E023C9D00D4ED4D /* dcpixseq.h in Headers */,
@@ -2249,7 +1957,6 @@
 				4A13DA0B1E023C9E00D4ED4D /* log4judp.h in Headers */,
 				4A13D8DA1E023C9D00D4ED4D /* dcpath.h in Headers */,
 				4A13DA4D1E023C9E00D4ED4D /* ofsetit.h in Headers */,
-				4A8909FE1E167B44003753F4 /* mem_stream.h in Headers */,
 				4A0D92711E12EF5400E2DE7B /* opjrParams.h in Headers */,
 				4A13D92F1E023C9D00D4ED4D /* dipipng.h in Headers */,
 				4A13DA1D1E023C9E00D4ED4D /* streams.h in Headers */,
@@ -2291,12 +1998,9 @@
 				4A13DA141E023C9E00D4ED4D /* socketap.h in Headers */,
 				4A0D92EB1E1457B000E2DE7B /* jversion12.h in Headers */,
 				4A13DA0E1E023C9E00D4ED4D /* logmacro.h in Headers */,
-				4A890A191E167B44003753F4 /* raw.h in Headers */,
-				4A890A0B1E167B44003753F4 /* opj_intmath.h in Headers */,
 				4A13DA241E023C9E00D4ED4D /* thredimp.h in Headers */,
 				4A13D8FF1E023C9D00D4ED4D /* dcvrof.h in Headers */,
 				4A13DA0D1E023C9E00D4ED4D /* loglevel.h in Headers */,
-				4A890A2C1E167B44003753F4 /* ThreadPool.h in Headers */,
 				4A13DA541E023C9E00D4ED4D /* oftest.h in Headers */,
 				4A13D8E71E023C9D00D4ED4D /* dcsequen.h in Headers */,
 				4A13D90A1E023C9D00D4ED4D /* dcvrul.h in Headers */,
@@ -2307,26 +2011,21 @@
 				4A0D92CB1E14579C00E2DE7B /* jlossls16.h in Headers */,
 				4A13D9F11E023C9E00D4ED4D /* configrt.h in Headers */,
 				4A13D9591E023C9D00D4ED4D /* dimoflt.h in Headers */,
-				4A8909E21E167B43003753F4 /* Barrier.h in Headers */,
 				4A13DA161E023C9E00D4ED4D /* factory.h in Headers */,
 				4A0D93001E1457C700E2DE7B /* jmorecfg8.h in Headers */,
 				4A13D8F81E023C9D00D4ED4D /* dcvrfd.h in Headers */,
-				4A890A031E167B44003753F4 /* minpf_plugin_manager.h in Headers */,
 				4A0D92681E12AF2200E2DE7B /* rudk.h in Headers */,
 				4A13D9EA1E023C9E00D4ED4D /* clfsap.h in Headers */,
-				4A8909F41E167B44003753F4 /* image.h in Headers */,
 				4A0D925D1E12ADF700E2DE7B /* rk2jParams.h in Headers */,
 				4A13D90B1E023C9D00D4ED4D /* dcvrulup.h in Headers */,
 				4A13DA411E023C9E00D4ED4D /* ofglobal.h in Headers */,
 				4A13D8D71E023C9D00D4ED4D /* dcostrmf.h in Headers */,
 				4A13DA071E023C9E00D4ED4D /* env.h in Headers */,
-				4A8909FA1E167B44003753F4 /* jp2.h in Headers */,
 				4A0D92A71E1451F200E2DE7B /* djeijg8.h in Headers */,
 				4A13DA1C1E023C9E00D4ED4D /* rootlog.h in Headers */,
 				4A13D9501E023C9D00D4ED4D /* digsdfn.h in Headers */,
 				4A0D92C71E14579C00E2DE7B /* jdct16.h in Headers */,
 				4A13D8E91E023C9D00D4ED4D /* dcstack.h in Headers */,
-				4A890A171E167B44003753F4 /* RateInfo.h in Headers */,
 				4A13D8D61E023C9D00D4ED4D /* dcostrmb.h in Headers */,
 				4A13D8D81E023C9D00D4ED4D /* dcostrmz.h in Headers */,
 				4A13DA3C1E023C9E00D4ED4D /* ofdefine.h in Headers */,
@@ -2339,7 +2038,6 @@
 				4A13DA551E023C9E00D4ED4D /* ofthread.h in Headers */,
 				4A13D8FD1E023C9D00D4ED4D /* dcvrobow.h in Headers */,
 				4A13D95A1E023C9D00D4ED4D /* dimoimg.h in Headers */,
-				4A890A041E167B44003753F4 /* minpf_plugin.h in Headers */,
 				4A13D9FF1E023C9E00D4ED4D /* sockbuff.h in Headers */,
 				4A13DA001E023C9E00D4ED4D /* socket.h in Headers */,
 				4A13DA231E023C9E00D4ED4D /* syncwin.h in Headers */,
@@ -2353,9 +2051,7 @@
 				4A13D94F1E023C9D00D4ED4D /* diflipt.h in Headers */,
 				4A13DA261E023C9E00D4ED4D /* syncprim.h in Headers */,
 				4A13D9441E023C9D00D4ED4D /* diyp2img.h in Headers */,
-				4A8909E41E167B43003753F4 /* bio.h in Headers */,
 				4A13D9FA1E023C9E00D4ED4D /* pointer.h in Headers */,
-				4A890A101E167B44003753F4 /* pi.h in Headers */,
 				4A13D8EB1E023C9D00D4ED4D /* dctag.h in Headers */,
 				4A13DA341E023C9E00D4ED4D /* ofcmdln.h in Headers */,
 				4A13DA5F1E023C9E00D4ED4D /* ofvriant.h in Headers */,
@@ -2364,15 +2060,12 @@
 				4A13DA091E023C9E00D4ED4D /* socket.h in Headers */,
 				4A0D92AC1E1451F200E2DE7B /* djencext.h in Headers */,
 				4A13D8ED1E023C9D00D4ED4D /* dctk.h in Headers */,
-				4A8909F01E167B44003753F4 /* function_list.h in Headers */,
 				4A13DA581E023C9E00D4ED4D /* oftraits.h in Headers */,
 				4A0D92411E128FB100E2DE7B /* j2krRegister.h in Headers */,
 				4A13DA591E023C9E00D4ED4D /* oftuple.h in Headers */,
 				4A13D8CB1E023C9D00D4ED4D /* dchashdi.h in Headers */,
-				4A8909EE1E167B44003753F4 /* format_defs.h in Headers */,
 				4A13D9EF1E023C9E00D4ED4D /* windowsh.h in Headers */,
 				4A13D8D51E023C9D00D4ED4D /* dcostrma.h in Headers */,
-				4A890A1F1E167B44003753F4 /* t1_opt.h in Headers */,
 				4A13D8D01E023C9D00D4ED4D /* dcitem.h in Headers */,
 				4A0D92991E1451F200E2DE7B /* ddpiimpl.h in Headers */,
 				4A13D9301E023C9D00D4ED4D /* dipitiff.h in Headers */,
@@ -2388,7 +2081,6 @@
 				4A0D92C51E14579C00E2DE7B /* jchuff16.h in Headers */,
 				4A13DA2D1E023C9E00D4ED4D /* windebap.h in Headers */,
 				4A13D8BB1E023C9D00D4ED4D /* dcchrstr.h in Headers */,
-				4A890A061E167B44003753F4 /* mqc.h in Headers */,
 				4A13D9FC1E023C9E00D4ED4D /* queue.h in Headers */,
 				4A13D8FC1E023C9D00D4ED4D /* dcvrlt.h in Headers */,
 				4A0D92FC1E1457C700E2DE7B /* jinclude8.h in Headers */,
@@ -2458,61 +2150,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A890A051E167B44003753F4 /* mqc.cpp in Sources */,
 				4A0D92601E12ADF700E2DE7B /* rk2jCoder.cc in Sources */,
-				4A890A0F1E167B44003753F4 /* pi.cpp in Sources */,
-				4A890A221E167B44003753F4 /* T1Decoder.cpp in Sources */,
-				4A890A111E167B44003753F4 /* plugin_bridge.cpp in Sources */,
 				4A0D92691E12AF2200E2DE7B /* rudk.cc in Sources */,
 				4A0D92721E12EF5400E2DE7B /* opjrParams.cc in Sources */,
 				4A0D92741E12EF5400E2DE7B /* opjrInstance.cc in Sources */,
 				4A0D92421E128FB100E2DE7B /* j2krRegister.cc in Sources */,
-				4A890A261E167B44003753F4 /* t2.cpp in Sources */,
-				4A8909FD1E167B44003753F4 /* mem_stream.cpp in Sources */,
-				4A890A1A1E167B44003753F4 /* segmented_stream.cpp in Sources */,
-				4A8909E81E167B43003753F4 /* dwt_region.cpp in Sources */,
 				4A0D92001E1285A600E2DE7B /* k2jParams.cc in Sources */,
 				4A0D91FE1E1285A600E2DE7B /* k2jCoder.cc in Sources */,
 				4A0D92461E128FB100E2DE7B /* j2krCoder.cc in Sources */,
-				4A8909F31E167B44003753F4 /* image.cpp in Sources */,
-				4A8909FB1E167B44003753F4 /* mct.cpp in Sources */,
-				4A8909F91E167B44003753F4 /* jp2.cpp in Sources */,
-				4A890A001E167B44003753F4 /* minpf_dynamic_library.cpp in Sources */,
-				4A8909E61E167B43003753F4 /* cio.cpp in Sources */,
-				4A890A021E167B44003753F4 /* minpf_plugin_manager.cpp in Sources */,
-				4A890A1E1E167B44003753F4 /* t1_opt.cpp in Sources */,
-				4A890A2D1E167B44003753F4 /* tile_buf.cpp in Sources */,
-				4A8909DF1E167B43003753F4 /* OPJSupport.cpp in Sources */,
 				4A0D925E1E12ADF700E2DE7B /* rk2jParams.cc in Sources */,
-				4A8909EF1E167B44003753F4 /* function_list.cpp in Sources */,
 				4A3AD84D1E11C3B400C9F9E6 /* k2jRegister.cc in Sources */,
 				4A0D92751E12EF5400E2DE7B /* opjr.cc in Sources */,
-				4A8909DE1E167B43003753F4 /* openjpeg.cpp in Sources */,
 				4A13D3641E02196000D4ED4D /* NSString+opendicom.mm in Sources */,
-				4A890A311E167B44003753F4 /* vector.cpp in Sources */,
-				4A890A2F1E167B44003753F4 /* util.cpp in Sources */,
-				4A890A161E167B44003753F4 /* RateInfo.cpp in Sources */,
-				4A890A241E167B44003753F4 /* T1Encoder.cpp in Sources */,
-				4A890A281E167B44003753F4 /* tcd.cpp in Sources */,
 				4A0D92671E12AF2200E2DE7B /* rudkInstance.cc in Sources */,
-				4A8909F51E167B44003753F4 /* invert.cpp in Sources */,
-				4A890A071E167B44003753F4 /* opj_clock.cpp in Sources */,
 				4A0D92091E1285C200E2DE7B /* udkInstance.cc in Sources */,
-				4A8909EA1E167B43003753F4 /* dwt.cpp in Sources */,
-				4A890A181E167B44003753F4 /* raw.cpp in Sources */,
-				4A8909F11E167B44003753F4 /* hashmap.cpp in Sources */,
 				4A0D92501E128FCD00E2DE7B /* kdurInstance.cc in Sources */,
-				4A890A0C1E167B44003753F4 /* opj_malloc.cpp in Sources */,
 				4A0D925B1E12ADF700E2DE7B /* rk2jRegister.cc in Sources */,
-				4A890A2A1E167B44003753F4 /* tgt.cpp in Sources */,
-				4A890A201E167B44003753F4 /* t1.cpp in Sources */,
-				4A8909E31E167B43003753F4 /* bio.cpp in Sources */,
 				4A0D92071E1285C200E2DE7B /* udk.cc in Sources */,
 				4A0D924E1E128FCD00E2DE7B /* kdur.cc in Sources */,
-				4A8909EC1E167B44003753F4 /* event.cpp in Sources */,
 				4A0D92441E128FB100E2DE7B /* j2krParams.cc in Sources */,
-				4A8909F71E167B44003753F4 /* j2k.cpp in Sources */,
-				4A890A141E167B44003753F4 /* RateControl.cpp in Sources */,
 				4A1B7ADF1E01D93500288437 /* J2K.mm in Sources */,
 				4A0D92521E128FCD00E2DE7B /* kdurParams.cc in Sources */,
 			);
@@ -2546,7 +2202,10 @@
 					"$(PROJECT_DIR)/**",
 					"$(PROJECT_DIR)/dcmtk/libs",
 					"$(PROJECT_DIR)/KDU_OsiriX59",
-					"$(PROJECT_DIR)/openjpeg",
+					"$(PROJECT_DIR)/openjpeg_lib",
+					"$(PROJECT_DIR)/openjpeg-2.1.2_XCode/bin/Debug",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/build/Development",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_LDFLAGS = (

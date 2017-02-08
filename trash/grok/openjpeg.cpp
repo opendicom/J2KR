@@ -756,11 +756,14 @@ bool OPJ_CALLCONV opj_start_compress (	opj_codec_t *p_codec,
         opj_codec_private_t * l_codec = (opj_codec_private_t *) p_codec;
         opj_stream_private_t * l_stream = (opj_stream_private_t *) p_stream;
         
-        if (! l_codec->is_decompressor) {
-            return l_codec->m_codec_data.m_compression.opj_start_compress(	l_codec->m_codec,
-                                                                          l_stream,
-                                                                          p_image,
-                                                                          &(l_codec->m_event_mgr));
+        if (! l_codec->is_decompressor)
+        {
+            return l_codec->m_codec_data.m_compression.opj_start_compress(
+                            l_codec->m_codec,
+                            l_stream,
+                            p_image,
+                            &(l_codec->m_event_mgr)
+                                                                          );
         }
     }
     

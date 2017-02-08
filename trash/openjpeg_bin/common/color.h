@@ -1,24 +1,6 @@
 /*
-*    Copyright (C) 2016 Grok Image Compression Inc.
-*
-*    This source code is free software: you can redistribute it and/or  modify
-*    it under the terms of the GNU Affero General Public License, version 3,
-*    as published by the Free Software Foundation.
-*
-*    This source code is distributed in the hope that it will be useful,
-*    but WITHOUT ANY WARRANTY; without even the implied warranty of
-*    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-*    GNU Affero General Public License for more details.
-*
-*    You should have received a copy of the GNU Affero General Public License
-*    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*
-*
-*    This source code incorporates work covered by the following copyright and
-*    permission notice:
-*
- * The copyright in this software is being made available under the 2-clauses
- * BSD License, included below. This software may be subject to other third
+ * The copyright in this software is being made available under the 2-clauses 
+ * BSD License, included below. This software may be subject to other third 
  * party and contributor rights, including patent rights, and no such rights
  * are granted under this license.
  *
@@ -26,7 +8,7 @@
  * Copyright (c) 2002-2014, Professor Benoit Macq
  * Copyright (c) 2001-2003, David Janssens
  * Copyright (c) 2002-2003, Yannick Verschueren
- * Copyright (c) 2003-2007, Francois-Olivier Devaux
+ * Copyright (c) 2003-2007, Francois-Olivier Devaux 
  * Copyright (c) 2003-2014, Antonin Descampe
  * Copyright (c) 2005, Herve Drolon, FreeImage Team
  * All rights reserved.
@@ -53,21 +35,13 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef _OPJ_FORMAT_DEFS_H_
-#define _OPJ_FORMAT_DEFS_H_
+#ifndef _OPJ_COLOR_H_
+#define _OPJ_COLOR_H_
 
-#define J2K_CFMT 0
-#define JP2_CFMT 1
-#define JPT_CFMT 2
+extern void color_sycc_to_rgb(opj_image_t *img);
+extern void color_apply_icc_profile(opj_image_t *image);
+extern void color_cielab_to_rgb(opj_image_t *image);
 
-#define PXM_DFMT 10
-#define PGX_DFMT 11
-#define BMP_DFMT 12
-#define YUV_DFMT 13
-#define TIF_DFMT 14
-#define RAW_DFMT 15 /* MSB / Big Endian */
-#define TGA_DFMT 16
-#define PNG_DFMT 17
-#define RAWL_DFMT 18 /* LSB / Little Endian */
-
-#endif /* _OPJ_FORMAT_DEFS_H_ */
+extern void color_cmyk_to_rgb(opj_image_t *image);
+extern void color_esycc_to_rgb(opj_image_t *image);
+#endif /* _OPJ_COLOR_H_ */

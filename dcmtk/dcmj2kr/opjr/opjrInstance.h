@@ -3,6 +3,7 @@
 #include "dcmtk/dcmj2kr/j2krCoder.h" //opjrInstance constructor +
 
 #include "dcmtk/dcmjpeg/djencabs.h"
+
 /*DJEncoder
  
 métodos:
